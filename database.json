@@ -31810,5 +31810,17 @@
     "masterId": "VV-hH3oDDfg",
     "isMaster": true,
     "tipoMaster": "Master Original"
+  },
+  {
+    "videoId": "SG9H18fwnAs",
+    "titulo": "MARCELO MARINS E OS FILHOS DAS ESTRELAS ! está ao vivo!",
+    "canal": "MARCELO MARINS E OS FILHOS DAS ESTRELAS !",
+    "duracaoSegundos": 0,
+    "dataPublicacao": "2026-10-10T23:57:33Z",
+    "eLive": true,
+    "privacyStatus": "public",
+    "masterId": "sFdw7iPi6c8",
+    "isMaster": false,
+    "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)"
   }
 ]
