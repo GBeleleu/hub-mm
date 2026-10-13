@@ -10,6 +10,7 @@ import {
 import { 
   getAuth, 
   signInWithPopup, 
+  signOut, 
   GoogleAuthProvider, 
   onAuthStateChanged 
 } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
@@ -43,6 +44,7 @@ window.userProgressCache = {};
 // Observa mudanças na autenticação do usuário
 onAuthStateChanged(auth, (user) => {
   window.currentUser = user;
+  updateAuthUI(user);
   if (user) {
     console.log("Usuário autenticado:", user.email || user.uid);
     // Escuta mudanças em tempo real na coleção de progresso do usuário
@@ -98,4 +100,89 @@ window.updateVideoProgress = async function(videoId, selectedValue) {
   } catch (err) {
     console.error("Erro ao sincronizar com Firestore:", err);
   }
+};
+
+// Atualiza os elementos de UI com base no estado de autenticação
+function updateAuthUI(user) {
+  const loginBtn = document.getElementById('loginBtn');
+  const userEmailSpan = document.getElementById('userEmailSpan');
+  const logoutBtn = document.getElementById('logoutBtn');
+
+  if (user) {
+    if (loginBtn) loginBtn.style.display = 'none';
+    if (userEmailSpan) {
+      userEmailSpan.textContent = user.email || user.displayName || 'Usuário Logado';
+      userEmailSpan.style.display = 'inline';
+    }
+    if (logoutBtn) logoutBtn.style.display = 'inline-block';
+  } else {
+    if (loginBtn) loginBtn.style.display = 'inline-block';
+    if (userEmailSpan) {
+      userEmailSpan.textContent = '';
+      userEmailSpan.style.display = 'none';
+    }
+    if (logoutBtn) logoutBtn.style.display = 'none';
+  }
+}
+
+// Função para Deslogar
+window.logoutFromFirebase = async function() {
+  try {
+    await signOut(auth);
+    console.log("Usuário deslogado com sucesso.");
+  } catch (error) {
+    console.error("Erro ao deslogar:", error);
+  }
+};
+
+// EXPORTAR PROGRESOS PARA ARQUIVO JSON
+window.exportProgressJSON = function() {
+  if (!window.userProgressCache || Object.keys(window.userProgressCache).length === 0) {
+    alert("Nenhum dado de progresso para exportar.");
+    return;
+  }
+
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(window.userProgressCache, null, 2));
+  const downloadAnchor = document.createElement('a');
+  downloadAnchor.setAttribute("href", dataStr);
+  downloadAnchor.setAttribute("download", `progresso_videos_${new Date().toISOString().slice(0, 10)}.json`);
+  document.body.appendChild(downloadAnchor);
+  downloadAnchor.click();
+  downloadAnchor.remove();
+};
+
+// IMPORTAR PROGRESSOS DE ARQUIVO JSON PARA O FIRESTORE
+window.importProgressJSON = function(event) {
+  if (!window.currentUser) {
+    alert("Faça login antes de importar o progresso.");
+    return;
+  }
+
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = async function(e) {
+    try {
+      const importedData = JSON.parse(e.target.result);
+
+      if (typeof importedData !== 'object' || Array.isArray(importedData)) {
+        throw new Error("Formato JSON inválido. Esperado um objeto de mapa { videoId: status }.");
+      }
+
+      // Mescla o progresso atual com o importado
+      window.userProgressCache = { ...window.userProgressCache, ...importedData };
+
+      // Sincroniza no Firestore
+      const userId = window.currentUser.uid;
+      const userProgressDoc = doc(db, "users", userId);
+      await setDoc(userProgressDoc, { progress: window.userProgressCache }, { merge: true });
+
+      alert("Progresso importado com sucesso!");
+      if (typeof renderList === 'function') renderList();
+    } catch (err) {
+      alert("Erro ao importar o arquivo JSON: " + err.message);
+    }
+  };
+  reader.readAsText(file);
 };
