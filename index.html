@@ -491,7 +491,20 @@
 
         <button id="sortOrderBtn" title="Inverter Ordem">Asc ▲</button>
         <button id="channelsModalBtn">Filtro</button>
-        <button id="loginBtn" onclick="window.loginWithGoogle()">Login</button>
+      </div>
+
+      <!-- Área de Autenticação e Gestão do Progresso -->
+      <div id="authContainer" style="display: flex; gap: 8px; align-items: center;">
+        <button id="loginBtn" onclick="window.loginWithGoogle()">Entrar</button>
+        <span id="userEmailSpan" style="display: none; font-size: 12px; color: var(--accent-color); font-weight: bold;"></span>
+        <button id="logoutBtn" onclick="window.logoutFromFirebase()" style="display: none;">Sair</button>
+      </div>
+
+      <!-- Importar e Exportar JSON -->
+      <div id="dataToolsGroup" style="display: flex; gap: 6px; align-items: center;">
+        <button onclick="window.exportProgressJSON()" title="Exportar progresso para JSON">Exportar 📥</button>
+        <button onclick="document.getElementById('importJsonInput').click()" title="Importar progresso de JSON">Importar 📤</button>
+        <input type="file" id="importJsonInput" accept=".json" style="display: none;" onchange="window.importProgressJSON(event)">
       </div>
 
       <!-- Navegação Auxiliar de Rolagem (Ano e Mês com Setas Individuais) -->
