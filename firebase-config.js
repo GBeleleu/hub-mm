@@ -45,6 +45,7 @@ window.userProgressCache = {};
 onAuthStateChanged(auth, (user) => {
   window.currentUser = user;
   updateAuthUI(user);
+
   if (user) {
     console.log("Usuário autenticado:", user.email || user.uid);
     // Escuta mudanças em tempo real na coleção de progresso do usuário
@@ -55,10 +56,12 @@ onAuthStateChanged(auth, (user) => {
       } else {
         window.userProgressCache = {};
       }
+      // Re-renderiza atualizando o estado ativo dos seletores
       if (typeof renderList === 'function') renderList();
     });
   } else {
     window.userProgressCache = {};
+    // Re-renderiza adicionando 'disabled' a todos os seletores
     console.log("Nenhum usuário autenticado.");
     if (typeof renderList === 'function') renderList();
   }
