@@ -78,7 +78,6 @@ onAuthStateChanged(auth, (user) => {
   if (typeof toggleCardStatusControls === 'function') {
     toggleCardStatusControls(!!user);
   }
-});
   
   // Atualiza o estado dos seletores na tela
   if (typeof toggleCardStatusControls === 'function') {
