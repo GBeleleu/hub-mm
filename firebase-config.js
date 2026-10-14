@@ -37,17 +37,25 @@ const auth = getAuth(app);
 // Estado global
 window.currentUser = null;
 window.userProgressCache = {};
+let unsubscribeSnapshot = null;
 
-// Observa mudanças na autenticação do usuário de forma unificada e limpa
+// Observa mudanças na autenticação do usuário
 onAuthStateChanged(auth, (user) => {
   window.currentUser = user;
   updateAuthUI(user);
+
+  // Se houver um ouvinte ativo anterior, cancela ele antes de criar um novo ou deslogar
+  if (unsubscribeSnapshot) {
+    unsubscribeSnapshot();
+    unsubscribeSnapshot = null;
+  }
 
   if (user) {
     console.log("Usuário autenticado:", user.email || user.uid);
     const progressRef = doc(db, "users", user.uid);
     
-    onSnapshot(progressRef, (docSnap) => {
+    // Armazena a função de cancelamento retornada pelo onSnapshot
+    unsubscribeSnapshot = onSnapshot(progressRef, (docSnap) => {
       if (!window.currentUser) return; 
       
       if (docSnap.exists()) {
@@ -56,12 +64,21 @@ onAuthStateChanged(auth, (user) => {
         window.userProgressCache = {};
       }
       if (typeof renderList === 'function') renderList();
+    }, (error) => {
+      // Trata silenciosamente erros de permissão se ocorrerem durante o encerramento da sessão
+      if (error.code === 'permission-denied') return;
+      console.error("Erro no listener do Firestore:", error);
     });
   } else {
     window.userProgressCache = {};
     console.log("Nenhum usuário autenticado.");
     if (typeof renderList === 'function') renderList();
   }
+  
+  if (typeof toggleCardStatusControls === 'function') {
+    toggleCardStatusControls(!!user);
+  }
+});
   
   // Atualiza o estado dos seletores na tela
   if (typeof toggleCardStatusControls === 'function') {
@@ -137,6 +154,13 @@ function updateAuthUI(user) {
 // Função para Deslogar
 window.logoutFromFirebase = async function() {
   try {
+    // Para o listener explicitamente antes de invalidar a sessão
+    if (unsubscribeSnapshot) {
+      unsubscribeSnapshot();
+      unsubscribeSnapshot = null;
+    }
+    window.userProgressCache = {};
+    
     await signOut(auth);
     console.log("Usuário deslogado com sucesso.");
   } catch (error) {
