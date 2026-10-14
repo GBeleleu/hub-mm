@@ -363,15 +363,6 @@
       background-color: var(--bg-secondary);
       color: var(--text-main);
     }
-    
-.card-status-select:disabled {
-  background-color: var(--bg-primary);
-  color: var(--text-muted);
-  border-color: var(--border-color);
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none; /* Impede a abertura do menu e o clique */
-}
   
     /* Ajuste para Celular */
     @media (max-width: 600px) {
@@ -895,9 +886,6 @@
       setupScrollObserver();
     }
 
-    // Verifica se o usuário está logado no momento
-    const isLogged = !!window.currentUser;
-    
    	// Criação do Elemento HTML do Card com Estrutura Reformulada
     function createCardElement(item, duplicates = []) {
       const card = document.createElement('div');
@@ -943,10 +931,8 @@
           <span class="card-date">${formatLocalDateTime(item.dataPublicacao)}${liveBadge}</span>
 
           <!-- Menu suspenso de Progresso -->
-          <select class="card-status-select ${statusClass}" 
-              onchange="handleStatusChange(this, '${item.videoId}')">
-              ${!isLogged ? 'disabled' : ''}>
-            <option value="" ${currentStatus === '' ? 'selected' : ''}>...</option>
+          <select class="card-status-select ${statusClass}" onchange="handleStatusChange(this, '${item.videoId}')">
+            <option value="" ${currentStatus === '' ? 'selected' : ''}>Status...</option>
             <option value="0" ${currentStatus === 0 ? 'selected' : ''}>Visto</option>
             <option value="1" ${currentStatus === 1 ? 'selected' : ''}>Alta</option>
             <option value="2" ${currentStatus === 2 ? 'selected' : ''}>Média</option>
@@ -977,27 +963,21 @@
 
     // Handler para alterar a classe visual imediatamente e disparar o salvamento
     function handleStatusChange(selectEl, videoId) {
-      // Se não houver usuário logado, impede a ação e avisa
-      if (!window.currentUser) {
-        alert("Faça login para alterar o progresso.");
-        selectEl.value = ""; // Volta para o valor padrão
-      return;
-    }
+      const value = selectEl.value;
 
-    const value = selectEl.value;
-    selectEl.className = 'card-status-select';
-  
-    // Adiciona a nova classe de cor
-    if (value === "") {
-      selectEl.classList.add('status-null');
-    } else {
-      selectEl.classList.add(`status-${value}`);
-    }
+      // Remove classes antigas
+      selectEl.className = 'card-status-select';
+      
+      // Adiciona a nova classe de cor
+      if (value === "") {
+        selectEl.classList.add('status-null');
+      } else {
+        selectEl.classList.add(`status-${value}`);
+      }
 
-
-    // Invoca a função global do Firebase
-    if (typeof window.updateVideoProgress === 'function') {
-      window.updateVideoProgress(videoId, value);
+      // Invoca a função global do Firebase
+      if (typeof window.updateVideoProgress === 'function') {
+        window.updateVideoProgress(videoId, value);
       }
     }
 
