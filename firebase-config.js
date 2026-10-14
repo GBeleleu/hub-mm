@@ -40,7 +40,6 @@ const auth = getAuth(app);
 // Estado global do usuário e cache de progressos
 window.currentUser = null;
 window.userProgressCache = {};
-
 // Observa mudanças na autenticação do usuário
 onAuthStateChanged(auth, (user) => {
   window.currentUser = user;
@@ -51,6 +50,9 @@ onAuthStateChanged(auth, (user) => {
     // Escuta mudanças em tempo real na coleção de progresso do usuário
     const progressRef = doc(db, "users", user.uid);
     onSnapshot(progressRef, (docSnap) => {
+      // Garante que só processa se o usuário ainda estiver autenticado
+      if (!window.currentUser) return; 
+      
       if (docSnap.exists()) {
         window.userProgressCache = docSnap.data().progress || {};
       } else {
@@ -60,11 +62,17 @@ onAuthStateChanged(auth, (user) => {
       if (typeof renderList === 'function') renderList();
     });
   } else {
+    // Limpa o cache imediatamente ao deslogar para evitar conflito de permissão
     window.userProgressCache = {};
     // Re-renderiza adicionando 'disabled' a todos os seletores
     console.log("Nenhum usuário autenticado.");
     if (typeof renderList === 'function') renderList();
   }
+  
+  if (typeof toggleCardStatusControls === 'function') {
+    toggleCardStatusControls(!!user);
+  }
+});
   
   // Habilita ou desabilita os seletores instantaneamente na tela
   if (typeof toggleCardStatusControls === 'function') {
@@ -76,9 +84,14 @@ onAuthStateChanged(auth, (user) => {
 window.loginWithGoogle = async function() {
   const provider = new GoogleAuthProvider();
   try {
-    await signInWithPopup(auth, provider);
-	console.log("Login realizado com sucesso!", result.user);
+    const result = await signInWithPopup(auth, provider);
+    console.log("Login realizado com sucesso!", result.user);
   } catch (error) {
+    // Ignora alertas se o usuário apenas fechou o popup intencionalmente
+    if (error.code === 'auth/popup-closed-by-user' || error.code === 'auth/cancelled-popup-request') {
+      console.log("Login cancelado pelo usuário.");
+      return;
+    }
     console.error("Erro ao fazer login:", error.code, error.message);
     alert("Erro ao autenticar: " + error.message);
   }
