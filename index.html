@@ -363,6 +363,11 @@
       background-color: var(--bg-secondary);
       color: var(--text-main);
     }
+    
+    .card-status-select:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
   
     /* Ajuste para Celular */
     @media (max-width: 600px) {
@@ -963,21 +968,27 @@
 
     // Handler para alterar a classe visual imediatamente e disparar o salvamento
     function handleStatusChange(selectEl, videoId) {
-      const value = selectEl.value;
+      // Se não houver usuário logado, impede a ação e avisa
+      if (!window.currentUser) {
+        alert("Faça login para alterar o progresso.");
+        selectEl.value = ""; // Volta para o valor padrão
+      return;
+    }
 
-      // Remove classes antigas
-      selectEl.className = 'card-status-select';
-      
-      // Adiciona a nova classe de cor
-      if (value === "") {
-        selectEl.classList.add('status-null');
-      } else {
-        selectEl.classList.add(`status-${value}`);
-      }
+    const value = selectEl.value;
+    selectEl.className = 'card-status-select';
+  
+    // Adiciona a nova classe de cor
+    if (value === "") {
+      selectEl.classList.add('status-null');
+    } else {
+      selectEl.classList.add(`status-${value}`);
+    }
 
-      // Invoca a função global do Firebase
-      if (typeof window.updateVideoProgress === 'function') {
-        window.updateVideoProgress(videoId, value);
+
+    // Invoca a função global do Firebase
+    if (typeof window.updateVideoProgress === 'function') {
+      window.updateVideoProgress(videoId, value);
       }
     }
 
