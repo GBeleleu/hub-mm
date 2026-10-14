@@ -799,7 +799,7 @@
       // Habilita/Desabilita seletores de data baseando-se na ordenação por data
       const isDateSorted = state.sortBy === 'data';
       toggleDateNavControls(isDateSorted);
-
+      
       // 4. Modos de Visualização
       if (state.viewMode === 'consolidado') {
         const masterMap = new Map();
@@ -884,6 +884,10 @@
       }
       
       setupScrollObserver();
+      
+      // Aplica o estado atual de habilitação nos seletores recém-renderizados
+      const isLogged = !!window.currentUser;
+      toggleCardStatusControls(isLogged);
     }
 
    	// Criação do Elemento HTML do Card com Estrutura Reformulada
@@ -1062,6 +1066,14 @@
 
     function updateSortBtnText() {
       document.getElementById('sortOrderBtn').textContent = state.sortAscending ? 'Asc ▲' : 'Desc ▼';
+    }
+
+    // Habilita/Desabilita os seletores de status dos cards baseando-se no login
+    function toggleCardStatusControls(enable) {
+      const container = document.getElementById('videoListContainer');
+      if (!container) return;
+      const selects = container.querySelectorAll('.card-status-select');
+      selects.forEach(el => el.disabled = !enable);
     }
 
     /* ==========================================================================
