@@ -364,10 +364,14 @@
       color: var(--text-main);
     }
     
-    .card-status-select:disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
-    }
+.card-status-select:disabled {
+  background-color: var(--bg-primary);
+  color: var(--text-muted);
+  border-color: var(--border-color);
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none; /* Impede a abertura do menu e o clique */
+}
   
     /* Ajuste para Celular */
     @media (max-width: 600px) {
@@ -891,6 +895,9 @@
       setupScrollObserver();
     }
 
+    // Verifica se o usuário está logado no momento
+    const isLogged = !!window.currentUser;
+    
    	// Criação do Elemento HTML do Card com Estrutura Reformulada
     function createCardElement(item, duplicates = []) {
       const card = document.createElement('div');
@@ -936,8 +943,10 @@
           <span class="card-date">${formatLocalDateTime(item.dataPublicacao)}${liveBadge}</span>
 
           <!-- Menu suspenso de Progresso -->
-          <select class="card-status-select ${statusClass}" onchange="handleStatusChange(this, '${item.videoId}')">
-            <option value="" ${currentStatus === '' ? 'selected' : ''}>Status...</option>
+          <select class="card-status-select ${statusClass}" 
+              onchange="handleStatusChange(this, '${item.videoId}')">
+              ${!isLogged ? 'disabled' : ''}>
+            <option value="" ${currentStatus === '' ? 'selected' : ''}>...</option>
             <option value="0" ${currentStatus === 0 ? 'selected' : ''}>Visto</option>
             <option value="1" ${currentStatus === 1 ? 'selected' : ''}>Alta</option>
             <option value="2" ${currentStatus === 2 ? 'selected' : ''}>Média</option>
