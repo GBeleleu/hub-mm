@@ -65,6 +65,11 @@ onAuthStateChanged(auth, (user) => {
     console.log("Nenhum usuário autenticado.");
     if (typeof renderList === 'function') renderList();
   }
+  
+  // Habilita ou desabilita os seletores instantaneamente na tela
+  if (typeof toggleCardStatusControls === 'function') {
+    toggleCardStatusControls(!!user);
+  }
 });
 
 // Função global para acionar o login via clique do usuário
