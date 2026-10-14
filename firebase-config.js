@@ -15,42 +15,39 @@ import {
   onAuthStateChanged 
 } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
-  // Substitua com as credenciais do seu projeto Firebase
-  const firebaseConfig = {
-    apiKey: "AIzaSyDQ_bQKTnPryYQEfzzcu4H0gHopajv4RP4",
-    authDomain: "meuguia-progresso.firebaseapp.com",
-    projectId: "meuguia-progresso",
-    storageBucket: "meuguia-progresso.firebasestorage.app",
-    messagingSenderId: "391949244186",
-    appId: "1:391949244186:web:02d5b1da5ffe4e1dadfea3"
-  };
+// Credenciais do Projeto Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyDQ_bQKTnPryYQEfzzcu4H0gHopajv4RP4",
+  authDomain: "meuguia-progresso.firebaseapp.com",
+  projectId: "meuguia-progresso",
+  storageBucket: "meuguia-progresso.firebasestorage.app",
+  messagingSenderId: "391949244186",
+  appId: "1:391949244186:web:02d5b1da5ffe4e1dadfea3"
+};
 
-// Inicializa o Firebase
+// Inicializa o Firebase e o Firestore com suporte a múltiplas abas
 const app = initializeApp(firebaseConfig);
-
-// Inicializa o Firestore já habilitando a persistência moderna compatível com MÚLTIPLAS ABAS
 const db = initializeFirestore(app, {
   localCache: persistentLocalCache({
     tabManager: persistentMultipleTabManager()
   })
 });
-
 const auth = getAuth(app);
 
-// Estado global do usuário e cache de progressos
+// Estado global
 window.currentUser = null;
 window.userProgressCache = {};
-// Observa mudanças na autenticação do usuário
+
+// Observa mudanças na autenticação do usuário de forma unificada e limpa
 onAuthStateChanged(auth, (user) => {
   window.currentUser = user;
   updateAuthUI(user);
 
   if (user) {
     console.log("Usuário autenticado:", user.email || user.uid);
-    // Escuta mudanças em tempo real na coleção de progresso do usuário
     const progressRef = doc(db, "users", user.uid);
+    
     onSnapshot(progressRef, (docSnap) => {
-      // Garante que só processa se o usuário ainda estiver autenticado
       if (!window.currentUser) return; 
       
       if (docSnap.exists()) {
@@ -58,36 +55,28 @@ onAuthStateChanged(auth, (user) => {
       } else {
         window.userProgressCache = {};
       }
-      // Re-renderiza atualizando o estado ativo dos seletores
       if (typeof renderList === 'function') renderList();
     });
   } else {
-    // Limpa o cache imediatamente ao deslogar para evitar conflito de permissão
     window.userProgressCache = {};
-    // Re-renderiza adicionando 'disabled' a todos os seletores
     console.log("Nenhum usuário autenticado.");
     if (typeof renderList === 'function') renderList();
   }
   
-  if (typeof toggleCardStatusControls === 'function') {
-    toggleCardStatusControls(!!user);
-  }
-});
-  
-  // Habilita ou desabilita os seletores instantaneamente na tela
+  // Atualiza o estado dos seletores na tela
   if (typeof toggleCardStatusControls === 'function') {
     toggleCardStatusControls(!!user);
   }
 });
 
-// Função global para acionar o login via clique do usuário
+// Função global para acionar o login via Google
 window.loginWithGoogle = async function() {
   const provider = new GoogleAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
     console.log("Login realizado com sucesso!", result.user);
   } catch (error) {
-    // Ignora alertas se o usuário apenas fechou o popup intencionalmente
+    // Silencia erros caso o usuário apenas feche o popup intencionalmente
     if (error.code === 'auth/popup-closed-by-user' || error.code === 'auth/cancelled-popup-request') {
       console.log("Login cancelado pelo usuário.");
       return;
@@ -97,7 +86,7 @@ window.loginWithGoogle = async function() {
   }
 };
 
-// Função global para salvar o progresso de um vídeo específico
+// Função global para salvar o progresso de um vídeo
 window.updateVideoProgress = async function(videoId, selectedValue) {
   if (!window.currentUser) {
     alert("Usuário não autenticado no Firebase.");
@@ -113,7 +102,6 @@ window.updateVideoProgress = async function(videoId, selectedValue) {
     window.userProgressCache[videoId] = Number(selectedValue);
   }
 
-    // Salva no Firestore (sincroniza em background caso esteja offline)
   try {
     await setDoc(userProgressDoc, {
       progress: window.userProgressCache
@@ -123,7 +111,7 @@ window.updateVideoProgress = async function(videoId, selectedValue) {
   }
 };
 
-// Atualiza os elementos de UI com base no estado de autenticação
+// Atualiza os elementos visuais da barra superior (Botão Entrar/Sair e Email)
 function updateAuthUI(user) {
   const loginBtn = document.getElementById('loginBtn');
   const userEmailSpan = document.getElementById('userEmailSpan');
@@ -156,7 +144,7 @@ window.logoutFromFirebase = async function() {
   }
 };
 
-// EXPORTAR PROGRESOS PARA ARQUIVO JSON
+// Exportar progresso para arquivo JSON
 window.exportProgressJSON = function() {
   if (!window.userProgressCache || Object.keys(window.userProgressCache).length === 0) {
     alert("Nenhum dado de progresso para exportar.");
@@ -172,7 +160,7 @@ window.exportProgressJSON = function() {
   downloadAnchor.remove();
 };
 
-// IMPORTAR PROGRESSOS DE ARQUIVO JSON PARA O FIRESTORE
+// Importar progresso de arquivo JSON
 window.importProgressJSON = function(event) {
   if (!window.currentUser) {
     alert("Faça login antes de importar o progresso.");
@@ -191,10 +179,8 @@ window.importProgressJSON = function(event) {
         throw new Error("Formato JSON inválido. Esperado um objeto de mapa { videoId: status }.");
       }
 
-      // Mescla o progresso atual com o importado
       window.userProgressCache = { ...window.userProgressCache, ...importedData };
 
-      // Sincroniza no Firestore
       const userId = window.currentUser.uid;
       const userProgressDoc = doc(db, "users", userId);
       await setDoc(userProgressDoc, { progress: window.userProgressCache }, { merge: true });
