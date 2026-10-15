@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Gerenciador de Taxonomia</title>
+  <style>
+    :root {
+      --bg-primary: #121212;
+      --bg-secondary: #1e1e1e;
+      --text-main: #e0e0e0;
+      --accent-color: #66b3ab;
+      --border-color: #333333;
+    }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-secondary);
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border-color);
+    }
+    button, input[type="file"] {
+      padding: 8px 12px;
+      background: var(--bg-primary);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover { border-color: var(--accent-color); }
+    .item-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      background: var(--bg-secondary);
+      padding: 10px;
+      margin-bottom: 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+    }
+    .item-title { flex: 1; font-size: 13px; font-weight: bold; }
+    .item-id { font-family: monospace; font-size: 11px; color: #888; width: 100px; }
+    input[type="text"] {
+      padding: 6px;
+      background: var(--bg-primary);
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-bar">
+      <h2>Admin - Taxonomia dos Vídeos</h2>
+      <div>
+        <label>
+          Importar Categorias JSON: 
+          <input type="file" id="importJsonInput" accept=".json">
+        </label>
+        <button id="exportBtn" style="border-color: var(--accent-color); margin-left: 10px;">Exportar database.json</button>
+      </div>
+    </div>
+
+    <div id="itemsContainer">Carregando vídeos...</div>
+  </div>
+
+  <script>
+    let database = [];
+
+    async function loadData() {
+      try {
+        const res = await fetch('database.json');
+        database = await res.json();
+        renderAdminList();
+      } catch (e) {
+        document.getElementById('itemsContainer').innerHTML = 'Erro ao carregar database.json';
+      }
+    }
+
+    function renderAdminList() {
+      const container = document.getElementById('itemsContainer');
+      container.innerHTML = '';
+
+      database.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'item-row';
+
+        row.innerHTML = `
+          <span class="item-id">${item.videoId}</span>
+          <span class="item-title">${item.titulo}</span>
+          <input type="text" style="width: 320px;" placeholder="cat:Série | grupo:Nome" value="${item.taxonomia || item.categoria || ''}" onchange="updateTaxonomy('${item.videoId}', this.value)">
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    function updateTaxonomy(videoId, value) {
+      const target = database.find(v => v.videoId === videoId);
+      if (target) {
+        target.taxonomia = value;
+      }
+    }
+
+    // Importador do JSON inicial: {"videoId": "Categoria"}
+    document.getElementById('importJsonInput').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const mapping = JSON.parse(event.target.result);
+          let updatedCount = 0;
+
+          database.forEach(item => {
+            if (mapping[item.videoId]) {
+              const categoryValue = mapping[item.videoId];
+              // Se a string já vier formatada preserva, senão inclui "cat:"
+              item.taxonomia = categoryValue.includes(':') ? categoryValue : `cat:${categoryValue}`;
+              updatedCount++;
+            }
+          });
+
+          alert(`${updatedCount} categorias importadas e aplicadas com sucesso!`);
+          renderAdminList();
+        } catch (err) {
+          alert('Erro ao processar o JSON de importação.');
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // Download/Exportação do novo database.json
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(database, null, 2));
+      const downloadAnchor = document.createElement('a');
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", "database.json");
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    });
+
+    document.addEventListener('DOMContentLoaded', loadData);
+  </script>
+</body>
+</html>
