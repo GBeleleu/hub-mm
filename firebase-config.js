@@ -5,6 +5,8 @@ import {
   persistentMultipleTabManager,
   doc, 
   setDoc, 
+  updateDoc, 
+  deleteField, 
   onSnapshot 
 } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 import { 
@@ -102,7 +104,7 @@ window.loginWithGoogle = async function() {
   }
 };
 
-// Função global para salvar o progresso de um vídeo
+// Função global para salvar/remover o progresso de um vídeo
 window.updateVideoProgress = async function(videoId, selectedValue) {
   if (!window.currentUser) {
     alert("Usuário não autenticado no Firebase.");
@@ -112,16 +114,24 @@ window.updateVideoProgress = async function(videoId, selectedValue) {
   const userId = window.currentUser.uid;
   const userProgressDoc = doc(db, "users", userId);
 
-  if (selectedValue === "" || selectedValue === null) {
-    delete window.userProgressCache[videoId];
-  } else {
-    window.userProgressCache[videoId] = Number(selectedValue);
-  }
-
   try {
-    await setDoc(userProgressDoc, {
-      progress: window.userProgressCache
-    }, { merge: true });
+    if (selectedValue === "" || selectedValue === null) {
+      // Remove do cache local
+      delete window.userProgressCache[videoId];
+      
+      // Remove a propriedade específica do documento no Firestore sem afetar outras chaves
+      await updateDoc(userProgressDoc, {
+        [`progress.${videoId}`]: deleteField()
+      });
+    } else {
+      // Atualiza o cache local
+      window.userProgressCache[videoId] = Number(selectedValue);
+
+      // Salva no Firestore
+      await setDoc(userProgressDoc, {
+        progress: window.userProgressCache
+      }, { merge: true });
+    }
   } catch (err) {
     console.error("Erro ao sincronizar com Firestore:", err);
   }
