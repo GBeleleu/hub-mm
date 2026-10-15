@@ -526,6 +526,8 @@
           <option value="titulo">Título</option>
           <option value="duracao">Duração</option>
           <option value="ocorrencias">Ocorrências</option>
+          <option value="categoria">Categoria</option>
+          <option value="progresso">Status</option>
         </select>
 
         <button id="sortOrderBtn" title="Inverter Ordem">Asc ▲</button>
@@ -838,20 +840,38 @@
       }
 
       // 3. Ordenação Dinâmica
-      items.sort((a, b) => {
+            items.sort((a, b) => {
         let valA, valB;
-        if (state.sortBy === 'titulo') {
+
+        if (state.sortBy === 'categoria') {
+          valA = (parseTaxonomy(a.taxonomia || a.categoria).categoria || 'zzz').toLowerCase();
+          valB = (parseTaxonomy(b.taxonomia || b.categoria).categoria || 'zzz').toLowerCase();
+          return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+
+        } else if (state.sortBy === 'progresso') {
+          const statusA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined)
+            ? Number(window.userProgressCache[a.videoId]) : 99;
+          const statusB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined)
+            ? Number(window.userProgressCache[b.videoId]) : 99;
+          
+          valA = statusA;
+          valB = statusB;
+
+        } else if (state.sortBy === 'titulo') {
           valA = a.titulo.toLowerCase();
           valB = b.titulo.toLowerCase();
           return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+
         } else if (state.sortBy === 'duracao') {
           valA = a.duracaoSegundos || 0;
           valB = b.duracaoSegundos || 0;
+
         } else {
           // 'data'
           valA = new Date(a.dataPublicacao);
           valB = new Date(b.dataPublicacao);
         }
+
         return state.sortAscending ? valA - valB : valB - valA;
       });
 
@@ -881,21 +901,40 @@
         // Aplica a ordenação
         masterList.sort((a, b) => {
           let valA, valB;
-          if (state.sortBy === 'ocorrencias') {
+
+          if (state.sortBy === 'categoria') {
+            valA = (parseTaxonomy(a.taxonomia || a.categoria).categoria || 'zzz').toLowerCase();
+            valB = (parseTaxonomy(b.taxonomia || b.categoria).categoria || 'zzz').toLowerCase();
+            return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+
+          } else if (state.sortBy === 'progresso') {
+            const statusA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined)
+              ? Number(window.userProgressCache[a.videoId]) : 99;
+            const statusB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined)
+              ? Number(window.userProgressCache[b.videoId]) : 99;
+            
+            valA = statusA;
+            valB = statusB;
+
+          } else if (state.sortBy === 'ocorrencias') {
             valA = (duplicatesMap.get(a.videoId) || []).length;
             valB = (duplicatesMap.get(b.videoId) || []).length;
+
           } else if (state.sortBy === 'titulo') {
             valA = a.titulo.toLowerCase();
             valB = b.titulo.toLowerCase();
             return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+
           } else if (state.sortBy === 'duracao') {
             valA = a.duracaoSegundos || 0;
             valB = b.duracaoSegundos || 0;
+
           } else {
             // 'data'
             valA = new Date(a.dataPublicacao);
             valB = new Date(b.dataPublicacao);
           }
+
           return state.sortAscending ? valA - valB : valB - valA;
         });
 
