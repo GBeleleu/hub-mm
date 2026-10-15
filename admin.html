@@ -52,9 +52,9 @@
       border: 1px solid var(--border-color);
     }
     .item-title { flex: 1; font-size: 13px; font-weight: bold; }
-    .item-id { font-family: monospace; font-size: 11px; color: #888; width: 100px; }
+    .item-id { font-family: monospace; font-size: 11px; color: #888; width: 110px; }
     input[type="text"] {
-      padding: 6px;
+      padding: 6px 10px;
       background: var(--bg-primary);
       color: var(--text-main);
       border: 1px solid var(--border-color);
@@ -68,26 +68,34 @@
       <h2>Admin - Taxonomia dos Vídeos</h2>
       <div>
         <label>
-          Importar Categorias JSON: 
+          Importar JSON Inicial: 
           <input type="file" id="importJsonInput" accept=".json">
         </label>
-        <button id="exportBtn" style="border-color: var(--accent-color); margin-left: 10px;">Exportar database.json</button>
+        <button id="exportBtn" style="border-color: var(--accent-color); margin-left: 10px;">Exportar taxonomia.json</button>
       </div>
     </div>
 
-    <div id="itemsContainer">Carregando vídeos...</div>
+    <div id="itemsContainer">Carregando dados...</div>
   </div>
 
   <script>
     let database = [];
+    let taxonomyMap = {};
 
-    async function loadData() {
+    async function init() {
       try {
-        const res = await fetch('database.json');
-        database = await res.json();
+        // Carrega database.json e taxonomia.json (se existir)
+        const [resDb, resTax] = await Promise.allSettled([
+          fetch('database.json').then(r => r.json()),
+          fetch('taxonomia.json').then(r => r.json())
+        ]);
+
+        if (resDb.status === 'fulfilled') database = resDb.value;
+        if (resTax.status === 'fulfilled') taxonomyMap = resTax.value;
+
         renderAdminList();
       } catch (e) {
-        document.getElementById('itemsContainer').innerHTML = 'Erro ao carregar database.json';
+        document.getElementById('itemsContainer').innerHTML = 'Erro ao carregar dados.';
       }
     }
 
@@ -99,19 +107,22 @@
         const row = document.createElement('div');
         row.className = 'item-row';
 
+        const currentValue = taxonomyMap[item.videoId] || item.taxonomia || item.categoria || '';
+
         row.innerHTML = `
           <span class="item-id">${item.videoId}</span>
           <span class="item-title">${item.titulo}</span>
-          <input type="text" style="width: 320px;" placeholder="cat:Série | grupo:Nome" value="${item.taxonomia || item.categoria || ''}" onchange="updateTaxonomy('${item.videoId}', this.value)">
+          <input type="text" style="width: 320px;" placeholder="cat:Série | grupo:Nome" value="${currentValue}" onchange="updateTaxonomy('${item.videoId}', this.value)">
         `;
         container.appendChild(row);
       });
     }
 
     function updateTaxonomy(videoId, value) {
-      const target = database.find(v => v.videoId === videoId);
-      if (target) {
-        target.taxonomia = value;
+      if (!value.trim()) {
+        delete taxonomyMap[videoId];
+      } else {
+        taxonomyMap[videoId] = value.trim();
       }
     }
 
@@ -124,38 +135,35 @@
       reader.onload = (event) => {
         try {
           const mapping = JSON.parse(event.target.result);
-          let updatedCount = 0;
+          let count = 0;
 
-          database.forEach(item => {
-            if (mapping[item.videoId]) {
-              const categoryValue = mapping[item.videoId];
-              // Se a string já vier formatada preserva, senão inclui "cat:"
-              item.taxonomia = categoryValue.includes(':') ? categoryValue : `cat:${categoryValue}`;
-              updatedCount++;
-            }
+          Object.keys(mapping).forEach(id => {
+            const val = mapping[id];
+            taxonomyMap[id] = val.includes(':') ? val : `cat:${val}`;
+            count++;
           });
 
-          alert(`${updatedCount} categorias importadas e aplicadas com sucesso!`);
+          alert(`${count} categorias importadas!`);
           renderAdminList();
         } catch (err) {
-          alert('Erro ao processar o JSON de importação.');
+          alert('Erro ao ler o arquivo de importação.');
         }
       };
       reader.readAsText(file);
     });
 
-    // Download/Exportação do novo database.json
+    // Exporta estritamente o arquivo taxonomia.json no formato {"ID": "Prefixos"}
     document.getElementById('exportBtn').addEventListener('click', () => {
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(database, null, 2));
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(taxonomyMap, null, 2));
       const downloadAnchor = document.createElement('a');
       downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", "database.json");
+      downloadAnchor.setAttribute("download", "taxonomia.json");
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
     });
 
-    document.addEventListener('DOMContentLoaded', loadData);
+    document.addEventListener('DOMContentLoaded', init);
   </script>
 </body>
 </html>
