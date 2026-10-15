@@ -477,9 +477,9 @@
       <!-- Modos de Visualização & Ordenamento -->
       <div class="filter-group">
         <select id="viewModeSelect">
-          <option value="consolidado">Consolidado (Agrupado por conteúdo)</option>
-          <option value="sequenciado">Sequenciado (Canais mesclados)</option>
-          <option value="sequenciado-canais">Sequenciado (Canais separados)</option>
+          <option value="consolidado" title="Reune os vídeos duplicados">Conteúdo</option>
+          <option value="sequenciado">Sequência Mesclada</option>
+          <option value="sequenciado-canais">Sequência Separada</option>
         </select>
 
         <select id="sortBySelect">
@@ -490,20 +490,20 @@
         </select>
 
         <button id="sortOrderBtn" title="Inverter Ordem">Asc ▲</button>
-        <button id="channelsModalBtn">Filtro</button>
+        <button id="channelsModalBtn">Canais</button>
       </div>
 
       <!-- Área de Autenticação e Gestão do Progresso -->
       <div id="authContainer" style="display: flex; gap: 8px; align-items: center;">
-        <button id="loginBtn" onclick="window.loginWithGoogle()">Entrar</button>
+        <button id="loginBtn" onclick="window.loginWithGoogle()" title="Entre para registrar seu progresso e sincronizar com otros dispositivos">Entrar</button>
         <span id="userEmailSpan" style="display: none; font-size: 12px; color: var(--accent-color); font-weight: bold;"></span>
         <button id="logoutBtn" onclick="window.logoutFromFirebase()" style="display: none;">Sair</button>
       </div>
 
       <!-- Importar e Exportar JSON -->
       <div id="dataToolsGroup" style="display: flex; gap: 6px; align-items: center;">
-        <button onclick="window.exportProgressJSON()" title="Exportar progresso para JSON">Exportar 📥</button>
-        <button onclick="document.getElementById('importJsonInput').click()" title="Importar progresso de JSON">Importar 📤</button>
+        <button onclick="window.exportProgressJSON()" title="Exportar progresso (JSON)">📤</button>
+        <button onclick="document.getElementById('importJsonInput').click()" title="Importar progresso (JSON)">📥</button>
         <input type="file" id="importJsonInput" accept=".json" style="display: none;" onchange="window.importProgressJSON(event)">
       </div>
 
@@ -519,7 +519,6 @@
         <div class="nav-unit">
           <button class="arrow-btn" id="monthUpBtn">▲</button>
           <select id="monthSelect">
-            <option value="">Mês</option>
             <option value="0">Jan</option><option value="1">Fev</option>
             <option value="2">Mar</option><option value="3">Abr</option>
             <option value="4">Mai</option><option value="5">Jun</option>
