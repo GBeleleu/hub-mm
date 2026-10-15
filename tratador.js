@@ -19,6 +19,7 @@ const path = require('path');
 const CONFIG_TRAT = {
   ARQUIVO_BRUTO: path.join(__dirname, 'videos_bruto.json'),
   ARQUIVO_OVERRIDES: path.join(__dirname, 'overrides.json'),
+  ARQUIVO_TAXONOMIA: path.join(__dirname, 'taxonomia.json'), // <--- Adicionar esta linha
   ARQUIVO_FINAL: path.join(__dirname, 'database.json'),
   
   // Limites de tolerância de duração (em segundos)
@@ -259,7 +260,35 @@ function processarDados() {
     }
   }
 
-  // 5. SALVAR BANCO FINAL (database.json)
+  // 5 APLICAÇÃO DE TAXONOMIA MANUAL
+  let taxonomiaCount = 0;
+  let taxonomiaMap = {};
+
+  if (fs.existsSync(CONFIG_TRAT.ARQUIVO_TAXONOMIA)) {
+    try {
+      taxonomiaMap = JSON.parse(fs.readFileSync(CONFIG_TRAT.ARQUIVO_TAXONOMIA, 'utf-8'));
+    } catch (e) {
+      console.warn("⚠️ Aviso: Não foi possível ler o arquivo taxonomia.json. Prosseguindo sem taxonomias.");
+    }
+  }
+
+  // Sincroniza a chave 'taxonomia' em cada item do resultado
+  resultadoProcessado.forEach(item => {
+    if (taxonomiaMap[item.videoId]) {
+      item.taxonomia = taxonomiaMap[item.videoId];
+      taxonomiaCount++;
+    } else {
+      // Se não for encontrado no taxonomia.json (ou se foi removido de lá),
+      // garante a remoção do campo no objeto do database.json
+      delete item.taxonomia;
+    }
+  });
+
+  if (taxonomiaCount > 0) {
+    console.log(`🏷️  ${taxonomiaCount} rótulo(s) de taxonomia atribuído(s) via taxonomia.json.`);
+  }
+  
+  // 6. SALVAR BANCO FINAL (database.json)
   fs.writeFileSync(CONFIG_TRAT.ARQUIVO_FINAL, JSON.stringify(resultadoProcessado, null, 2), 'utf-8');
 
   // Resumo de métricas
