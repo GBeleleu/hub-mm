@@ -169,6 +169,45 @@
       margin-top: 20px;
     }
 
+    /* Faixa Vertical Lateral de Categoria no Card */
+    .card {
+      position: relative;
+      overflow: hidden; /* Garante alinhamento exato na borda */
+      padding-left: 28px !important; /* Espaço para acomodar a faixa lateral */
+    }
+
+    .category-stripe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1a1a1a; /* Cor neutra para 'sem categoria' */
+      border-right: 1px solid var(--border-color);
+      z-index: 2;
+    }
+
+    .category-stripe-text {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      font-size: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    /* Cores Mapeadas por Categoria */
+    .category-stripe[data-cat="Série"] { background-color: #ef6c00; }
+    .category-stripe[data-cat="Relato"] { background-color: #424242; }
+    .category-stripe[data-cat="Análise"] { background-color: #b0bec5; }
+    .category-stripe[data-cat="Análise"] .category-stripe-text { color: #121212; }
+    .category-stripe[data-cat="Meditação"] { background-color: #7b1fa2; }
+    
     /* Novo Layout dos Cards */
     .card {
       background-color: var(--bg-card);
@@ -694,6 +733,27 @@
       }
     }
 
+    // Extrai categoria, grupo e playlist de strings como "cat:Meditação | grupo:Série 1"
+    function parseTaxonomy(taxonomyStr) {
+      const result = { categoria: '', grupo: '', playlist: '' };
+      if (!taxonomyStr) return result;
+
+      const parts = taxonomyStr.split('|').map(s => s.trim());
+      parts.forEach(part => {
+        if (part.startsWith('cat:')) {
+          result.categoria = part.replace('cat:', '').trim();
+        } else if (part.startsWith('grupo:')) {
+          result.grupo = part.replace('grupo:', '').trim();
+        } else if (part.startsWith('pl:')) {
+          result.playlist = part.replace('pl:', '').trim();
+        } else if (!result.categoria) {
+          result.categoria = part;
+        }
+      });
+
+      return result;
+    }
+    
     /* ==========================================================================
        7. PERSISTÊNCIA DE ESTADO E CARREGAMENTO
        ========================================================================== */
@@ -901,6 +961,9 @@
       const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
       const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
 
+      // Extrai a taxonomia do item
+      const tax = parseTaxonomy(item.taxonomia || item.categoria);
+
       let privacyNotice = item.privacyStatus === 'removed' 
         ? `<span class="status-removed">(Vídeo removido)</span>` 
         : '';
@@ -918,6 +981,11 @@
       const statusClass = currentStatus !== '' ? `status-${currentStatus}` : 'status-null';
 
       card.innerHTML = `
+        <!-- Faixa Vertical Lateral de Categoria -->
+        <div class="category-stripe" data-cat="${tax.categoria}">
+          <span class="category-stripe-text">${tax.categoria}</span>
+        </div>
+
         <div class="card-media-block">
           <img class="card-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
           <div class="thumb-footer-bar">
@@ -932,6 +1000,8 @@
           </div>
           <span class="card-channel">${item.canal}</span>
           <span class="card-date">${formatLocalDateTime(item.dataPublicacao)}${liveBadge}</span>
+
+          ${tax.grupo ? `<span style="font-size:11px; color:var(--text-muted); margin-top:2px; display:block;">📁 ${tax.grupo}</span>` : ''}
 
           <!-- Menu suspenso de Progresso -->
           <select class="card-status-select ${statusClass}" onchange="handleStatusChange(this, '${item.videoId}')">
