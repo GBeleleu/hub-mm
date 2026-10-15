@@ -499,6 +499,32 @@
       justify-content: space-between;
       gap: 10px;
     }
+
+    /* Estilos do Modal Dinâmico de Taxonomia */
+    .taxonomy-group {
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 10px;
+    }
+
+    .taxonomy-group-title {
+      font-size: 13px;
+      font-weight: bold;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .taxonomy-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0 4px 12px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    
   </style>
 </head>
 <body>
@@ -531,6 +557,7 @@
         </select>
 
         <button id="sortOrderBtn" title="Inverter Ordem">Asc ▲</button>
+        <button id="taxonomyModalBtn">Grupos</button>
         <button id="channelsModalBtn">Canais</button>
       </div>
 
@@ -579,6 +606,26 @@
     <div class="status-message">Carregando dados...</div>
   </main>
 
+<!-- Estrutura do Modal Dinâmico GRUPOS -->
+<div class="modal-overlay" id="taxonomyModal">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3>Filtrar por Taxonomia</h3>
+      <button id="closeTaxonomyModalBtn">&times;</button>
+    </div>
+    <div class="modal-body" id="taxonomyListContainer">
+      <!-- Seções de prefixos e sufixos geradas dinamicamente aqui -->
+    </div>
+    <div class="modal-actions">
+      <div>
+        <button id="selectAllTaxonomyBtn">Marcar Todos</button>
+        <button id="deselectAllTaxonomyBtn">Desmarcar Todos</button>
+      </div>
+      <button id="applyTaxonomyBtn" style="border-color: var(--accent-color);">Aplicar</button>
+    </div>
+  </div>
+</div>
+  
   <!-- MODAL DE FILTRO POR CANAL -->
   <div class="modal-overlay" id="channelsModal">
     <div class="modal-card">
@@ -755,6 +802,100 @@
 
       return result;
     }
+
+    // Estado global para guardar quais tags foram desmarcadas (no formato "prefixo:sufixo")
+    let hiddenTaxonomyTags = []; 
+
+    // 1. Extração dinâmica de todos os pares prefixo/sufixo existentes na base
+    function extractAllTaxonomyTags() {
+      const taxonomyTree = {}; // Ex: { "cat": Set(["Meditação", "Relato"]), "grupo": Set(["Série 1"]) }
+
+      videoDatabase.forEach(item => {
+        const rawTax = item.taxonomia || item.categoria;
+        if (!rawTax) return;
+
+        const parts = rawTax.split('|').map(s => s.trim());
+        parts.forEach(part => {
+          if (part.includes(':')) {
+            const [prefix, value] = part.split(':').map(s => s.trim());
+            if (prefix && value) {
+              if (!taxonomyTree[prefix]) taxonomyTree[prefix] = new Set();
+              taxonomyTree[prefix].add(value);
+            }
+          } else {
+            // Caso seja apenas a categoria legada sem prefixo "cat:"
+            if (!taxonomyTree['cat']) taxonomyTree['cat'] = new Set();
+            taxonomyTree['cat'].add(part);
+          }
+        });
+      });
+
+      return taxonomyTree;
+    }
+
+    // 2. Renderização do Modal com Seções Automáticas
+    function populateTaxonomyModal() {
+      const container = document.getElementById('taxonomyListContainer');
+      container.innerHTML = '';
+
+      const taxonomyTree = extractAllTaxonomyTags();
+      const prefixes = Object.keys(taxonomyTree).sort();
+
+      if (prefixes.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted); font-size:13px;">Nenhuma taxonomia cadastrada na base de dados.</p>';
+        return;
+      }
+
+      prefixes.forEach(prefix => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'taxonomy-group';
+
+        // Nome do prefixo em destaque (Ex: CAT, GRUPO, PL)
+        const title = document.createElement('div');
+        title.className = 'taxonomy-group-title';
+        title.textContent = prefix;
+        groupDiv.appendChild(title);
+
+        // Sufixos ordenados
+        const values = Array.from(taxonomyTree[prefix]).sort();
+        values.forEach(val => {
+          const tagKey = `${prefix}:${val}`;
+          const label = document.createElement('label');
+          label.className = 'taxonomy-item';
+
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = tagKey;
+          checkbox.checked = !hiddenTaxonomyTags.includes(tagKey);
+
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(val));
+          groupDiv.appendChild(label);
+        });
+
+        container.appendChild(groupDiv);
+      });
+    }
+
+    // 3. Validação do Filtro nos Vídeos (Integrado no renderList)
+    // Insira dentro da filtragem do renderList():
+    function isVideoTaxonomyVisible(item) {
+      const rawTax = item.taxonomia || item.categoria;
+      if (!rawTax) return true;
+
+      const parts = rawTax.split('|').map(s => s.trim());
+      for (let part of parts) {
+        let tagKey = part;
+        if (!part.includes(':')) {
+          tagKey = `cat:${part}`;
+        }
+        // Se a tag do vídeo constar na lista de ocultas, o vídeo não deve aparecer
+        if (hiddenTaxonomyTags.includes(tagKey)) {
+          return false;
+        }
+      }
+      return true;
+    }
     
     /* ==========================================================================
        7. PERSISTÊNCIA DE ESTADO E CARREGAMENTO
@@ -826,8 +967,12 @@
         return;
       }
 
-      // 1. Ocultar Canais Desmarcados
-      let items = videoDatabase.filter(item => !state.hiddenChannels.includes(item.canal));
+      // 1. Ocultar Canais Desmarcados e Taxonomias Ocultadas
+      let items = videoDatabase.filter(item => {
+        const isChannelVisible = !state.hiddenChannels.includes(item.canal);
+        const isTaxonomyVisible = isVideoTaxonomyVisible(item);
+        return isChannelVisible && isTaxonomyVisible;
+      });
 
       // 2. Filtragem por Busca Imprecisa (Fuzzy Match)
       if (state.searchQuery.trim() !== '') {
@@ -1314,6 +1459,39 @@
         document.querySelectorAll('#channelsListContainer input[type="checkbox"]').forEach(cb => cb.checked = false);
       });
 
+      // Eventos do Modal de Taxonomia
+      document.getElementById('taxonomyModalBtn').addEventListener('click', () => {
+        populateTaxonomyModal();
+        document.getElementById('taxonomyModal').classList.add('open');
+      });
+
+      document.getElementById('closeTaxonomyModalBtn').addEventListener('click', () => {
+        document.getElementById('taxonomyModal').classList.remove('open');
+      });
+
+      document.getElementById('applyTaxonomyBtn').addEventListener('click', () => {
+        const checkboxes = document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]');
+        hiddenTaxonomyTags = [];
+
+        checkboxes.forEach(cb => {
+          if (!cb.checked) {
+            hiddenTaxonomyTags.push(cb.value);
+          }
+        });
+
+        saveState();
+        renderList();
+        document.getElementById('taxonomyModal').classList.remove('open');
+      });
+
+      document.getElementById('selectAllTaxonomyBtn').addEventListener('click', () => {
+        document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => cb.checked = true);
+      });
+
+      document.getElementById('deselectAllTaxonomyBtn').addEventListener('click', () => {
+        document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => cb.checked = false);
+      });
+      
       // Salva scroll na rolagem
       window.addEventListener('scroll', saveState);
     });
