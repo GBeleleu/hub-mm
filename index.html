@@ -795,26 +795,40 @@
       }
     }
 
-    // Extrai os prefixos/sufixos de forma flexível e segura
+    // 1. PARSER ESTABILIZADO (Retorna Categoria, Grupo e Etiquetas Extras)
     function parseTaxonomy(taxonomyStr) {
-      const result = { categoria: '', grupo: '', playlist: '', extras: [] };
+      const result = { categoria: '', grupo: '', tags: [] };
       if (!taxonomyStr) return result;
-
+    
       const parts = taxonomyStr.split('|').map(s => s.trim());
       parts.forEach(part => {
         if (part.startsWith('cat:')) {
           result.categoria = part.replace('cat:', '').trim();
         } else if (part.startsWith('grupo:')) {
           result.grupo = part.replace('grupo:', '').trim();
-        } else if (part.startsWith('pl:')) {
-          result.playlist = part.replace('pl:', '').trim();
         } else if (part.includes(':')) {
-          result.extras.push(part);
+          // Qualquer outro prefixo (ex: pl:123, nivel:Iniciante, Teste:Teste2)
+          result.tags.push(part);
         } else {
-          // Caso não tenha ':', é tratado como Categoria legada
+          // String sem prefixo entra como Categoria legada
           if (!result.categoria) result.categoria = part;
         }
       });
+
+  return result;
+}
+
+// 2. RENDERIZAÇÃO DO CARD (Substitua a parte do badge de taxonomia na criação do HTML do Card)
+const taxInfo = parseTaxonomy(item.taxonomia || item.categoria);
+
+// Monta o HTML das tags e grupos para o Card
+let subInfoHtml = '';
+if (taxInfo.grupo) {
+  subInfoHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span> `;
+}
+taxInfo.tags.forEach(tag => {
+  subInfoHtml += `<span class="badge-tag">🏷️ ${tag}</span> `;
+});
 
       return result;
     }
