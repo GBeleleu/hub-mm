@@ -606,25 +606,38 @@
     <div class="status-message">Carregando dados...</div>
   </main>
 
-<!-- Estrutura do Modal Dinâmico GRUPOS -->
-<div class="modal-overlay" id="taxonomyModal">
-  <div class="modal-card">
-    <div class="modal-header">
-      <h3>Filtrar por Taxonomia</h3>
-      <button id="closeTaxonomyModalBtn">&times;</button>
-    </div>
-    <div class="modal-body" id="taxonomyListContainer">
-      <!-- Seções de prefixos e sufixos geradas dinamicamente aqui -->
-    </div>
-    <div class="modal-actions">
-      <div>
-        <button id="selectAllTaxonomyBtn">Marcar Todos</button>
-        <button id="deselectAllTaxonomyBtn">Desmarcar Todos</button>
+  <!-- MODAL DE FILTRO DE TAXONOMIA -->
+  <div class="modal-overlay" id="taxonomyModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>Filtrar por Taxonomia</h3>
+        <button id="closeTaxonomyModalBtn">&times;</button>
       </div>
-      <button id="applyTaxonomyBtn" style="border-color: var(--accent-color);">Aplicar</button>
+      
+      <!-- Alternador de Modo de Filtro -->
+      <div style="display: flex; gap: 12px; margin-bottom: 12px; padding: 6px; background: var(--bg-primary); border-radius: 6px; border: 1px solid var(--border-color); font-size: 12px;">
+        <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+          <input type="radio" name="taxonomyFilterMode" value="exclude" checked>
+          <span>Ocultar desmarcados</span>
+        </label>
+        <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
+          <input type="radio" name="taxonomyFilterMode" value="includeOnly">
+          <span>Exibir apenas selecionados</span>
+        </label>
+      </div>
+  
+      <div class="modal-body" id="taxonomyListContainer">
+        <!-- Conteúdo dinâmico -->
+      </div>
+      <div class="modal-actions">
+        <div>
+          <button id="selectAllTaxonomyBtn">Marcar Todos</button>
+          <button id="deselectAllTaxonomyBtn">Desmarcar Todos</button>
+        </div>
+        <button id="applyTaxonomyBtn" style="border-color: var(--accent-color);">Aplicar</button>
+      </div>
     </div>
   </div>
-</div>
   
   <!-- MODAL DE FILTRO POR CANAL -->
   <div class="modal-overlay" id="channelsModal">
@@ -782,9 +795,9 @@
       }
     }
 
-    // Extrai categoria, grupo e playlist de strings como "cat:Meditação | grupo:Série 1"
+    // Extrai os prefixos/sufixos de forma flexível e segura
     function parseTaxonomy(taxonomyStr) {
-      const result = { categoria: '', grupo: '', playlist: '' };
+      const result = { categoria: '', grupo: '', playlist: '', extras: [] };
       if (!taxonomyStr) return result;
 
       const parts = taxonomyStr.split('|').map(s => s.trim());
@@ -795,8 +808,11 @@
           result.grupo = part.replace('grupo:', '').trim();
         } else if (part.startsWith('pl:')) {
           result.playlist = part.replace('pl:', '').trim();
-        } else if (!result.categoria) {
-          result.categoria = part;
+        } else if (part.includes(':')) {
+          result.extras.push(part);
+        } else {
+          // Caso não tenha ':', é tratado como Categoria legada
+          if (!result.categoria) result.categoria = part;
         }
       });
 
@@ -878,23 +894,29 @@
     }
 
     // 3. Validação do Filtro nos Vídeos (Integrado no renderList)
-    // Insira dentro da filtragem do renderList():
+    let taxonomyFilterMode = 'exclude'; // 'exclude' ou 'includeOnly'
+    let selectedTaxonomyTags = [];     // Guarda as tags selecionadas
+
     function isVideoTaxonomyVisible(item) {
       const rawTax = item.taxonomia || item.categoria;
-      if (!rawTax) return true;
+      if (!rawTax) {
+        // Se o vídeo não tem taxonomia e estamos no modo "Exibir Apenas", ele é ocultado
+        return taxonomyFilterMode === 'exclude';
+      }
 
       const parts = rawTax.split('|').map(s => s.trim());
-      for (let part of parts) {
-        let tagKey = part;
-        if (!part.includes(':')) {
-          tagKey = `cat:${part}`;
+      const itemTags = parts.map(p => p.includes(':') ? p : `cat:${p}`);
+
+      if (taxonomyFilterMode === 'exclude') {
+        // Modo Ocultar: O vídeo esconde se alguma de suas tags constar na lista de desmarcadas (hiddenTaxonomyTags)
+        for (let tag of itemTags) {
+          if (hiddenTaxonomyTags.includes(tag)) return false;
         }
-        // Se a tag do vídeo constar na lista de ocultas, o vídeo não deve aparecer
-        if (hiddenTaxonomyTags.includes(tagKey)) {
-          return false;
-        }
+        return true;
+      } else {
+        // Modo "Exibir Apenas": O vídeo só aparece se possuir pelo menos uma das tags marcadas
+        return itemTags.some(tag => selectedTaxonomyTags.includes(tag));
       }
-      return true;
     }
     
     /* ==========================================================================
@@ -1460,21 +1482,18 @@
       });
 
       // Eventos do Modal de Taxonomia
-      document.getElementById('taxonomyModalBtn').addEventListener('click', () => {
-        populateTaxonomyModal();
-        document.getElementById('taxonomyModal').classList.add('open');
-      });
-
-      document.getElementById('closeTaxonomyModalBtn').addEventListener('click', () => {
-        document.getElementById('taxonomyModal').classList.remove('open');
-      });
-
       document.getElementById('applyTaxonomyBtn').addEventListener('click', () => {
+        const modeRadio = document.querySelector('input[name="taxonomyFilterMode"]:checked');
+        taxonomyFilterMode = modeRadio ? modeRadio.value : 'exclude';
+
         const checkboxes = document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]');
         hiddenTaxonomyTags = [];
+        selectedTaxonomyTags = [];
 
         checkboxes.forEach(cb => {
-          if (!cb.checked) {
+          if (cb.checked) {
+            selectedTaxonomyTags.push(cb.value);
+          } else {
             hiddenTaxonomyTags.push(cb.value);
           }
         });
@@ -1482,14 +1501,6 @@
         saveState();
         renderList();
         document.getElementById('taxonomyModal').classList.remove('open');
-      });
-
-      document.getElementById('selectAllTaxonomyBtn').addEventListener('click', () => {
-        document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => cb.checked = true);
-      });
-
-      document.getElementById('deselectAllTaxonomyBtn').addEventListener('click', () => {
-        document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => cb.checked = false);
       });
       
       // Salva scroll na rolagem
