@@ -22,7 +22,8 @@
     "privacyStatus": "public",
     "masterId": "jBQG06BNH4U",
     "isMaster": true,
-    "tipoMaster": "Master Original"
+    "tipoMaster": "Master Original",
+    "taxonomia": "grupo:Teste1"
   },
   {
     "videoId": "Wd6Ha54Hx-s",
@@ -34,7 +35,8 @@
     "privacyStatus": "public",
     "masterId": "Wd6Ha54Hx-s",
     "isMaster": true,
-    "tipoMaster": "Master Original"
+    "tipoMaster": "Master Original",
+    "taxonomia": "Playlist:Teste2"
   },
   {
     "videoId": "8pkYsvSqYZE",
