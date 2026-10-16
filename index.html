@@ -500,7 +500,7 @@
       gap: 10px;
     }
 
-    /* Estilos do Modal Dinâmico de Taxonomia */
+/* Estilos do Modal Dinâmico de Taxonomia */
     .taxonomy-group {
       margin-bottom: 16px;
       border-bottom: 1px solid var(--border-color);
@@ -523,6 +523,19 @@
       padding: 4px 0 4px 12px;
       font-size: 13px;
       cursor: pointer;
+    }
+
+    /* Badges extras nos Cards */
+    .badge-grupo {
+      font-size: 11px;
+      color: var(--accent-color);
+      margin-right: 6px;
+    }
+
+    .badge-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-right: 6px;
     }
     
   </style>
@@ -605,29 +618,16 @@
   <main class="container" id="videoListContainer">
     <div class="status-message">Carregando dados...</div>
   </main>
-
-  <!-- MODAL DE FILTRO DE TAXONOMIA -->
+  
+  <!-- MODAL DINÂMICO DE TAXONOMIA -->
   <div class="modal-overlay" id="taxonomyModal">
     <div class="modal-card">
       <div class="modal-header">
         <h3>Filtrar por Taxonomia</h3>
         <button id="closeTaxonomyModalBtn">&times;</button>
       </div>
-      
-      <!-- Alternador de Modo de Filtro -->
-      <div style="display: flex; gap: 12px; margin-bottom: 12px; padding: 6px; background: var(--bg-primary); border-radius: 6px; border: 1px solid var(--border-color); font-size: 12px;">
-        <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
-          <input type="radio" name="taxonomyFilterMode" value="exclude" checked>
-          <span>Ocultar desmarcados</span>
-        </label>
-        <label style="cursor: pointer; display: flex; align-items: center; gap: 4px;">
-          <input type="radio" name="taxonomyFilterMode" value="includeOnly">
-          <span>Exibir apenas selecionados</span>
-        </label>
-      </div>
-  
       <div class="modal-body" id="taxonomyListContainer">
-        <!-- Conteúdo dinâmico -->
+        <!-- Gerado dinamicamente via JS -->
       </div>
       <div class="modal-actions">
         <div>
@@ -795,11 +795,11 @@
       }
     }
 
-    // 1. PARSER ESTABILIZADO (Retorna Categoria, Grupo e Etiquetas Extras)
+    // 1. PARSER TAXONOMIA ESTABILIZADO
     function parseTaxonomy(taxonomyStr) {
       const result = { categoria: '', grupo: '', tags: [] };
       if (!taxonomyStr) return result;
-    
+
       const parts = taxonomyStr.split('|').map(s => s.trim());
       parts.forEach(part => {
         if (part.startsWith('cat:')) {
@@ -807,29 +807,113 @@
         } else if (part.startsWith('grupo:')) {
           result.grupo = part.replace('grupo:', '').trim();
         } else if (part.includes(':')) {
-          // Qualquer outro prefixo (ex: pl:123, nivel:Iniciante, Teste:Teste2)
           result.tags.push(part);
         } else {
-          // String sem prefixo entra como Categoria legada
           if (!result.categoria) result.categoria = part;
         }
       });
 
-  return result;
-}
+      return result;
+    }
 
-// 2. RENDERIZAÇÃO DO CARD (Substitua a parte do badge de taxonomia na criação do HTML do Card)
-const taxInfo = parseTaxonomy(item.taxonomia || item.categoria);
+    // FUNÇÕES AUXILIARES DO PARSER
+    let hiddenTaxonomyTags = [];
 
-// Monta o HTML das tags e grupos para o Card
-let subInfoHtml = '';
-if (taxInfo.grupo) {
-  subInfoHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span> `;
-}
-taxInfo.tags.forEach(tag => {
-  subInfoHtml += `<span class="badge-tag">🏷️ ${tag}</span> `;
-});
+    function extractAllTaxonomyTags() {
+      const taxonomyTree = {};
 
+      videoDatabase.forEach(item => {
+        const rawTax = item.taxonomia || item.categoria;
+        if (!rawTax) return;
+
+        const parts = rawTax.split('|').map(s => s.trim());
+        parts.forEach(part => {
+          if (part.includes(':')) {
+            const [prefix, value] = part.split(':').map(s => s.trim());
+            if (prefix && value) {
+              if (!taxonomyTree[prefix]) taxonomyTree[prefix] = new Set();
+              taxonomyTree[prefix].add(value);
+            }
+          } else {
+            if (!taxonomyTree['cat']) taxonomyTree['cat'] = new Set();
+            taxonomyTree['cat'].add(part);
+          }
+        });
+      });
+
+      return taxonomyTree;
+    }
+
+    function populateTaxonomyModal() {
+      const container = document.getElementById('taxonomyListContainer');
+      container.innerHTML = '';
+
+      const taxonomyTree = extractAllTaxonomyTags();
+      const prefixes = Object.keys(taxonomyTree).sort();
+
+      if (prefixes.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-muted); font-size:13px;">Nenhuma taxonomia cadastrada na base de dados.</p>';
+        return;
+      }
+
+      prefixes.forEach(prefix => {
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'taxonomy-group';
+
+        const title = document.createElement('div');
+        title.className = 'taxonomy-group-title';
+        title.textContent = prefix;
+        groupDiv.appendChild(title);
+
+        const values = Array.from(taxonomyTree[prefix]).sort();
+        values.forEach(val => {
+          const tagKey = `${prefix}:${val}`;
+          const label = document.createElement('label');
+          label.className = 'taxonomy-item';
+
+          const checkbox = document.createElement('input');
+          checkbox.type = 'checkbox';
+          checkbox.value = tagKey;
+          checkbox.checked = !hiddenTaxonomyTags.includes(tagKey);
+
+          label.appendChild(checkbox);
+          label.appendChild(document.createTextNode(val));
+          groupDiv.appendChild(label);
+        });
+
+        container.appendChild(groupDiv);
+      });
+    }
+
+    function isVideoTaxonomyVisible(item) {
+      const rawTax = item.taxonomia || item.categoria;
+      if (!rawTax) return true;
+
+      const parts = rawTax.split('|').map(s => s.trim());
+      for (let part of parts) {
+        let tagKey = part;
+        if (!part.includes(':')) {
+          tagKey = `cat:${part}`;
+        }
+        if (hiddenTaxonomyTags.includes(tagKey)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // 2. RENDERIZAÇÃO DO CARD (Substitua a parte do badge de taxonomia na criação do HTML do Card)
+    const taxInfo = parseTaxonomy(item.taxonomia || item.categoria);
+    
+    // Monta o HTML das tags e grupos para o Card
+    let subInfoHtml = '';
+      if (taxInfo.grupo) {
+        subInfoHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span> `;
+      }
+      taxInfo.tags.forEach(tag => {
+        subInfoHtml += `<span class="badge-tag">🏷️ ${tag}</span> `;
+      });
+      
       return result;
     }
 
@@ -1081,48 +1165,46 @@ taxInfo.tags.forEach(tag => {
 
         // Aplica a ordenação
         masterList.sort((a, b) => {
-          let valA, valB;
+        let valA, valB;
 
-          if (state.sortBy === 'categoria') {
-            valA = (parseTaxonomy(a.taxonomia || a.categoria).categoria || 'zzz').toLowerCase();
-            valB = (parseTaxonomy(b.taxonomia || b.categoria).categoria || 'zzz').toLowerCase();
-            return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        if (state.sortBy === 'categoria') {
+          valA = (parseTaxonomy(a.taxonomia || a.categoria).categoria || 'zzz').toLowerCase();
+          valB = (parseTaxonomy(b.taxonomia || b.categoria).categoria || 'zzz').toLowerCase();
+          return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
 
-          } else if (state.sortBy === 'progresso') {
-            const statusA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined)
-              ? Number(window.userProgressCache[a.videoId]) : 99;
-            const statusB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined)
-              ? Number(window.userProgressCache[b.videoId]) : 99;
-            
-            valA = statusA;
-            valB = statusB;
+        } else if (state.sortBy === 'progresso') {
+          const statusA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined)
+            ? Number(window.userProgressCache[a.videoId]) : 99;
+          const statusB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined)
+            ? Number(window.userProgressCache[b.videoId]) : 99;
+          valA = statusA;
+          valB = statusB;
 
-          } else if (state.sortBy === 'ocorrencias') {
-            valA = (duplicatesMap.get(a.videoId) || []).length;
-            valB = (duplicatesMap.get(b.videoId) || []).length;
+        } else if (state.sortBy === 'ocorrencias') {
+          valA = (duplicatesMap.get(a.videoId) || []).length;
+          valB = (duplicatesMap.get(b.videoId) || []).length;
 
-          } else if (state.sortBy === 'titulo') {
-            valA = a.titulo.toLowerCase();
-            valB = b.titulo.toLowerCase();
-            return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        } else if (state.sortBy === 'titulo') {
+          valA = a.titulo.toLowerCase();
+          valB = b.titulo.toLowerCase();
+          return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
 
-          } else if (state.sortBy === 'duracao') {
-            valA = a.duracaoSegundos || 0;
-            valB = b.duracaoSegundos || 0;
+        } else if (state.sortBy === 'duracao') {
+          valA = a.duracaoSegundos || 0;
+          valB = b.duracaoSegundos || 0;
 
-          } else {
-            // 'data'
-            valA = new Date(a.dataPublicacao);
-            valB = new Date(b.dataPublicacao);
-          }
+        } else {
+          valA = new Date(a.dataPublicacao);
+          valB = new Date(b.dataPublicacao);
+        }
 
-          return state.sortAscending ? valA - valB : valB - valA;
-        });
+        return state.sortAscending ? valA - valB : valB - valA;
+      });
 
-        masterList.forEach(masterItem => {
-          const duplicates = duplicatesMap.get(masterItem.videoId) || [];
-          container.appendChild(createCardElement(masterItem, duplicates));
-        });
+      masterList.forEach(masterItem => {
+        const duplicates = duplicatesMap.get(masterItem.videoId) || [];
+        container.appendChild(createCardElement(masterItem, duplicates));
+      });
 
       } else if (state.viewMode === 'sequenciado-canais') {
         // Agrupado por Blocos de Canal
@@ -1182,13 +1264,23 @@ taxInfo.tags.forEach(tag => {
       const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
 
       // Extrai a taxonomia do item
-      const tax = parseTaxonomy(item.taxonomia || item.categoria);
+      const taxInfo = parseTaxonomy(item.taxonomia || item.categoria);
 
+      // Badges de grupo e tags:
+      let badgesHtml = '';
+      if (taxInfo.grupo) {
+        badgesHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span>`;
+      }
+      taxInfo.tags.forEach(t => {
+        badgesHtml += `<span class="badge-tag">🏷️ ${t}</span>`;
+      });
+
+      // Indicador de Removido
       let privacyNotice = item.privacyStatus === 'removed' 
         ? `<span class="status-removed">(Vídeo removido)</span>` 
         : '';
       
-      // Indicador de live
+      // Indicador de LIVE
       const liveBadge = item.eLive 
         ? `<span class="live-badge" title="Live / Transmissão ao vivo"></span>` 
         : '';
@@ -1496,18 +1588,21 @@ taxInfo.tags.forEach(tag => {
       });
 
       // Eventos do Modal de Taxonomia
-      document.getElementById('applyTaxonomyBtn').addEventListener('click', () => {
-        const modeRadio = document.querySelector('input[name="taxonomyFilterMode"]:checked');
-        taxonomyFilterMode = modeRadio ? modeRadio.value : 'exclude';
+      document.getElementById('taxonomyModalBtn').addEventListener('click', () => {
+        populateTaxonomyModal();
+        document.getElementById('taxonomyModal').classList.add('open');
+      });
 
+      document.getElementById('closeTaxonomyModalBtn').addEventListener('click', () => {
+        document.getElementById('taxonomyModal').classList.remove('open');
+      });
+
+      document.getElementById('applyTaxonomyBtn').addEventListener('click', () => {
         const checkboxes = document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]');
         hiddenTaxonomyTags = [];
-        selectedTaxonomyTags = [];
 
         checkboxes.forEach(cb => {
-          if (cb.checked) {
-            selectedTaxonomyTags.push(cb.value);
-          } else {
+          if (!cb.checked) {
             hiddenTaxonomyTags.push(cb.value);
           }
         });
@@ -1515,6 +1610,14 @@ taxInfo.tags.forEach(tag => {
         saveState();
         renderList();
         document.getElementById('taxonomyModal').classList.remove('open');
+      });
+
+      document.getElementById('selectAllTaxonomyBtn').addEventListener('click', () => {
+        document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => cb.checked = true);
+      });
+
+      document.getElementById('deselectAllTaxonomyBtn').addEventListener('click', () => {
+        document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => cb.checked = false);
       });
       
       // Salva scroll na rolagem
