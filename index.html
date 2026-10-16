@@ -32,7 +32,6 @@
       background-color: var(--bg-primary);
       color: var(--text-main);
       font-family: var(--font-family);
-      /* O padding-top será ajustado via JavaScript dinamicamente para evitar sobreposição */
       padding-top: 140px; 
       min-height: 100vh;
     }
@@ -104,7 +103,6 @@
       border-color: var(--border-color) !important;
     }
 
-    /* Controles de Navegação por Data */
     .nav-time-container {
       display: flex;
       gap: 8px;
@@ -169,11 +167,17 @@
       margin-top: 20px;
     }
 
-    /* Faixa Vertical Lateral de Categoria no Card */
     .card {
       position: relative;
-      overflow: hidden; /* Garante alinhamento exato na borda */
-      padding-left: 28px !important; /* Espaço para acomodar a faixa lateral */
+      overflow: hidden;
+      padding-left: 28px !important;
+      background-color: var(--bg-card);
+      border-radius: 10px;
+      padding: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 14px;
+      border: 1px solid var(--border-color);
     }
 
     .category-stripe {
@@ -185,7 +189,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #1a1a1a; /* Cor neutra para 'sem categoria' */
+      background-color: #1a1a1a;
       border-right: 1px solid var(--border-color);
       z-index: 2;
     }
@@ -201,24 +205,11 @@
       white-space: nowrap;
     }
 
-    /* Cores Mapeadas por Categoria */
     .category-stripe[data-cat="Série"] { background-color: #ef6c00; }
     .category-stripe[data-cat="Relato"] { background-color: #424242; }
     .category-stripe[data-cat="Análise"] { background-color: #b0bec5; }
     .category-stripe[data-cat="Análise"] .category-stripe-text { color: #121212; }
     .category-stripe[data-cat="Meditação"] { background-color: #7b1fa2; }
-    
-    /* Novo Layout dos Cards */
-    .card {
-      background-color: var(--bg-card);
-      border-radius: 10px; /* Arredondamento dos cantos dos cards */
-      padding: 5px; /* Espaçamento interno dentro de cada card */
-      margin-bottom: 10px; /* Espaçamento vertical ENTRE os cards */
-      display: flex;
-      gap: 14px; /* Espaço horizontal entre a Thumbnail e o Texto */
-      border: 1px solid var(--border-color); /* Largura e cor da borda */
-      position: relative;
-    }
 
     .card-media-block {
       width: 160px;
@@ -262,7 +253,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding-right: 35px; /* Espaço para não sobrepor o contador +N */
+      padding-right: 35px;
     }
 
     .card-title {
@@ -275,7 +266,6 @@
       display: inline-block;
     }
     
-    /* Conteúdo dos Cards */
     .card-title:hover {
       text-decoration: underline;
     }
@@ -293,7 +283,6 @@
       display: block;
     }
 
-    /* Indicador de Live */
     .live-badge {
       display: inline-block;
       width: 8px;
@@ -312,7 +301,6 @@
       margin-left: 6px;
     }
 
-    /* Botão/Indicador +N da Gaveta */
     .drawer-toggle {
       position: absolute;
       bottom: 12px;
@@ -337,15 +325,14 @@
       padding-left: 12px;
       border-left: 2px solid var(--accent-color);
       display: none;
-      background-color: var(--bg-); /* Fundo igual ao do  principal */
+      background-color: var(--bg-drawer);
       border-radius: 0 8px 8px 0;
       padding-top: 8px;
       padding-bottom: 8px;
       width: 100%;
     }
 
-    /* Cards dentro da gaveta ficam com tom mais escuro */
-    .drawer-content . {
+    .drawer-content .card {
       background-color: var(--bg-drawer);
       margin-bottom: 8px;
     }
@@ -354,7 +341,6 @@
       display: block;
     }
     
-    /* Menu de Progresso do Card */
     .card-status-select {
       margin-top: 6px;
       padding: 3px 8px;
@@ -367,7 +353,6 @@
       transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
     }
 
-    /* Cores das opções/estados selecionados */
     .card-status-select.status-null {
       background-color: var(--bg-primary);
       color: var(--text-muted);
@@ -375,25 +360,25 @@
     }
 
     .card-status-select.status-0 {
-      background-color: #2e7d32; /* Verde - Visto */
+      background-color: #2e7d32;
       color: #ffffff;
       border-color: #4caf50;
     }
 
     .card-status-select.status-1 {
-      background-color: #c62828; /* Vermelho - Alta */
+      background-color: #c62828;
       color: #ffffff;
       border-color: #ef5350;
     }
 
     .card-status-select.status-2 {
-      background-color: #ef6c00; /* Laranja - Média */
+      background-color: #ef6c00;
       color: #ffffff;
       border-color: #ff9800;
     }
 
     .card-status-select.status-3 {
-      background-color: #fbc02d; /* Amarelo - Baixa */
+      background-color: #fbc02d;
       color: #121212;
       border-color: #fdd835;
     }
@@ -403,20 +388,19 @@
       color: var(--text-main);
     }
   
-    /* Ajuste para Celular */
     @media (max-width: 600px) {
-      . {
+      .card {
         flex-direction: row;
         gap: 10px;
         padding: 10px;
       }
-      .-media-block {
+      .card-media-block {
         width: 110px;
       }
-      .-thumb {
+      .card-thumb {
         height: 62px;
       }
-      .-title {
+      .card-title {
         font-size: 13px;
       }
       .card-channel {
@@ -434,7 +418,7 @@
     }
 
     /* ==========================================================================
-       4. MODAL DE FILTRO DE CANAIS
+       4. MODAIS DE FILTRO
        ========================================================================== */
     .modal-overlay {
       position: fixed;
@@ -500,7 +484,7 @@
       gap: 10px;
     }
 
-/* Estilos do Modal Dinâmico de Taxonomia */
+    /* Estilos do Modal Dinâmico de Taxonomia */
     .taxonomy-group {
       margin-bottom: 16px;
       border-bottom: 1px solid var(--border-color);
@@ -537,7 +521,6 @@
       color: var(--text-muted);
       margin-right: 6px;
     }
-    
   </style>
 </head>
 <body>
@@ -546,13 +529,11 @@
   <header class="top-bar" id="topBar">
     <div class="controls-container">
       
-<!-- Busca Instantânea com restrição de Vogais e Botão de Limpar -->
       <div class="search-box" style="position: relative;">
         <input type="text" id="searchInput" placeholder="Buscar por título..." style="padding-right: 32px;">
         <button id="clearSearchBtn" title="Limpar busca" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--text-muted); font-size: 14px; cursor: pointer; display: none; padding: 2px 6px;">✕</button>
       </div>
 
-      <!-- Modos de Visualização & Ordenamento -->
       <div class="filter-group">
         <select id="viewModeSelect">
           <option value="consolidado" title="Reune os vídeos duplicados">Conteúdo</option>
@@ -574,29 +555,24 @@
         <button id="channelsModalBtn">Canais</button>
       </div>
 
-      <!-- Área de Autenticação e Gestão do Progresso -->
       <div id="authContainer" style="display: flex; gap: 8px; align-items: center;">
-        <button id="loginBtn" onclick="window.loginWithGoogle()" title="Entre para registrar seu progresso e sincronizar com otros dispositivos">Entrar</button>
+        <button id="loginBtn" onclick="window.loginWithGoogle()" title="Entre para registrar seu progresso">Entrar</button>
         <span id="userEmailSpan" style="display: none; font-size: 12px; color: var(--accent-color); font-weight: bold;"></span>
         <button id="logoutBtn" onclick="window.logoutFromFirebase()" style="display: none;">Sair</button>
       </div>
 
-      <!-- Importar e Exportar JSON -->
       <div id="dataToolsGroup" style="display: flex; gap: 6px; align-items: center;">
         <button onclick="window.exportProgressJSON()" title="Exportar progresso (JSON)">📤</button>
         <button onclick="document.getElementById('importJsonInput').click()" title="Importar progresso (JSON)">📥</button>
         <input type="file" id="importJsonInput" accept=".json" style="display: none;" onchange="window.importProgressJSON(event)">
       </div>
 
-      <!-- Navegação Auxiliar de Rolagem (Ano e Mês com Setas Individuais) -->
       <div class="nav-time-container" id="navTimeContainer">
-        <!-- Ano -->
         <div class="nav-unit">
           <button class="arrow-btn" id="yearUpBtn">▲</button>
           <select id="yearSelect"><option value="">Ano</option></select>
           <button class="arrow-btn" id="yearDownBtn">▼</button>
         </div>
-        <!-- Mês -->
         <div class="nav-unit">
           <button class="arrow-btn" id="monthUpBtn">▲</button>
           <select id="monthSelect">
@@ -663,7 +639,6 @@
   <script type="module" src="firebase-config.js"></script>
   
   <script>
-    
     /* ==========================================================================
        5. CONFIGURAÇÕES E ESTADO GLOBAL
        ========================================================================== */
@@ -673,14 +648,15 @@
       DATA_URL: 'database.json'
     };
 
-    let videoDatabase = []; // Array de dados carregados do JSON
+    let videoDatabase = [];
+    let hiddenTaxonomyTags = [];
 
     let state = {
       searchQuery: '',
-      viewMode: 'consolidado', // consolidado | sequenciado | sequenciado-canais
-      sortBy: 'data',          // data | titulo | duracao
+      viewMode: 'consolidado',
+      sortBy: 'data',
       sortAscending: true,
-      hiddenChannels: [],      // Lista de canais ocultados
+      hiddenChannels: [],
       scrollY: 0
     };
 
@@ -688,11 +664,8 @@
     let observer = null;
 
     /* ==========================================================================
-       6. FUNÇÕES AUXILIARES (TEXTO, DURAÇÃO, DATAS)
+       6. FUNÇÕES AUXILIARES (TEXTO, DURAÇÃO, TAXONOMIA)
        ========================================================================== */
-
-// Funções de Busca por Título
-// Normalização básica: Apenas remove acentos e caracteres especiais, mantendo todas as letras e números
     function normalizeText(str) {
       if (!str) return '';
       return str
@@ -703,20 +676,13 @@
         .trim();
     }
 
-    // Algoritmo de Distância de Levenshtein: Calcula o número de edições entre duas palavras
     function levenshteinDistance(a, b) {
       if (a.length === 0) return b.length;
       if (b.length === 0) return a.length;
 
       const matrix = [];
-
-      for (let i = 0; i <= b.length; i++) {
-        matrix[i] = [i];
-      }
-
-      for (let j = 0; j <= a.length; j++) {
-        matrix[0][j] = j;
-      }
+      for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+      for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
 
       for (let i = 1; i <= b.length; i++) {
         for (let j = 1; j <= a.length; j++) {
@@ -724,61 +690,49 @@
             matrix[i][j] = matrix[i - 1][j - 1];
           } else {
             matrix[i][j] = Math.min(
-              matrix[i - 1][j - 1] + 1, // Substituição
-              matrix[i][j - 1] + 1,     // Inserção
-              matrix[i - 1][j] + 1      // Remoção
+              matrix[i - 1][j - 1] + 1,
+              matrix[i][j - 1] + 1,
+              matrix[i - 1][j] + 1
             );
           }
         }
       }
-
       return matrix[b.length][a.length];
     }
 
-    // Avalia se o termo buscado bate exatamente ou de forma aproximada com o título
     function fuzzyMatch(title, query) {
       const cleanTitle = normalizeText(title);
       const cleanQuery = normalizeText(query);
 
       if (!cleanQuery) return true;
-      
-      // 1. Busca Exata por Substring (prioridade rápida)
       if (cleanTitle.includes(cleanQuery)) return true;
 
-      // 2. Busca Imprecisa palavra por palavra (Fuzzy)
       const titleWords = cleanTitle.split(/\s+/);
       const queryWords = cleanQuery.split(/\s+/);
 
-      // Para cada palavra digitada no campo de busca
       return queryWords.every(qWord => {
-        // Tolerância de erros ajustada ao tamanho da palavra
         let maxDistance = 1;
-        if (qWord.length > 7) maxDistance = 2; // Palavras longas toleram até 2 erros
+        if (qWord.length > 7) maxDistance = 2;
 
         return titleWords.some(tWord => {
-          // Checa contendo ou similaridade de distância
           if (tWord.includes(qWord)) return true;
           if (Math.abs(tWord.length - qWord.length) > maxDistance) return false;
-          
           return levenshteinDistance(tWord, qWord) <= maxDistance;
         });
       });
     }
 
-    // Formatação de data/hora para fuso horário e idioma local do dispositivo
     function formatLocalDateTime(isoDateStr) {
       if (!isoDateStr) return '';
       const date = new Date(isoDateStr);
       return date.toLocaleString();
     }
 
-    // Formatação de segundos no padrão de tempo do YouTube (HH:MM:SS ou MM:SS)
     function formatDuration(totalSeconds) {
       if (!totalSeconds || isNaN(totalSeconds)) return '0:00';
       const hours = Math.floor(totalSeconds / 3600);
       const minutes = Math.floor((totalSeconds % 3600) / 60);
       const seconds = totalSeconds % 60;
-
       const pad = (num) => String(num).padStart(2, '0');
 
       if (hours > 0) {
@@ -787,7 +741,6 @@
       return `${minutes}:${pad(seconds)}`;
     }
 
-    // Redimensiona o padding do Body de acordo com a altura da barra fixa
     function adjustBodyPadding() {
       const topBar = document.getElementById('topBar');
       if (topBar) {
@@ -795,7 +748,7 @@
       }
     }
 
-    // 1. PARSER TAXONOMIA ESTABILIZADO
+    // Parser de Taxonomia Estabilizado
     function parseTaxonomy(taxonomyStr) {
       const result = { categoria: '', grupo: '', tags: [] };
       if (!taxonomyStr) return result;
@@ -815,9 +768,6 @@
 
       return result;
     }
-
-    // FUNÇÕES AUXILIARES DO PARSER
-    let hiddenTaxonomyTags = [];
 
     function extractAllTaxonomyTags() {
       const taxonomyTree = {};
@@ -902,121 +852,6 @@
       return true;
     }
 
-    // 2. RENDERIZAÇÃO DO CARD (Substitua a parte do badge de taxonomia na criação do HTML do Card)
-    const taxInfo = parseTaxonomy(item.taxonomia || item.categoria);
-    
-    // Monta o HTML das tags e grupos para o Card
-    let subInfoHtml = '';
-      if (taxInfo.grupo) {
-        subInfoHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span> `;
-      }
-      taxInfo.tags.forEach(tag => {
-        subInfoHtml += `<span class="badge-tag">🏷️ ${tag}</span> `;
-      });
-      
-      return result;
-    }
-
-    // Estado global para guardar quais tags foram desmarcadas (no formato "prefixo:sufixo")
-    let hiddenTaxonomyTags = []; 
-
-    // 1. Extração dinâmica de todos os pares prefixo/sufixo existentes na base
-    function extractAllTaxonomyTags() {
-      const taxonomyTree = {}; // Ex: { "cat": Set(["Meditação", "Relato"]), "grupo": Set(["Série 1"]) }
-
-      videoDatabase.forEach(item => {
-        const rawTax = item.taxonomia || item.categoria;
-        if (!rawTax) return;
-
-        const parts = rawTax.split('|').map(s => s.trim());
-        parts.forEach(part => {
-          if (part.includes(':')) {
-            const [prefix, value] = part.split(':').map(s => s.trim());
-            if (prefix && value) {
-              if (!taxonomyTree[prefix]) taxonomyTree[prefix] = new Set();
-              taxonomyTree[prefix].add(value);
-            }
-          } else {
-            // Caso seja apenas a categoria legada sem prefixo "cat:"
-            if (!taxonomyTree['cat']) taxonomyTree['cat'] = new Set();
-            taxonomyTree['cat'].add(part);
-          }
-        });
-      });
-
-      return taxonomyTree;
-    }
-
-    // 2. Renderização do Modal com Seções Automáticas
-    function populateTaxonomyModal() {
-      const container = document.getElementById('taxonomyListContainer');
-      container.innerHTML = '';
-
-      const taxonomyTree = extractAllTaxonomyTags();
-      const prefixes = Object.keys(taxonomyTree).sort();
-
-      if (prefixes.length === 0) {
-        container.innerHTML = '<p style="color:var(--text-muted); font-size:13px;">Nenhuma taxonomia cadastrada na base de dados.</p>';
-        return;
-      }
-
-      prefixes.forEach(prefix => {
-        const groupDiv = document.createElement('div');
-        groupDiv.className = 'taxonomy-group';
-
-        // Nome do prefixo em destaque (Ex: CAT, GRUPO, PL)
-        const title = document.createElement('div');
-        title.className = 'taxonomy-group-title';
-        title.textContent = prefix;
-        groupDiv.appendChild(title);
-
-        // Sufixos ordenados
-        const values = Array.from(taxonomyTree[prefix]).sort();
-        values.forEach(val => {
-          const tagKey = `${prefix}:${val}`;
-          const label = document.createElement('label');
-          label.className = 'taxonomy-item';
-
-          const checkbox = document.createElement('input');
-          checkbox.type = 'checkbox';
-          checkbox.value = tagKey;
-          checkbox.checked = !hiddenTaxonomyTags.includes(tagKey);
-
-          label.appendChild(checkbox);
-          label.appendChild(document.createTextNode(val));
-          groupDiv.appendChild(label);
-        });
-
-        container.appendChild(groupDiv);
-      });
-    }
-
-    // 3. Validação do Filtro nos Vídeos (Integrado no renderList)
-    let taxonomyFilterMode = 'exclude'; // 'exclude' ou 'includeOnly'
-    let selectedTaxonomyTags = [];     // Guarda as tags selecionadas
-
-    function isVideoTaxonomyVisible(item) {
-      const rawTax = item.taxonomia || item.categoria;
-      if (!rawTax) {
-        // Se o vídeo não tem taxonomia e estamos no modo "Exibir Apenas", ele é ocultado
-        return taxonomyFilterMode === 'exclude';
-      }
-
-      const parts = rawTax.split('|').map(s => s.trim());
-      const itemTags = parts.map(p => p.includes(':') ? p : `cat:${p}`);
-
-      if (taxonomyFilterMode === 'exclude') {
-        // Modo Ocultar: O vídeo esconde se alguma de suas tags constar na lista de desmarcadas (hiddenTaxonomyTags)
-        for (let tag of itemTags) {
-          if (hiddenTaxonomyTags.includes(tag)) return false;
-        }
-        return true;
-      } else {
-        // Modo "Exibir Apenas": O vídeo só aparece se possuir pelo menos uma das tags marcadas
-        return itemTags.some(tag => selectedTaxonomyTags.includes(tag));
-      }
-    }
-    
     /* ==========================================================================
        7. PERSISTÊNCIA DE ESTADO E CARREGAMENTO
        ========================================================================== */
@@ -1067,9 +902,6 @@
           <div class="error-message">
             <h3>Erro de Carregamento</h3>
             <p style="margin-top:8px;">${error.message}</p>
-            <p style="margin-top:8px; font-size:12px; color: var(--text-muted);">
-              Verifique se o arquivo <strong>database.json</strong> está na mesma pasta que o <strong>index.html</strong> e executando através de um servidor local ou GitHub Pages.
-            </p>
           </div>
         `;
       }
@@ -1087,14 +919,14 @@
         return;
       }
 
-      // 1. Ocultar Canais Desmarcados e Taxonomias Ocultadas
+      // 1. Filtragem por Canal e Taxonomia
       let items = videoDatabase.filter(item => {
         const isChannelVisible = !state.hiddenChannels.includes(item.canal);
         const isTaxonomyVisible = isVideoTaxonomyVisible(item);
         return isChannelVisible && isTaxonomyVisible;
       });
 
-      // 2. Filtragem por Busca Imprecisa (Fuzzy Match)
+      // 2. Busca por Título (Fuzzy)
       if (state.searchQuery.trim() !== '') {
         items = items.filter(item => fuzzyMatch(item.titulo, state.searchQuery));
       }
@@ -1104,8 +936,8 @@
         return;
       }
 
-      // 3. Ordenação Dinâmica
-            items.sort((a, b) => {
+      // 3. Ordenação dos itens principais (Modos Sequenciados)
+      items.sort((a, b) => {
         let valA, valB;
 
         if (state.sortBy === 'categoria') {
@@ -1118,7 +950,6 @@
             ? Number(window.userProgressCache[a.videoId]) : 99;
           const statusB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined)
             ? Number(window.userProgressCache[b.videoId]) : 99;
-          
           valA = statusA;
           valB = statusB;
 
@@ -1132,7 +963,6 @@
           valB = b.duracaoSegundos || 0;
 
         } else {
-          // 'data'
           valA = new Date(a.dataPublicacao);
           valB = new Date(b.dataPublicacao);
         }
@@ -1140,7 +970,6 @@
         return state.sortAscending ? valA - valB : valB - valA;
       });
 
-      // Habilita/Desabilita seletores de data baseando-se na ordenação por data
       const isDateSorted = state.sortBy === 'data';
       toggleDateNavControls(isDateSorted);
       
@@ -1160,54 +989,52 @@
           }
         });
 
-        // Converte os masters em um array para podermos ordenar
         let masterList = Array.from(masterMap.values());
 
-        // Aplica a ordenação
+        // Ordenação específica para o Modo Consolidado
         masterList.sort((a, b) => {
-        let valA, valB;
+          let valA, valB;
 
-        if (state.sortBy === 'categoria') {
-          valA = (parseTaxonomy(a.taxonomia || a.categoria).categoria || 'zzz').toLowerCase();
-          valB = (parseTaxonomy(b.taxonomia || b.categoria).categoria || 'zzz').toLowerCase();
-          return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+          if (state.sortBy === 'categoria') {
+            valA = (parseTaxonomy(a.taxonomia || a.categoria).categoria || 'zzz').toLowerCase();
+            valB = (parseTaxonomy(b.taxonomia || b.categoria).categoria || 'zzz').toLowerCase();
+            return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
 
-        } else if (state.sortBy === 'progresso') {
-          const statusA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined)
-            ? Number(window.userProgressCache[a.videoId]) : 99;
-          const statusB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined)
-            ? Number(window.userProgressCache[b.videoId]) : 99;
-          valA = statusA;
-          valB = statusB;
+          } else if (state.sortBy === 'progresso') {
+            const statusA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined)
+              ? Number(window.userProgressCache[a.videoId]) : 99;
+            const statusB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined)
+              ? Number(window.userProgressCache[b.videoId]) : 99;
+            valA = statusA;
+            valB = statusB;
 
-        } else if (state.sortBy === 'ocorrencias') {
-          valA = (duplicatesMap.get(a.videoId) || []).length;
-          valB = (duplicatesMap.get(b.videoId) || []).length;
+          } else if (state.sortBy === 'ocorrencias') {
+            valA = (duplicatesMap.get(a.videoId) || []).length;
+            valB = (duplicatesMap.get(b.videoId) || []).length;
 
-        } else if (state.sortBy === 'titulo') {
-          valA = a.titulo.toLowerCase();
-          valB = b.titulo.toLowerCase();
-          return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+          } else if (state.sortBy === 'titulo') {
+            valA = a.titulo.toLowerCase();
+            valB = b.titulo.toLowerCase();
+            return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
 
-        } else if (state.sortBy === 'duracao') {
-          valA = a.duracaoSegundos || 0;
-          valB = b.duracaoSegundos || 0;
+          } else if (state.sortBy === 'duracao') {
+            valA = a.duracaoSegundos || 0;
+            valB = b.duracaoSegundos || 0;
 
-        } else {
-          valA = new Date(a.dataPublicacao);
-          valB = new Date(b.dataPublicacao);
-        }
+          } else {
+            valA = new Date(a.dataPublicacao);
+            valB = new Date(b.dataPublicacao);
+          }
 
-        return state.sortAscending ? valA - valB : valB - valA;
-      });
+          return state.sortAscending ? valA - valB : valB - valA;
+        });
 
-      masterList.forEach(masterItem => {
-        const duplicates = duplicatesMap.get(masterItem.videoId) || [];
-        container.appendChild(createCardElement(masterItem, duplicates));
-      });
+        masterList.forEach(masterItem => {
+          const duplicates = duplicatesMap.get(masterItem.videoId) || [];
+          container.appendChild(createCardElement(masterItem, duplicates));
+        });
 
       } else if (state.viewMode === 'sequenciado-canais') {
-        // Agrupado por Blocos de Canal
         const channelGroups = new Map();
         items.forEach(item => {
           if (!channelGroups.has(item.canal)) {
@@ -1228,13 +1055,11 @@
         });
 
       } else {
-        // Sequenciado Cronológico Simples
         items.forEach(item => {
           container.appendChild(createCardElement(item, []));
         });
       }
 
-      // Habilita/desabilita a opção "Ocorrências" no select dependendo do modo de visão
       const ocorrenciasOption = document.querySelector('#sortBySelect option[value="ocorrencias"]');
       if (ocorrenciasOption) {
         ocorrenciasOption.disabled = (state.viewMode !== 'consolidado');
@@ -1246,12 +1071,10 @@
       
       setupScrollObserver();
       
-      // Aplica o estado atual de habilitação nos seletores recém-renderizados
       const isLogged = !!window.currentUser;
       toggleCardStatusControls(isLogged);
     }
 
-   	// Criação do Elemento HTML do Card com Estrutura Reformulada
     function createCardElement(item, duplicates = []) {
       const card = document.createElement('div');
       card.className = 'card';
@@ -1263,10 +1086,8 @@
       const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
       const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
 
-      // Extrai a taxonomia do item
       const taxInfo = parseTaxonomy(item.taxonomia || item.categoria);
 
-      // Badges de grupo e tags:
       let badgesHtml = '';
       if (taxInfo.grupo) {
         badgesHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span>`;
@@ -1275,17 +1096,14 @@
         badgesHtml += `<span class="badge-tag">🏷️ ${t}</span>`;
       });
 
-      // Indicador de Removido
       let privacyNotice = item.privacyStatus === 'removed' 
         ? `<span class="status-removed">(Vídeo removido)</span>` 
         : '';
       
-      // Indicador de LIVE
       const liveBadge = item.eLive 
         ? `<span class="live-badge" title="Live / Transmissão ao vivo"></span>` 
         : '';
 
-      // Obtém o progresso salvo do vídeo no cache local (ou nulo se não houver)
       const currentStatus = (window.userProgressCache && window.userProgressCache[item.videoId] !== undefined)
         ? window.userProgressCache[item.videoId]
         : '';
@@ -1293,9 +1111,8 @@
       const statusClass = currentStatus !== '' ? `status-${currentStatus}` : 'status-null';
 
       card.innerHTML = `
-        <!-- Faixa Vertical Lateral de Categoria -->
-        <div class="category-stripe" data-cat="${tax.categoria}">
-          <span class="category-stripe-text">${tax.categoria}</span>
+        <div class="category-stripe" data-cat="${taxInfo.categoria}">
+          <span class="category-stripe-text">${taxInfo.categoria}</span>
         </div>
 
         <div class="card-media-block">
@@ -1313,9 +1130,8 @@
           <span class="card-channel">${item.canal}</span>
           <span class="card-date">${formatLocalDateTime(item.dataPublicacao)}${liveBadge}</span>
 
-          ${tax.grupo ? `<span style="font-size:11px; color:var(--text-muted); margin-top:2px; display:block;">📁 ${tax.grupo}</span>` : ''}
+          ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
 
-          <!-- Menu suspenso de Progresso -->
           <select class="card-status-select ${statusClass}" onchange="handleStatusChange(this, '${item.videoId}')">
             <option value="" ${currentStatus === '' ? 'selected' : ''}>Status...</option>
             <option value="0" ${currentStatus === 0 ? 'selected' : ''}>Visto</option>
@@ -1333,7 +1149,6 @@
         </div>
       `;
 
-      // Preenche a gaveta do modo consolidado com cards completos e classe específica
       if (duplicates.length > 0) {
         const drawerContent = card.querySelector('.drawer-content');
         duplicates.forEach(dupItem => {
@@ -1346,21 +1161,16 @@
       return card;
     }
 
-    // Handler para alterar a classe visual imediatamente e disparar o salvamento
     function handleStatusChange(selectEl, videoId) {
       const value = selectEl.value;
-
-      // Remove classes antigas
       selectEl.className = 'card-status-select';
       
-      // Adiciona a nova classe de cor
       if (value === "") {
         selectEl.classList.add('status-null');
       } else {
         selectEl.classList.add(`status-${value}`);
       }
 
-      // Invoca a função global do Firebase
       if (typeof window.updateVideoProgress === 'function') {
         window.updateVideoProgress(videoId, value);
       }
@@ -1449,7 +1259,6 @@
       document.getElementById('sortOrderBtn').textContent = state.sortAscending ? 'Asc ▲' : 'Desc ▼';
     }
 
-    // Habilita/Desabilita os seletores de status dos cards baseando-se no login
     function toggleCardStatusControls(enable) {
       const container = document.getElementById('videoListContainer');
       if (!container) return;
@@ -1521,10 +1330,8 @@
         clearSearchBtn.style.display = searchInput.value ? 'block' : 'none';
       }
 
-      // Garante visibilidade correta ao carregar estado salvo
       updateClearBtnVisibility();
 
-      // Busca Instantânea com Debounce e Visibilidade do Botão Limpar
       searchInput.addEventListener('input', (e) => {
         updateClearBtnVisibility();
         clearTimeout(debounceTimer);
@@ -1535,7 +1342,6 @@
         }, CONFIG.DEBOUNCE_DELAY_MS);
       });
 
-      // Clique no Botão de Limpar
       clearSearchBtn.addEventListener('click', () => {
         searchInput.value = '';
         state.searchQuery = '';
@@ -1544,7 +1350,6 @@
         renderList();
       });
 
-      // Modos de Visualização e Ordenação
       document.getElementById('viewModeSelect').addEventListener('change', (e) => {
         state.viewMode = e.target.value;
         saveState();
@@ -1564,17 +1369,14 @@
         renderList();
       });
 
-      // Navegação Ano e Mês
       document.getElementById('yearSelect').addEventListener('change', scrollToSelectedDate);
       document.getElementById('monthSelect').addEventListener('change', scrollToSelectedDate);
 
-      // Setas de Navegação Individuais
       document.getElementById('yearUpBtn').addEventListener('click', () => navigateSelect('yearSelect', -1));
       document.getElementById('yearDownBtn').addEventListener('click', () => navigateSelect('yearSelect', 1));
       document.getElementById('monthUpBtn').addEventListener('click', () => navigateSelect('monthSelect', -1));
       document.getElementById('monthDownBtn').addEventListener('click', () => navigateSelect('monthSelect', 1));
 
-      // Eventos do Modal de Canais
       document.getElementById('channelsModalBtn').addEventListener('click', openChannelsModal);
       document.getElementById('closeModalBtn').addEventListener('click', closeChannelsModal);
       document.getElementById('applyChannelsBtn').addEventListener('click', applyChannelsFilter);
@@ -1587,7 +1389,6 @@
         document.querySelectorAll('#channelsListContainer input[type="checkbox"]').forEach(cb => cb.checked = false);
       });
 
-      // Eventos do Modal de Taxonomia
       document.getElementById('taxonomyModalBtn').addEventListener('click', () => {
         populateTaxonomyModal();
         document.getElementById('taxonomyModal').classList.add('open');
@@ -1620,7 +1421,6 @@
         document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => cb.checked = false);
       });
       
-      // Salva scroll na rolagem
       window.addEventListener('scroll', saveState);
     });
   </script>
