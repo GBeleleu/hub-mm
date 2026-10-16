@@ -1,0 +1,131 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE TEMA ESCURO & RESET
+   ========================================================================== */
+:root {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #333333;
+  --bg-drawer: #1a1a1a;
+  --text-main: #e0e0e0;
+  --text-secondary: #777777;
+  --text-muted: #aaaaaa;
+  --accent-color: #f7f7f7;
+  --border-color: #333333;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-family);
+  padding-top: 140px; 
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   2. BARRA FIXA SUPERIOR DE CONTROLE & NAVEGAÇÃO
+   ========================================================================== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 16px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.controls-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.search-box {
+  flex: 1;
+  min-width: 220px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-size: 14px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+select, button {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+button:hover, select:hover {
+  border-color: var(--accent-color);
+}
+
+button:disabled, select:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: var(--border-color) !important;
+}
+
+.nav-time-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.nav-unit {
+  display: flex;
+  align-items: center;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
+.nav-unit select {
+  border: none;
+  background: transparent;
+  padding: 4px 2px;
+}
+
+.arrow-btn {
+  padding: 2px 5px;
+  font-size: 10px;
+  background: transparent;
+  border: none;
+  line-height: 1;
+}
+
+.container {
+  max-width: 900px;
+  margin: 15px auto;
+  padding: 0 12px;
+}
