@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Gerenciador de Tags</title>
+  <title>Admin - Gestão de Taxonomia e Overrides</title>
   <style>
     :root {
       --bg-primary: #121212;
@@ -11,6 +11,8 @@
       --text-main: #e0e0e0;
       --accent-color: #66b3ab;
       --border-color: #333333;
+      --modified-color: #e5a93c;
+      --existing-color: #3b82f6;
     }
     body {
       background-color: var(--bg-primary);
@@ -19,7 +21,7 @@
       padding: 20px;
     }
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
     }
     .header-bar {
@@ -31,43 +33,132 @@
       border-radius: 8px;
       margin-bottom: 20px;
       border: 1px solid var(--border-color);
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
     }
     button {
-      padding: 8px 16px;
+      padding: 8px 14px;
       background: var(--bg-primary);
       color: var(--text-main);
-      border: 1px solid var(--accent-color);
+      border: 1px solid var(--border-color);
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      transition: all 0.2s;
     }
-    button:hover { background: var(--accent-color); color: #121212; }
+    button:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+    button.primary {
+      border-color: var(--accent-color);
+      background: var(--accent-color);
+      color: #121212;
+    }
+    button.primary:hover {
+      opacity: 0.9;
+    }
+    .status-badge {
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: #2a2a2a;
+    }
+    .status-dirty {
+      color: var(--modified-color);
+      border: 1px solid var(--modified-color);
+    }
     .item-row {
-      display: flex;
-      gap: 12px;
+      display: grid;
+      grid-template-columns: 110px 1fr 180px 180px 140px;
+      gap: 10px;
       align-items: center;
       background: var(--bg-secondary);
       padding: 10px;
       margin-bottom: 8px;
       border-radius: 6px;
       border: 1px solid var(--border-color);
+      transition: border-color 0.2s;
     }
-    .item-title { flex: 1; font-size: 13px; font-weight: bold; }
-    .item-id { font-family: monospace; font-size: 11px; color: #888; width: 110px; }
+    .item-row.has-existing {
+      border-left: 4px solid var(--existing-color);
+    }
+    .item-row.is-modified {
+      border-left: 4px solid var(--modified-color);
+      background: #262219;
+    }
+    .item-title {
+      font-size: 13px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .item-id {
+      font-family: monospace;
+      font-size: 11px;
+      color: #888;
+    }
     input[type="text"] {
-      padding: 8px 10px;
+      padding: 6px 8px;
       background: var(--bg-primary);
       color: var(--text-main);
       border: 1px solid var(--border-color);
       border-radius: 4px;
+      font-size: 12px;
+    }
+    input[type="text"]:focus {
+      border-color: var(--accent-color);
+      outline: none;
+    }
+    .legend {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      margin-bottom: 12px;
+      color: #aaa;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header-bar">
-      <h2>Admin — Gerenciador de Tags (Taxonomia)</h2>
-      <button id="exportBtn">Exportar taxonomia.json 💾</button>
+      <div>
+        <h2>Admin — Taxonomia & Overrides</h2>
+        <span id="unsavedStatus" class="status-badge">Sem alterações pendentes</span>
+      </div>
+      <div class="btn-group">
+        <button id="exportTaxonomyBtn">Exportar taxonomia.json</button>
+        <button id="exportOverridesBtn">Exportar overrides.json</button>
+        <button id="exportAllBtn" class="primary">Exportar Ambos 💾</button>
+      </div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item">
+        <div class="dot" style="background: var(--existing-color);"></div>
+        <span>Possui registro existente</span>
+      </div>
+      <div class="legend-item">
+        <div class="dot" style="background: var(--modified-color);"></div>
+        <span>Modificado na sessão (Não exportado)</span>
+      </div>
     </div>
 
     <div id="itemsContainer">Carregando dados...</div>
@@ -75,21 +166,33 @@
 
   <script>
     let database = [];
-    let taxonomyMap = {};
+    let initialTaxonomyMap = {};
+    let initialOverridesMap = {};
+
+    let currentTaxonomyMap = {};
+    let currentOverridesMap = {};
+
+    let modifiedItems = new Set();
 
     async function init() {
       try {
-        const [resDb, resTax] = await Promise.allSettled([
+        const [resDb, resTax, resOv] = await Promise.allSettled([
           fetch('database.json').then(r => r.json()),
-          fetch('taxonomia.json').then(r => r.json())
+          fetch('taxonomia.json').then(r => r.json()),
+          fetch('overrides.json').then(r => r.json())
         ]);
 
         if (resDb.status === 'fulfilled') database = resDb.value;
-        if (resTax.status === 'fulfilled') taxonomyMap = resTax.value;
+        if (resTax.status === 'fulfilled') initialTaxonomyMap = resTax.value;
+        if (resOv.status === 'fulfilled') initialOverridesMap = resOv.value;
+
+        // Clona os estados iniciais
+        currentTaxonomyMap = JSON.parse(JSON.stringify(initialTaxonomyMap));
+        currentOverridesMap = JSON.parse(JSON.stringify(initialOverridesMap));
 
         renderAdminList();
       } catch (e) {
-        document.getElementById('itemsContainer').innerHTML = 'Erro ao carregar dados.';
+        document.getElementById('itemsContainer').innerHTML = 'Erro ao carregar arquivos JSON do projeto.';
       }
     }
 
@@ -98,36 +201,119 @@
       container.innerHTML = '';
 
       database.forEach(item => {
+        const vId = item.videoId;
         const row = document.createElement('div');
-        row.className = 'item-row';
+        
+        // Separa categoria e grupo a partir do formato "Categoria | Grupo"
+        const taxVal = currentTaxonomyMap[vId] || '';
+        const [catVal, grpVal] = taxVal.split('|').map(s => s.trim());
+        const masterVal = currentOverridesMap[vId] || '';
 
-        const currentValue = taxonomyMap[item.videoId] || '';
+        const hasExisting = !!(initialTaxonomyMap[vId] || initialOverridesMap[vId]);
+        const isModified = modifiedItems.has(vId);
+
+        row.className = `item-row ${isModified ? 'is-modified' : (hasExisting ? 'has-existing' : '')}`;
+        row.id = `row-${vId}`;
 
         row.innerHTML = `
-          <span class="item-id">${item.videoId}</span>
-          <span class="item-title">${item.titulo}</span>
-          <input type="text" style="width: 360px;" placeholder="Ex: Categoria | Grupo | Playlist" value="${currentValue}" onchange="updateTaxonomy('${item.videoId}', this.value)">
+          <span class="item-id">${vId}</span>
+          <span class="item-title" title="${item.titulo}">${item.titulo}</span>
+          <input type="text" placeholder="Categoria" value="${catVal || ''}" onchange="updateRow('${vId}')" id="cat-${vId}">
+          <input type="text" placeholder="Grupo" value="${grpVal || ''}" onchange="updateRow('${vId}')" id="grp-${vId}">
+          <input type="text" placeholder="Master ID (Override)" value="${masterVal}" onchange="updateRow('${vId}')" id="ov-${vId}">
         `;
         container.appendChild(row);
       });
     }
 
-    function updateTaxonomy(videoId, value) {
-      if (!value.trim()) {
-        delete taxonomyMap[videoId];
+    function updateRow(videoId) {
+      const cat = document.getElementById(`cat-${videoId}`).value.trim();
+      const grp = document.getElementById(`grp-${videoId}`).value.trim();
+      const ov = document.getElementById(`ov-${videoId}`).value.trim();
+
+      // Monta string formatada "Categoria | Grupo" ou apenas "Categoria"
+      let taxFormatted = '';
+      if (cat && grp) {
+        taxFormatted = `${cat} | ${grp}`;
+      } else if (cat) {
+        taxFormatted = cat;
+      } else if (grp) {
+        taxFormatted = grp;
+      }
+
+      // Atualiza Taxonomia
+      if (taxFormatted) {
+        currentTaxonomyMap[videoId] = taxFormatted;
       } else {
-        taxonomyMap[videoId] = value.trim();
+        delete currentTaxonomyMap[videoId];
+      }
+
+      // Atualiza Overrides
+      if (ov) {
+        currentOverridesMap[videoId] = ov;
+      } else {
+        delete currentOverridesMap[videoId];
+      }
+
+      // Marca como modificado
+      modifiedItems.add(videoId);
+      
+      // Atualiza visual da linha
+      const row = document.getElementById(`row-${videoId}`);
+      if (row) {
+        row.classList.add('is-modified');
+      }
+
+      updateUnsavedStatus();
+    }
+
+    function updateUnsavedStatus() {
+      const statusBadge = document.getElementById('unsavedStatus');
+      if (modifiedItems.size > 0) {
+        statusBadge.textContent = `${modifiedItems.size} vídeo(s) modificado(s) não exportado(s)`;
+        statusBadge.className = 'status-badge status-dirty';
+      } else {
+        statusBadge.textContent = 'Sem alterações pendentes';
+        statusBadge.className = 'status-badge';
       }
     }
 
-    document.getElementById('exportBtn').addEventListener('click', () => {
-      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(taxonomyMap, null, 2));
+    function downloadJSON(filename, dataObj) {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(dataObj, null, 2));
       const downloadAnchor = document.createElement('a');
       downloadAnchor.setAttribute("href", dataStr);
-      downloadAnchor.setAttribute("download", "taxonomia.json");
+      downloadAnchor.setAttribute("download", filename);
       document.body.appendChild(downloadAnchor);
       downloadAnchor.click();
       downloadAnchor.remove();
+    }
+
+    document.getElementById('exportTaxonomyBtn').addEventListener('click', () => {
+      downloadJSON('taxonomia.json', currentTaxonomyMap);
+    });
+
+    document.getElementById('exportOverridesBtn').addEventListener('click', () => {
+      downloadJSON('overrides.json', currentOverridesMap);
+    });
+
+    document.getElementById('exportAllBtn').addEventListener('click', () => {
+      downloadJSON('taxonomia.json', currentTaxonomyMap);
+      setTimeout(() => {
+        downloadJSON('overrides.json', currentOverridesMap);
+      }, 300);
+
+      // Reseta estado de modificações pendentes após exportação
+      modifiedItems.clear();
+      document.querySelectorAll('.item-row').forEach(r => r.classList.remove('is-modified'));
+      updateUnsavedStatus();
+    });
+
+    // Alerta ao tentar fechar a aba se houver alterações não exportadas
+    window.addEventListener('beforeunload', (e) => {
+      if (modifiedItems.size > 0) {
+        e.preventDefault();
+        e.returnValue = '';
+      }
     });
 
     document.addEventListener('DOMContentLoaded', init);
