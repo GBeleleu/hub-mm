@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Gerenciador de Taxonomia</title>
+  <title>Admin - Gerenciador de Tags</title>
   <style>
     :root {
       --bg-primary: #121212;
@@ -32,15 +32,16 @@
       margin-bottom: 20px;
       border: 1px solid var(--border-color);
     }
-    button, input[type="file"] {
-      padding: 8px 12px;
+    button {
+      padding: 8px 16px;
       background: var(--bg-primary);
       color: var(--text-main);
-      border: 1px solid var(--border-color);
+      border: 1px solid var(--accent-color);
       border-radius: 6px;
       cursor: pointer;
+      font-weight: bold;
     }
-    button:hover { border-color: var(--accent-color); }
+    button:hover { background: var(--accent-color); color: #121212; }
     .item-row {
       display: flex;
       gap: 12px;
@@ -54,7 +55,7 @@
     .item-title { flex: 1; font-size: 13px; font-weight: bold; }
     .item-id { font-family: monospace; font-size: 11px; color: #888; width: 110px; }
     input[type="text"] {
-      padding: 6px 10px;
+      padding: 8px 10px;
       background: var(--bg-primary);
       color: var(--text-main);
       border: 1px solid var(--border-color);
@@ -65,14 +66,8 @@
 <body>
   <div class="container">
     <div class="header-bar">
-      <h2>Admin - Taxonomia dos Vídeos</h2>
-      <div>
-        <label>
-          Importar JSON Inicial: 
-          <input type="file" id="importJsonInput" accept=".json">
-        </label>
-        <button id="exportBtn" style="border-color: var(--accent-color); margin-left: 10px;">Exportar taxonomia.json</button>
-      </div>
+      <h2>Admin — Gerenciador de Tags (Taxonomia)</h2>
+      <button id="exportBtn">Exportar taxonomia.json 💾</button>
     </div>
 
     <div id="itemsContainer">Carregando dados...</div>
@@ -84,7 +79,6 @@
 
     async function init() {
       try {
-        // Carrega database.json e taxonomia.json (se existir)
         const [resDb, resTax] = await Promise.allSettled([
           fetch('database.json').then(r => r.json()),
           fetch('taxonomia.json').then(r => r.json())
@@ -107,12 +101,12 @@
         const row = document.createElement('div');
         row.className = 'item-row';
 
-        const currentValue = taxonomyMap[item.videoId] || item.taxonomia || item.categoria || '';
+        const currentValue = taxonomyMap[item.videoId] || '';
 
         row.innerHTML = `
           <span class="item-id">${item.videoId}</span>
           <span class="item-title">${item.titulo}</span>
-          <input type="text" style="width: 320px;" placeholder="cat:Série | grupo:Nome" value="${currentValue}" onchange="updateTaxonomy('${item.videoId}', this.value)">
+          <input type="text" style="width: 360px;" placeholder="Ex: Categoria | Grupo | Playlist" value="${currentValue}" onchange="updateTaxonomy('${item.videoId}', this.value)">
         `;
         container.appendChild(row);
       });
@@ -126,33 +120,6 @@
       }
     }
 
-    // Importador do JSON inicial: {"videoId": "Categoria"}
-    document.getElementById('importJsonInput').addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        try {
-          const mapping = JSON.parse(event.target.result);
-          let count = 0;
-
-          Object.keys(mapping).forEach(id => {
-            const val = mapping[id];
-            taxonomyMap[id] = val.includes(':') ? val : `cat:${val}`;
-            count++;
-          });
-
-          alert(`${count} categorias importadas!`);
-          renderAdminList();
-        } catch (err) {
-          alert('Erro ao ler o arquivo de importação.');
-        }
-      };
-      reader.readAsText(file);
-    });
-
-    // Exporta estritamente o arquivo taxonomia.json no formato {"ID": "Prefixos"}
     document.getElementById('exportBtn').addEventListener('click', () => {
       const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(taxonomyMap, null, 2));
       const downloadAnchor = document.createElement('a');
