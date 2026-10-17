@@ -22,7 +22,9 @@
     "privacyStatus": "public",
     "masterId": "jBQG06BNH4U",
     "isMaster": true,
-    "tipoMaster": "Master Original"
+    "tipoMaster": "Master Original",
+    "categoria": "TEST",
+    "grupo": "Teste"
   },
   {
     "videoId": "Wd6Ha54Hx-s",
