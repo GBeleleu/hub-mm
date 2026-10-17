@@ -2,10 +2,10 @@ name: Pipeline
 
 on:
   schedule:
-    # 1. Checagem Rápida
+    # 1. Checagem Rápida (Hora em hora)
     - cron: '21 * * * *'
     
-    # 2. Varredura Completa
+    # 2. Varredura Completa Diária
     - cron: '21 3 * * *'
 
   workflow_dispatch: # Execução manual via painel do GitHub
@@ -15,12 +15,9 @@ on:
         type: choice
         default: 'apenas_tratamento'
         options:
-          - 'coleta_e_tratamento'
+          - 'coleta_rapida_e_tratamento'
+          - 'coleta_completa_e_tratamento'
           - 'apenas_tratamento'
-      modo_completo:
-        description: 'Forçar varredura completa (coleta)'
-        type: boolean
-        default: false
 
 jobs:
   executar-pipeline:
@@ -36,11 +33,10 @@ jobs:
           node-version: '22'
 
       # 1. PASSO DO IMPORTADOR
-      # Roda se for agendamento automático OU se a ação manual não for 'apenas_tratamento'
       - name: Executar Script de Importação
-        if: ${{ github.event_name == 'schedule' || github.event.inputs.acao == 'coleta_e_tratamento' }}
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.acao == 'coleta_rapida_e_tratamento' || github.event.inputs.acao == 'coleta_completa_e_tratamento' }}
         run: |
-          if [ "${{ github.event.schedule }}" = "21 3 * * *" ] || [ "${{ github.event.inputs.modo_completo }}" = "true" ]; then
+          if [ "${{ github.event.schedule }}" = "21 3 * * *" ] || [ "${{ github.event.inputs.acao }}" = "coleta_completa_e_tratamento" ]; then
             node importador.js --completa
           else
             node importador.js
@@ -48,7 +44,7 @@ jobs:
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
 
-      # 2. VERIFICA SE O BANCO BRUTO FOI ALTERADO PELO IMPORTADOR
+      # 2. VERIFICA SE O BANCO BRUTO FOI ALTERADO
       - name: Verificar se houve alteração em videos_bruto.json
         id: check_bruto
         run: |
@@ -59,15 +55,13 @@ jobs:
           fi
 
       # 3. PASSO DO TRATADOR
-      # Roda se: o importador alterou o bruto OR se o usuário escolheu 'apenas_tratamento'
       - name: Executar Script de Tratamento (ETL)
         if: ${{ steps.check_bruto.outputs.bruto_alterado == 'true' || github.event.inputs.acao == 'apenas_tratamento' }}
         run: |
           echo "🚀 Executando Tratador de Dados..."
           node tratador.js
 
-      # 4. SALVAR ALTERAÇÕES (AUTO COMMIT)
-      # Salva o bruto e/ou o database.json se houver modificações em qualquer um deles
+      # 4. AUTO COMMIT
       - name: Salvar alterações no Git (Auto Commit)
         run: |
           git config --global user.name 'github-actions[bot]'
