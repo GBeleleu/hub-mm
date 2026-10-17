@@ -4,6 +4,9 @@ import { renderList } from './render.js';
 
 let debounceTimer = null;
 
+// Expor renderList globalmente para o firebase-config.js atualizar a interface após o login
+window.renderList = renderList;
+
 function adjustBodyPadding() {
   const topBar = document.getElementById('topBar');
   if (topBar) document.body.style.paddingTop = `${topBar.offsetHeight + 15}px`;
