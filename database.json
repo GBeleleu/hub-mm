@@ -10,7 +10,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "jBQG06BNH4U",
@@ -23,7 +23,7 @@
     "masterId": "jBQG06BNH4U",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "grupo:Teste1"
+    "grupo": "Teste1"
   },
   {
     "videoId": "Wd6Ha54Hx-s",
@@ -36,7 +36,7 @@
     "masterId": "Wd6Ha54Hx-s",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "Teste:Teste2"
+    "teste": "Teste2"
   },
   {
     "videoId": "8pkYsvSqYZE",
@@ -61,7 +61,7 @@
     "masterId": "EYeC98jy14k",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "ZzfbcG_8ubA",
@@ -74,7 +74,7 @@
     "masterId": "ZzfbcG_8ubA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "gIsTZZ6F2Ig",
@@ -111,7 +111,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "_O94WxHxFqQ",
@@ -220,7 +220,7 @@
     "masterId": "VJSH1B1H8bs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "jww4aqScaDU",
@@ -233,7 +233,7 @@
     "masterId": "jww4aqScaDU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "7V87AazHwnk",
@@ -246,7 +246,7 @@
     "masterId": "jww4aqScaDU",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Gc2t9ndUq0A",
@@ -391,7 +391,7 @@
     "masterId": "jww4aqScaDU",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GCRPluUV9PU",
@@ -416,7 +416,7 @@
     "masterId": "icZGEhYGsiY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "fjLSRbvZufo",
@@ -453,7 +453,7 @@
     "masterId": "bnQ8fUTNMrE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "sDHSe8qhlCU",
@@ -490,7 +490,7 @@
     "masterId": "icZGEhYGsiY",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "zdO9_VsFdHs",
@@ -503,7 +503,7 @@
     "masterId": "icZGEhYGsiY",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bwFfnFsXn-8",
@@ -516,7 +516,7 @@
     "masterId": "bwFfnFsXn-8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "kUFBieATFpg",
@@ -541,7 +541,7 @@
     "masterId": "KglaESI2by0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "Iq62odHvBvQ",
@@ -554,7 +554,7 @@
     "masterId": "Iq62odHvBvQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "-sW_HZbt7Zk",
@@ -567,7 +567,7 @@
     "masterId": "-sW_HZbt7Zk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "ftF_A1B7Rkk",
@@ -580,7 +580,7 @@
     "masterId": "ftF_A1B7Rkk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "dGytfUaW61A",
@@ -593,7 +593,7 @@
     "masterId": "dGytfUaW61A",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "5-1KTL0qqYs",
@@ -606,7 +606,7 @@
     "masterId": "5-1KTL0qqYs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "JyVNYvpNtFk",
@@ -619,7 +619,7 @@
     "masterId": "JyVNYvpNtFk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "F_P46dyDaVU",
@@ -644,7 +644,7 @@
     "masterId": "B3q4alABGMo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "gNWSPLcmMjg",
@@ -657,7 +657,7 @@
     "masterId": "gNWSPLcmMjg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "rW0um-iojZk",
@@ -706,7 +706,7 @@
     "masterId": "0pOjtceFYCI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "nBHg5W_jeCQ",
@@ -743,7 +743,7 @@
     "masterId": "0E3kkpYb_z4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "LoO6keEuzFc",
@@ -768,7 +768,7 @@
     "masterId": "Vx6TsL0CxKE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "NTHneEcA5M4",
@@ -781,7 +781,7 @@
     "masterId": "NTHneEcA5M4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "Z1-et63vDeQ",
@@ -806,7 +806,7 @@
     "masterId": "UYDjJ2Leoy8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "m4rsYhCsiw0",
@@ -819,7 +819,7 @@
     "masterId": "m4rsYhCsiw0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "A4OGpu3MAWU",
@@ -832,7 +832,7 @@
     "masterId": "A4OGpu3MAWU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ifksubcsMfY",
@@ -857,7 +857,7 @@
     "masterId": "R3c3jmVrpE0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "KORanAq8JQ8",
@@ -882,7 +882,7 @@
     "masterId": "M0MuirU7IDo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "IJd_A_Kaq38",
@@ -895,7 +895,7 @@
     "masterId": "IJd_A_Kaq38",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "TUvCZvoFUd0",
@@ -932,7 +932,7 @@
     "masterId": "RqpQLP0xvmo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "cC8T1fvFN1o",
@@ -1017,7 +1017,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata - Duração Diferente (100%)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "zgsXZBSqzbA",
@@ -1114,7 +1114,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "NVGuzaGpht0",
@@ -1163,7 +1163,7 @@
     "masterId": "RqpQLP0xvmo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (100%) (Critério B)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "ULgMNZk-zsU",
@@ -1200,7 +1200,7 @@
     "masterId": "R3c3jmVrpE0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata - Duração Diferente (100%)",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "OPv2ZlY4k0c",
@@ -1225,7 +1225,7 @@
     "masterId": "bwFfnFsXn-8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (100%) (Critério B)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "VahE1YMDy-0",
@@ -1322,7 +1322,7 @@
     "masterId": "jww4aqScaDU",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "amegvuAm-d0",
@@ -1335,7 +1335,7 @@
     "masterId": "icZGEhYGsiY",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "BJbabj37HCA",
@@ -1348,7 +1348,7 @@
     "masterId": "BJbabj37HCA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5S6ansNKi0k",
@@ -1361,7 +1361,7 @@
     "masterId": "5S6ansNKi0k",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "VOEZ0hfljxI",
@@ -1374,7 +1374,7 @@
     "masterId": "VJSH1B1H8bs",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (100%) (Critério B)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "1Uluv1rgHbU",
@@ -1411,7 +1411,7 @@
     "masterId": "bnQ8fUTNMrE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (100%) (Critério B)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "nVzCYMShMCU",
@@ -1508,7 +1508,7 @@
     "masterId": "EYeC98jy14k",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (100%) (Critério B)",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "eiP3R5d7e1c",
@@ -1533,7 +1533,7 @@
     "masterId": "BJftdQvdiug",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "V4BdQLnfUU0",
@@ -1546,7 +1546,7 @@
     "masterId": "BJftdQvdiug",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "meA6aKDAhFo",
@@ -1583,7 +1583,7 @@
     "masterId": "t-cQMAd5y60",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "nvJpNnzslj4",
@@ -1596,7 +1596,7 @@
     "masterId": "nvJpNnzslj4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "lh3p1mIsQB0",
@@ -1609,7 +1609,7 @@
     "masterId": "nvJpNnzslj4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "NezKPIiK-rI",
@@ -1622,7 +1622,7 @@
     "masterId": "NezKPIiK-rI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "183dK-CtSe8",
@@ -1635,7 +1635,7 @@
     "masterId": "NezKPIiK-rI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "8vRQYjRqun4",
@@ -1672,7 +1672,7 @@
     "masterId": "cdnpsufVsD4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "_4XByUv9V0I",
@@ -1685,7 +1685,7 @@
     "masterId": "cdnpsufVsD4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "xHoRTG2gJXc",
@@ -1722,7 +1722,7 @@
     "masterId": "2YKmEE8JM4I",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "9z3F6iG1eNU",
@@ -1735,7 +1735,7 @@
     "masterId": "2YKmEE8JM4I",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "l8lrh8mxINM",
@@ -1748,7 +1748,7 @@
     "masterId": "l8lrh8mxINM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "H-1g4nmKmlw",
@@ -1761,7 +1761,7 @@
     "masterId": "l8lrh8mxINM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "lK0Aj96kWic",
@@ -1798,7 +1798,7 @@
     "masterId": "3X5bEScoIt8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "XESROTsjNHw",
@@ -1811,7 +1811,7 @@
     "masterId": "3X5bEScoIt8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "yZ-y2vqqaK8",
@@ -1824,7 +1824,7 @@
     "masterId": "yZ-y2vqqaK8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "hXASa_dWsmY",
@@ -1837,7 +1837,7 @@
     "masterId": "yZ-y2vqqaK8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "vxu0xKfQ9K0",
@@ -1850,7 +1850,7 @@
     "masterId": "vxu0xKfQ9K0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ddbK-fzrPUc",
@@ -1863,7 +1863,7 @@
     "masterId": "vxu0xKfQ9K0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "UYeGBkHD5sQ",
@@ -1876,7 +1876,7 @@
     "masterId": "UYeGBkHD5sQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "E17eFbfH0Ag",
@@ -1889,7 +1889,7 @@
     "masterId": "E17eFbfH0Ag",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "5uG2BvqYGHM",
@@ -1902,7 +1902,7 @@
     "masterId": "E17eFbfH0Ag",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "UlpEM1pxKYU",
@@ -1915,7 +1915,7 @@
     "masterId": "UlpEM1pxKYU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ED1ZTHwASdI",
@@ -1928,7 +1928,7 @@
     "masterId": "UlpEM1pxKYU",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "9mYVDH3uD98",
@@ -1941,7 +1941,7 @@
     "masterId": "9mYVDH3uD98",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "y3xGmjMVi-g",
@@ -1978,7 +1978,7 @@
     "masterId": "3rhxrAixZ7I",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "mzsEsMyPjWI",
@@ -1991,7 +1991,7 @@
     "masterId": "3rhxrAixZ7I",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "5AxV64kQJYY",
@@ -2004,7 +2004,7 @@
     "masterId": "5AxV64kQJYY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GLX-Q5QOGxE",
@@ -2017,7 +2017,7 @@
     "masterId": "5AxV64kQJYY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "kQVEzvaf7JQ",
@@ -2198,7 +2198,7 @@
     "masterId": "cCRUSUCBW6I",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "F8J0ANqz6tU",
@@ -2211,7 +2211,7 @@
     "masterId": "cCRUSUCBW6I",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "VDLbRgi_D78",
@@ -2224,7 +2224,7 @@
     "masterId": "VDLbRgi_D78",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ySJH2AhtYjA",
@@ -2237,7 +2237,7 @@
     "masterId": "VDLbRgi_D78",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sQv5T4qoegY",
@@ -2250,7 +2250,7 @@
     "masterId": "sQv5T4qoegY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "IhBFPeiAe6w",
@@ -2287,7 +2287,7 @@
     "masterId": "NUiANXL-rac",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ekDuiY617HE",
@@ -2300,7 +2300,7 @@
     "masterId": "NUiANXL-rac",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "YdRg1BVbW7g",
@@ -2313,7 +2313,7 @@
     "masterId": "YdRg1BVbW7g",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "blMQ6wevN2Y",
@@ -2326,7 +2326,7 @@
     "masterId": "blMQ6wevN2Y",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "B671kwRkluw",
@@ -2339,7 +2339,7 @@
     "masterId": "B671kwRkluw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Wd8h7yLi9Ro",
@@ -2352,7 +2352,7 @@
     "masterId": "B671kwRkluw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "E8d6zCpL2I8",
@@ -2389,7 +2389,7 @@
     "masterId": "phl2CGsrxiA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "18p4_Mzt8q4",
@@ -2402,7 +2402,7 @@
     "masterId": "phl2CGsrxiA",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "ylFFIgdXpGE",
@@ -2511,7 +2511,7 @@
     "masterId": "yDMUG136FZU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "DAM8osJ_2aw",
@@ -3040,7 +3040,7 @@
     "masterId": "aWz5iBXPSAE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "wAwavShzOU8",
@@ -3053,7 +3053,7 @@
     "masterId": "aWz5iBXPSAE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "OrhWQHp4Dgw",
@@ -3078,7 +3078,7 @@
     "masterId": "SY1b94rdzas",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "mq4wCuIpVRA",
@@ -3487,7 +3487,7 @@
     "masterId": "3xpKk-VC_Os",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "OGcR1F1uQOk",
@@ -3500,7 +3500,7 @@
     "masterId": "3xpKk-VC_Os",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "f_WAKM5lE0Y",
@@ -3513,7 +3513,7 @@
     "masterId": "f_WAKM5lE0Y",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "9VA6vX_BF0k",
@@ -3526,7 +3526,7 @@
     "masterId": "f_WAKM5lE0Y",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "6SRWJTwPkQU",
@@ -3551,7 +3551,7 @@
     "masterId": "mXSsEkE-L7U",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "MBiakfyOZ48",
@@ -3564,7 +3564,7 @@
     "masterId": "mXSsEkE-L7U",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "_35lB6qGahc",
@@ -3577,7 +3577,7 @@
     "masterId": "_35lB6qGahc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "y7UaKtbUVdw",
@@ -3590,7 +3590,7 @@
     "masterId": "_35lB6qGahc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sKFNgMqzyMI",
@@ -3603,7 +3603,7 @@
     "masterId": "sKFNgMqzyMI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gkc1B-xaI-Y",
@@ -3616,7 +3616,7 @@
     "masterId": "sKFNgMqzyMI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "QSPbNUgTNr8",
@@ -3629,7 +3629,7 @@
     "masterId": "QSPbNUgTNr8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "vnb5kG_z5Vk",
@@ -3642,7 +3642,7 @@
     "masterId": "QSPbNUgTNr8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5ORFd5dmJ0I",
@@ -3655,7 +3655,7 @@
     "masterId": "5ORFd5dmJ0I",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "puehew6YtYA",
@@ -3668,7 +3668,7 @@
     "masterId": "5ORFd5dmJ0I",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "eGS-iR7Xmr0",
@@ -3681,7 +3681,7 @@
     "masterId": "eGS-iR7Xmr0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "FPd1eLgjHbI",
@@ -3694,7 +3694,7 @@
     "masterId": "eGS-iR7Xmr0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "htgiAZXHMJA",
@@ -3791,7 +3791,7 @@
     "masterId": "RENXjGpOmNI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "g_6Pz_kAbwQ",
@@ -3804,7 +3804,7 @@
     "masterId": "RENXjGpOmNI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "mhWJhpWeRHI",
@@ -3889,7 +3889,7 @@
     "masterId": "i2OradNr44E",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bi4ayKJyVRA",
@@ -3902,7 +3902,7 @@
     "masterId": "i2OradNr44E",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "biQrHycsCr8",
@@ -4155,7 +4155,7 @@
     "masterId": "mCRAaW1BXj0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "H089SI6_4Mg",
@@ -4168,7 +4168,7 @@
     "masterId": "mCRAaW1BXj0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "iNFlq66XaLM",
@@ -4181,7 +4181,7 @@
     "masterId": "iNFlq66XaLM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "EION4sZtrVk",
@@ -4194,7 +4194,7 @@
     "masterId": "iNFlq66XaLM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "hgYB6WahDuA",
@@ -4231,7 +4231,7 @@
     "masterId": "NYy5Zr_7yY4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "4jJQv6h8bIQ",
@@ -4244,7 +4244,7 @@
     "masterId": "NYy5Zr_7yY4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "z8n8GIKvUhs",
@@ -4305,7 +4305,7 @@
     "masterId": "quXs9-r5Yk0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "27GAyDzjGo4",
@@ -4318,7 +4318,7 @@
     "masterId": "quXs9-r5Yk0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "7D-U6lM0bbE",
@@ -4547,7 +4547,7 @@
     "masterId": "GmAoCxQ0Osk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "jRKIUWZ7_14",
@@ -4680,7 +4680,7 @@
     "masterId": "IcEObqP5jU8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "6_pjFKb0bmY",
@@ -4693,7 +4693,7 @@
     "masterId": "IcEObqP5jU8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "DVBta88Jk40",
@@ -4706,7 +4706,7 @@
     "masterId": "DVBta88Jk40",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "rwpfK7NzDqg",
@@ -4719,7 +4719,7 @@
     "masterId": "DVBta88Jk40",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "3tfOhlfh5C4",
@@ -4732,7 +4732,7 @@
     "masterId": "3tfOhlfh5C4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "dRLFuDVBTgk",
@@ -4745,7 +4745,7 @@
     "masterId": "3tfOhlfh5C4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "e-uy1mwcHjA",
@@ -4758,7 +4758,7 @@
     "masterId": "e-uy1mwcHjA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "3dXWo1LKpak",
@@ -4771,7 +4771,7 @@
     "masterId": "e-uy1mwcHjA",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "neCAoZOb6gQ",
@@ -4784,7 +4784,7 @@
     "masterId": "neCAoZOb6gQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "7775xa5yYgE",
@@ -4797,7 +4797,7 @@
     "masterId": "neCAoZOb6gQ",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5mTuTaqfh4Q",
@@ -4810,7 +4810,7 @@
     "masterId": "5mTuTaqfh4Q",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "nt5NwV6DapE",
@@ -4823,7 +4823,7 @@
     "masterId": "5mTuTaqfh4Q",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "e2K4pM6mbN0",
@@ -4836,7 +4836,7 @@
     "masterId": "e2K4pM6mbN0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "moFeTXBpY0Y",
@@ -4849,7 +4849,7 @@
     "masterId": "e2K4pM6mbN0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "4uUs_kifiG8",
@@ -4862,7 +4862,7 @@
     "masterId": "4uUs_kifiG8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "R0suMDFWq4A",
@@ -4875,7 +4875,7 @@
     "masterId": "4uUs_kifiG8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "O9-DEx7wwu4",
@@ -4924,7 +4924,7 @@
     "masterId": "1inB2L9dMcw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "081XA3dwCr4",
@@ -4937,7 +4937,7 @@
     "masterId": "1inB2L9dMcw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Yy1wlDlEoeI",
@@ -5130,7 +5130,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "mC1Sn7HCOl0",
@@ -5143,7 +5143,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "39EwM_7dP5E",
@@ -5180,7 +5180,7 @@
     "masterId": "eh61zYNhFyk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "IjMUgbwceFM",
@@ -5193,7 +5193,7 @@
     "masterId": "eh61zYNhFyk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ojnY3N-1ueI",
@@ -5290,7 +5290,7 @@
     "masterId": "vZuiLQCFi48",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "wZlZh37pmUY",
@@ -5303,7 +5303,7 @@
     "masterId": "vZuiLQCFi48",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "1yXr7sLDr48",
@@ -5340,7 +5340,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "MkLUHMnW91Q",
@@ -5353,7 +5353,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "PYxhoZAVGlc",
@@ -5870,7 +5870,7 @@
     "masterId": "WWf-nOjWnWM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "rbWbgdAScGM",
@@ -5919,7 +5919,7 @@
     "masterId": "J4oHJnBE4bc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "2NL--70hK_U",
@@ -5956,7 +5956,7 @@
     "masterId": "23H0VmNhJqI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "QWZ8MOZedZg",
@@ -5969,7 +5969,7 @@
     "masterId": "23H0VmNhJqI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "NPFlgIf7Cvg",
@@ -5982,7 +5982,7 @@
     "masterId": "NPFlgIf7Cvg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "rwZVk9XgAQ8",
@@ -5995,7 +5995,7 @@
     "masterId": "rwZVk9XgAQ8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "-dyHrOi5W5M",
@@ -6008,7 +6008,7 @@
     "masterId": "-dyHrOi5W5M",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "lODKPwyt8S4",
@@ -6045,7 +6045,7 @@
     "masterId": "MIZZvXtTqIA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "XYS54pAA3mI",
@@ -6058,7 +6058,7 @@
     "masterId": "XYS54pAA3mI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "oBN9CySu9NQ",
@@ -6071,7 +6071,7 @@
     "masterId": "oBN9CySu9NQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "onvtla8K6h8",
@@ -6084,7 +6084,7 @@
     "masterId": "onvtla8K6h8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "YplqF7jzXhQ",
@@ -6169,7 +6169,7 @@
     "masterId": "5Y7l8LCOcx0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "EDBICXsc344",
@@ -6182,7 +6182,7 @@
     "masterId": "EDBICXsc344",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "UGvEPWubxpY",
@@ -6195,7 +6195,7 @@
     "masterId": "UGvEPWubxpY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0A41AFffYHI",
@@ -6208,7 +6208,7 @@
     "masterId": "0A41AFffYHI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5gK9Dw4eOrU",
@@ -6461,7 +6461,7 @@
     "masterId": "Wp2yp0vziFE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "_Zip9TrdLtQ",
@@ -6474,7 +6474,7 @@
     "masterId": "Wp2yp0vziFE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "l--YH8KzGgI",
@@ -6559,7 +6559,7 @@
     "masterId": "7apJWqZJKBQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "ymrrq5kPGac",
@@ -6572,7 +6572,7 @@
     "masterId": "7apJWqZJKBQ",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "P9yyh0MilDU",
@@ -6777,7 +6777,7 @@
     "masterId": "AKq4dXVeer8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "4ikyZE9F5FY",
@@ -6790,7 +6790,7 @@
     "masterId": "AKq4dXVeer8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "94xj3x3WU_Q",
@@ -7919,7 +7919,7 @@
     "masterId": "m7hyeEhZagM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "de4JFDXOyhY",
@@ -7932,7 +7932,7 @@
     "masterId": "m7hyeEhZagM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "7UivcPl9Yes",
@@ -7969,7 +7969,7 @@
     "masterId": "rp_h_kjCwd0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "-_Fi91l_mlo",
@@ -7982,7 +7982,7 @@
     "masterId": "rp_h_kjCwd0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "RlS4i2honX0",
@@ -7995,7 +7995,7 @@
     "masterId": "RlS4i2honX0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "pfSjDOJRtdI",
@@ -8008,7 +8008,7 @@
     "masterId": "RlS4i2honX0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "IkSftksHQ24",
@@ -8021,7 +8021,7 @@
     "masterId": "IkSftksHQ24",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "R3irYqwefH0",
@@ -8034,7 +8034,7 @@
     "masterId": "IkSftksHQ24",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "wmJQU5sbgvA",
@@ -8071,7 +8071,7 @@
     "masterId": "_xOslYIvwNY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "52AeGHpqpbo",
@@ -8084,7 +8084,7 @@
     "masterId": "_xOslYIvwNY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "jL6m0pcd3nk",
@@ -8097,7 +8097,7 @@
     "masterId": "jL6m0pcd3nk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "CwgpfYu3ICs",
@@ -8110,7 +8110,7 @@
     "masterId": "jL6m0pcd3nk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "tC1O3R_UVgA",
@@ -8171,7 +8171,7 @@
     "masterId": "5EfmYETqFyQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "YIBMABY3OKg",
@@ -8184,7 +8184,7 @@
     "masterId": "5EfmYETqFyQ",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "NAOe3LOrrR0",
@@ -8197,7 +8197,7 @@
     "masterId": "NAOe3LOrrR0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "41n5Fno2G28",
@@ -8210,7 +8210,7 @@
     "masterId": "NAOe3LOrrR0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gZNIDnwZoAc",
@@ -8223,7 +8223,7 @@
     "masterId": "gZNIDnwZoAc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "yIfawiCc2Zs",
@@ -8236,7 +8236,7 @@
     "masterId": "gZNIDnwZoAc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Vj4agBpVBP0",
@@ -8249,7 +8249,7 @@
     "masterId": "Vj4agBpVBP0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bpzO8bOb4V8",
@@ -8262,7 +8262,7 @@
     "masterId": "Vj4agBpVBP0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "fxXoNjnenA0",
@@ -8275,7 +8275,7 @@
     "masterId": "fxXoNjnenA0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ggSLMcrJMSY",
@@ -8288,7 +8288,7 @@
     "masterId": "fxXoNjnenA0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GmXJoUYO7ZM",
@@ -8301,7 +8301,7 @@
     "masterId": "GmXJoUYO7ZM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "LgtkanarJBg",
@@ -8314,7 +8314,7 @@
     "masterId": "GmXJoUYO7ZM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sjHV8wK02wk",
@@ -8447,7 +8447,7 @@
     "masterId": "AKVdOXvTRq4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "qEWjw3PzLLM",
@@ -8460,7 +8460,7 @@
     "masterId": "AKVdOXvTRq4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gi8i0wlU4wA",
@@ -8497,7 +8497,7 @@
     "masterId": "Bd-Lus3c6wA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "KObgNw6uceM",
@@ -8510,7 +8510,7 @@
     "masterId": "Bd-Lus3c6wA",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "tz19Ef-gXHE",
@@ -8943,7 +8943,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "cBjq-mecWwA",
@@ -8956,7 +8956,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "eqwQbnDErto",
@@ -9137,7 +9137,7 @@
     "masterId": "_iqbsmBa1Ks",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sTYeag1JfhQ",
@@ -9150,7 +9150,7 @@
     "masterId": "_iqbsmBa1Ks",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "JKyCJSTViHE",
@@ -9163,7 +9163,7 @@
     "masterId": "JKyCJSTViHE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "u7dNpSdQG0w",
@@ -9176,7 +9176,7 @@
     "masterId": "JKyCJSTViHE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "KciH3oY8Ll4",
@@ -9189,7 +9189,7 @@
     "masterId": "KciH3oY8Ll4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Co3B08_XlgE",
@@ -9202,7 +9202,7 @@
     "masterId": "KciH3oY8Ll4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "kT38hiJJPDs",
@@ -9215,7 +9215,7 @@
     "masterId": "kT38hiJJPDs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5VHHmKTEBB0",
@@ -9228,7 +9228,7 @@
     "masterId": "kT38hiJJPDs",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "XRAxW2naXKU",
@@ -9241,7 +9241,7 @@
     "masterId": "XRAxW2naXKU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gzsFxvw2Ypc",
@@ -9254,7 +9254,7 @@
     "masterId": "XRAxW2naXKU",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "i8YVBYRZ4oI",
@@ -9267,7 +9267,7 @@
     "masterId": "i8YVBYRZ4oI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "PNf9SGIjMAA",
@@ -9280,7 +9280,7 @@
     "masterId": "i8YVBYRZ4oI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "4oXljiHSm-U",
@@ -9293,7 +9293,7 @@
     "masterId": "4oXljiHSm-U",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "tcaYX8f4TH0",
@@ -9306,7 +9306,7 @@
     "masterId": "4oXljiHSm-U",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "HOixHvJvgFQ",
@@ -9319,7 +9319,7 @@
     "masterId": "HOixHvJvgFQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "i4Cy0k-gDhM",
@@ -9332,7 +9332,7 @@
     "masterId": "HOixHvJvgFQ",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "oqd35b3a3aA",
@@ -9417,7 +9417,7 @@
     "masterId": "vdtdWR1MhoY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "mkPCpRo0UKI",
@@ -9826,7 +9826,7 @@
     "masterId": "FICM5xkv4Q4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "jD0XtXfqbSA",
@@ -9839,7 +9839,7 @@
     "masterId": "FICM5xkv4Q4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "7oKjZxpqDeo",
@@ -9852,7 +9852,7 @@
     "masterId": "7oKjZxpqDeo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "he1P1TVd-k4",
@@ -9865,7 +9865,7 @@
     "masterId": "7oKjZxpqDeo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "JjkncOcNw50",
@@ -9950,7 +9950,7 @@
     "masterId": "dNy084tq6_4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "FYm735cDqnU",
@@ -9963,7 +9963,7 @@
     "masterId": "dNy084tq6_4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "giFemzAS5D4",
@@ -9976,7 +9976,7 @@
     "masterId": "giFemzAS5D4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "SVmin3lwpfQ",
@@ -9989,7 +9989,7 @@
     "masterId": "giFemzAS5D4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "b0nHFA7IO6s",
@@ -10002,7 +10002,7 @@
     "masterId": "b0nHFA7IO6s",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "AJjHANkeGIs",
@@ -10015,7 +10015,7 @@
     "masterId": "b0nHFA7IO6s",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "mhZgp1WPhRs",
@@ -10196,7 +10196,7 @@
     "masterId": "J7LpXI-lYPU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "NZSJQWaTEx0",
@@ -10209,7 +10209,7 @@
     "masterId": "J7LpXI-lYPU",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "a5OXe960cJU",
@@ -10222,7 +10222,7 @@
     "masterId": "a5OXe960cJU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Wyz6c9NXWyM",
@@ -10235,7 +10235,7 @@
     "masterId": "a5OXe960cJU",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bI6VlbcAvKk",
@@ -10248,7 +10248,7 @@
     "masterId": "bI6VlbcAvKk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "CYEUjAdCXKw",
@@ -10261,7 +10261,7 @@
     "masterId": "bI6VlbcAvKk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "xbsAmju4XnI",
@@ -10274,7 +10274,7 @@
     "masterId": "xbsAmju4XnI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "QjE5mr8k98Q",
@@ -10287,7 +10287,7 @@
     "masterId": "xbsAmju4XnI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "LEpCes1xyLM",
@@ -10300,7 +10300,7 @@
     "masterId": "LEpCes1xyLM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0fYXNhOHrvE",
@@ -10313,7 +10313,7 @@
     "masterId": "LEpCes1xyLM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "vXiC008kJ04",
@@ -10374,7 +10374,7 @@
     "masterId": "UiDhztBpojE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "A9Lz_X_t2Ig",
@@ -10387,7 +10387,7 @@
     "masterId": "UiDhztBpojE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "IglvnGKqKPU",
@@ -10496,7 +10496,7 @@
     "masterId": "_nO7wAgmoEc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "pabFZIH0UtU",
@@ -10509,7 +10509,7 @@
     "masterId": "_nO7wAgmoEc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "VA350LeODdA",
@@ -10594,7 +10594,7 @@
     "masterId": "GKGYGQg_254",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "a7xwFh_9ENM",
@@ -10607,7 +10607,7 @@
     "masterId": "GKGYGQg_254",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "q7zaJPZrLvw",
@@ -10860,7 +10860,7 @@
     "masterId": "lEdlkGgEVy8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "Er55OvFmMlU",
@@ -10873,7 +10873,7 @@
     "masterId": "lEdlkGgEVy8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "STClI3uM3rg",
@@ -11054,7 +11054,7 @@
     "masterId": "Rg842_Ev0fs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "lkEQ_tQU-g8",
@@ -11067,7 +11067,7 @@
     "masterId": "Rg842_Ev0fs",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "45JEcgeOoic",
@@ -11272,7 +11272,7 @@
     "masterId": "0PYo4FCIerc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "xuAZs3YNJ9w",
@@ -11285,7 +11285,7 @@
     "masterId": "0PYo4FCIerc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "90K2bsqH-Ck",
@@ -11298,7 +11298,7 @@
     "masterId": "90K2bsqH-Ck",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ySVye52hN_I",
@@ -11311,7 +11311,7 @@
     "masterId": "90K2bsqH-Ck",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "H-qFNoRvog4",
@@ -11324,7 +11324,7 @@
     "masterId": "H-qFNoRvog4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GLeReIZmhKY",
@@ -11337,7 +11337,7 @@
     "masterId": "H-qFNoRvog4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "MuZkCKYHUPU",
@@ -11350,7 +11350,7 @@
     "masterId": "MuZkCKYHUPU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "wHVfTQtkw9E",
@@ -11363,7 +11363,7 @@
     "masterId": "MuZkCKYHUPU",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0w8VS2f9L8c",
@@ -12072,7 +12072,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "otgpmKM4aSQ",
@@ -12085,7 +12085,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "5rUuRLGuBuQ",
@@ -12182,7 +12182,7 @@
     "masterId": "am73ggw3Tpo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "SwqtzbIdibw",
@@ -12195,7 +12195,7 @@
     "masterId": "am73ggw3Tpo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bgrYkEeLOis",
@@ -12292,7 +12292,7 @@
     "masterId": "ACDcxl-ovV8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "trQb5VMZhIs",
@@ -12305,7 +12305,7 @@
     "masterId": "ACDcxl-ovV8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "6H9lOe0b3sk",
@@ -12318,7 +12318,7 @@
     "masterId": "6H9lOe0b3sk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "W-LvchHgSEY",
@@ -12331,7 +12331,7 @@
     "masterId": "6H9lOe0b3sk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "FoB4ndAMtpo",
@@ -12344,7 +12344,7 @@
     "masterId": "FoB4ndAMtpo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Fhh0Rm2eY4A",
@@ -12357,7 +12357,7 @@
     "masterId": "FoB4ndAMtpo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "TBrhoypD694",
@@ -12370,7 +12370,7 @@
     "masterId": "TBrhoypD694",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gNlbul72BZ8",
@@ -12383,7 +12383,7 @@
     "masterId": "TBrhoypD694",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "TMCFZhocFyM",
@@ -12564,7 +12564,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "QrH3SrOpecE",
@@ -12577,7 +12577,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "okZIDcEnVWA",
@@ -12866,7 +12866,7 @@
     "masterId": "9MWbTWzrcLs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "6N-WY3iCUek",
@@ -12879,7 +12879,7 @@
     "masterId": "9MWbTWzrcLs",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "JOGFCzoRaZQ",
@@ -13060,7 +13060,7 @@
     "masterId": "KkMkGJfQSno",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "DvR9sNvnZYE",
@@ -13073,7 +13073,7 @@
     "masterId": "KkMkGJfQSno",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (100%) (Critério B)",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "wzkXhLMBbtA",
@@ -13134,7 +13134,7 @@
     "masterId": "JzsozzVpQFA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "gez59hbxpHI",
@@ -13147,7 +13147,7 @@
     "masterId": "gez59hbxpHI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "RoOEtC15T5o",
@@ -13232,7 +13232,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "zX0QxkraD5Q",
@@ -13245,7 +13245,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "6SmkK694VQw",
@@ -13258,7 +13258,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "GZDo33OUFjI",
@@ -13271,7 +13271,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "2cxfbAIhqq4",
@@ -13404,7 +13404,7 @@
     "masterId": "u8Nm1uEgdtY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "tZWoi8xvxxk",
@@ -13417,7 +13417,7 @@
     "masterId": "u8Nm1uEgdtY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "j3gqgr7DJw8",
@@ -13430,7 +13430,7 @@
     "masterId": "j3gqgr7DJw8",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "r9yqX09EETk",
@@ -13443,7 +13443,7 @@
     "masterId": "j3gqgr7DJw8",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "rR7mV778Y8E",
@@ -13480,7 +13480,7 @@
     "masterId": "NWZs3qozm10",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "DR90pbXcA9k",
@@ -13493,7 +13493,7 @@
     "masterId": "NWZs3qozm10",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "1ZjdTSls2NU",
@@ -13506,7 +13506,7 @@
     "masterId": "1ZjdTSls2NU",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "LG3ip1_jUG8",
@@ -13519,7 +13519,7 @@
     "masterId": "1ZjdTSls2NU",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "eaxHcKwmVNk",
@@ -13532,7 +13532,7 @@
     "masterId": "eaxHcKwmVNk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "Wk13w6HYxeM",
@@ -13545,7 +13545,7 @@
     "masterId": "eaxHcKwmVNk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "j3RjSBun9z8",
@@ -13558,7 +13558,7 @@
     "masterId": "j3RjSBun9z8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bYjkqLteZfU",
@@ -13571,7 +13571,7 @@
     "masterId": "j3RjSBun9z8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gnhBVJMLoLg",
@@ -13584,7 +13584,7 @@
     "masterId": "gnhBVJMLoLg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "dgq3SHs1vZM",
@@ -13597,7 +13597,7 @@
     "masterId": "gnhBVJMLoLg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GDllrNmAc3o",
@@ -13682,7 +13682,7 @@
     "masterId": "QnLM_4EaZt4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gE2YSijkoNk",
@@ -13695,7 +13695,7 @@
     "masterId": "QnLM_4EaZt4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ocXDMaHwlTc",
@@ -13840,7 +13840,7 @@
     "masterId": "Z2DG-FMFP0Q",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "N4WM5D8JP8o",
@@ -13853,7 +13853,7 @@
     "masterId": "Z2DG-FMFP0Q",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "P-VeV4NfARI",
@@ -13866,7 +13866,7 @@
     "masterId": "P-VeV4NfARI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "cmviPwjbq8g",
@@ -13879,7 +13879,7 @@
     "masterId": "P-VeV4NfARI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "j1YZ4WWwg1o",
@@ -13892,7 +13892,7 @@
     "masterId": "j1YZ4WWwg1o",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "XfarVkbmzgc",
@@ -13905,7 +13905,7 @@
     "masterId": "j1YZ4WWwg1o",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "CrwQxCY6Yr8",
@@ -14950,7 +14950,7 @@
     "masterId": "ZuTMgVOAvrA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "hDa0hi7SxJg",
@@ -15683,7 +15683,7 @@
     "masterId": "BsJYPoD7AHM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "orTZfxbkjr4",
@@ -15696,7 +15696,7 @@
     "masterId": "BsJYPoD7AHM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "rzmiwE5P30A",
@@ -16429,7 +16429,7 @@
     "masterId": "RA1OP6RA_0g",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "LJ8V6vrLBco",
@@ -16442,7 +16442,7 @@
     "masterId": "RA1OP6RA_0g",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "SUiKaN2dANc",
@@ -16491,7 +16491,7 @@
     "masterId": "QWoSmHozITY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "LKuE_yeHXAA",
@@ -16504,7 +16504,7 @@
     "masterId": "QWoSmHozITY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "3KtLYjiiazE",
@@ -16757,7 +16757,7 @@
     "masterId": "dil72hbv554",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "511WX6TY3xE",
@@ -16770,7 +16770,7 @@
     "masterId": "dil72hbv554",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "_KXNFvteXRs",
@@ -17095,7 +17095,7 @@
     "masterId": "xGYoWbR7JXQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "E1_TRgU4KQw",
@@ -17108,7 +17108,7 @@
     "masterId": "xGYoWbR7JXQ",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "IDVhJH3Q4LQ",
@@ -17169,7 +17169,7 @@
     "masterId": "oDTXyWp_qmw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "e7LDSpBJIS0",
@@ -17182,7 +17182,7 @@
     "masterId": "oDTXyWp_qmw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "BpZgEncbd3I",
@@ -17267,7 +17267,7 @@
     "masterId": "45q4rcPxx3s",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "H-48O8l-B_w",
@@ -17280,7 +17280,7 @@
     "masterId": "45q4rcPxx3s",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "fn04KFfBEbI",
@@ -17965,7 +17965,7 @@
     "masterId": "ESegqVTTPMg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "Tmdte5yjIHI",
@@ -17978,7 +17978,7 @@
     "masterId": "ESegqVTTPMg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "X7ByPdPxGRs",
@@ -18507,7 +18507,7 @@
     "masterId": "xjZG2_02yyM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5UVwlU-ndxE",
@@ -18520,7 +18520,7 @@
     "masterId": "xjZG2_02yyM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5VvKkYLiaJY",
@@ -18533,7 +18533,7 @@
     "masterId": "5VvKkYLiaJY",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "t-2BQWBkOFw",
@@ -18546,7 +18546,7 @@
     "masterId": "5VvKkYLiaJY",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5TO1-kROz74",
@@ -18559,7 +18559,7 @@
     "masterId": "5TO1-kROz74",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "D0ZEhf8IAUI",
@@ -18572,7 +18572,7 @@
     "masterId": "5TO1-kROz74",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "JtkX2iK335U",
@@ -18585,7 +18585,7 @@
     "masterId": "JtkX2iK335U",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "dEqP6Brqwe0",
@@ -18598,7 +18598,7 @@
     "masterId": "JtkX2iK335U",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "oZ8YUEpK0AY",
@@ -18935,7 +18935,7 @@
     "masterId": "2SPExlp9tFg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "_hsI9RIm67g",
@@ -18948,7 +18948,7 @@
     "masterId": "2SPExlp9tFg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "KeoFuc6aZTo",
@@ -19513,7 +19513,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (64%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "3EFEY5EF9z4",
@@ -19526,7 +19526,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (64%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "ji9DCwHgVPU",
@@ -19587,7 +19587,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (78%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "PFaWvB8LIHo",
@@ -19600,7 +19600,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (78%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "o-DGhTZugSY",
@@ -19613,7 +19613,7 @@
     "masterId": "BJftdQvdiug",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "No0FMbIhfv0",
@@ -19626,7 +19626,7 @@
     "masterId": "BJftdQvdiug",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "gpGe38oXV5M",
@@ -19639,7 +19639,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "2TTa82dKAYg",
@@ -19652,7 +19652,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "NXYT_HqM33c",
@@ -19665,7 +19665,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "XzJaJjxracg",
@@ -19678,7 +19678,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "WKJKIxAxuzM",
@@ -19739,7 +19739,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (71%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "rshyx1DJqaQ",
@@ -19752,7 +19752,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (71%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "qWflWY-uQ0A",
@@ -19789,7 +19789,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "OGyx2lasAPM",
@@ -19802,7 +19802,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "R4e_eonsmCo",
@@ -19839,7 +19839,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "v2wm_GuNjm0",
@@ -19852,7 +19852,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "PdoCjp3haLU",
@@ -19889,7 +19889,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (71%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "dO-eWKBCm7s",
@@ -19902,7 +19902,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (71%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "_H_gxD6zKCE",
@@ -19939,7 +19939,7 @@
     "masterId": "9XTa9NHVqR8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "9hmlxrOT-PE",
@@ -19952,7 +19952,7 @@
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Yvqg6G1BYTA",
@@ -20061,7 +20061,7 @@
     "masterId": "ykmyIlKSpjI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "3VldsFbAJ9w",
@@ -20074,7 +20074,7 @@
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "y-hQnp3Y13o",
@@ -20183,7 +20183,7 @@
     "masterId": "nbmXgrfdXuw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ak2Vpg6VLi0",
@@ -20208,7 +20208,7 @@
     "masterId": "nbmXgrfdXuw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata - Duração Diferente (100%)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sgoVS_3TRCs",
@@ -20221,7 +20221,7 @@
     "masterId": "sgoVS_3TRCs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "f_nWICbHuFY",
@@ -20234,7 +20234,7 @@
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "FzaCFfLYdJ0",
@@ -20247,7 +20247,7 @@
     "masterId": "FzaCFfLYdJ0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "n21fvRAXwYA",
@@ -20260,7 +20260,7 @@
     "masterId": "FzaCFfLYdJ0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "FZ4fbE90gd4",
@@ -20273,7 +20273,7 @@
     "masterId": "FZ4fbE90gd4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "YEW1ww2G9ak",
@@ -20286,7 +20286,7 @@
     "masterId": "FZ4fbE90gd4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "PkrndxaDOK8",
@@ -20431,7 +20431,7 @@
     "masterId": "hlX0MGOBjec",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "VP_DJOTSZfo",
@@ -20444,7 +20444,7 @@
     "masterId": "hlX0MGOBjec",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "_LSeKt8ePM8",
@@ -20457,7 +20457,7 @@
     "masterId": "_LSeKt8ePM8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GKPpU13fc9I",
@@ -20470,7 +20470,7 @@
     "masterId": "_LSeKt8ePM8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "OHlbY2iFVC8",
@@ -20483,7 +20483,7 @@
     "masterId": "OHlbY2iFVC8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "vxFXwfpGLEw",
@@ -20496,7 +20496,7 @@
     "masterId": "OHlbY2iFVC8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "T_uSrRIIzbo",
@@ -20509,7 +20509,7 @@
     "masterId": "T_uSrRIIzbo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "KC_J9gewg5I",
@@ -20522,7 +20522,7 @@
     "masterId": "T_uSrRIIzbo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "lAFFs4arbTk",
@@ -20535,7 +20535,7 @@
     "masterId": "lAFFs4arbTk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "if-9URWZznI",
@@ -20548,7 +20548,7 @@
     "masterId": "lAFFs4arbTk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "wWsNyV6woyI",
@@ -20561,7 +20561,7 @@
     "masterId": "wWsNyV6woyI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GfqpQHlLHCQ",
@@ -20574,7 +20574,7 @@
     "masterId": "wWsNyV6woyI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "UVqB6pmzzRs",
@@ -20587,7 +20587,7 @@
     "masterId": "UVqB6pmzzRs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "8fGQKXU1jc4",
@@ -20600,7 +20600,7 @@
     "masterId": "UVqB6pmzzRs",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ktGBTwx31u4",
@@ -20613,7 +20613,7 @@
     "masterId": "ktGBTwx31u4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ItmlkmiMYKc",
@@ -20626,7 +20626,7 @@
     "masterId": "ktGBTwx31u4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "cZJpOKXgw2o",
@@ -20639,7 +20639,7 @@
     "masterId": "cZJpOKXgw2o",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "afR3rlPA2z8",
@@ -20652,7 +20652,7 @@
     "masterId": "cZJpOKXgw2o",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "weasKSz6IMY",
@@ -20665,7 +20665,7 @@
     "masterId": "weasKSz6IMY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "OQ2h2uDOl7c",
@@ -20678,7 +20678,7 @@
     "masterId": "weasKSz6IMY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "hZdStoWHPWs",
@@ -20691,7 +20691,7 @@
     "masterId": "hZdStoWHPWs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "RvdS7Qy4FCk",
@@ -20704,7 +20704,7 @@
     "masterId": "hZdStoWHPWs",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "cbtdE9py5-8",
@@ -20717,7 +20717,7 @@
     "masterId": "cbtdE9py5-8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Hl1ONjGaz_U",
@@ -20730,7 +20730,7 @@
     "masterId": "cbtdE9py5-8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "e_YxQWaTFWw",
@@ -20743,7 +20743,7 @@
     "masterId": "e_YxQWaTFWw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "fbW9073pTb4",
@@ -20756,7 +20756,7 @@
     "masterId": "e_YxQWaTFWw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ydtvdjz8nXo",
@@ -20769,7 +20769,7 @@
     "masterId": "ydtvdjz8nXo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "DAR33eeLlec",
@@ -20782,7 +20782,7 @@
     "masterId": "ydtvdjz8nXo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "uxD2MH4MkZ0",
@@ -20795,7 +20795,7 @@
     "masterId": "uxD2MH4MkZ0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Ane-dkn5Uf0",
@@ -20808,7 +20808,7 @@
     "masterId": "uxD2MH4MkZ0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "QxaTfqYuZko",
@@ -20929,7 +20929,7 @@
     "masterId": "bvqmWnIfbkk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "20NzuN4byXs",
@@ -20942,7 +20942,7 @@
     "masterId": "bvqmWnIfbkk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "hK96WD-tKug",
@@ -21003,7 +21003,7 @@
     "masterId": "0yGfc92hYFk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "8vfbcfF_ulQ",
@@ -21016,7 +21016,7 @@
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "G1MtEyFVLvU",
@@ -21257,7 +21257,7 @@
     "masterId": "5vR_J8D5VMc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "ttcpAFEZpVQ",
@@ -21270,7 +21270,7 @@
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "OeiEyZKVcWw",
@@ -21475,7 +21475,7 @@
     "masterId": "c1eY859uMs8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "e0F-83Jd2E4",
@@ -21488,7 +21488,7 @@
     "masterId": "c1eY859uMs8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "nKbe7mry38U",
@@ -21681,7 +21681,7 @@
     "masterId": "B-rLVmG5uXg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "KjzTztklU6I",
@@ -21694,7 +21694,7 @@
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "LmG7C51Gnwg",
@@ -21875,7 +21875,7 @@
     "masterId": "WATt7PvQrV8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "gcRUs7OZDxM",
@@ -21888,7 +21888,7 @@
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "jKx3SzAb6WY",
@@ -22069,7 +22069,7 @@
     "masterId": "zMbfIcbatBI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "-QlMx6JimBw",
@@ -22082,7 +22082,7 @@
     "masterId": "zMbfIcbatBI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Lpamq2K9T-M",
@@ -22167,7 +22167,7 @@
     "masterId": "P5uKIpWPDmE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "uzmOXOSVa90",
@@ -22180,7 +22180,7 @@
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "4MReEyhv_SI",
@@ -22265,7 +22265,7 @@
     "masterId": "1McDGhB_wPg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "8zaZSwthU60",
@@ -22278,7 +22278,7 @@
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "e0JfReHjzNg",
@@ -22351,7 +22351,7 @@
     "masterId": "aB72x5xi2sw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "w5EcWi-WY7Y",
@@ -22364,7 +22364,7 @@
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "xPCb1ooqkvY",
@@ -22473,7 +22473,7 @@
     "masterId": "eaZB9SSrDBI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "hrYE9c1UsUA",
@@ -22486,7 +22486,7 @@
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "dwBbac6E4U8",
@@ -22619,7 +22619,7 @@
     "masterId": "eUp3hsqosn0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "E92OG2u4eMg",
@@ -22632,7 +22632,7 @@
     "masterId": "eUp3hsqosn0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "4GTbE3dP_Ig",
@@ -22765,7 +22765,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (82%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "4OutxDy-K_w",
@@ -22778,7 +22778,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (82%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "_YhSiQgK_6Q",
@@ -22791,7 +22791,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (78%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "NqwPgxHvBFc",
@@ -22804,7 +22804,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (78%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "amIL9AZhJPs",
@@ -22817,7 +22817,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (78%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "m2PgzGFLMik",
@@ -22830,7 +22830,7 @@
     "masterId": "BJftdQvdiug",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (57%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Qx4RNRAlMvU",
@@ -22867,7 +22867,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (73%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "e339o9qVCnU",
@@ -22880,7 +22880,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (73%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "YrqQ-HEJ-P0",
@@ -22941,7 +22941,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "fVqgbmWrXRg",
@@ -22954,7 +22954,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "h5FV2beVDZw",
@@ -22991,7 +22991,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (63%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "pCO3uEkFbHk",
@@ -23004,7 +23004,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (63%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "6KWMLZFBb94",
@@ -23077,7 +23077,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "OjCa2qrNep8",
@@ -23090,7 +23090,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "NIdrfaeaAtI",
@@ -23127,7 +23127,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (60%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "EbCbfm-WWk0",
@@ -23140,7 +23140,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (60%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "YHVmIVuMlPY",
@@ -23177,7 +23177,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (63%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "sDwOHDAZVdw",
@@ -23190,7 +23190,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (63%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "SiJJp6_LCqM",
@@ -23251,7 +23251,7 @@
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (70%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "p0udgWFj_P4",
@@ -23264,7 +23264,7 @@
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (70%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "gYD0CndjkGg",
@@ -23277,7 +23277,7 @@
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "_CBPXac0_gs",
@@ -23290,7 +23290,7 @@
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "LLjEruJfWus",
@@ -23315,7 +23315,7 @@
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "s7MU-nm8P4U",
@@ -23328,7 +23328,7 @@
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "uavfXvHsaHE",
@@ -23389,7 +23389,7 @@
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (60%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "KTE64Yhz0Kw",
@@ -23402,7 +23402,7 @@
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (60%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "ElB4x7XlyoU",
@@ -23415,7 +23415,7 @@
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (60%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "pBgnsRqj9sM",
@@ -23428,7 +23428,7 @@
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (60%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "VRKkVeFK6xk",
@@ -23453,7 +23453,7 @@
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (82%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "kEMLjtwHFpk",
@@ -23466,7 +23466,7 @@
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (82%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "6s6jQsPib-k",
@@ -23503,7 +23503,7 @@
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "vZMrfg6Vj4g",
@@ -23516,7 +23516,7 @@
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "l-wy1qHrDQA",
@@ -23577,7 +23577,7 @@
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "KlPVIqdw7oY",
@@ -23590,7 +23590,7 @@
     "masterId": "zMbfIcbatBI",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "bvoCb6vlnno",
@@ -23639,7 +23639,7 @@
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "oeEMH9OymrA",
@@ -23652,7 +23652,7 @@
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "aup-S0j6fuI",
@@ -23665,7 +23665,7 @@
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "0jekNznauvQ",
@@ -23678,7 +23678,7 @@
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "0-nzKOVpoR8",
@@ -23715,7 +23715,7 @@
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "yiPxa3Bi6XI",
@@ -23728,7 +23728,7 @@
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Wb00frPm7CY",
@@ -23741,7 +23741,7 @@
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "4VJn0Ay0zWw",
@@ -23754,7 +23754,7 @@
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (80%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "CY98Ne1OE_g",
@@ -23767,7 +23767,7 @@
     "masterId": "CY98Ne1OE_g",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "6mVOV4CSaag",
@@ -23780,7 +23780,7 @@
     "masterId": "CY98Ne1OE_g",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "782G9RyVFmI",
@@ -24081,7 +24081,7 @@
     "masterId": "xUgZ0_KyqI8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "u91tesZ-TrA",
@@ -24094,7 +24094,7 @@
     "masterId": "xUgZ0_KyqI8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata - Duração Diferente (100%)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "a9VU7vn8xHY",
@@ -24107,7 +24107,7 @@
     "masterId": "xUgZ0_KyqI8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "HnfIaILPieU",
@@ -24240,7 +24240,7 @@
     "masterId": "xPv8CF-7HIc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "SQgUrQWUH2k",
@@ -24253,7 +24253,7 @@
     "masterId": "xPv8CF-7HIc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "UVCwZ-56eNs",
@@ -24398,7 +24398,7 @@
     "masterId": "zZWvfMVYfU0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "3hR3pRE3eY8",
@@ -24411,7 +24411,7 @@
     "masterId": "zZWvfMVYfU0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "wRY2Q4qP3pE",
@@ -24424,7 +24424,7 @@
     "masterId": "wRY2Q4qP3pE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "yxNZGEEw4bw",
@@ -24437,7 +24437,7 @@
     "masterId": "wRY2Q4qP3pE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "CBMOmo4VxxY",
@@ -24450,7 +24450,7 @@
     "masterId": "CBMOmo4VxxY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "cMMjwQJJ9gc",
@@ -24463,7 +24463,7 @@
     "masterId": "CBMOmo4VxxY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "x_4PghjStaI",
@@ -24476,7 +24476,7 @@
     "masterId": "x_4PghjStaI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "6nYYLHAEFkU",
@@ -24489,7 +24489,7 @@
     "masterId": "x_4PghjStaI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "CAHUfjjuASs",
@@ -24646,7 +24646,7 @@
     "masterId": "sZzigrwPfSI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "T2tOaDgLokw",
@@ -24659,7 +24659,7 @@
     "masterId": "sZzigrwPfSI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "GvmlQZuBGxM",
@@ -24732,7 +24732,7 @@
     "masterId": "sqjYaWP2ki8",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "H6oA2mqMnXA",
@@ -25045,7 +25045,7 @@
     "masterId": "B-YF8fjolEY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "8EpoBwFtmeM",
@@ -25058,7 +25058,7 @@
     "masterId": "B-YF8fjolEY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "q9d1DaPVB3Y",
@@ -25359,7 +25359,7 @@
     "masterId": "lTTQ19cuzJE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "0zWNAkLQ7cA",
@@ -25372,7 +25372,7 @@
     "masterId": "lTTQ19cuzJE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "4TUDbYSG6I0",
@@ -26273,7 +26273,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (69%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "zSaxXPLFBGk",
@@ -26298,7 +26298,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (64%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "URH3O65ZTag",
@@ -26323,7 +26323,7 @@
     "masterId": "BJftdQvdiug",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (44%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "2iR3BNGp3gQ",
@@ -26336,7 +26336,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "SVXqcfRfhjo",
@@ -26349,7 +26349,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "agh5U_Xn24k",
@@ -26374,7 +26374,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "ftJ724l25tY",
@@ -26387,7 +26387,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "bkxDtVg_Vjg",
@@ -26412,7 +26412,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "nXkFEw4Jb1k",
@@ -26425,7 +26425,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "gyU1jg21uX0",
@@ -26438,7 +26438,7 @@
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (58%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "p6pnhMcc7ZA",
@@ -26463,7 +26463,7 @@
     "masterId": "DqAGHgDPAro",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "uKey6wKD7zI",
@@ -26476,7 +26476,7 @@
     "masterId": "uKey6wKD7zI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "gE0qMIDHvX4",
@@ -26489,7 +26489,7 @@
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Yee51zytAVs",
@@ -26502,7 +26502,7 @@
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "FBUlC_5M9r4",
@@ -26515,7 +26515,7 @@
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "tqmyKfd4Q0Y",
@@ -26540,7 +26540,7 @@
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "rkvvw82FFpQ",
@@ -26565,7 +26565,7 @@
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "LR0i0Gaaicw",
@@ -26578,7 +26578,7 @@
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "MBjGt0N-u84",
@@ -26603,7 +26603,7 @@
     "masterId": "zMbfIcbatBI",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "9oRnPLZKP4Y",
@@ -26616,7 +26616,7 @@
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "mG93LdsgoOQ",
@@ -26641,7 +26641,7 @@
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (55%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "9X0NZ9MJVJc",
@@ -26654,7 +26654,7 @@
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "6TZ3xj6gDgI",
@@ -26679,7 +26679,7 @@
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "_ajXUesjQsw",
@@ -26692,7 +26692,7 @@
     "masterId": "_ajXUesjQsw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "kiFAbg2jxBM",
@@ -26705,7 +26705,7 @@
     "masterId": "xUgZ0_KyqI8",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "fC_dhsTPugs",
@@ -26730,7 +26730,7 @@
     "masterId": "xPv8CF-7HIc",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "2GE2zv231l0",
@@ -26755,7 +26755,7 @@
     "masterId": "sZzigrwPfSI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (75%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "kYWsqOR0460",
@@ -26768,7 +26768,7 @@
     "masterId": "sqjYaWP2ki8",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "8WIFT0zK_JQ",
@@ -26841,7 +26841,7 @@
     "masterId": "tYH2zNUCiEQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "WRbAndncxgA",
@@ -26854,7 +26854,7 @@
     "masterId": "WRbAndncxgA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "fxzdUzf45L4",
@@ -26867,7 +26867,7 @@
     "masterId": "fxzdUzf45L4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "dH3ot6xErcQ",
@@ -26880,7 +26880,7 @@
     "masterId": "dH3ot6xErcQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "RQt7DqK-AUc",
@@ -26893,7 +26893,7 @@
     "masterId": "RQt7DqK-AUc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "d877ug4F1_c",
@@ -26918,7 +26918,7 @@
     "masterId": "B-YF8fjolEY",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (73%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "1S-wTbmol-0",
@@ -26931,7 +26931,7 @@
     "masterId": "1S-wTbmol-0",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Ok_f_cdNwd8",
@@ -26956,7 +26956,7 @@
     "masterId": "AHvIJsYWxYM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sgDZOfxXKME",
@@ -26993,7 +26993,7 @@
     "masterId": "gOfqMgShyfI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "anm8zxAhaRc",
@@ -27006,7 +27006,7 @@
     "masterId": "anm8zxAhaRc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "EUYfQdTJvhE",
@@ -27019,7 +27019,7 @@
     "masterId": "EUYfQdTJvhE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "lbynaFUPCcA",
@@ -27056,7 +27056,7 @@
     "masterId": "XAqXrvnjckY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "VGRD0QCuTKw",
@@ -27105,7 +27105,7 @@
     "masterId": "ZMz_-660qHw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "uFpJwiPiRrY",
@@ -27322,7 +27322,7 @@
     "masterId": "P2HAupa1FDA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "VXIlLWm0u88",
@@ -27371,7 +27371,7 @@
     "masterId": "tIg4z9voaks",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "eFaxXm2fnaU",
@@ -27660,7 +27660,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "iP-aLMHgoKQ",
@@ -27685,7 +27685,7 @@
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (64%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "DGt5KEa28I4",
@@ -27698,7 +27698,7 @@
     "masterId": "BJftdQvdiug",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (44%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "TE4WSLGTZhk",
@@ -27723,7 +27723,7 @@
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "XESP3uR1y_s",
@@ -27748,7 +27748,7 @@
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "59tM8lAELj8",
@@ -27785,7 +27785,7 @@
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "0qMUvomOXoQ",
@@ -27798,7 +27798,7 @@
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "wkvHTmBb8zE",
@@ -27811,7 +27811,7 @@
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "SU2qKcvxVuo",
@@ -27836,7 +27836,7 @@
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "LR2Rs5qgB54",
@@ -27885,7 +27885,7 @@
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (58%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Sv5-0ZoQdIE",
@@ -27922,7 +27922,7 @@
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "yPW-Jq4S_Ek",
@@ -28019,7 +28019,7 @@
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
     "tipoMaster": "Duplicado (Forçado Manualmente)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "fRg8Z6eODbk",
@@ -28032,7 +28032,7 @@
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
     "tipoMaster": "Duplicado - Reenvio/Subtítulo (50%) (Critério B)",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "6YKXNoGR9Sk",
@@ -28201,7 +28201,7 @@
     "masterId": "buA3GzuxAqw",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "EKs-4VUNjhk",
@@ -28310,7 +28310,7 @@
     "masterId": "5UptBv7FT1E",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "O7vQ7D3Wdrs",
@@ -28335,7 +28335,7 @@
     "masterId": "nDHzWVa0lYc",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "PZ8BS4OJuo4",
@@ -28348,7 +28348,7 @@
     "masterId": "PZ8BS4OJuo4",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sOjCP0kc5sE",
@@ -28373,7 +28373,7 @@
     "masterId": "gnKC_QCy2DE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "TB28j7SGHoU",
@@ -28398,7 +28398,7 @@
     "masterId": "VJIl5swflcU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "yw4z6cNmW28",
@@ -28411,7 +28411,7 @@
     "masterId": "yw4z6cNmW28",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sUoitSPe_Hw",
@@ -28448,7 +28448,7 @@
     "masterId": "gNNTB0R71TM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "BYpXqsb8cTs",
@@ -28461,7 +28461,7 @@
     "masterId": "BYpXqsb8cTs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "JzTzp3BPq4k",
@@ -28474,7 +28474,7 @@
     "masterId": "JzTzp3BPq4k",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Ab_ROQAO6hE",
@@ -28487,7 +28487,7 @@
     "masterId": "Ab_ROQAO6hE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "R25JM9J8_VE",
@@ -28512,7 +28512,7 @@
     "masterId": "JBbb3p5aeCA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Fd-kaqA1zXY",
@@ -28681,7 +28681,7 @@
     "masterId": "4eNiJCGpx7M",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "L8CweqBSD-A",
@@ -28694,7 +28694,7 @@
     "masterId": "L8CweqBSD-A",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "PrhY3HH01h4",
@@ -28707,7 +28707,7 @@
     "masterId": "PrhY3HH01h4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "KoBYLPXobQc",
@@ -28720,7 +28720,7 @@
     "masterId": "KoBYLPXobQc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0RBVUcHE6vI",
@@ -28733,7 +28733,7 @@
     "masterId": "0RBVUcHE6vI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GCu-ugitFOM",
@@ -28746,7 +28746,7 @@
     "masterId": "GCu-ugitFOM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0lpmXqVOlw0",
@@ -28771,7 +28771,7 @@
     "masterId": "9swOU8GmIkA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "sGMHa3U26rs",
@@ -28784,7 +28784,7 @@
     "masterId": "sGMHa3U26rs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "lNUpDrhaoys",
@@ -29325,7 +29325,7 @@
     "masterId": "M5xPWSyX-To",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "gBVaaLrE7Ds",
@@ -29338,7 +29338,7 @@
     "masterId": "gBVaaLrE7Ds",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0DxFsQQHqeI",
@@ -29351,7 +29351,7 @@
     "masterId": "0DxFsQQHqeI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "yELzRFoVljo",
@@ -29364,7 +29364,7 @@
     "masterId": "yELzRFoVljo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "kdpNEfwLVQw",
@@ -29401,7 +29401,7 @@
     "masterId": "HSQz4B2l8a0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Ti2Y7rgAJ7Q",
@@ -29414,7 +29414,7 @@
     "masterId": "Ti2Y7rgAJ7Q",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "J_qzSndAj7Y",
@@ -29427,7 +29427,7 @@
     "masterId": "J_qzSndAj7Y",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "21N4d3qnzys",
@@ -29440,7 +29440,7 @@
     "masterId": "21N4d3qnzys",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5P1NsQDzSO0",
@@ -29453,7 +29453,7 @@
     "masterId": "5P1NsQDzSO0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "qwxHaUI6WAg",
@@ -29466,7 +29466,7 @@
     "masterId": "qwxHaUI6WAg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "x7JKMOBXRho",
@@ -29479,7 +29479,7 @@
     "masterId": "x7JKMOBXRho",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "zTBZM_0ph04",
@@ -29492,7 +29492,7 @@
     "masterId": "zTBZM_0ph04",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "eQf-uyngUtg",
@@ -29829,7 +29829,7 @@
     "masterId": "Zox__4ph6Fo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "-3cAi9euY2M",
@@ -29842,7 +29842,7 @@
     "masterId": "-3cAi9euY2M",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ujPonuZbXEg",
@@ -29855,7 +29855,7 @@
     "masterId": "ujPonuZbXEg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Mk_utFhw-AA",
@@ -29880,7 +29880,7 @@
     "masterId": "LdpnttS2prM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "g-Gd0izE4B8",
@@ -29893,7 +29893,7 @@
     "masterId": "g-Gd0izE4B8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Q0RePeopN4M",
@@ -29906,7 +29906,7 @@
     "masterId": "Q0RePeopN4M",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "iHTRd0dzmcU",
@@ -29919,7 +29919,7 @@
     "masterId": "iHTRd0dzmcU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0BDRWvepPDA",
@@ -30172,7 +30172,7 @@
     "masterId": "ooFMEtCgtqE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "zzdDizTYpac",
@@ -30185,7 +30185,7 @@
     "masterId": "zzdDizTYpac",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "fuwWoimTsXY",
@@ -30198,7 +30198,7 @@
     "masterId": "fuwWoimTsXY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "FHCM1gujN-I",
@@ -30211,7 +30211,7 @@
     "masterId": "FHCM1gujN-I",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "t8ncULCoGD0",
@@ -30224,7 +30224,7 @@
     "masterId": "t8ncULCoGD0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "z9p6AzuDaA0",
@@ -30237,7 +30237,7 @@
     "masterId": "z9p6AzuDaA0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Es5uQQif7JQ",
@@ -30250,7 +30250,7 @@
     "masterId": "Es5uQQif7JQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "0p5IjKfQJeg",
@@ -30263,7 +30263,7 @@
     "masterId": "0p5IjKfQJeg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "CsID0xT5ysk",
@@ -30276,7 +30276,7 @@
     "masterId": "CsID0xT5ysk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "5sLJp4qx5Hg",
@@ -30289,7 +30289,7 @@
     "masterId": "5sLJp4qx5Hg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Relato"
+    "categoria": "Relato"
   },
   {
     "videoId": "raRg6X2u_-k",
@@ -30326,7 +30326,7 @@
     "masterId": "PYCTXEl7sKY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "L_Qcjlp9fAw",
@@ -30351,7 +30351,7 @@
     "masterId": "Rj-Z1cjgy3s",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "FgBS1iwN3Ng",
@@ -30364,7 +30364,7 @@
     "masterId": "FgBS1iwN3Ng",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "PwpWh17-ZmQ",
@@ -30389,7 +30389,7 @@
     "masterId": "6ye_fOlywfs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Q2dNITw6E2U",
@@ -30402,7 +30402,7 @@
     "masterId": "Q2dNITw6E2U",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "-Piy83__uFk",
@@ -30415,7 +30415,7 @@
     "masterId": "-Piy83__uFk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "-0gXRjtImaU",
@@ -30428,7 +30428,7 @@
     "masterId": "-0gXRjtImaU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "EnvpqlEJOkI",
@@ -30441,7 +30441,7 @@
     "masterId": "EnvpqlEJOkI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "D9D0MjCWlV4",
@@ -30454,7 +30454,7 @@
     "masterId": "D9D0MjCWlV4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "OiHZ_4CYkyQ",
@@ -30467,7 +30467,7 @@
     "masterId": "OiHZ_4CYkyQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "pRfeRBJ3LNc",
@@ -30480,7 +30480,7 @@
     "masterId": "pRfeRBJ3LNc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "hcaCD5mwkCU",
@@ -30493,7 +30493,7 @@
     "masterId": "hcaCD5mwkCU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "0kOlmIPzM7k",
@@ -30506,7 +30506,7 @@
     "masterId": "0kOlmIPzM7k",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "3ZmXSKQoDhM",
@@ -30519,7 +30519,7 @@
     "masterId": "3ZmXSKQoDhM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "J801Vn0MKIQ",
@@ -30544,7 +30544,7 @@
     "masterId": "ARIkdmEGehg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ph9T3e1DvAY",
@@ -30569,7 +30569,7 @@
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ClHzoOFZTwQ",
@@ -30582,7 +30582,7 @@
     "masterId": "ClHzoOFZTwQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "n-PpP6gFxbU",
@@ -30595,7 +30595,7 @@
     "masterId": "n-PpP6gFxbU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "RwZy063kXVA",
@@ -30608,7 +30608,7 @@
     "masterId": "RwZy063kXVA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "6Ck2ID9-HOs",
@@ -30621,7 +30621,7 @@
     "masterId": "6Ck2ID9-HOs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "IzwJ7lZziYQ",
@@ -30658,7 +30658,7 @@
     "masterId": "5E0Ae3SJdAs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "j6eJO_2YMsY",
@@ -30671,7 +30671,7 @@
     "masterId": "j6eJO_2YMsY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "QSONnDSxP3k",
@@ -30684,7 +30684,7 @@
     "masterId": "QSONnDSxP3k",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "u5vgI2ulkxs",
@@ -30697,7 +30697,7 @@
     "masterId": "u5vgI2ulkxs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "c1we5wYrwt0",
@@ -30710,7 +30710,7 @@
     "masterId": "c1we5wYrwt0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "VtoFsKzahh4",
@@ -30735,7 +30735,7 @@
     "masterId": "tO7lFE7-N7Q",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "8ClSoY2vd8A",
@@ -30808,7 +30808,7 @@
     "masterId": "ARIkdmEGehg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "UflnST3W834",
@@ -30821,7 +30821,7 @@
     "masterId": "ARIkdmEGehg",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "yW1XJ-iqst0",
@@ -30870,7 +30870,7 @@
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "lZFSIhLFzJ0",
@@ -30883,7 +30883,7 @@
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "CGMhh0T8WH0",
@@ -30920,7 +30920,7 @@
     "masterId": "ClHzoOFZTwQ",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "opCUeNZImWM",
@@ -30933,7 +30933,7 @@
     "masterId": "ClHzoOFZTwQ",
     "isMaster": false,
     "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "xoUxrChLQMY",
@@ -30970,7 +30970,7 @@
     "masterId": "U-89DyGYThU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ZHjESmLErik",
@@ -30983,7 +30983,7 @@
     "masterId": "ZHjESmLErik",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "4bumnUeCKoc",
@@ -31008,7 +31008,7 @@
     "masterId": "tS3MWivrEVg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "zGqgHqTr1WA",
@@ -31069,7 +31069,7 @@
     "masterId": "vSfChat3q-w",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "gr7ze7bOEj4",
@@ -31082,7 +31082,7 @@
     "masterId": "gr7ze7bOEj4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "tWY_zklo7BE",
@@ -31119,7 +31119,7 @@
     "masterId": "E323qlgXVLs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "bcGUcbnyH2M",
@@ -31156,7 +31156,7 @@
     "masterId": "CbHAjsmyWCc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "OzLBm8GO21Q",
@@ -31169,7 +31169,7 @@
     "masterId": "OzLBm8GO21Q",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Análise"
+    "categoria": "Análise"
   },
   {
     "videoId": "qTdRdTKDZxY",
@@ -31182,7 +31182,7 @@
     "masterId": "qTdRdTKDZxY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "oYsBXYGrDFk",
@@ -31195,7 +31195,7 @@
     "masterId": "oYsBXYGrDFk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "MvJ5BPhJgjw",
@@ -31232,7 +31232,7 @@
     "masterId": "YQrxLpEH5zc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "HdDgOpeYU7M",
@@ -31269,7 +31269,7 @@
     "masterId": "sD0BE99BG2s",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "qoeSXRi0rAs",
@@ -31294,7 +31294,7 @@
     "masterId": "rofLoEcYMko",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Wyg-bZ-ivN0",
@@ -31451,7 +31451,7 @@
     "masterId": "NOj6A5zjB4o",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5lLMWIjpJYA",
@@ -31464,7 +31464,7 @@
     "masterId": "5lLMWIjpJYA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "KdkCDZjyolI",
@@ -31477,7 +31477,7 @@
     "masterId": "KdkCDZjyolI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bVGq0HUSyBA",
@@ -31646,7 +31646,7 @@
     "masterId": "cM-QbbRoefo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "boQhkp-AA5c",
@@ -31671,7 +31671,7 @@
     "masterId": "qSPRLRaPxiY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "knRDlkqpH9A",
@@ -31684,7 +31684,7 @@
     "masterId": "knRDlkqpH9A",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "d5MShwgq42U",
@@ -31697,7 +31697,7 @@
     "masterId": "d5MShwgq42U",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Fd8LRahkXPk",
@@ -31710,7 +31710,7 @@
     "masterId": "Fd8LRahkXPk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "S4XLNPXMmMc",
@@ -31723,7 +31723,7 @@
     "masterId": "S4XLNPXMmMc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GFxuAhO0qG8",
@@ -31736,7 +31736,7 @@
     "masterId": "GFxuAhO0qG8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "XTVYVrkceII",
@@ -31749,7 +31749,7 @@
     "masterId": "XTVYVrkceII",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "08OwDqAya6g",
@@ -31762,7 +31762,7 @@
     "masterId": "08OwDqAya6g",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "HE6EAx_AfK8",
@@ -31775,7 +31775,7 @@
     "masterId": "HE6EAx_AfK8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "Ja8MHQUpPbg",
@@ -31788,7 +31788,7 @@
     "masterId": "Ja8MHQUpPbg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "hwPqbKDRaV8",
@@ -31801,7 +31801,7 @@
     "masterId": "hwPqbKDRaV8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "F2hm2aUa4Qg",
@@ -31814,7 +31814,7 @@
     "masterId": "F2hm2aUa4Qg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "QHJbr1aftOg",
@@ -31827,7 +31827,7 @@
     "masterId": "QHJbr1aftOg",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "uKlTGTRVshA",
@@ -31840,7 +31840,7 @@
     "masterId": "uKlTGTRVshA",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "NamZbP-B-uE",
@@ -31853,7 +31853,7 @@
     "masterId": "NamZbP-B-uE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "fY-QJORtIh0",
@@ -31866,7 +31866,7 @@
     "masterId": "fY-QJORtIh0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "K_qOtK7INTM",
@@ -31879,7 +31879,7 @@
     "masterId": "K_qOtK7INTM",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "8853EyqHQQQ",
@@ -31892,7 +31892,7 @@
     "masterId": "8853EyqHQQQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "1euYHCtqJ20",
@@ -31905,7 +31905,7 @@
     "masterId": "1euYHCtqJ20",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "aPq6PUaSEv8",
@@ -31918,7 +31918,7 @@
     "masterId": "aPq6PUaSEv8",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "V0LsAe0VuEU",
@@ -31931,7 +31931,7 @@
     "masterId": "V0LsAe0VuEU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "02MAU9k73iY",
@@ -31944,7 +31944,7 @@
     "masterId": "02MAU9k73iY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "f-s7IJsLBDs",
@@ -31957,7 +31957,7 @@
     "masterId": "f-s7IJsLBDs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "DHKaWvtNtc4",
@@ -31970,7 +31970,7 @@
     "masterId": "DHKaWvtNtc4",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ucUKzkbwvMI",
@@ -31983,7 +31983,7 @@
     "masterId": "ucUKzkbwvMI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "09g_5g2_8gk",
@@ -31996,7 +31996,7 @@
     "masterId": "09g_5g2_8gk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "8FY4CtdYB0s",
@@ -32009,7 +32009,7 @@
     "masterId": "8FY4CtdYB0s",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "zGJmN3AoBj0",
@@ -32022,7 +32022,7 @@
     "masterId": "zGJmN3AoBj0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Meditação"
+    "categoria": "Meditação"
   },
   {
     "videoId": "Q9MkDbHhIkQ",
@@ -32035,7 +32035,7 @@
     "masterId": "Q9MkDbHhIkQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "dwHYieAC4_8",
@@ -32060,7 +32060,7 @@
     "masterId": "UK2uCMnT85U",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "2sosDNlux-g",
@@ -32073,7 +32073,7 @@
     "masterId": "2sosDNlux-g",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "GNHf7YafNxM",
@@ -32086,7 +32086,7 @@
     "masterId": "GNHf7YafNxM",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "VxQvz9Tb4HQ",
@@ -32099,7 +32099,7 @@
     "masterId": "VxQvz9Tb4HQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "RP2QtGNf8OA",
@@ -32124,7 +32124,7 @@
     "masterId": "jH0JDXXeA3w",
     "isMaster": true,
     "tipoMaster": "Master Original (Forçado Manualmente)",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "DMnxqzXsdpQ",
@@ -32173,7 +32173,7 @@
     "masterId": "Llb-ifJ9zZo",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "_TO7OV6APvk",
@@ -32198,7 +32198,7 @@
     "masterId": "lC6_G3ijjtk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "P3drmSXW3OQ",
@@ -32211,7 +32211,7 @@
     "masterId": "P3drmSXW3OQ",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "SqipHj9vaS4",
@@ -32236,7 +32236,7 @@
     "masterId": "_vZqS9Z8sYs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "nHMosUNpImQ",
@@ -32309,7 +32309,7 @@
     "masterId": "L6qwWN1oPjE",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "UNh9uM1Sur8",
@@ -32334,7 +32334,7 @@
     "masterId": "qCDKfNEeTrI",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "FoUBXSYLelM",
@@ -32359,7 +32359,7 @@
     "masterId": "jqHKR_c1o6s",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "z3hYrJ-GsXU",
@@ -32372,7 +32372,7 @@
     "masterId": "z3hYrJ-GsXU",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "bir1Be2wr50",
@@ -32397,7 +32397,7 @@
     "masterId": "ZFQLMuTUqP0",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "5LcPQVOWvmc",
@@ -32410,7 +32410,7 @@
     "masterId": "5LcPQVOWvmc",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "VlbEGiK4K0o",
@@ -32423,7 +32423,7 @@
     "masterId": "VlbEGiK4K0o",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "ux4EuD0YWMY",
@@ -32436,7 +32436,7 @@
     "masterId": "ux4EuD0YWMY",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "CQ6Lu30eRzk",
@@ -32449,7 +32449,7 @@
     "masterId": "CQ6Lu30eRzk",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "RzO_r-0gPYs",
@@ -32462,7 +32462,7 @@
     "masterId": "RzO_r-0gPYs",
     "isMaster": true,
     "tipoMaster": "Master Original",
-    "taxonomia": "cat:Série"
+    "categoria": "Série"
   },
   {
     "videoId": "SFDv-w1bdr0",
