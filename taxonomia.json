@@ -1,679 +1,2009 @@
 {
-  "tkA6jkRfZA8": "cat:Meditação",
-  "EYeC98jy14k": "cat:Análise",
-  "ZzfbcG_8ubA": "cat:Análise",
-  "SVY2kUI0M9A": "cat:Meditação",
-  "VJSH1B1H8bs": "cat:Relato",
-  "jww4aqScaDU": "cat:Série",
-  "7V87AazHwnk": "cat:Série",
-  "c4rqQxwtHis": "cat:Série",
-  "icZGEhYGsiY": "cat:Série",
-  "bnQ8fUTNMrE": "cat:Relato",
-  "MCawY4-0jok": "cat:Série",
-  "zdO9_VsFdHs": "cat:Série",
-  "bwFfnFsXn-8": "cat:Relato",
-  "KglaESI2by0": "cat:Análise",
-  "Iq62odHvBvQ": "cat:Relato",
-  "-sW_HZbt7Zk": "cat:Relato",
-  "ftF_A1B7Rkk": "cat:Relato",
-  "dGytfUaW61A": "cat:Relato",
-  "5-1KTL0qqYs": "cat:Relato",
-  "JyVNYvpNtFk": "cat:Relato",
-  "B3q4alABGMo": "cat:Relato",
-  "gNWSPLcmMjg": "cat:Relato",
-  "0pOjtceFYCI": "cat:Relato",
-  "0E3kkpYb_z4": "cat:Relato",
-  "Vx6TsL0CxKE": "cat:Relato",
-  "NTHneEcA5M4": "cat:Relato",
-  "UYDjJ2Leoy8": "cat:Relato",
-  "m4rsYhCsiw0": "cat:Relato",
-  "A4OGpu3MAWU": "cat:Série",
-  "R3c3jmVrpE0": "cat:Análise",
-  "M0MuirU7IDo": "cat:Relato",
-  "IJd_A_Kaq38": "cat:Relato",
-  "RqpQLP0xvmo": "cat:Relato",
-  "V4BdQLnfUU0": "cat:Meditação",
-  "lh3p1mIsQB0": "cat:Relato",
-  "183dK-CtSe8": "cat:Relato",
-  "_4XByUv9V0I": "cat:Série",
-  "9z3F6iG1eNU": "cat:Série",
-  "H-1g4nmKmlw": "cat:Série",
-  "XESROTsjNHw": "cat:Relato",
-  "hXASa_dWsmY": "cat:Relato",
-  "ddbK-fzrPUc": "cat:Série",
-  "5uG2BvqYGHM": "cat:Relato",
-  "ED1ZTHwASdI": "cat:Série",
-  "mzsEsMyPjWI": "cat:Análise",
-  "GLX-Q5QOGxE": "cat:Série",
-  "F8J0ANqz6tU": "cat:Série",
-  "ySJH2AhtYjA": "cat:Série",
-  "ekDuiY617HE": "cat:Série",
-  "B671kwRkluw": "cat:Série",
-  "18p4_Mzt8q4": "cat:Relato",
-  "wAwavShzOU8": "cat:Relato",
-  "OGcR1F1uQOk": "cat:Série",
-  "9VA6vX_BF0k": "cat:Série",
-  "MBiakfyOZ48": "cat:Série",
-  "y7UaKtbUVdw": "cat:Série",
-  "gkc1B-xaI-Y": "cat:Série",
-  "vnb5kG_z5Vk": "cat:Série",
-  "puehew6YtYA": "cat:Série",
-  "FPd1eLgjHbI": "cat:Série",
-  "g_6Pz_kAbwQ": "cat:Análise",
-  "bi4ayKJyVRA": "cat:Série",
-  "H089SI6_4Mg": "cat:Relato",
-  "EION4sZtrVk": "cat:Relato",
-  "4jJQv6h8bIQ": "cat:Relato",
-  "27GAyDzjGo4": "cat:Série",
-  "6_pjFKb0bmY": "cat:Relato",
-  "rwpfK7NzDqg": "cat:Relato",
-  "dRLFuDVBTgk": "cat:Relato",
-  "3dXWo1LKpak": "cat:Relato",
-  "7775xa5yYgE": "cat:Série",
-  "nt5NwV6DapE": "cat:Série",
-  "moFeTXBpY0Y": "cat:Série",
-  "R0suMDFWq4A": "cat:Série",
-  "081XA3dwCr4": "cat:Série",
-  "mC1Sn7HCOl0": "cat:Meditação",
-  "IjMUgbwceFM": "cat:Série",
-  "wZlZh37pmUY": "cat:Relato",
-  "MkLUHMnW91Q": "cat:Meditação",
-  "8C8-MYJnn7o": "cat:Relato",
-  "w_GIN3nr4V4": "cat:Relato",
-  "QWZ8MOZedZg": "cat:Série",
-  "nKHF3RqFm_s": "cat:Relato",
-  "_Zip9TrdLtQ": "cat:Relato",
-  "7apJWqZJKBQ": "cat:Relato",
-  "4ikyZE9F5FY": "cat:Relato",
-  "de4JFDXOyhY": "cat:Série",
-  "-_Fi91l_mlo": "cat:Série",
-  "pfSjDOJRtdI": "cat:Série",
-  "R3irYqwefH0": "cat:Série",
-  "52AeGHpqpbo": "cat:Série",
-  "CwgpfYu3ICs": "cat:Série",
-  "YIBMABY3OKg": "cat:Série",
-  "41n5Fno2G28": "cat:Série",
-  "yIfawiCc2Zs": "cat:Série",
-  "bpzO8bOb4V8": "cat:Série",
-  "ggSLMcrJMSY": "cat:Série",
-  "LgtkanarJBg": "cat:Série",
-  "qEWjw3PzLLM": "cat:Série",
-  "KObgNw6uceM": "cat:Série",
-  "cBjq-mecWwA": "cat:Meditação",
-  "sTYeag1JfhQ": "cat:Série",
-  "u7dNpSdQG0w": "cat:Série",
-  "Co3B08_XlgE": "cat:Série",
-  "5VHHmKTEBB0": "cat:Série",
-  "gzsFxvw2Ypc": "cat:Série",
-  "PNf9SGIjMAA": "cat:Série",
-  "tcaYX8f4TH0": "cat:Série",
-  "i4Cy0k-gDhM": "cat:Série",
-  "jD0XtXfqbSA": "cat:Série",
-  "he1P1TVd-k4": "cat:Série",
-  "FYm735cDqnU": "cat:Série",
-  "SVmin3lwpfQ": "cat:Série",
-  "AJjHANkeGIs": "cat:Relato",
-  "NZSJQWaTEx0": "cat:Série",
-  "Wyz6c9NXWyM": "cat:Série",
-  "CYEUjAdCXKw": "cat:Série",
-  "QjE5mr8k98Q": "cat:Série",
-  "0fYXNhOHrvE": "cat:Série",
-  "A9Lz_X_t2Ig": "cat:Série",
-  "pabFZIH0UtU": "cat:Relato",
-  "a7xwFh_9ENM": "cat:Série",
-  "Er55OvFmMlU": "cat:Relato",
-  "lkEQ_tQU-g8": "cat:Série",
-  "xuAZs3YNJ9w": "cat:Série",
-  "ySVye52hN_I": "cat:Série",
-  "GLeReIZmhKY": "cat:Série",
-  "wHVfTQtkw9E": "cat:Série",
-  "otgpmKM4aSQ": "cat:Meditação",
-  "SwqtzbIdibw": "cat:Série",
-  "trQb5VMZhIs": "cat:Série",
-  "W-LvchHgSEY": "cat:Série",
-  "Fhh0Rm2eY4A": "cat:Série",
-  "gNlbul72BZ8": "cat:Série",
-  "QrH3SrOpecE": "cat:Meditação",
-  "6N-WY3iCUek": "cat:Relato",
-  "DvR9sNvnZYE": "cat:Análise",
-  "gez59hbxpHI": "cat:Relato",
-  "zX0QxkraD5Q": "cat:Meditação",
-  "GZDo33OUFjI": "cat:Meditação",
-  "tZWoi8xvxxk": "cat:Série",
-  "r9yqX09EETk": "cat:Série",
-  "DR90pbXcA9k": "cat:Série",
-  "LG3ip1_jUG8": "cat:Série",
-  "Wk13w6HYxeM": "cat:Relato",
-  "bYjkqLteZfU": "cat:Série",
-  "dgq3SHs1vZM": "cat:Série",
-  "gE2YSijkoNk": "cat:Série",
-  "N4WM5D8JP8o": "cat:Série",
-  "cmviPwjbq8g": "cat:Série",
-  "XfarVkbmzgc": "cat:Série",
-  "orTZfxbkjr4": "cat:Relato",
-  "LJ8V6vrLBco": "cat:Série",
-  "LKuE_yeHXAA": "cat:Série",
-  "511WX6TY3xE": "cat:Relato",
-  "E1_TRgU4KQw": "cat:Série",
-  "e7LDSpBJIS0": "cat:Série",
-  "H-48O8l-B_w": "cat:Série",
-  "Tmdte5yjIHI": "cat:Relato",
-  "5UVwlU-ndxE": "cat:Série",
-  "t-2BQWBkOFw": "cat:Série",
-  "D0ZEhf8IAUI": "cat:Série",
-  "dEqP6Brqwe0": "cat:Série",
-  "_hsI9RIm67g": "cat:Relato",
-  "0GLvuh4--Wc": "cat:Meditação",
-  "PFaWvB8LIHo": "cat:Meditação",
-  "No0FMbIhfv0": "cat:Meditação",
-  "2TTa82dKAYg": "cat:Meditação",
-  "XzJaJjxracg": "cat:Meditação",
-  "rshyx1DJqaQ": "cat:Meditação",
-  "OGyx2lasAPM": "cat:Meditação",
-  "v2wm_GuNjm0": "cat:Meditação",
-  "dO-eWKBCm7s": "cat:Meditação",
-  "9XTa9NHVqR8": "cat:Meditação",
-  "3VldsFbAJ9w": "cat:Meditação",
-  "iXooTc1N6XE": "cat:Série",
-  "f_nWICbHuFY": "cat:Meditação",
-  "n21fvRAXwYA": "cat:Série",
-  "YEW1ww2G9ak": "cat:Série",
-  "VP_DJOTSZfo": "cat:Série",
-  "_LSeKt8ePM8": "cat:Série",
-  "vxFXwfpGLEw": "cat:Série",
-  "KC_J9gewg5I": "cat:Série",
-  "if-9URWZznI": "cat:Série",
-  "GfqpQHlLHCQ": "cat:Série",
-  "8fGQKXU1jc4": "cat:Série",
-  "ItmlkmiMYKc": "cat:Série",
-  "afR3rlPA2z8": "cat:Relato",
-  "OQ2h2uDOl7c": "cat:Série",
-  "RvdS7Qy4FCk": "cat:Série",
-  "Hl1ONjGaz_U": "cat:Série",
-  "fbW9073pTb4": "cat:Série",
-  "DAR33eeLlec": "cat:Série",
-  "Ane-dkn5Uf0": "cat:Série",
-  "20NzuN4byXs": "cat:Análise",
-  "8vfbcfF_ulQ": "cat:Meditação",
-  "ttcpAFEZpVQ": "cat:Meditação",
-  "e0F-83Jd2E4": "cat:Série",
-  "KjzTztklU6I": "cat:Meditação",
-  "gcRUs7OZDxM": "cat:Meditação",
-  "-QlMx6JimBw": "cat:Meditação",
-  "uzmOXOSVa90": "cat:Meditação",
-  "8zaZSwthU60": "cat:Meditação",
-  "w5EcWi-WY7Y": "cat:Meditação",
-  "hrYE9c1UsUA": "cat:Meditação",
-  "E92OG2u4eMg": "cat:Relato",
-  "4OutxDy-K_w": "cat:Meditação",
-  "_YhSiQgK_6Q": "cat:Meditação",
-  "amIL9AZhJPs": "cat:Meditação",
-  "upwxPCJUJwE": "cat:Meditação",
-  "fVqgbmWrXRg": "cat:Meditação",
-  "pCO3uEkFbHk": "cat:Meditação",
-  "OjCa2qrNep8": "cat:Meditação",
-  "EbCbfm-WWk0": "cat:Meditação",
-  "sDwOHDAZVdw": "cat:Meditação",
-  "p0udgWFj_P4": "cat:Meditação",
-  "gYD0CndjkGg": "cat:Meditação",
-  "s7MU-nm8P4U": "cat:Meditação",
-  "BSru029m0bo": "cat:Meditação",
-  "ElB4x7XlyoU": "cat:Meditação",
-  "yPtCirCtiz8": "cat:Meditação",
-  "vq9fFiMzxBo": "cat:Meditação",
-  "bRHeJUYHj6I": "cat:Meditação",
-  "toJaiL2TRG8": "cat:Meditação",
-  "0jekNznauvQ": "cat:Meditação",
-  "Ut5_X7mWhpo": "cat:Meditação",
-  "4VJn0Ay0zWw": "cat:Meditação",
-  "6mVOV4CSaag": "cat:Análise",
-  "u91tesZ-TrA": "cat:Meditação",
-  "a9VU7vn8xHY": "cat:Meditação",
-  "SQgUrQWUH2k": "cat:Meditação",
-  "3hR3pRE3eY8": "cat:Relato",
-  "yxNZGEEw4bw": "cat:Relato",
-  "CBMOmo4VxxY": "cat:Relato",
-  "6nYYLHAEFkU": "cat:Relato",
-  "T2tOaDgLokw": "cat:Meditação",
-  "8EpoBwFtmeM": "cat:Meditação",
-  "lTTQ19cuzJE": "cat:Relato",
-  "BMNor9yUlBg": "cat:Meditação",
-  "JNSy2wXihI8": "cat:Meditação",
-  "CjIohtobdMM": "cat:Relato",
-  "kr4IOwp1DWU": "cat:Análise",
-  "nFJ0J7Y6nzA": "cat:Relato",
-  "6KaqaOMWGMo": "cat:Série",
-  "amegvuAm-d0": "cat:Série",
-  "BJbabj37HCA": "cat:Série",
-  "5S6ansNKi0k": "cat:Série",
-  "VOEZ0hfljxI": "cat:Relato",
-  "zp20qGo5H8E": "cat:Relato",
-  "4DNusdkmAO4": "cat:Análise",
-  "BJftdQvdiug": "cat:Meditação",
-  "t-cQMAd5y60": "cat:Relato",
-  "nvJpNnzslj4": "cat:Relato",
-  "NezKPIiK-rI": "cat:Relato",
-  "cdnpsufVsD4": "cat:Série",
-  "2YKmEE8JM4I": "cat:Série",
-  "l8lrh8mxINM": "cat:Série",
-  "3X5bEScoIt8": "cat:Relato",
-  "yZ-y2vqqaK8": "cat:Relato",
-  "vxu0xKfQ9K0": "cat:Série",
-  "UYeGBkHD5sQ": "cat:Relato",
-  "E17eFbfH0Ag": "cat:Relato",
-  "UlpEM1pxKYU": "cat:Série",
-  "9mYVDH3uD98": "cat:Relato",
-  "3rhxrAixZ7I": "cat:Análise",
-  "5AxV64kQJYY": "cat:Série",
-  "cCRUSUCBW6I": "cat:Série",
-  "VDLbRgi_D78": "cat:Série",
-  "sQv5T4qoegY": "cat:Série",
-  "NUiANXL-rac": "cat:Série",
-  "YdRg1BVbW7g": "cat:Série",
-  "blMQ6wevN2Y": "cat:Série",
-  "Wd8h7yLi9Ro": "cat:Série",
-  "phl2CGsrxiA": "cat:Relato",
-  "yDMUG136FZU": "cat:Relato",
-  "aWz5iBXPSAE": "cat:Relato",
-  "SY1b94rdzas": "cat:Relato",
-  "3xpKk-VC_Os": "cat:Série",
-  "f_WAKM5lE0Y": "cat:Série",
-  "mXSsEkE-L7U": "cat:Série",
-  "_35lB6qGahc": "cat:Série",
-  "sKFNgMqzyMI": "cat:Série",
-  "QSPbNUgTNr8": "cat:Série",
-  "5ORFd5dmJ0I": "cat:Série",
-  "eGS-iR7Xmr0": "cat:Série",
-  "RENXjGpOmNI": "cat:Análise",
-  "i2OradNr44E": "cat:Série",
-  "mCRAaW1BXj0": "cat:Relato",
-  "iNFlq66XaLM": "cat:Relato",
-  "NYy5Zr_7yY4": "cat:Relato",
-  "quXs9-r5Yk0": "cat:Série",
-  "GmAoCxQ0Osk": "cat:Análise",
-  "IcEObqP5jU8": "cat:Relato",
-  "DVBta88Jk40": "cat:Relato",
-  "3tfOhlfh5C4": "cat:Relato",
-  "e-uy1mwcHjA": "cat:Relato",
-  "neCAoZOb6gQ": "cat:Série",
-  "5mTuTaqfh4Q": "cat:Série",
-  "e2K4pM6mbN0": "cat:Série",
-  "4uUs_kifiG8": "cat:Série",
-  "1inB2L9dMcw": "cat:Série",
-  "DewqjWWYwKo": "cat:Meditação",
-  "eh61zYNhFyk": "cat:Série",
-  "vZuiLQCFi48": "cat:Relato",
-  "bIyzi8sykCI": "cat:Meditação",
-  "23H0VmNhJqI": "cat:Série",
-  "NPFlgIf7Cvg": "cat:Série",
-  "rwZVk9XgAQ8": "cat:Série",
-  "-dyHrOi5W5M": "cat:Série",
-  "MIZZvXtTqIA": "cat:Série",
-  "XYS54pAA3mI": "cat:Série",
-  "oBN9CySu9NQ": "cat:Série",
-  "onvtla8K6h8": "cat:Série",
-  "EDBICXsc344": "cat:Série",
-  "UGvEPWubxpY": "cat:Série",
-  "0A41AFffYHI": "cat:Série",
-  "Wp2yp0vziFE": "cat:Relato",
-  "ymrrq5kPGac": "cat:Relato",
-  "AKq4dXVeer8": "cat:Relato",
-  "m7hyeEhZagM": "cat:Série",
-  "rp_h_kjCwd0": "cat:Série",
-  "RlS4i2honX0": "cat:Série",
-  "IkSftksHQ24": "cat:Série",
-  "_xOslYIvwNY": "cat:Série",
-  "jL6m0pcd3nk": "cat:Série",
-  "5EfmYETqFyQ": "cat:Série",
-  "NAOe3LOrrR0": "cat:Série",
-  "gZNIDnwZoAc": "cat:Série",
-  "Vj4agBpVBP0": "cat:Série",
-  "fxXoNjnenA0": "cat:Série",
-  "GmXJoUYO7ZM": "cat:Série",
-  "AKVdOXvTRq4": "cat:Série",
-  "Bd-Lus3c6wA": "cat:Série",
-  "Zavg6C0y0BE": "cat:Meditação",
-  "_iqbsmBa1Ks": "cat:Série",
-  "JKyCJSTViHE": "cat:Série",
-  "KciH3oY8Ll4": "cat:Série",
-  "kT38hiJJPDs": "cat:Série",
-  "XRAxW2naXKU": "cat:Série",
-  "i8YVBYRZ4oI": "cat:Série",
-  "4oXljiHSm-U": "cat:Série",
-  "HOixHvJvgFQ": "cat:Série",
-  "vdtdWR1MhoY": "cat:Análise",
-  "FICM5xkv4Q4": "cat:Série",
-  "7oKjZxpqDeo": "cat:Série",
-  "dNy084tq6_4": "cat:Série",
-  "giFemzAS5D4": "cat:Série",
-  "b0nHFA7IO6s": "cat:Relato",
-  "J7LpXI-lYPU": "cat:Série",
-  "a5OXe960cJU": "cat:Série",
-  "bI6VlbcAvKk": "cat:Série",
-  "xbsAmju4XnI": "cat:Série",
-  "LEpCes1xyLM": "cat:Série",
-  "UiDhztBpojE": "cat:Série",
-  "_nO7wAgmoEc": "cat:Relato",
-  "GKGYGQg_254": "cat:Série",
-  "lEdlkGgEVy8": "cat:Relato",
-  "Rg842_Ev0fs": "cat:Série",
-  "0PYo4FCIerc": "cat:Série",
-  "90K2bsqH-Ck": "cat:Série",
-  "H-qFNoRvog4": "cat:Série",
-  "MuZkCKYHUPU": "cat:Série",
-  "te1SPoFEvo0": "cat:Meditação",
-  "am73ggw3Tpo": "cat:Série",
-  "ACDcxl-ovV8": "cat:Série",
-  "6H9lOe0b3sk": "cat:Série",
-  "FoB4ndAMtpo": "cat:Série",
-  "TBrhoypD694": "cat:Série",
-  "phuDl30MpZ4": "cat:Meditação",
-  "9MWbTWzrcLs": "cat:Relato",
-  "KkMkGJfQSno": "cat:Análise",
-  "JzsozzVpQFA": "cat:Análise",
-  "ttGVv0ItZtM": "cat:Meditação",
-  "6SmkK694VQw": "cat:Meditação",
-  "u8Nm1uEgdtY": "cat:Série",
-  "j3gqgr7DJw8": "cat:Série",
-  "NWZs3qozm10": "cat:Série",
-  "1ZjdTSls2NU": "cat:Série",
-  "eaxHcKwmVNk": "cat:Relato",
-  "j3RjSBun9z8": "cat:Série",
-  "gnhBVJMLoLg": "cat:Série",
-  "QnLM_4EaZt4": "cat:Série",
-  "Z2DG-FMFP0Q": "cat:Série",
-  "P-VeV4NfARI": "cat:Série",
-  "j1YZ4WWwg1o": "cat:Série",
-  "ZuTMgVOAvrA": "cat:Relato",
-  "BsJYPoD7AHM": "cat:Relato",
-  "RA1OP6RA_0g": "cat:Série",
-  "QWoSmHozITY": "cat:Série",
-  "dil72hbv554": "cat:Relato",
-  "xGYoWbR7JXQ": "cat:Série",
-  "oDTXyWp_qmw": "cat:Série",
-  "45q4rcPxx3s": "cat:Série",
-  "ESegqVTTPMg": "cat:Relato",
-  "xjZG2_02yyM": "cat:Série",
-  "5VvKkYLiaJY": "cat:Série",
-  "5TO1-kROz74": "cat:Série",
-  "JtkX2iK335U": "cat:Série",
-  "2SPExlp9tFg": "cat:Relato",
-  "3EFEY5EF9z4": "cat:Meditação",
-  "Dkqh-Oc83CY": "cat:Meditação",
-  "o-DGhTZugSY": "cat:Meditação",
-  "gpGe38oXV5M": "cat:Meditação",
-  "NXYT_HqM33c": "cat:Meditação",
-  "E-v7hySvmvA": "cat:Meditação",
-  "9nnZpfrOg3k": "cat:Meditação",
-  "wMRMCh5h5FY": "cat:Meditação",
-  "3AG5O8QH8to": "cat:Meditação",
-  "9hmlxrOT-PE": "cat:Meditação",
-  "ykmyIlKSpjI": "cat:Meditação",
-  "nbmXgrfdXuw": "cat:Série",
-  "sgoVS_3TRCs": "cat:Meditação",
-  "FzaCFfLYdJ0": "cat:Série",
-  "FZ4fbE90gd4": "cat:Série",
-  "hlX0MGOBjec": "cat:Série",
-  "GKPpU13fc9I": "cat:Série",
-  "OHlbY2iFVC8": "cat:Série",
-  "T_uSrRIIzbo": "cat:Série",
-  "lAFFs4arbTk": "cat:Série",
-  "wWsNyV6woyI": "cat:Série",
-  "UVqB6pmzzRs": "cat:Série",
-  "ktGBTwx31u4": "cat:Série",
-  "cZJpOKXgw2o": "cat:Relato",
-  "weasKSz6IMY": "cat:Série",
-  "hZdStoWHPWs": "cat:Série",
-  "cbtdE9py5-8": "cat:Série",
-  "e_YxQWaTFWw": "cat:Série",
-  "ydtvdjz8nXo": "cat:Série",
-  "uxD2MH4MkZ0": "cat:Série",
-  "bvqmWnIfbkk": "cat:Análise",
-  "0yGfc92hYFk": "cat:Meditação",
-  "5vR_J8D5VMc": "cat:Meditação",
-  "c1eY859uMs8": "cat:Série",
-  "B-rLVmG5uXg": "cat:Meditação",
-  "WATt7PvQrV8": "cat:Meditação",
-  "zMbfIcbatBI": "cat:Meditação",
-  "P5uKIpWPDmE": "cat:Meditação",
-  "1McDGhB_wPg": "cat:Meditação",
-  "aB72x5xi2sw": "cat:Meditação",
-  "eaZB9SSrDBI": "cat:Meditação",
-  "eUp3hsqosn0": "cat:Relato",
-  "Mg5FQ6-ZkKY": "cat:Meditação",
-  "NqwPgxHvBFc": "cat:Meditação",
-  "m2PgzGFLMik": "cat:Meditação",
-  "e339o9qVCnU": "cat:Meditação",
-  "PkbtV_83V2M": "cat:Meditação",
-  "TR4MG9U45cU": "cat:Meditação",
-  "-EJ7wqGjoM8": "cat:Meditação",
-  "kkZvVkxW7U0": "cat:Meditação",
-  "4MdP5jBFcCk": "cat:Meditação",
-  "9XgKN44KLIE": "cat:Meditação",
-  "_CBPXac0_gs": "cat:Meditação",
-  "KRO1dlxqSfs": "cat:Meditação",
-  "KTE64Yhz0Kw": "cat:Meditação",
-  "pBgnsRqj9sM": "cat:Meditação",
-  "kEMLjtwHFpk": "cat:Meditação",
-  "vZMrfg6Vj4g": "cat:Meditação",
-  "KlPVIqdw7oY": "cat:Meditação",
-  "oeEMH9OymrA": "cat:Meditação",
-  "aup-S0j6fuI": "cat:Meditação",
-  "yiPxa3Bi6XI": "cat:Meditação",
-  "Wb00frPm7CY": "cat:Meditação",
-  "CY98Ne1OE_g": "cat:Análise",
-  "xUgZ0_KyqI8": "cat:Meditação",
-  "xPv8CF-7HIc": "cat:Meditação",
-  "zZWvfMVYfU0": "cat:Relato",
-  "wRY2Q4qP3pE": "cat:Relato",
-  "cMMjwQJJ9gc": "cat:Relato",
-  "x_4PghjStaI": "cat:Relato",
-  "sZzigrwPfSI": "cat:Meditação",
-  "sqjYaWP2ki8": "cat:Meditação",
-  "B-YF8fjolEY": "cat:Meditação",
-  "0zWNAkLQ7cA": "cat:Relato",
-  "zMiN7JgGgmk": "cat:Meditação",
-  "wM_aRxzOijs": "cat:Meditação",
-  "MvVvu8r_vpI": "cat:Meditação",
-  "2iR3BNGp3gQ": "cat:Meditação",
-  "SVXqcfRfhjo": "cat:Meditação",
-  "l5BNRQNHC9I": "cat:Meditação",
-  "ftJ724l25tY": "cat:Meditação",
-  "g2IPtmgAMXQ": "cat:Meditação",
-  "nXkFEw4Jb1k": "cat:Meditação",
-  "gyU1jg21uX0": "cat:Meditação",
-  "DqAGHgDPAro": "cat:Análise",
-  "uKey6wKD7zI": "cat:Análise",
-  "gE0qMIDHvX4": "cat:Meditação",
-  "Yee51zytAVs": "cat:Meditação",
-  "FBUlC_5M9r4": "cat:Meditação",
-  "3gPQn00ThmA": "cat:Meditação",
-  "N3hzOTWijSY": "cat:Meditação",
-  "LR0i0Gaaicw": "cat:Meditação",
-  "I34TGQIyjHE": "cat:Meditação",
-  "9oRnPLZKP4Y": "cat:Meditação",
-  "IJIIPSCW7qI": "cat:Meditação",
-  "9X0NZ9MJVJc": "cat:Meditação",
-  "AwwIqdybvxA": "cat:Meditação",
-  "_ajXUesjQsw": "cat:Relato",
-  "kiFAbg2jxBM": "cat:Meditação",
-  "ghjpAYX0uhE": "cat:Meditação",
-  "GBAy2gp37CU": "cat:Meditação",
-  "kYWsqOR0460": "cat:Meditação",
-  "tYH2zNUCiEQ": "cat:Série",
-  "WRbAndncxgA": "cat:Série",
-  "fxzdUzf45L4": "cat:Série",
-  "dH3ot6xErcQ": "cat:Série",
-  "RQt7DqK-AUc": "cat:Série",
-  "N16OxnX40p4": "cat:Meditação",
-  "1S-wTbmol-0": "cat:Meditação",
-  "AHvIJsYWxYM": "cat:Série",
-  "gOfqMgShyfI": "cat:Relato",
-  "anm8zxAhaRc": "cat:Análise",
-  "EUYfQdTJvhE": "cat:Análise",
-  "XAqXrvnjckY": "cat:Série",
-  "ZMz_-660qHw": "cat:Análise",
-  "P2HAupa1FDA": "cat:Meditação",
-  "tIg4z9voaks": "cat:Relato",
-  "FkMx00n9xuA": "cat:Meditação",
-  "QZixpf8j6wI": "cat:Meditação",
-  "DGt5KEa28I4": "cat:Meditação",
-  "c6--f7iPGS8": "cat:Meditação",
-  "AZI0O-1uc6I": "cat:Meditação",
-  "9j0WDpmXHXw": "cat:Meditação",
-  "0qMUvomOXoQ": "cat:Meditação",
-  "wkvHTmBb8zE": "cat:Meditação",
-  "2VvpOHc3J4A": "cat:Meditação",
-  "s13-lcrFhyI": "cat:Meditação",
-  "FyrqauPNi5k": "cat:Meditação",
-  "5KVAYAXksLk": "cat:Meditação",
-  "fRg8Z6eODbk": "cat:Meditação",
-  "buA3GzuxAqw": "cat:Relato",
-  "5UptBv7FT1E": "cat:Série",
-  "nDHzWVa0lYc": "cat:Série",
-  "PZ8BS4OJuo4": "cat:Série",
-  "gnKC_QCy2DE": "cat:Série",
-  "VJIl5swflcU": "cat:Série",
-  "yw4z6cNmW28": "cat:Série",
-  "gNNTB0R71TM": "cat:Série",
-  "BYpXqsb8cTs": "cat:Série",
-  "JzTzp3BPq4k": "cat:Série",
-  "Ab_ROQAO6hE": "cat:Série",
-  "JBbb3p5aeCA": "cat:Série",
-  "4eNiJCGpx7M": "cat:Série",
-  "L8CweqBSD-A": "cat:Série",
-  "PrhY3HH01h4": "cat:Série",
-  "KoBYLPXobQc": "cat:Série",
-  "0RBVUcHE6vI": "cat:Série",
-  "GCu-ugitFOM": "cat:Série",
-  "9swOU8GmIkA": "cat:Série",
-  "sGMHa3U26rs": "cat:Série",
-  "M5xPWSyX-To": "cat:Série",
-  "gBVaaLrE7Ds": "cat:Série",
-  "0DxFsQQHqeI": "cat:Série",
-  "yELzRFoVljo": "cat:Série",
-  "HSQz4B2l8a0": "cat:Série",
-  "Ti2Y7rgAJ7Q": "cat:Série",
-  "J_qzSndAj7Y": "cat:Série",
-  "21N4d3qnzys": "cat:Série",
-  "5P1NsQDzSO0": "cat:Série",
-  "qwxHaUI6WAg": "cat:Série",
-  "x7JKMOBXRho": "cat:Meditação",
-  "zTBZM_0ph04": "cat:Meditação",
-  "Zox__4ph6Fo": "cat:Série",
-  "-3cAi9euY2M": "cat:Série",
-  "ujPonuZbXEg": "cat:Série",
-  "LdpnttS2prM": "cat:Série",
-  "g-Gd0izE4B8": "cat:Série",
-  "Q0RePeopN4M": "cat:Série",
-  "iHTRd0dzmcU": "cat:Série",
-  "ooFMEtCgtqE": "cat:Série",
-  "zzdDizTYpac": "cat:Série",
-  "fuwWoimTsXY": "cat:Série",
-  "FHCM1gujN-I": "cat:Série",
-  "t8ncULCoGD0": "cat:Série",
-  "z9p6AzuDaA0": "cat:Série",
-  "Es5uQQif7JQ": "cat:Série",
-  "0p5IjKfQJeg": "cat:Série",
-  "CsID0xT5ysk": "cat:Relato",
-  "5sLJp4qx5Hg": "cat:Relato",
-  "PYCTXEl7sKY": "cat:Análise",
-  "Rj-Z1cjgy3s": "cat:Meditação",
-  "FgBS1iwN3Ng": "cat:Meditação",
-  "6ye_fOlywfs": "cat:Meditação",
-  "Q2dNITw6E2U": "cat:Meditação",
-  "-Piy83__uFk": "cat:Meditação",
-  "-0gXRjtImaU": "cat:Meditação",
-  "EnvpqlEJOkI": "cat:Meditação",
-  "D9D0MjCWlV4": "cat:Meditação",
-  "OiHZ_4CYkyQ": "cat:Meditação",
-  "pRfeRBJ3LNc": "cat:Meditação",
-  "hcaCD5mwkCU": "cat:Meditação",
-  "0kOlmIPzM7k": "cat:Meditação",
-  "3ZmXSKQoDhM": "cat:Meditação",
-  "ARIkdmEGehg": "cat:Série",
-  "l9Cc1ctoQ3E": "cat:Série",
-  "ClHzoOFZTwQ": "cat:Série",
-  "n-PpP6gFxbU": "cat:Série",
-  "RwZy063kXVA": "cat:Série",
-  "6Ck2ID9-HOs": "cat:Série",
-  "5E0Ae3SJdAs": "cat:Série",
-  "j6eJO_2YMsY": "cat:Série",
-  "QSONnDSxP3k": "cat:Série",
-  "u5vgI2ulkxs": "cat:Série",
-  "c1we5wYrwt0": "cat:Série",
-  "tO7lFE7-N7Q": "cat:Série",
-  "U-89DyGYThU": "cat:Série",
-  "ZHjESmLErik": "cat:Série",
-  "tS3MWivrEVg": "cat:Meditação",
-  "vSfChat3q-w": "cat:Meditação",
-  "gr7ze7bOEj4": "cat:Meditação",
-  "E323qlgXVLs": "cat:Meditação",
-  "CbHAjsmyWCc": "cat:Análise",
-  "OzLBm8GO21Q": "cat:Análise",
-  "qTdRdTKDZxY": "cat:Meditação",
-  "oYsBXYGrDFk": "cat:Meditação",
-  "YQrxLpEH5zc": "cat:Meditação",
-  "sD0BE99BG2s": "cat:Meditação",
-  "rofLoEcYMko": "cat:Meditação",
-  "NOj6A5zjB4o": "cat:Série",
-  "5lLMWIjpJYA": "cat:Série",
-  "KdkCDZjyolI": "cat:Série",
-  "cM-QbbRoefo": "cat:Série",
-  "qSPRLRaPxiY": "cat:Série",
-  "knRDlkqpH9A": "cat:Série",
-  "d5MShwgq42U": "cat:Série",
-  "Fd8LRahkXPk": "cat:Série",
-  "S4XLNPXMmMc": "cat:Série",
-  "GFxuAhO0qG8": "cat:Série",
-  "XTVYVrkceII": "cat:Série",
-  "08OwDqAya6g": "cat:Série",
-  "HE6EAx_AfK8": "cat:Série",
-  "Ja8MHQUpPbg": "cat:Série",
-  "hwPqbKDRaV8": "cat:Série",
-  "F2hm2aUa4Qg": "cat:Série",
-  "QHJbr1aftOg": "cat:Série",
-  "uKlTGTRVshA": "cat:Série",
-  "NamZbP-B-uE": "cat:Série",
-  "fY-QJORtIh0": "cat:Série",
-  "K_qOtK7INTM": "cat:Série",
-  "8853EyqHQQQ": "cat:Série",
-  "1euYHCtqJ20": "cat:Série",
-  "aPq6PUaSEv8": "cat:Série",
-  "V0LsAe0VuEU": "cat:Série",
-  "02MAU9k73iY": "cat:Série",
-  "f-s7IJsLBDs": "cat:Série",
-  "DHKaWvtNtc4": "cat:Série",
-  "ucUKzkbwvMI": "cat:Série",
-  "09g_5g2_8gk": "cat:Série",
-  "8FY4CtdYB0s": "cat:Série",
-  "zGJmN3AoBj0": "cat:Meditação",
-  "Q9MkDbHhIkQ": "cat:Série",
-  "UK2uCMnT85U": "cat:Série",
-  "2sosDNlux-g": "cat:Série",
-  "GNHf7YafNxM": "cat:Série",
-  "VxQvz9Tb4HQ": "cat:Série",
-  "jH0JDXXeA3w": "cat:Série",
-  "Llb-ifJ9zZo": "cat:Série",
-  "lC6_G3ijjtk": "cat:Série",
-  "P3drmSXW3OQ": "cat:Série",
-  "_vZqS9Z8sYs": "cat:Série",
-  "L6qwWN1oPjE": "cat:Série",
-  "qCDKfNEeTrI": "cat:Série",
-  "jqHKR_c1o6s": "cat:Série",
-  "z3hYrJ-GsXU": "cat:Série",
-  "ZFQLMuTUqP0": "cat:Série",
-  "5LcPQVOWvmc": "cat:Série",
-  "VlbEGiK4K0o": "cat:Série",
-  "ux4EuD0YWMY": "cat:Série",
-  "CQ6Lu30eRzk": "cat:Série",
-  "RzO_r-0gPYs": "cat:Série",
-  "UflnST3W834": "cat:Série",
-  "FvdGl4n1dBg": "cat:Série",
-  "PoEau8hn2pY": "cat:Série",
-  "ff0Zqs6iTd0": "cat:Série",
-  "lZFSIhLFzJ0": "cat:Série",
-  "opCUeNZImWM": "cat:Série",
-  "jBQG06BNH4U": "TESTE",
-  "Wd6Ha54Hx-s": "TESTE"
+  "tkA6jkRfZA8": {
+    "categoria": "Meditação"
+  },
+  "EYeC98jy14k": {
+    "categoria": "Análise"
+  },
+  "ZzfbcG_8ubA": {
+    "categoria": "Análise"
+  },
+  "SVY2kUI0M9A": {
+    "categoria": "Meditação"
+  },
+  "VJSH1B1H8bs": {
+    "categoria": "Relato"
+  },
+  "jww4aqScaDU": {
+    "categoria": "Série"
+  },
+  "7V87AazHwnk": {
+    "categoria": "Série"
+  },
+  "c4rqQxwtHis": {
+    "categoria": "Série"
+  },
+  "icZGEhYGsiY": {
+    "categoria": "Série"
+  },
+  "bnQ8fUTNMrE": {
+    "categoria": "Relato"
+  },
+  "MCawY4-0jok": {
+    "categoria": "Série"
+  },
+  "zdO9_VsFdHs": {
+    "categoria": "Série"
+  },
+  "bwFfnFsXn-8": {
+    "categoria": "Relato"
+  },
+  "KglaESI2by0": {
+    "categoria": "Análise"
+  },
+  "Iq62odHvBvQ": {
+    "categoria": "Relato"
+  },
+  "-sW_HZbt7Zk": {
+    "categoria": "Relato"
+  },
+  "ftF_A1B7Rkk": {
+    "categoria": "Relato"
+  },
+  "dGytfUaW61A": {
+    "categoria": "Relato"
+  },
+  "5-1KTL0qqYs": {
+    "categoria": "Relato"
+  },
+  "JyVNYvpNtFk": {
+    "categoria": "Relato"
+  },
+  "B3q4alABGMo": {
+    "categoria": "Relato"
+  },
+  "gNWSPLcmMjg": {
+    "categoria": "Relato"
+  },
+  "0pOjtceFYCI": {
+    "categoria": "Relato"
+  },
+  "0E3kkpYb_z4": {
+    "categoria": "Relato"
+  },
+  "Vx6TsL0CxKE": {
+    "categoria": "Relato"
+  },
+  "NTHneEcA5M4": {
+    "categoria": "Relato"
+  },
+  "UYDjJ2Leoy8": {
+    "categoria": "Relato"
+  },
+  "m4rsYhCsiw0": {
+    "categoria": "Relato"
+  },
+  "A4OGpu3MAWU": {
+    "categoria": "Série"
+  },
+  "R3c3jmVrpE0": {
+    "categoria": "Análise"
+  },
+  "M0MuirU7IDo": {
+    "categoria": "Relato"
+  },
+  "IJd_A_Kaq38": {
+    "categoria": "Relato"
+  },
+  "RqpQLP0xvmo": {
+    "categoria": "Relato"
+  },
+  "V4BdQLnfUU0": {
+    "categoria": "Meditação"
+  },
+  "lh3p1mIsQB0": {
+    "categoria": "Relato"
+  },
+  "183dK-CtSe8": {
+    "categoria": "Relato"
+  },
+  "_4XByUv9V0I": {
+    "categoria": "Série"
+  },
+  "9z3F6iG1eNU": {
+    "categoria": "Série"
+  },
+  "H-1g4nmKmlw": {
+    "categoria": "Série"
+  },
+  "XESROTsjNHw": {
+    "categoria": "Relato"
+  },
+  "hXASa_dWsmY": {
+    "categoria": "Relato"
+  },
+  "ddbK-fzrPUc": {
+    "categoria": "Série"
+  },
+  "5uG2BvqYGHM": {
+    "categoria": "Relato"
+  },
+  "ED1ZTHwASdI": {
+    "categoria": "Série"
+  },
+  "mzsEsMyPjWI": {
+    "categoria": "Análise"
+  },
+  "GLX-Q5QOGxE": {
+    "categoria": "Série"
+  },
+  "F8J0ANqz6tU": {
+    "categoria": "Série"
+  },
+  "ySJH2AhtYjA": {
+    "categoria": "Série"
+  },
+  "ekDuiY617HE": {
+    "categoria": "Série"
+  },
+  "B671kwRkluw": {
+    "categoria": "Série"
+  },
+  "18p4_Mzt8q4": {
+    "categoria": "Relato"
+  },
+  "wAwavShzOU8": {
+    "categoria": "Relato"
+  },
+  "OGcR1F1uQOk": {
+    "categoria": "Série"
+  },
+  "9VA6vX_BF0k": {
+    "categoria": "Série"
+  },
+  "MBiakfyOZ48": {
+    "categoria": "Série"
+  },
+  "y7UaKtbUVdw": {
+    "categoria": "Série"
+  },
+  "gkc1B-xaI-Y": {
+    "categoria": "Série"
+  },
+  "vnb5kG_z5Vk": {
+    "categoria": "Série"
+  },
+  "puehew6YtYA": {
+    "categoria": "Série"
+  },
+  "FPd1eLgjHbI": {
+    "categoria": "Série"
+  },
+  "g_6Pz_kAbwQ": {
+    "categoria": "Análise"
+  },
+  "bi4ayKJyVRA": {
+    "categoria": "Série"
+  },
+  "H089SI6_4Mg": {
+    "categoria": "Relato"
+  },
+  "EION4sZtrVk": {
+    "categoria": "Relato"
+  },
+  "4jJQv6h8bIQ": {
+    "categoria": "Relato"
+  },
+  "27GAyDzjGo4": {
+    "categoria": "Série"
+  },
+  "6_pjFKb0bmY": {
+    "categoria": "Relato"
+  },
+  "rwpfK7NzDqg": {
+    "categoria": "Relato"
+  },
+  "dRLFuDVBTgk": {
+    "categoria": "Relato"
+  },
+  "3dXWo1LKpak": {
+    "categoria": "Relato"
+  },
+  "7775xa5yYgE": {
+    "categoria": "Série"
+  },
+  "nt5NwV6DapE": {
+    "categoria": "Série"
+  },
+  "moFeTXBpY0Y": {
+    "categoria": "Série"
+  },
+  "R0suMDFWq4A": {
+    "categoria": "Série"
+  },
+  "081XA3dwCr4": {
+    "categoria": "Série"
+  },
+  "mC1Sn7HCOl0": {
+    "categoria": "Meditação"
+  },
+  "IjMUgbwceFM": {
+    "categoria": "Série"
+  },
+  "wZlZh37pmUY": {
+    "categoria": "Relato"
+  },
+  "MkLUHMnW91Q": {
+    "categoria": "Meditação"
+  },
+  "8C8-MYJnn7o": {
+    "categoria": "Relato"
+  },
+  "w_GIN3nr4V4": {
+    "categoria": "Relato"
+  },
+  "QWZ8MOZedZg": {
+    "categoria": "Série"
+  },
+  "nKHF3RqFm_s": {
+    "categoria": "Relato"
+  },
+  "_Zip9TrdLtQ": {
+    "categoria": "Relato"
+  },
+  "7apJWqZJKBQ": {
+    "categoria": "Relato"
+  },
+  "4ikyZE9F5FY": {
+    "categoria": "Relato"
+  },
+  "de4JFDXOyhY": {
+    "categoria": "Série"
+  },
+  "-_Fi91l_mlo": {
+    "categoria": "Série"
+  },
+  "pfSjDOJRtdI": {
+    "categoria": "Série"
+  },
+  "R3irYqwefH0": {
+    "categoria": "Série"
+  },
+  "52AeGHpqpbo": {
+    "categoria": "Série"
+  },
+  "CwgpfYu3ICs": {
+    "categoria": "Série"
+  },
+  "YIBMABY3OKg": {
+    "categoria": "Série"
+  },
+  "41n5Fno2G28": {
+    "categoria": "Série"
+  },
+  "yIfawiCc2Zs": {
+    "categoria": "Série"
+  },
+  "bpzO8bOb4V8": {
+    "categoria": "Série"
+  },
+  "ggSLMcrJMSY": {
+    "categoria": "Série"
+  },
+  "LgtkanarJBg": {
+    "categoria": "Série"
+  },
+  "qEWjw3PzLLM": {
+    "categoria": "Série"
+  },
+  "KObgNw6uceM": {
+    "categoria": "Série"
+  },
+  "cBjq-mecWwA": {
+    "categoria": "Meditação"
+  },
+  "sTYeag1JfhQ": {
+    "categoria": "Série"
+  },
+  "u7dNpSdQG0w": {
+    "categoria": "Série"
+  },
+  "Co3B08_XlgE": {
+    "categoria": "Série"
+  },
+  "5VHHmKTEBB0": {
+    "categoria": "Série"
+  },
+  "gzsFxvw2Ypc": {
+    "categoria": "Série"
+  },
+  "PNf9SGIjMAA": {
+    "categoria": "Série"
+  },
+  "tcaYX8f4TH0": {
+    "categoria": "Série"
+  },
+  "i4Cy0k-gDhM": {
+    "categoria": "Série"
+  },
+  "jD0XtXfqbSA": {
+    "categoria": "Série"
+  },
+  "he1P1TVd-k4": {
+    "categoria": "Série"
+  },
+  "FYm735cDqnU": {
+    "categoria": "Série"
+  },
+  "SVmin3lwpfQ": {
+    "categoria": "Série"
+  },
+  "AJjHANkeGIs": {
+    "categoria": "Relato"
+  },
+  "NZSJQWaTEx0": {
+    "categoria": "Série"
+  },
+  "Wyz6c9NXWyM": {
+    "categoria": "Série"
+  },
+  "CYEUjAdCXKw": {
+    "categoria": "Série"
+  },
+  "QjE5mr8k98Q": {
+    "categoria": "Série"
+  },
+  "0fYXNhOHrvE": {
+    "categoria": "Série"
+  },
+  "A9Lz_X_t2Ig": {
+    "categoria": "Série"
+  },
+  "pabFZIH0UtU": {
+    "categoria": "Relato"
+  },
+  "a7xwFh_9ENM": {
+    "categoria": "Série"
+  },
+  "Er55OvFmMlU": {
+    "categoria": "Relato"
+  },
+  "lkEQ_tQU-g8": {
+    "categoria": "Série"
+  },
+  "xuAZs3YNJ9w": {
+    "categoria": "Série"
+  },
+  "ySVye52hN_I": {
+    "categoria": "Série"
+  },
+  "GLeReIZmhKY": {
+    "categoria": "Série"
+  },
+  "wHVfTQtkw9E": {
+    "categoria": "Série"
+  },
+  "otgpmKM4aSQ": {
+    "categoria": "Meditação"
+  },
+  "SwqtzbIdibw": {
+    "categoria": "Série"
+  },
+  "trQb5VMZhIs": {
+    "categoria": "Série"
+  },
+  "W-LvchHgSEY": {
+    "categoria": "Série"
+  },
+  "Fhh0Rm2eY4A": {
+    "categoria": "Série"
+  },
+  "gNlbul72BZ8": {
+    "categoria": "Série"
+  },
+  "QrH3SrOpecE": {
+    "categoria": "Meditação"
+  },
+  "6N-WY3iCUek": {
+    "categoria": "Relato"
+  },
+  "DvR9sNvnZYE": {
+    "categoria": "Análise"
+  },
+  "gez59hbxpHI": {
+    "categoria": "Relato"
+  },
+  "zX0QxkraD5Q": {
+    "categoria": "Meditação"
+  },
+  "GZDo33OUFjI": {
+    "categoria": "Meditação"
+  },
+  "tZWoi8xvxxk": {
+    "categoria": "Série"
+  },
+  "r9yqX09EETk": {
+    "categoria": "Série"
+  },
+  "DR90pbXcA9k": {
+    "categoria": "Série"
+  },
+  "LG3ip1_jUG8": {
+    "categoria": "Série"
+  },
+  "Wk13w6HYxeM": {
+    "categoria": "Relato"
+  },
+  "bYjkqLteZfU": {
+    "categoria": "Série"
+  },
+  "dgq3SHs1vZM": {
+    "categoria": "Série"
+  },
+  "gE2YSijkoNk": {
+    "categoria": "Série"
+  },
+  "N4WM5D8JP8o": {
+    "categoria": "Série"
+  },
+  "cmviPwjbq8g": {
+    "categoria": "Série"
+  },
+  "XfarVkbmzgc": {
+    "categoria": "Série"
+  },
+  "orTZfxbkjr4": {
+    "categoria": "Relato"
+  },
+  "LJ8V6vrLBco": {
+    "categoria": "Série"
+  },
+  "LKuE_yeHXAA": {
+    "categoria": "Série"
+  },
+  "511WX6TY3xE": {
+    "categoria": "Relato"
+  },
+  "E1_TRgU4KQw": {
+    "categoria": "Série"
+  },
+  "e7LDSpBJIS0": {
+    "categoria": "Série"
+  },
+  "H-48O8l-B_w": {
+    "categoria": "Série"
+  },
+  "Tmdte5yjIHI": {
+    "categoria": "Relato"
+  },
+  "5UVwlU-ndxE": {
+    "categoria": "Série"
+  },
+  "t-2BQWBkOFw": {
+    "categoria": "Série"
+  },
+  "D0ZEhf8IAUI": {
+    "categoria": "Série"
+  },
+  "dEqP6Brqwe0": {
+    "categoria": "Série"
+  },
+  "_hsI9RIm67g": {
+    "categoria": "Relato"
+  },
+  "0GLvuh4--Wc": {
+    "categoria": "Meditação"
+  },
+  "PFaWvB8LIHo": {
+    "categoria": "Meditação"
+  },
+  "No0FMbIhfv0": {
+    "categoria": "Meditação"
+  },
+  "2TTa82dKAYg": {
+    "categoria": "Meditação"
+  },
+  "XzJaJjxracg": {
+    "categoria": "Meditação"
+  },
+  "rshyx1DJqaQ": {
+    "categoria": "Meditação"
+  },
+  "OGyx2lasAPM": {
+    "categoria": "Meditação"
+  },
+  "v2wm_GuNjm0": {
+    "categoria": "Meditação"
+  },
+  "dO-eWKBCm7s": {
+    "categoria": "Meditação"
+  },
+  "9XTa9NHVqR8": {
+    "categoria": "Meditação"
+  },
+  "3VldsFbAJ9w": {
+    "categoria": "Meditação"
+  },
+  "iXooTc1N6XE": {
+    "categoria": "Série"
+  },
+  "f_nWICbHuFY": {
+    "categoria": "Meditação"
+  },
+  "n21fvRAXwYA": {
+    "categoria": "Série"
+  },
+  "YEW1ww2G9ak": {
+    "categoria": "Série"
+  },
+  "VP_DJOTSZfo": {
+    "categoria": "Série"
+  },
+  "_LSeKt8ePM8": {
+    "categoria": "Série"
+  },
+  "vxFXwfpGLEw": {
+    "categoria": "Série"
+  },
+  "KC_J9gewg5I": {
+    "categoria": "Série"
+  },
+  "if-9URWZznI": {
+    "categoria": "Série"
+  },
+  "GfqpQHlLHCQ": {
+    "categoria": "Série"
+  },
+  "8fGQKXU1jc4": {
+    "categoria": "Série"
+  },
+  "ItmlkmiMYKc": {
+    "categoria": "Série"
+  },
+  "afR3rlPA2z8": {
+    "categoria": "Relato"
+  },
+  "OQ2h2uDOl7c": {
+    "categoria": "Série"
+  },
+  "RvdS7Qy4FCk": {
+    "categoria": "Série"
+  },
+  "Hl1ONjGaz_U": {
+    "categoria": "Série"
+  },
+  "fbW9073pTb4": {
+    "categoria": "Série"
+  },
+  "DAR33eeLlec": {
+    "categoria": "Série"
+  },
+  "Ane-dkn5Uf0": {
+    "categoria": "Série"
+  },
+  "20NzuN4byXs": {
+    "categoria": "Análise"
+  },
+  "8vfbcfF_ulQ": {
+    "categoria": "Meditação"
+  },
+  "ttcpAFEZpVQ": {
+    "categoria": "Meditação"
+  },
+  "e0F-83Jd2E4": {
+    "categoria": "Série"
+  },
+  "KjzTztklU6I": {
+    "categoria": "Meditação"
+  },
+  "gcRUs7OZDxM": {
+    "categoria": "Meditação"
+  },
+  "-QlMx6JimBw": {
+    "categoria": "Meditação"
+  },
+  "uzmOXOSVa90": {
+    "categoria": "Meditação"
+  },
+  "8zaZSwthU60": {
+    "categoria": "Meditação"
+  },
+  "w5EcWi-WY7Y": {
+    "categoria": "Meditação"
+  },
+  "hrYE9c1UsUA": {
+    "categoria": "Meditação"
+  },
+  "E92OG2u4eMg": {
+    "categoria": "Relato"
+  },
+  "4OutxDy-K_w": {
+    "categoria": "Meditação"
+  },
+  "_YhSiQgK_6Q": {
+    "categoria": "Meditação"
+  },
+  "amIL9AZhJPs": {
+    "categoria": "Meditação"
+  },
+  "upwxPCJUJwE": {
+    "categoria": "Meditação"
+  },
+  "fVqgbmWrXRg": {
+    "categoria": "Meditação"
+  },
+  "pCO3uEkFbHk": {
+    "categoria": "Meditação"
+  },
+  "OjCa2qrNep8": {
+    "categoria": "Meditação"
+  },
+  "EbCbfm-WWk0": {
+    "categoria": "Meditação"
+  },
+  "sDwOHDAZVdw": {
+    "categoria": "Meditação"
+  },
+  "p0udgWFj_P4": {
+    "categoria": "Meditação"
+  },
+  "gYD0CndjkGg": {
+    "categoria": "Meditação"
+  },
+  "s7MU-nm8P4U": {
+    "categoria": "Meditação"
+  },
+  "BSru029m0bo": {
+    "categoria": "Meditação"
+  },
+  "ElB4x7XlyoU": {
+    "categoria": "Meditação"
+  },
+  "yPtCirCtiz8": {
+    "categoria": "Meditação"
+  },
+  "vq9fFiMzxBo": {
+    "categoria": "Meditação"
+  },
+  "bRHeJUYHj6I": {
+    "categoria": "Meditação"
+  },
+  "toJaiL2TRG8": {
+    "categoria": "Meditação"
+  },
+  "0jekNznauvQ": {
+    "categoria": "Meditação"
+  },
+  "Ut5_X7mWhpo": {
+    "categoria": "Meditação"
+  },
+  "4VJn0Ay0zWw": {
+    "categoria": "Meditação"
+  },
+  "6mVOV4CSaag": {
+    "categoria": "Análise"
+  },
+  "u91tesZ-TrA": {
+    "categoria": "Meditação"
+  },
+  "a9VU7vn8xHY": {
+    "categoria": "Meditação"
+  },
+  "SQgUrQWUH2k": {
+    "categoria": "Meditação"
+  },
+  "3hR3pRE3eY8": {
+    "categoria": "Relato"
+  },
+  "yxNZGEEw4bw": {
+    "categoria": "Relato"
+  },
+  "CBMOmo4VxxY": {
+    "categoria": "Relato"
+  },
+  "6nYYLHAEFkU": {
+    "categoria": "Relato"
+  },
+  "T2tOaDgLokw": {
+    "categoria": "Meditação"
+  },
+  "8EpoBwFtmeM": {
+    "categoria": "Meditação"
+  },
+  "lTTQ19cuzJE": {
+    "categoria": "Relato"
+  },
+  "BMNor9yUlBg": {
+    "categoria": "Meditação"
+  },
+  "JNSy2wXihI8": {
+    "categoria": "Meditação"
+  },
+  "CjIohtobdMM": {
+    "categoria": "Relato"
+  },
+  "kr4IOwp1DWU": {
+    "categoria": "Análise"
+  },
+  "nFJ0J7Y6nzA": {
+    "categoria": "Relato"
+  },
+  "6KaqaOMWGMo": {
+    "categoria": "Série"
+  },
+  "amegvuAm-d0": {
+    "categoria": "Série"
+  },
+  "BJbabj37HCA": {
+    "categoria": "Série"
+  },
+  "5S6ansNKi0k": {
+    "categoria": "Série"
+  },
+  "VOEZ0hfljxI": {
+    "categoria": "Relato"
+  },
+  "zp20qGo5H8E": {
+    "categoria": "Relato"
+  },
+  "4DNusdkmAO4": {
+    "categoria": "Análise"
+  },
+  "BJftdQvdiug": {
+    "categoria": "Meditação"
+  },
+  "t-cQMAd5y60": {
+    "categoria": "Relato"
+  },
+  "nvJpNnzslj4": {
+    "categoria": "Relato"
+  },
+  "NezKPIiK-rI": {
+    "categoria": "Relato"
+  },
+  "cdnpsufVsD4": {
+    "categoria": "Série"
+  },
+  "2YKmEE8JM4I": {
+    "categoria": "Série"
+  },
+  "l8lrh8mxINM": {
+    "categoria": "Série"
+  },
+  "3X5bEScoIt8": {
+    "categoria": "Relato"
+  },
+  "yZ-y2vqqaK8": {
+    "categoria": "Relato"
+  },
+  "vxu0xKfQ9K0": {
+    "categoria": "Série"
+  },
+  "UYeGBkHD5sQ": {
+    "categoria": "Relato"
+  },
+  "E17eFbfH0Ag": {
+    "categoria": "Relato"
+  },
+  "UlpEM1pxKYU": {
+    "categoria": "Série"
+  },
+  "9mYVDH3uD98": {
+    "categoria": "Relato"
+  },
+  "3rhxrAixZ7I": {
+    "categoria": "Análise"
+  },
+  "5AxV64kQJYY": {
+    "categoria": "Série"
+  },
+  "cCRUSUCBW6I": {
+    "categoria": "Série"
+  },
+  "VDLbRgi_D78": {
+    "categoria": "Série"
+  },
+  "sQv5T4qoegY": {
+    "categoria": "Série"
+  },
+  "NUiANXL-rac": {
+    "categoria": "Série"
+  },
+  "YdRg1BVbW7g": {
+    "categoria": "Série"
+  },
+  "blMQ6wevN2Y": {
+    "categoria": "Série"
+  },
+  "Wd8h7yLi9Ro": {
+    "categoria": "Série"
+  },
+  "phl2CGsrxiA": {
+    "categoria": "Relato"
+  },
+  "yDMUG136FZU": {
+    "categoria": "Relato"
+  },
+  "aWz5iBXPSAE": {
+    "categoria": "Relato"
+  },
+  "SY1b94rdzas": {
+    "categoria": "Relato"
+  },
+  "3xpKk-VC_Os": {
+    "categoria": "Série"
+  },
+  "f_WAKM5lE0Y": {
+    "categoria": "Série"
+  },
+  "mXSsEkE-L7U": {
+    "categoria": "Série"
+  },
+  "_35lB6qGahc": {
+    "categoria": "Série"
+  },
+  "sKFNgMqzyMI": {
+    "categoria": "Série"
+  },
+  "QSPbNUgTNr8": {
+    "categoria": "Série"
+  },
+  "5ORFd5dmJ0I": {
+    "categoria": "Série"
+  },
+  "eGS-iR7Xmr0": {
+    "categoria": "Série"
+  },
+  "RENXjGpOmNI": {
+    "categoria": "Análise"
+  },
+  "i2OradNr44E": {
+    "categoria": "Série"
+  },
+  "mCRAaW1BXj0": {
+    "categoria": "Relato"
+  },
+  "iNFlq66XaLM": {
+    "categoria": "Relato"
+  },
+  "NYy5Zr_7yY4": {
+    "categoria": "Relato"
+  },
+  "quXs9-r5Yk0": {
+    "categoria": "Série"
+  },
+  "GmAoCxQ0Osk": {
+    "categoria": "Análise"
+  },
+  "IcEObqP5jU8": {
+    "categoria": "Relato"
+  },
+  "DVBta88Jk40": {
+    "categoria": "Relato"
+  },
+  "3tfOhlfh5C4": {
+    "categoria": "Relato"
+  },
+  "e-uy1mwcHjA": {
+    "categoria": "Relato"
+  },
+  "neCAoZOb6gQ": {
+    "categoria": "Série"
+  },
+  "5mTuTaqfh4Q": {
+    "categoria": "Série"
+  },
+  "e2K4pM6mbN0": {
+    "categoria": "Série"
+  },
+  "4uUs_kifiG8": {
+    "categoria": "Série"
+  },
+  "1inB2L9dMcw": {
+    "categoria": "Série"
+  },
+  "DewqjWWYwKo": {
+    "categoria": "Meditação"
+  },
+  "eh61zYNhFyk": {
+    "categoria": "Série"
+  },
+  "vZuiLQCFi48": {
+    "categoria": "Relato"
+  },
+  "bIyzi8sykCI": {
+    "categoria": "Meditação"
+  },
+  "23H0VmNhJqI": {
+    "categoria": "Série"
+  },
+  "NPFlgIf7Cvg": {
+    "categoria": "Série"
+  },
+  "rwZVk9XgAQ8": {
+    "categoria": "Série"
+  },
+  "-dyHrOi5W5M": {
+    "categoria": "Série"
+  },
+  "MIZZvXtTqIA": {
+    "categoria": "Série"
+  },
+  "XYS54pAA3mI": {
+    "categoria": "Série"
+  },
+  "oBN9CySu9NQ": {
+    "categoria": "Série"
+  },
+  "onvtla8K6h8": {
+    "categoria": "Série"
+  },
+  "EDBICXsc344": {
+    "categoria": "Série"
+  },
+  "UGvEPWubxpY": {
+    "categoria": "Série"
+  },
+  "0A41AFffYHI": {
+    "categoria": "Série"
+  },
+  "Wp2yp0vziFE": {
+    "categoria": "Relato"
+  },
+  "ymrrq5kPGac": {
+    "categoria": "Relato"
+  },
+  "AKq4dXVeer8": {
+    "categoria": "Relato"
+  },
+  "m7hyeEhZagM": {
+    "categoria": "Série"
+  },
+  "rp_h_kjCwd0": {
+    "categoria": "Série"
+  },
+  "RlS4i2honX0": {
+    "categoria": "Série"
+  },
+  "IkSftksHQ24": {
+    "categoria": "Série"
+  },
+  "_xOslYIvwNY": {
+    "categoria": "Série"
+  },
+  "jL6m0pcd3nk": {
+    "categoria": "Série"
+  },
+  "5EfmYETqFyQ": {
+    "categoria": "Série"
+  },
+  "NAOe3LOrrR0": {
+    "categoria": "Série"
+  },
+  "gZNIDnwZoAc": {
+    "categoria": "Série"
+  },
+  "Vj4agBpVBP0": {
+    "categoria": "Série"
+  },
+  "fxXoNjnenA0": {
+    "categoria": "Série"
+  },
+  "GmXJoUYO7ZM": {
+    "categoria": "Série"
+  },
+  "AKVdOXvTRq4": {
+    "categoria": "Série"
+  },
+  "Bd-Lus3c6wA": {
+    "categoria": "Série"
+  },
+  "Zavg6C0y0BE": {
+    "categoria": "Meditação"
+  },
+  "_iqbsmBa1Ks": {
+    "categoria": "Série"
+  },
+  "JKyCJSTViHE": {
+    "categoria": "Série"
+  },
+  "KciH3oY8Ll4": {
+    "categoria": "Série"
+  },
+  "kT38hiJJPDs": {
+    "categoria": "Série"
+  },
+  "XRAxW2naXKU": {
+    "categoria": "Série"
+  },
+  "i8YVBYRZ4oI": {
+    "categoria": "Série"
+  },
+  "4oXljiHSm-U": {
+    "categoria": "Série"
+  },
+  "HOixHvJvgFQ": {
+    "categoria": "Série"
+  },
+  "vdtdWR1MhoY": {
+    "categoria": "Análise"
+  },
+  "FICM5xkv4Q4": {
+    "categoria": "Série"
+  },
+  "7oKjZxpqDeo": {
+    "categoria": "Série"
+  },
+  "dNy084tq6_4": {
+    "categoria": "Série"
+  },
+  "giFemzAS5D4": {
+    "categoria": "Série"
+  },
+  "b0nHFA7IO6s": {
+    "categoria": "Relato"
+  },
+  "J7LpXI-lYPU": {
+    "categoria": "Série"
+  },
+  "a5OXe960cJU": {
+    "categoria": "Série"
+  },
+  "bI6VlbcAvKk": {
+    "categoria": "Série"
+  },
+  "xbsAmju4XnI": {
+    "categoria": "Série"
+  },
+  "LEpCes1xyLM": {
+    "categoria": "Série"
+  },
+  "UiDhztBpojE": {
+    "categoria": "Série"
+  },
+  "_nO7wAgmoEc": {
+    "categoria": "Relato"
+  },
+  "GKGYGQg_254": {
+    "categoria": "Série"
+  },
+  "lEdlkGgEVy8": {
+    "categoria": "Relato"
+  },
+  "Rg842_Ev0fs": {
+    "categoria": "Série"
+  },
+  "0PYo4FCIerc": {
+    "categoria": "Série"
+  },
+  "90K2bsqH-Ck": {
+    "categoria": "Série"
+  },
+  "H-qFNoRvog4": {
+    "categoria": "Série"
+  },
+  "MuZkCKYHUPU": {
+    "categoria": "Série"
+  },
+  "te1SPoFEvo0": {
+    "categoria": "Meditação"
+  },
+  "am73ggw3Tpo": {
+    "categoria": "Série"
+  },
+  "ACDcxl-ovV8": {
+    "categoria": "Série"
+  },
+  "6H9lOe0b3sk": {
+    "categoria": "Série"
+  },
+  "FoB4ndAMtpo": {
+    "categoria": "Série"
+  },
+  "TBrhoypD694": {
+    "categoria": "Série"
+  },
+  "phuDl30MpZ4": {
+    "categoria": "Meditação"
+  },
+  "9MWbTWzrcLs": {
+    "categoria": "Relato"
+  },
+  "KkMkGJfQSno": {
+    "categoria": "Análise"
+  },
+  "JzsozzVpQFA": {
+    "categoria": "Análise"
+  },
+  "ttGVv0ItZtM": {
+    "categoria": "Meditação"
+  },
+  "6SmkK694VQw": {
+    "categoria": "Meditação"
+  },
+  "u8Nm1uEgdtY": {
+    "categoria": "Série"
+  },
+  "j3gqgr7DJw8": {
+    "categoria": "Série"
+  },
+  "NWZs3qozm10": {
+    "categoria": "Série"
+  },
+  "1ZjdTSls2NU": {
+    "categoria": "Série"
+  },
+  "eaxHcKwmVNk": {
+    "categoria": "Relato"
+  },
+  "j3RjSBun9z8": {
+    "categoria": "Série"
+  },
+  "gnhBVJMLoLg": {
+    "categoria": "Série"
+  },
+  "QnLM_4EaZt4": {
+    "categoria": "Série"
+  },
+  "Z2DG-FMFP0Q": {
+    "categoria": "Série"
+  },
+  "P-VeV4NfARI": {
+    "categoria": "Série"
+  },
+  "j1YZ4WWwg1o": {
+    "categoria": "Série"
+  },
+  "ZuTMgVOAvrA": {
+    "categoria": "Relato"
+  },
+  "BsJYPoD7AHM": {
+    "categoria": "Relato"
+  },
+  "RA1OP6RA_0g": {
+    "categoria": "Série"
+  },
+  "QWoSmHozITY": {
+    "categoria": "Série"
+  },
+  "dil72hbv554": {
+    "categoria": "Relato"
+  },
+  "xGYoWbR7JXQ": {
+    "categoria": "Série"
+  },
+  "oDTXyWp_qmw": {
+    "categoria": "Série"
+  },
+  "45q4rcPxx3s": {
+    "categoria": "Série"
+  },
+  "ESegqVTTPMg": {
+    "categoria": "Relato"
+  },
+  "xjZG2_02yyM": {
+    "categoria": "Série"
+  },
+  "5VvKkYLiaJY": {
+    "categoria": "Série"
+  },
+  "5TO1-kROz74": {
+    "categoria": "Série"
+  },
+  "JtkX2iK335U": {
+    "categoria": "Série"
+  },
+  "2SPExlp9tFg": {
+    "categoria": "Relato"
+  },
+  "3EFEY5EF9z4": {
+    "categoria": "Meditação"
+  },
+  "Dkqh-Oc83CY": {
+    "categoria": "Meditação"
+  },
+  "o-DGhTZugSY": {
+    "categoria": "Meditação"
+  },
+  "gpGe38oXV5M": {
+    "categoria": "Meditação"
+  },
+  "NXYT_HqM33c": {
+    "categoria": "Meditação"
+  },
+  "E-v7hySvmvA": {
+    "categoria": "Meditação"
+  },
+  "9nnZpfrOg3k": {
+    "categoria": "Meditação"
+  },
+  "wMRMCh5h5FY": {
+    "categoria": "Meditação"
+  },
+  "3AG5O8QH8to": {
+    "categoria": "Meditação"
+  },
+  "9hmlxrOT-PE": {
+    "categoria": "Meditação"
+  },
+  "ykmyIlKSpjI": {
+    "categoria": "Meditação"
+  },
+  "nbmXgrfdXuw": {
+    "categoria": "Série"
+  },
+  "sgoVS_3TRCs": {
+    "categoria": "Meditação"
+  },
+  "FzaCFfLYdJ0": {
+    "categoria": "Série"
+  },
+  "FZ4fbE90gd4": {
+    "categoria": "Série"
+  },
+  "hlX0MGOBjec": {
+    "categoria": "Série"
+  },
+  "GKPpU13fc9I": {
+    "categoria": "Série"
+  },
+  "OHlbY2iFVC8": {
+    "categoria": "Série"
+  },
+  "T_uSrRIIzbo": {
+    "categoria": "Série"
+  },
+  "lAFFs4arbTk": {
+    "categoria": "Série"
+  },
+  "wWsNyV6woyI": {
+    "categoria": "Série"
+  },
+  "UVqB6pmzzRs": {
+    "categoria": "Série"
+  },
+  "ktGBTwx31u4": {
+    "categoria": "Série"
+  },
+  "cZJpOKXgw2o": {
+    "categoria": "Relato"
+  },
+  "weasKSz6IMY": {
+    "categoria": "Série"
+  },
+  "hZdStoWHPWs": {
+    "categoria": "Série"
+  },
+  "cbtdE9py5-8": {
+    "categoria": "Série"
+  },
+  "e_YxQWaTFWw": {
+    "categoria": "Série"
+  },
+  "ydtvdjz8nXo": {
+    "categoria": "Série"
+  },
+  "uxD2MH4MkZ0": {
+    "categoria": "Série"
+  },
+  "bvqmWnIfbkk": {
+    "categoria": "Análise"
+  },
+  "0yGfc92hYFk": {
+    "categoria": "Meditação"
+  },
+  "5vR_J8D5VMc": {
+    "categoria": "Meditação"
+  },
+  "c1eY859uMs8": {
+    "categoria": "Série"
+  },
+  "B-rLVmG5uXg": {
+    "categoria": "Meditação"
+  },
+  "WATt7PvQrV8": {
+    "categoria": "Meditação"
+  },
+  "zMbfIcbatBI": {
+    "categoria": "Meditação"
+  },
+  "P5uKIpWPDmE": {
+    "categoria": "Meditação"
+  },
+  "1McDGhB_wPg": {
+    "categoria": "Meditação"
+  },
+  "aB72x5xi2sw": {
+    "categoria": "Meditação"
+  },
+  "eaZB9SSrDBI": {
+    "categoria": "Meditação"
+  },
+  "eUp3hsqosn0": {
+    "categoria": "Relato"
+  },
+  "Mg5FQ6-ZkKY": {
+    "categoria": "Meditação"
+  },
+  "NqwPgxHvBFc": {
+    "categoria": "Meditação"
+  },
+  "m2PgzGFLMik": {
+    "categoria": "Meditação"
+  },
+  "e339o9qVCnU": {
+    "categoria": "Meditação"
+  },
+  "PkbtV_83V2M": {
+    "categoria": "Meditação"
+  },
+  "TR4MG9U45cU": {
+    "categoria": "Meditação"
+  },
+  "-EJ7wqGjoM8": {
+    "categoria": "Meditação"
+  },
+  "kkZvVkxW7U0": {
+    "categoria": "Meditação"
+  },
+  "4MdP5jBFcCk": {
+    "categoria": "Meditação"
+  },
+  "9XgKN44KLIE": {
+    "categoria": "Meditação"
+  },
+  "_CBPXac0_gs": {
+    "categoria": "Meditação"
+  },
+  "KRO1dlxqSfs": {
+    "categoria": "Meditação"
+  },
+  "KTE64Yhz0Kw": {
+    "categoria": "Meditação"
+  },
+  "pBgnsRqj9sM": {
+    "categoria": "Meditação"
+  },
+  "kEMLjtwHFpk": {
+    "categoria": "Meditação"
+  },
+  "vZMrfg6Vj4g": {
+    "categoria": "Meditação"
+  },
+  "KlPVIqdw7oY": {
+    "categoria": "Meditação"
+  },
+  "oeEMH9OymrA": {
+    "categoria": "Meditação"
+  },
+  "aup-S0j6fuI": {
+    "categoria": "Meditação"
+  },
+  "yiPxa3Bi6XI": {
+    "categoria": "Meditação"
+  },
+  "Wb00frPm7CY": {
+    "categoria": "Meditação"
+  },
+  "CY98Ne1OE_g": {
+    "categoria": "Análise"
+  },
+  "xUgZ0_KyqI8": {
+    "categoria": "Meditação"
+  },
+  "xPv8CF-7HIc": {
+    "categoria": "Meditação"
+  },
+  "zZWvfMVYfU0": {
+    "categoria": "Relato"
+  },
+  "wRY2Q4qP3pE": {
+    "categoria": "Relato"
+  },
+  "cMMjwQJJ9gc": {
+    "categoria": "Relato"
+  },
+  "x_4PghjStaI": {
+    "categoria": "Relato"
+  },
+  "sZzigrwPfSI": {
+    "categoria": "Meditação"
+  },
+  "sqjYaWP2ki8": {
+    "categoria": "Meditação"
+  },
+  "B-YF8fjolEY": {
+    "categoria": "Meditação"
+  },
+  "0zWNAkLQ7cA": {
+    "categoria": "Relato"
+  },
+  "zMiN7JgGgmk": {
+    "categoria": "Meditação"
+  },
+  "wM_aRxzOijs": {
+    "categoria": "Meditação"
+  },
+  "MvVvu8r_vpI": {
+    "categoria": "Meditação"
+  },
+  "2iR3BNGp3gQ": {
+    "categoria": "Meditação"
+  },
+  "SVXqcfRfhjo": {
+    "categoria": "Meditação"
+  },
+  "l5BNRQNHC9I": {
+    "categoria": "Meditação"
+  },
+  "ftJ724l25tY": {
+    "categoria": "Meditação"
+  },
+  "g2IPtmgAMXQ": {
+    "categoria": "Meditação"
+  },
+  "nXkFEw4Jb1k": {
+    "categoria": "Meditação"
+  },
+  "gyU1jg21uX0": {
+    "categoria": "Meditação"
+  },
+  "DqAGHgDPAro": {
+    "categoria": "Análise"
+  },
+  "uKey6wKD7zI": {
+    "categoria": "Análise"
+  },
+  "gE0qMIDHvX4": {
+    "categoria": "Meditação"
+  },
+  "Yee51zytAVs": {
+    "categoria": "Meditação"
+  },
+  "FBUlC_5M9r4": {
+    "categoria": "Meditação"
+  },
+  "3gPQn00ThmA": {
+    "categoria": "Meditação"
+  },
+  "N3hzOTWijSY": {
+    "categoria": "Meditação"
+  },
+  "LR0i0Gaaicw": {
+    "categoria": "Meditação"
+  },
+  "I34TGQIyjHE": {
+    "categoria": "Meditação"
+  },
+  "9oRnPLZKP4Y": {
+    "categoria": "Meditação"
+  },
+  "IJIIPSCW7qI": {
+    "categoria": "Meditação"
+  },
+  "9X0NZ9MJVJc": {
+    "categoria": "Meditação"
+  },
+  "AwwIqdybvxA": {
+    "categoria": "Meditação"
+  },
+  "_ajXUesjQsw": {
+    "categoria": "Relato"
+  },
+  "kiFAbg2jxBM": {
+    "categoria": "Meditação"
+  },
+  "ghjpAYX0uhE": {
+    "categoria": "Meditação"
+  },
+  "GBAy2gp37CU": {
+    "categoria": "Meditação"
+  },
+  "kYWsqOR0460": {
+    "categoria": "Meditação"
+  },
+  "tYH2zNUCiEQ": {
+    "categoria": "Série"
+  },
+  "WRbAndncxgA": {
+    "categoria": "Série"
+  },
+  "fxzdUzf45L4": {
+    "categoria": "Série"
+  },
+  "dH3ot6xErcQ": {
+    "categoria": "Série"
+  },
+  "RQt7DqK-AUc": {
+    "categoria": "Série"
+  },
+  "N16OxnX40p4": {
+    "categoria": "Meditação"
+  },
+  "1S-wTbmol-0": {
+    "categoria": "Meditação"
+  },
+  "AHvIJsYWxYM": {
+    "categoria": "Série"
+  },
+  "gOfqMgShyfI": {
+    "categoria": "Relato"
+  },
+  "anm8zxAhaRc": {
+    "categoria": "Análise"
+  },
+  "EUYfQdTJvhE": {
+    "categoria": "Análise"
+  },
+  "XAqXrvnjckY": {
+    "categoria": "Série"
+  },
+  "ZMz_-660qHw": {
+    "categoria": "Análise"
+  },
+  "P2HAupa1FDA": {
+    "categoria": "Meditação"
+  },
+  "tIg4z9voaks": {
+    "categoria": "Relato"
+  },
+  "FkMx00n9xuA": {
+    "categoria": "Meditação"
+  },
+  "QZixpf8j6wI": {
+    "categoria": "Meditação"
+  },
+  "DGt5KEa28I4": {
+    "categoria": "Meditação"
+  },
+  "c6--f7iPGS8": {
+    "categoria": "Meditação"
+  },
+  "AZI0O-1uc6I": {
+    "categoria": "Meditação"
+  },
+  "9j0WDpmXHXw": {
+    "categoria": "Meditação"
+  },
+  "0qMUvomOXoQ": {
+    "categoria": "Meditação"
+  },
+  "wkvHTmBb8zE": {
+    "categoria": "Meditação"
+  },
+  "2VvpOHc3J4A": {
+    "categoria": "Meditação"
+  },
+  "s13-lcrFhyI": {
+    "categoria": "Meditação"
+  },
+  "FyrqauPNi5k": {
+    "categoria": "Meditação"
+  },
+  "5KVAYAXksLk": {
+    "categoria": "Meditação"
+  },
+  "fRg8Z6eODbk": {
+    "categoria": "Meditação"
+  },
+  "buA3GzuxAqw": {
+    "categoria": "Relato"
+  },
+  "5UptBv7FT1E": {
+    "categoria": "Série"
+  },
+  "nDHzWVa0lYc": {
+    "categoria": "Série"
+  },
+  "PZ8BS4OJuo4": {
+    "categoria": "Série"
+  },
+  "gnKC_QCy2DE": {
+    "categoria": "Série"
+  },
+  "VJIl5swflcU": {
+    "categoria": "Série"
+  },
+  "yw4z6cNmW28": {
+    "categoria": "Série"
+  },
+  "gNNTB0R71TM": {
+    "categoria": "Série"
+  },
+  "BYpXqsb8cTs": {
+    "categoria": "Série"
+  },
+  "JzTzp3BPq4k": {
+    "categoria": "Série"
+  },
+  "Ab_ROQAO6hE": {
+    "categoria": "Série"
+  },
+  "JBbb3p5aeCA": {
+    "categoria": "Série"
+  },
+  "4eNiJCGpx7M": {
+    "categoria": "Série"
+  },
+  "L8CweqBSD-A": {
+    "categoria": "Série"
+  },
+  "PrhY3HH01h4": {
+    "categoria": "Série"
+  },
+  "KoBYLPXobQc": {
+    "categoria": "Série"
+  },
+  "0RBVUcHE6vI": {
+    "categoria": "Série"
+  },
+  "GCu-ugitFOM": {
+    "categoria": "Série"
+  },
+  "9swOU8GmIkA": {
+    "categoria": "Série"
+  },
+  "sGMHa3U26rs": {
+    "categoria": "Série"
+  },
+  "M5xPWSyX-To": {
+    "categoria": "Série"
+  },
+  "gBVaaLrE7Ds": {
+    "categoria": "Série"
+  },
+  "0DxFsQQHqeI": {
+    "categoria": "Série"
+  },
+  "yELzRFoVljo": {
+    "categoria": "Série"
+  },
+  "HSQz4B2l8a0": {
+    "categoria": "Série"
+  },
+  "Ti2Y7rgAJ7Q": {
+    "categoria": "Série"
+  },
+  "J_qzSndAj7Y": {
+    "categoria": "Série"
+  },
+  "21N4d3qnzys": {
+    "categoria": "Série"
+  },
+  "5P1NsQDzSO0": {
+    "categoria": "Série"
+  },
+  "qwxHaUI6WAg": {
+    "categoria": "Série"
+  },
+  "x7JKMOBXRho": {
+    "categoria": "Meditação"
+  },
+  "zTBZM_0ph04": {
+    "categoria": "Meditação"
+  },
+  "Zox__4ph6Fo": {
+    "categoria": "Série"
+  },
+  "-3cAi9euY2M": {
+    "categoria": "Série"
+  },
+  "ujPonuZbXEg": {
+    "categoria": "Série"
+  },
+  "LdpnttS2prM": {
+    "categoria": "Série"
+  },
+  "g-Gd0izE4B8": {
+    "categoria": "Série"
+  },
+  "Q0RePeopN4M": {
+    "categoria": "Série"
+  },
+  "iHTRd0dzmcU": {
+    "categoria": "Série"
+  },
+  "ooFMEtCgtqE": {
+    "categoria": "Série"
+  },
+  "zzdDizTYpac": {
+    "categoria": "Série"
+  },
+  "fuwWoimTsXY": {
+    "categoria": "Série"
+  },
+  "FHCM1gujN-I": {
+    "categoria": "Série"
+  },
+  "t8ncULCoGD0": {
+    "categoria": "Série"
+  },
+  "z9p6AzuDaA0": {
+    "categoria": "Série"
+  },
+  "Es5uQQif7JQ": {
+    "categoria": "Série"
+  },
+  "0p5IjKfQJeg": {
+    "categoria": "Série"
+  },
+  "CsID0xT5ysk": {
+    "categoria": "Relato"
+  },
+  "5sLJp4qx5Hg": {
+    "categoria": "Relato"
+  },
+  "PYCTXEl7sKY": {
+    "categoria": "Análise"
+  },
+  "Rj-Z1cjgy3s": {
+    "categoria": "Meditação"
+  },
+  "FgBS1iwN3Ng": {
+    "categoria": "Meditação"
+  },
+  "6ye_fOlywfs": {
+    "categoria": "Meditação"
+  },
+  "Q2dNITw6E2U": {
+    "categoria": "Meditação"
+  },
+  "-Piy83__uFk": {
+    "categoria": "Meditação"
+  },
+  "-0gXRjtImaU": {
+    "categoria": "Meditação"
+  },
+  "EnvpqlEJOkI": {
+    "categoria": "Meditação"
+  },
+  "D9D0MjCWlV4": {
+    "categoria": "Meditação"
+  },
+  "OiHZ_4CYkyQ": {
+    "categoria": "Meditação"
+  },
+  "pRfeRBJ3LNc": {
+    "categoria": "Meditação"
+  },
+  "hcaCD5mwkCU": {
+    "categoria": "Meditação"
+  },
+  "0kOlmIPzM7k": {
+    "categoria": "Meditação"
+  },
+  "3ZmXSKQoDhM": {
+    "categoria": "Meditação"
+  },
+  "ARIkdmEGehg": {
+    "categoria": "Série"
+  },
+  "l9Cc1ctoQ3E": {
+    "categoria": "Série"
+  },
+  "ClHzoOFZTwQ": {
+    "categoria": "Série"
+  },
+  "n-PpP6gFxbU": {
+    "categoria": "Série"
+  },
+  "RwZy063kXVA": {
+    "categoria": "Série"
+  },
+  "6Ck2ID9-HOs": {
+    "categoria": "Série"
+  },
+  "5E0Ae3SJdAs": {
+    "categoria": "Série"
+  },
+  "j6eJO_2YMsY": {
+    "categoria": "Série"
+  },
+  "QSONnDSxP3k": {
+    "categoria": "Série"
+  },
+  "u5vgI2ulkxs": {
+    "categoria": "Série"
+  },
+  "c1we5wYrwt0": {
+    "categoria": "Série"
+  },
+  "tO7lFE7-N7Q": {
+    "categoria": "Série"
+  },
+  "U-89DyGYThU": {
+    "categoria": "Série"
+  },
+  "ZHjESmLErik": {
+    "categoria": "Série"
+  },
+  "tS3MWivrEVg": {
+    "categoria": "Meditação"
+  },
+  "vSfChat3q-w": {
+    "categoria": "Meditação"
+  },
+  "gr7ze7bOEj4": {
+    "categoria": "Meditação"
+  },
+  "E323qlgXVLs": {
+    "categoria": "Meditação"
+  },
+  "CbHAjsmyWCc": {
+    "categoria": "Análise"
+  },
+  "OzLBm8GO21Q": {
+    "categoria": "Análise"
+  },
+  "qTdRdTKDZxY": {
+    "categoria": "Meditação"
+  },
+  "oYsBXYGrDFk": {
+    "categoria": "Meditação"
+  },
+  "YQrxLpEH5zc": {
+    "categoria": "Meditação"
+  },
+  "sD0BE99BG2s": {
+    "categoria": "Meditação"
+  },
+  "rofLoEcYMko": {
+    "categoria": "Meditação"
+  },
+  "NOj6A5zjB4o": {
+    "categoria": "Série"
+  },
+  "5lLMWIjpJYA": {
+    "categoria": "Série"
+  },
+  "KdkCDZjyolI": {
+    "categoria": "Série"
+  },
+  "cM-QbbRoefo": {
+    "categoria": "Série"
+  },
+  "qSPRLRaPxiY": {
+    "categoria": "Série"
+  },
+  "knRDlkqpH9A": {
+    "categoria": "Série"
+  },
+  "d5MShwgq42U": {
+    "categoria": "Série"
+  },
+  "Fd8LRahkXPk": {
+    "categoria": "Série"
+  },
+  "S4XLNPXMmMc": {
+    "categoria": "Série"
+  },
+  "GFxuAhO0qG8": {
+    "categoria": "Série"
+  },
+  "XTVYVrkceII": {
+    "categoria": "Série"
+  },
+  "08OwDqAya6g": {
+    "categoria": "Série"
+  },
+  "HE6EAx_AfK8": {
+    "categoria": "Série"
+  },
+  "Ja8MHQUpPbg": {
+    "categoria": "Série"
+  },
+  "hwPqbKDRaV8": {
+    "categoria": "Série"
+  },
+  "F2hm2aUa4Qg": {
+    "categoria": "Série"
+  },
+  "QHJbr1aftOg": {
+    "categoria": "Série"
+  },
+  "uKlTGTRVshA": {
+    "categoria": "Série"
+  },
+  "NamZbP-B-uE": {
+    "categoria": "Série"
+  },
+  "fY-QJORtIh0": {
+    "categoria": "Série"
+  },
+  "K_qOtK7INTM": {
+    "categoria": "Série"
+  },
+  "8853EyqHQQQ": {
+    "categoria": "Série"
+  },
+  "1euYHCtqJ20": {
+    "categoria": "Série"
+  },
+  "aPq6PUaSEv8": {
+    "categoria": "Série"
+  },
+  "V0LsAe0VuEU": {
+    "categoria": "Série"
+  },
+  "02MAU9k73iY": {
+    "categoria": "Série"
+  },
+  "f-s7IJsLBDs": {
+    "categoria": "Série"
+  },
+  "DHKaWvtNtc4": {
+    "categoria": "Série"
+  },
+  "ucUKzkbwvMI": {
+    "categoria": "Série"
+  },
+  "09g_5g2_8gk": {
+    "categoria": "Série"
+  },
+  "8FY4CtdYB0s": {
+    "categoria": "Série"
+  },
+  "zGJmN3AoBj0": {
+    "categoria": "Meditação"
+  },
+  "Q9MkDbHhIkQ": {
+    "categoria": "Série"
+  },
+  "UK2uCMnT85U": {
+    "categoria": "Série"
+  },
+  "2sosDNlux-g": {
+    "categoria": "Série"
+  },
+  "GNHf7YafNxM": {
+    "categoria": "Série"
+  },
+  "VxQvz9Tb4HQ": {
+    "categoria": "Série"
+  },
+  "jH0JDXXeA3w": {
+    "categoria": "Série"
+  },
+  "Llb-ifJ9zZo": {
+    "categoria": "Série"
+  },
+  "lC6_G3ijjtk": {
+    "categoria": "Série"
+  },
+  "P3drmSXW3OQ": {
+    "categoria": "Série"
+  },
+  "_vZqS9Z8sYs": {
+    "categoria": "Série"
+  },
+  "L6qwWN1oPjE": {
+    "categoria": "Série"
+  },
+  "qCDKfNEeTrI": {
+    "categoria": "Série"
+  },
+  "jqHKR_c1o6s": {
+    "categoria": "Série"
+  },
+  "z3hYrJ-GsXU": {
+    "categoria": "Série"
+  },
+  "ZFQLMuTUqP0": {
+    "categoria": "Série"
+  },
+  "5LcPQVOWvmc": {
+    "categoria": "Série"
+  },
+  "VlbEGiK4K0o": {
+    "categoria": "Série"
+  },
+  "ux4EuD0YWMY": {
+    "categoria": "Série"
+  },
+  "CQ6Lu30eRzk": {
+    "categoria": "Série"
+  },
+  "RzO_r-0gPYs": {
+    "categoria": "Série"
+  }
 }
