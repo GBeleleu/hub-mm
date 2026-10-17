@@ -65,25 +65,21 @@ onAuthStateChanged(auth, (user) => {
       } else {
         window.userProgressCache = {};
       }
-      if (typeof renderList === 'function') renderList();
+      
+      // Re-renderiza a lista com os status atualizados do Firebase
+      if (typeof window.renderList === 'function') {
+        window.renderList();
+      }
     }, (error) => {
-      // Trata silenciosamente erros de permissão se ocorrerem durante o encerramento da sessão
       if (error.code === 'permission-denied') return;
       console.error("Erro no listener do Firestore:", error);
     });
   } else {
     window.userProgressCache = {};
     console.log("Nenhum usuário autenticado.");
-    if (typeof renderList === 'function') renderList();
-  }
-  
-  if (typeof toggleCardStatusControls === 'function') {
-    toggleCardStatusControls(!!user);
-  }
-  
-  // Atualiza o estado dos seletores na tela
-  if (typeof toggleCardStatusControls === 'function') {
-    toggleCardStatusControls(!!user);
+    if (typeof window.renderList === 'function') {
+      window.renderList();
+    }
   }
 });
 
@@ -94,7 +90,6 @@ window.loginWithGoogle = async function() {
     const result = await signInWithPopup(auth, provider);
     console.log("Login realizado com sucesso!", result.user);
   } catch (error) {
-    // Silencia erros caso o usuário apenas feche o popup intencionalmente
     if (error.code === 'auth/popup-closed-by-user' || error.code === 'auth/cancelled-popup-request') {
       console.log("Login cancelado pelo usuário.");
       return;
@@ -116,18 +111,14 @@ window.updateVideoProgress = async function(videoId, selectedValue) {
 
   try {
     if (selectedValue === "" || selectedValue === null) {
-      // Remove do cache local
       delete window.userProgressCache[videoId];
       
-      // Remove a propriedade específica do documento no Firestore sem afetar outras chaves
       await updateDoc(userProgressDoc, {
         [`progress.${videoId}`]: deleteField()
       });
     } else {
-      // Atualiza o cache local
       window.userProgressCache[videoId] = Number(selectedValue);
 
-      // Salva no Firestore
       await setDoc(userProgressDoc, {
         progress: window.userProgressCache
       }, { merge: true });
@@ -163,7 +154,6 @@ function updateAuthUI(user) {
 // Função para Deslogar
 window.logoutFromFirebase = async function() {
   try {
-    // Para o listener explicitamente antes de invalidar a sessão
     if (unsubscribeSnapshot) {
       unsubscribeSnapshot();
       unsubscribeSnapshot = null;
@@ -219,7 +209,7 @@ window.importProgressJSON = function(event) {
       await setDoc(userProgressDoc, { progress: window.userProgressCache }, { merge: true });
 
       alert("Progresso importado com sucesso!");
-      if (typeof renderList === 'function') renderList();
+      if (typeof window.renderList === 'function') window.renderList();
     } catch (err) {
       alert("Erro ao importar o arquivo JSON: " + err.message);
     }
