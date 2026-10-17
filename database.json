@@ -22,9 +22,7 @@
     "privacyStatus": "public",
     "masterId": "jBQG06BNH4U",
     "isMaster": true,
-    "tipoMaster": "Master Original",
-    "categoria": "TEST",
-    "grupo": "Teste"
+    "tipoMaster": "Master Original"
   },
   {
     "videoId": "Wd6Ha54Hx-s",
@@ -30807,7 +30805,8 @@
     "privacyStatus": "public",
     "masterId": "ARIkdmEGehg",
     "isMaster": false,
-    "tipoMaster": "Duplicado - Cópia Exata (Critério A)"
+    "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
+    "categoria": "Série"
   },
   {
     "videoId": "UflnST3W834",
@@ -30819,7 +30818,8 @@
     "privacyStatus": "public",
     "masterId": "ARIkdmEGehg",
     "isMaster": false,
-    "tipoMaster": "Duplicado - Cópia Exata (Critério A)"
+    "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
+    "categoria": "Série"
   },
   {
     "videoId": "yW1XJ-iqst0",
@@ -30867,7 +30867,8 @@
     "privacyStatus": "public",
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": false,
-    "tipoMaster": "Duplicado - Cópia Exata (Critério A)"
+    "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
+    "categoria": "Série"
   },
   {
     "videoId": "lZFSIhLFzJ0",
@@ -30879,7 +30880,8 @@
     "privacyStatus": "public",
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": false,
-    "tipoMaster": "Duplicado - Cópia Exata (Critério A)"
+    "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
+    "categoria": "Série"
   },
   {
     "videoId": "CGMhh0T8WH0",
@@ -30915,7 +30917,8 @@
     "privacyStatus": "public",
     "masterId": "ClHzoOFZTwQ",
     "isMaster": false,
-    "tipoMaster": "Duplicado - Cópia Exata (Critério A)"
+    "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
+    "categoria": "Série"
   },
   {
     "videoId": "opCUeNZImWM",
@@ -30927,7 +30930,8 @@
     "privacyStatus": "public",
     "masterId": "ClHzoOFZTwQ",
     "isMaster": false,
-    "tipoMaster": "Duplicado - Cópia Exata (Critério A)"
+    "tipoMaster": "Duplicado - Cópia Exata (Critério A)",
+    "categoria": "Série"
   },
   {
     "videoId": "xoUxrChLQMY",
