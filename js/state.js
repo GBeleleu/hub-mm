@@ -7,6 +7,9 @@ export const CONFIG = {
   DATA_URL: 'database.json'
 };
 
+// Garantir que o cache do progresso do usuário esteja acessível globalmente
+window.userProgressCache = window.userProgressCache || {};
+
 export let videoDatabase = [];
 export function setVideoDatabase(data) {
   videoDatabase = data;
