@@ -220,7 +220,7 @@ function processarDados() {
     }
   }
 
-  // 3. ESTRUTURAÇÃO DE TAGS/TAXONOMIA
+  // 3. ESTRUTURAÇÃO DE TAGS/TAXONOMIA (Merge Direto)
   let taxonomiaMap = {};
   let tagsCount = 0;
 
@@ -233,21 +233,25 @@ function processarDados() {
   }
 
   resultadoProcessado.forEach(item => {
-    // Garante a remoção de propriedades antigas de taxonomia
-    delete item.taxonomia;
+    // Limpa propriedades antigas de taxonomia para garantir estado limpo
     delete item.categoria;
     delete item.grupo;
     delete item.playlist;
 
+    // Se houver registro no taxonomia.json para este ID, injeta as propriedades diretamente
     if (taxonomiaMap[item.videoId]) {
-      const parsed = parseTagsString(taxonomiaMap[item.videoId]);
-      Object.assign(item, parsed);
+      const dadosTags = taxonomiaMap[item.videoId];
+      
+      if (dadosTags.categoria) item.categoria = dadosTags.categoria;
+      if (dadosTags.grupo) item.grupo = dadosTags.grupo;
+      if (dadosTags.playlist) item.playlist = dadosTags.playlist;
+
       tagsCount++;
     }
   });
 
   if (tagsCount > 0) {
-    console.log(`🏷️  ${tagsCount} vídeo(s) com tags estruturadas (categoria, grupo, playlist).`);
+    console.log(`🏷️  ${tagsCount} vídeo(s) com tags estruturadas aplicadas.`);
   }
 
   // 4. PERSISTÊNCIA DO BANCO FINAL
