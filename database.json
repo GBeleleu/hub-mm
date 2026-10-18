@@ -22,8 +22,7 @@
     "privacyStatus": "public",
     "masterId": "jBQG06BNH4U",
     "isMaster": true,
-    "tipoMaster": "Master Original",
-    "taxonomia": "grupo:Teste1"
+    "tipoMaster": "Master Original"
   },
   {
     "videoId": "Wd6Ha54Hx-s",
@@ -35,8 +34,7 @@
     "privacyStatus": "public",
     "masterId": "Wd6Ha54Hx-s",
     "isMaster": true,
-    "tipoMaster": "Master Original",
-    "taxonomia": "Teste:Teste2"
+    "tipoMaster": "Master Original"
   },
   {
     "videoId": "8pkYsvSqYZE",
@@ -32511,5 +32509,17 @@
     "masterId": "xW3Eik5HPYo",
     "isMaster": true,
     "tipoMaster": "Master Original"
+  },
+  {
+    "videoId": "SmRV1c_YJE4",
+    "titulo": "MARCELO MARINS E OS FILHOS DAS ESTRELAS ! está ao vivo!",
+    "canal": "MARCELO MARINS E OS FILHOS DAS ESTRELAS !",
+    "duracaoSegundos": 0,
+    "dataPublicacao": "2026-10-15T16:55:12Z",
+    "eLive": true,
+    "privacyStatus": "public",
+    "masterId": "sFdw7iPi6c8",
+    "isMaster": false,
+    "tipoMaster": "Duplicado - Reenvio/Subtítulo (67%) (Critério B)"
   }
 ]
