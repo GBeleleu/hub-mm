@@ -68,11 +68,13 @@ export function createCardElement(item, duplicates = []) {
 
   const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
-  const taxInfo = parseTaxonomy(item.taxonomia || item.categoria);
+  
+  // Consumo direto das propriedades nativas geradas pelo tratador.js
+  const taxInfo = parseTaxonomy(item);
 
   let badgesHtml = '';
   if (taxInfo.grupo) badgesHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span>`;
-  taxInfo.tags.forEach(t => badgesHtml += `<span class="badge-tag">🏷️ ${t}</span>`);
+  if (taxInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${taxInfo.playlist}</span>`;
 
   let privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">(Vídeo removido)</span>` : '';
   const liveBadge = item.eLive ? `<span class="live-badge" title="Live"></span>` : '';
@@ -169,8 +171,8 @@ export function renderList() {
     list.sort((a, b) => {
       let valA, valB;
       if (state.sortBy === 'categoria') {
-        valA = (parseTaxonomy(a.taxonomia || a.categoria).categoria || 'zzz').toLowerCase();
-        valB = (parseTaxonomy(b.taxonomia || b.categoria).categoria || 'zzz').toLowerCase();
+        valA = (a.categoria || 'zzz').toLowerCase();
+        valB = (b.categoria || 'zzz').toLowerCase();
         return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
       } else if (state.sortBy === 'progresso') {
         valA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined) ? Number(window.userProgressCache[a.videoId]) : 99;

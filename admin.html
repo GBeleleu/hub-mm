@@ -204,9 +204,10 @@
         const vId = item.videoId;
         const row = document.createElement('div');
         
-        // Separa categoria e grupo a partir do formato "Categoria | Grupo"
-        const taxVal = currentTaxonomyMap[vId] || '';
-        const [catVal, grpVal] = taxVal.split('|').map(s => s.trim());
+        // Recupera os dados atuais do mapa de taxonomia
+        const itemTax = currentTaxonomyMap[vId] || {};
+        const catVal = itemTax.categoria || '';
+        const grpVal = itemTax.grupo || '';
         const masterVal = currentOverridesMap[vId] || '';
 
         const hasExisting = !!(initialTaxonomyMap[vId] || initialOverridesMap[vId]);
@@ -218,8 +219,8 @@
         row.innerHTML = `
           <span class="item-id">${vId}</span>
           <span class="item-title" title="${item.titulo}">${item.titulo}</span>
-          <input type="text" placeholder="Categoria" value="${catVal || ''}" onchange="updateRow('${vId}')" id="cat-${vId}">
-          <input type="text" placeholder="Grupo" value="${grpVal || ''}" onchange="updateRow('${vId}')" id="grp-${vId}">
+          <input type="text" placeholder="Categoria" value="${catVal}" onchange="updateRow('${vId}')" id="cat-${vId}">
+          <input type="text" placeholder="Grupo" value="${grpVal}" onchange="updateRow('${vId}')" id="grp-${vId}">
           <input type="text" placeholder="Master ID (Override)" value="${masterVal}" onchange="updateRow('${vId}')" id="ov-${vId}">
         `;
         container.appendChild(row);
@@ -231,19 +232,14 @@
       const grp = document.getElementById(`grp-${videoId}`).value.trim();
       const ov = document.getElementById(`ov-${videoId}`).value.trim();
 
-      // Monta string formatada "Categoria | Grupo" ou apenas "Categoria"
-      let taxFormatted = '';
-      if (cat && grp) {
-        taxFormatted = `${cat} | ${grp}`;
-      } else if (cat) {
-        taxFormatted = cat;
-      } else if (grp) {
-        taxFormatted = grp;
-      }
+      // Reconstrói o objeto de taxonomia estritamente com os campos permitidos
+      const novoObjetoTag = {};
+      if (cat) novoObjetoTag.categoria = cat;
+      if (grp) novoObjetoTag.grupo = grp;
 
       // Atualiza Taxonomia
-      if (taxFormatted) {
-        currentTaxonomyMap[videoId] = taxFormatted;
+      if (Object.keys(novoObjetoTag).length > 0) {
+        currentTaxonomyMap[videoId] = novoObjetoTag;
       } else {
         delete currentTaxonomyMap[videoId];
       }
@@ -255,14 +251,10 @@
         delete currentOverridesMap[videoId];
       }
 
-      // Marca como modificado
       modifiedItems.add(videoId);
       
-      // Atualiza visual da linha
       const row = document.getElementById(`row-${videoId}`);
-      if (row) {
-        row.classList.add('is-modified');
-      }
+      if (row) row.classList.add('is-modified');
 
       updateUnsavedStatus();
     }
