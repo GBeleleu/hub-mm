@@ -7,7 +7,7 @@ export const CONFIG = {
   DATA_URL: 'database.json'
 };
 
-// Garantir que o cache do progresso do usuário esteja acessível globalmente
+// Cache do progresso do usuário acessível globalmente
 window.userProgressCache = window.userProgressCache || {};
 
 export let videoDatabase = [];
@@ -22,7 +22,8 @@ export function setHiddenTaxonomyTags(tags) {
 
 export let state = {
   searchQuery: '',
-  viewMode: 'consolidado',
+  displayMode: 'compacto', // 'compacto' | 'lista' | 'icones'
+  organizeMode: 'consolidado', // 'consolidado' | 'sequenciado' | 'sequenciado-canais'
   sortBy: 'data',
   sortAscending: true,
   hiddenChannels: [],
@@ -38,13 +39,17 @@ export function loadState() {
   const saved = localStorage.getItem(CONFIG.LOCALSTORAGE_KEY);
   if (saved) {
     try {
-      state = { ...state, ...JSON.parse(saved) };
+      const parsed = JSON.parse(saved);
+      // Migração retrocompatível se o estado antigo possuía viewMode
+      if (parsed.viewMode && !parsed.organizeMode) {
+        parsed.organizeMode = parsed.viewMode;
+      }
+      state = { ...state, ...parsed };
+
       const searchInput = document.getElementById('searchInput');
-      const viewModeSelect = document.getElementById('viewModeSelect');
       const sortBySelect = document.getElementById('sortBySelect');
 
       if (searchInput) searchInput.value = state.searchQuery || '';
-      if (viewModeSelect) viewModeSelect.value = state.viewMode || 'consolidado';
       if (sortBySelect) sortBySelect.value = state.sortBy || 'data';
     } catch (e) {
       console.error("Erro ao carregar o estado:", e);
