@@ -125,7 +125,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">(Removido)</span>` : '';
 
   // ------------------------------------------------------------------------
-  // MODO 1: LISTA (UMA LINHA POR VÍDEO COM CAMPOS ALINHADOS)
+  // MODO 1: LISTA
   // ------------------------------------------------------------------------
   if (displayMode === 'lista') {
     const row = document.createElement('div');
@@ -229,11 +229,67 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   }
 
   // ------------------------------------------------------------------------
-  // MODO 2: ÍCONES (GRADE NO ESTILO YOUTUBE COM MODAL DE OCORRÊNCIAS)
+  // MODO 2: COMPACTO (Padrão)
   // ------------------------------------------------------------------------
-  if (displayMode === 'icones') {
+  if (displayMode === 'compacto') {
     const card = document.createElement('div');
-    card.className = 'card-display-icones';
+    card.className = 'card-display-compacto';
+
+    let badgesHtml = '';
+    if (taxInfo.grupo) badgesHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span>`;
+    if (taxInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${taxInfo.playlist}</span>`;
+
+    card.innerHTML = `
+      <div class="category-stripe" data-cat="${taxInfo.categoria}">
+        <span class="category-stripe-text">${taxInfo.categoria}</span>
+      </div>
+      <div class="card-media-block" title="Clique para ampliar thumbnail">
+        <img class="card-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
+        <div class="thumb-footer-bar">
+          <span class="videoid-tag">${item.videoId}</span>
+          <span class="duration-tag">${formatDuration(item.duracaoSegundos)}</span>
+        </div>
+      </div>
+      <div class="card-content">
+        <div>
+          <a href="${videoUrl}" target="_blank" class="card-title">${item.titulo}</a>
+          ${privacyNotice}
+        </div>
+        <span class="card-channel">${item.canal}</span>
+        <span class="card-date">${formatLocalDateTime(item.dataPublicacao)}${liveBadge}</span>
+        ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
+
+        <div class="status-container" style="margin-top:6px;"></div>
+
+        ${duplicates.length > 0 ? `
+          <button class="drawer-toggle" title="Ver ocorrências" style="position:absolute; bottom:10px; right:10px;">+${duplicates.length}</button>
+          <div class="drawer-content"></div>
+        ` : ''}
+      </div>
+    `;
+
+    card.querySelector('.card-media-block').addEventListener('click', () => openThumbModal(item));
+    card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
+
+    if (duplicates.length > 0) {
+      const toggleBtn = card.querySelector('.drawer-toggle');
+      const drawerContent = card.querySelector('.drawer-content');
+      toggleBtn.addEventListener('click', () => drawerContent.classList.toggle('open'));
+
+      duplicates.forEach(dupItem => {
+        drawerContent.appendChild(createCardElement(dupItem, [], 'compacto'));
+      });
+    }
+
+    return card;
+  }
+
+  // ------------------------------------------------------------------------
+  // MODO 3: GRADE
+  // ------------------------------------------------------------------------
+  if (displayMode === 'grade') {
+    const card = document.createElement('div');
+    card.className = 'card-display-icones'; // Mantendo a classe CSS existente para não quebrar estilos
 
     card.innerHTML = `
       <div class="icones-cat-bar" data-cat="${taxInfo.categoria}" title="Categoria: ${taxInfo.categoria}"></div>
@@ -268,60 +324,6 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
 
     return card;
   }
-
-  // ------------------------------------------------------------------------
-  // MODO 3: COMPACTO (MODELO DE CARDS PADRÃO)
-  // ------------------------------------------------------------------------
-  const card = document.createElement('div');
-  card.className = 'card-display-compacto';
-
-  let badgesHtml = '';
-  if (taxInfo.grupo) badgesHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span>`;
-  if (taxInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${taxInfo.playlist}</span>`;
-
-  card.innerHTML = `
-    <div class="category-stripe" data-cat="${taxInfo.categoria}">
-      <span class="category-stripe-text">${taxInfo.categoria}</span>
-    </div>
-    <div class="card-media-block" title="Clique para ampliar thumbnail">
-      <img class="card-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
-      <div class="thumb-footer-bar">
-        <span class="videoid-tag">${item.videoId}</span>
-        <span class="duration-tag">${formatDuration(item.duracaoSegundos)}</span>
-      </div>
-    </div>
-    <div class="card-content">
-      <div>
-        <a href="${videoUrl}" target="_blank" class="card-title">${item.titulo}</a>
-        ${privacyNotice}
-      </div>
-      <span class="card-channel">${item.canal}</span>
-      <span class="card-date">${formatLocalDateTime(item.dataPublicacao)}${liveBadge}</span>
-      ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
-
-      <div class="status-container" style="margin-top:6px;"></div>
-
-      ${duplicates.length > 0 ? `
-        <button class="drawer-toggle" title="Ver ocorrências" style="position:absolute; bottom:10px; right:10px;">+${duplicates.length}</button>
-        <div class="drawer-content"></div>
-      ` : ''}
-    </div>
-  `;
-
-  card.querySelector('.card-media-block').addEventListener('click', () => openThumbModal(item));
-  card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
-
-  if (duplicates.length > 0) {
-    const toggleBtn = card.querySelector('.drawer-toggle');
-    const drawerContent = card.querySelector('.drawer-content');
-    toggleBtn.addEventListener('click', () => drawerContent.classList.toggle('open'));
-
-    duplicates.forEach(dupItem => {
-      drawerContent.appendChild(createCardElement(dupItem, [], 'compacto'));
-    });
-  }
-
-  return card;
 }
 
 export function renderList() {
