@@ -22,7 +22,7 @@ export function setHiddenTaxonomyTags(tags) {
 
 export let state = {
   searchQuery: '',
-  displayMode: 'compacto', // 'lista' | 'compacto' | 'grade'
+  displayMode: 'compacto', // 'compacto' | 'lista' | 'icones'
   organizeMode: 'consolidado', // 'consolidado' | 'sequenciado' | 'sequenciado-canais'
   sortBy: 'data',
   sortAscending: true,
