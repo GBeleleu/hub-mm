@@ -241,16 +241,16 @@
 }
 
 /* --------------------------------------------------------------------------
-   MODO ÍCONES (GRADE)
+   MODO GRADE
    -------------------------------------------------------------------------- */
-.grid-container-icones {
+.grid-container-grade {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
   margin-top: 12px;
 }
 
-.card-display-icones {
+.card-display-grade {
   position: relative;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -260,30 +260,30 @@
   flex-direction: column;
 }
 
-.card-display-icones .icones-cat-bar {
+.card-display-grade .grade-cat-bar {
   height: 4px;
   width: 100%;
 }
 
-.card-display-icones .icones-cat-bar[data-cat="Série"] { background-color: #ef6c00; }
-.card-display-icones .icones-cat-bar[data-cat="Relato"] { background-color: #424242; }
-.card-display-icones .icones-cat-bar[data-cat="Análise"] { background-color: #b0bec5; }
-.card-display-icones .icones-cat-bar[data-cat="Meditação"] { background-color: #7b1fa2; }
+.card-display-grade .grade-cat-bar[data-cat="Série"] { background-color: #ef6c00; }
+.card-display-grade .grade-cat-bar[data-cat="Relato"] { background-color: #424242; }
+.card-display-grade .grade-cat-bar[data-cat="Análise"] { background-color: #b0bec5; }
+.card-display-grade .grade-cat-bar[data-cat="Meditação"] { background-color: #7b1fa2; }
 
-.card-display-icones .icones-media-block {
+.card-display-grade .grade-media-block {
   position: relative;
   width: 100%;
   aspect-ratio: 16/9;
   background: #000;
 }
 
-.card-display-icones .icones-thumb {
+.card-display-grade .grade-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card-display-icones .icones-body {
+.card-display-grade .grade-body {
   padding: 12px;
   display: flex;
   flex-direction: column;
@@ -291,7 +291,7 @@
   gap: 6px;
 }
 
-.card-display-icones .icones-title {
+.card-display-grade .grade-title {
   font-size: 14px;
   font-weight: 700;
   color: var(--accent-color);
@@ -303,7 +303,7 @@
   overflow: hidden;
 }
 
-.card-display-icones .icones-details {
+.card-display-grade .grade-details {
   font-size: 11px;
   color: var(--text-secondary);
   display: flex;
@@ -311,7 +311,7 @@
   gap: 2px;
 }
 
-.card-display-icones .icones-footer {
+.card-display-grade .grade-footer {
   margin-top: auto;
   padding-top: 8px;
   display: flex;
