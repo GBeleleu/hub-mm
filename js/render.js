@@ -74,7 +74,7 @@ export function openThumbModal(item) {
   }
 }
 
-// Modal de Ocorrências para o modo Ícones
+// Modal de Ocorrências para o modo Grade
 export function openOccurrencesModal(duplicates) {
   const modal = document.getElementById('occurrencesModal');
   const container = document.getElementById('occurrencesListContainer');
@@ -289,25 +289,25 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   // ------------------------------------------------------------------------
   if (displayMode === 'grade') {
     const card = document.createElement('div');
-    card.className = 'card-display-icones'; // Mantendo a classe CSS existente para não quebrar estilos
+    card.className = 'card-display-grade'; // Mantendo a classe CSS existente para não quebrar estilos
 
     card.innerHTML = `
-      <div class="icones-cat-bar" data-cat="${taxInfo.categoria}" title="Categoria: ${taxInfo.categoria}"></div>
-      <div class="icones-media-block">
+      <div class="grade-cat-bar" data-cat="${taxInfo.categoria}" title="Categoria: ${taxInfo.categoria}"></div>
+      <div class="grade-media-block">
         <a href="${videoUrl}" target="_blank">
-          <img class="icones-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
+          <img class="grade-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
         </a>
         <span class="duration-tag" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.8); padding:2px 4px; border-radius:3px; font-size:11px;">
           ${formatDuration(item.duracaoSegundos)}
         </span>
       </div>
-      <div class="icones-body">
-        <a href="${videoUrl}" target="_blank" class="icones-title">${item.titulo}</a>
-        <div class="icones-details">
+      <div class="grade-body">
+        <a href="${videoUrl}" target="_blank" class="grade-title">${item.titulo}</a>
+        <div class="grade-details">
           <span><strong>${item.canal}</strong> ${liveBadge} ${privacyNotice}</span>
           <span>${formatLocalDateTime(item.dataPublicacao)}</span>
         </div>
-        <div class="icones-footer">
+        <div class="grade-footer">
           <div class="status-container"></div>
           ${duplicates.length > 0 ? `<button class="drawer-toggle occ-modal-btn" title="Ver ocorrências em Modal">+${duplicates.length}</button>` : ''}
         </div>
@@ -378,11 +378,11 @@ export function renderList() {
 
   sortItems(items);
 
-  // Wrapper para o Modo Ícones (Grade)
+  // Wrapper para o Modo Grade
   let targetContainer = container;
-  if (state.displayMode === 'icones') {
+  if (state.displayMode === 'grade') {
     const grid = document.createElement('div');
-    grid.className = 'grid-container-icones';
+    grid.className = 'grid-container-grade';
     container.appendChild(grid);
     targetContainer = grid;
   }
@@ -422,9 +422,9 @@ export function renderList() {
       container.appendChild(groupTitle);
 
       let groupTarget = container;
-      if (state.displayMode === 'icones') {
+      if (state.displayMode === 'grade') {
         groupTarget = document.createElement('div');
-        groupTarget.className = 'grid-container-icones';
+        groupTarget.className = 'grid-container-grade';
         container.appendChild(groupTarget);
       }
 
