@@ -286,7 +286,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
 // ------------------------------------------------------------------------
 // MODO DE EXIBIÇÃO 
 // ------------------------------------------------------------------------
-if (displayMode === '') {
+if (displayMode === 'grade') {
   const card = document.createElement('div');
   card.className = 'card-display-grade';
 
