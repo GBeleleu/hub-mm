@@ -98,7 +98,7 @@ function createStatusSelect(videoId) {
   select.className = `card-status-select ${statusClass}`;
   select.dataset.videoid = videoId;
   select.innerHTML = `
-    <option value="" ${currentStatus === '' ? 'selected' : ''}>Status...</option>
+    <option value="" ${currentStatus === '' ? 'selected' : ''}>...</option>
     <option value="0" ${currentStatus === 0 ? 'selected' : ''}>Visto</option>
     <option value="1" ${currentStatus === 1 ? 'selected' : ''}>Alta</option>
     <option value="2" ${currentStatus === 2 ? 'selected' : ''}>Média</option>
@@ -135,7 +135,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     const stripe = document.createElement('div');
     stripe.className = 'category-stripe-thin';
     stripe.dataset.cat = taxInfo.categoria;
-    stripe.title = `Categoria: ${taxInfo.categoria}`;
+    stripe.title = taxInfo.categoria;
     row.appendChild(stripe);
 
     // 2. Thumbnail com duração no canto inferior direito
