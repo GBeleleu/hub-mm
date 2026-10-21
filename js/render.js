@@ -125,20 +125,18 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">(Removido)</span>` : '';
 
   // ------------------------------------------------------------------------
-  // MODO DE EXIBIÇÃO LISTA
+  // MODO DE EXIBIÇÃO: LISTA
   // ------------------------------------------------------------------------
   if (displayMode === 'lista') {
     const row = document.createElement('div');
     row.className = 'card-display-lista';
 
-    // 1. Faixa fina lateral com a cor referente à categoria
     const stripe = document.createElement('div');
     stripe.className = 'category-stripe-thin';
     stripe.dataset.cat = taxInfo.categoria;
-    stripe.title = taxInfo.categoria
+    stripe.title = taxInfo.categoria;
     row.appendChild(stripe);
 
-    // 2. Thumbnail com duração no canto inferior direito
     const thumbWrap = document.createElement('div');
     thumbWrap.className = 'list-thumb-wrapper';
     thumbWrap.title = 'Clique para ampliar thumbnail';
@@ -149,13 +147,11 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     thumbWrap.addEventListener('click', () => openThumbModal(item));
     row.appendChild(thumbWrap);
 
-    // 3. Título (com scroll horizontal arrastável se grande)
     const titleWrap = document.createElement('div');
     titleWrap.className = 'list-title-wrapper';
     titleWrap.innerHTML = `<a href="${videoUrl}" target="_blank" class="list-title">${item.titulo}</a>`;
     row.appendChild(titleWrap);
 
-    // 4. Numeral que abre Gaveta de Ocorrências (se houver duplicatas)
     const occCell = document.createElement('div');
     occCell.className = 'list-item-cell';
     if (duplicates.length > 0) {
@@ -173,20 +169,17 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     }
     row.appendChild(occCell);
 
-    // 5. Seletor de Status
     const statusCell = document.createElement('div');
     statusCell.className = 'list-item-cell';
     statusCell.appendChild(createStatusSelect(item.videoId));
     row.appendChild(statusCell);
 
-    // 6. Data
     const dateCell = document.createElement('div');
     dateCell.className = 'list-item-cell';
     dateCell.style.color = 'var(--text-secondary)';
     dateCell.textContent = formatLocalDateTime(item.dataPublicacao);
     row.appendChild(dateCell);
 
-    // 7. Canal
     const channelCell = document.createElement('div');
     channelCell.className = 'list-item-cell';
     channelCell.style.fontWeight = 'bold';
@@ -194,7 +187,6 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     channelCell.textContent = item.canal;
     row.appendChild(channelCell);
 
-    // 8. live-Removido-TAGs
     const tagsCell = document.createElement('div');
     tagsCell.className = 'list-item-cell';
     let tagsContent = `${liveBadge}${privacyNotice}`;
@@ -202,7 +194,6 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     tagsCell.innerHTML = tagsContent;
     row.appendChild(tagsCell);
 
-    // 9. videoID
     const idCell = document.createElement('div');
     idCell.className = 'list-item-cell';
     idCell.style.fontFamily = 'monospace';
@@ -211,7 +202,6 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     idCell.textContent = item.videoId;
     row.appendChild(idCell);
 
-    // Suporte à Gaveta no Modo Lista
     if (duplicates.length > 0) {
       const wrapper = document.createElement('div');
       wrapper.appendChild(row);
@@ -229,7 +219,50 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   }
 
   // ------------------------------------------------------------------------
-  // MODO DE EXIBIÇÃO COMPACTO
+  // MODO DE EXIBIÇÃO: GRADE
+  // ------------------------------------------------------------------------
+  if (displayMode === 'grade') {
+    const card = document.createElement('div');
+    card.className = 'card-display-grade';
+
+    card.innerHTML = `
+      <div class="grade-cat-bar" data-cat="${taxInfo.categoria}">
+        <span class="grade-cat-text">${taxInfo.categoria}</span>
+      </div>
+      <div class="grade-media-block">
+        <a href="${videoUrl}" target="_blank">
+          <img class="grade-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
+        </a>
+        <span class="duration-tag" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.8); padding:2px 4px; border-radius:3px; font-size:11px;">
+          ${formatDuration(item.duracaoSegundos)}
+        </span>
+      </div>
+      <div class="grade-body">
+        <a href="${videoUrl}" target="_blank" class="grade-title">${item.titulo}</a>
+        <div class="grade-details">
+          <span><strong>${item.canal}</strong> ${liveBadge} ${privacyNotice}</span>
+          <span>${formatLocalDateTime(item.dataPublicacao)}</span>
+        </div>
+        <div class="grade-footer">
+          <div class="status-container"></div>
+          ${duplicates.length > 0 ? `<button class="drawer-toggle occ-modal-btn" title="Ver ocorrências em Modal">+${duplicates.length}</button>` : ''}
+        </div>
+      </div>
+    `;
+
+    card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
+
+    if (duplicates.length > 0) {
+      card.querySelector('.occ-modal-btn').addEventListener('click', () => {
+        openOccurrencesModal(duplicates);
+      });
+    }
+
+    return card;
+  }
+
+  // ------------------------------------------------------------------------
+  // MODO DE EXIBIÇÃO: COMPACTO
   // ------------------------------------------------------------------------
   const card = document.createElement('div');
   card.className = 'card-display-compacto';
@@ -277,49 +310,6 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
 
     duplicates.forEach(dupItem => {
       drawerContent.appendChild(createCardElement(dupItem, [], 'compacto'));
-    });
-  }
-
-  return card;
-}
-
-// ------------------------------------------------------------------------
-// MODO DE EXIBIÇÃO 
-// ------------------------------------------------------------------------
-if (displayMode === 'grade') {
-  const card = document.createElement('div');
-  card.className = 'card-display-grade';
-
-  card.innerHTML = `
-    <div class="grade-cat-bar" data-cat="${taxInfo.categoria}">
-      <span class="grade-cat-text">${taxInfo.categoria}</span>
-    </div>
-    <div class="grade-media-block">
-      <a href="${videoUrl}" target="_blank">
-        <img class="grade-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
-      </a>
-      <span class="duration-tag" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.8); padding:2px 4px; border-radius:3px; font-size:11px;">
-        ${formatDuration(item.duracaoSegundos)}
-      </span>
-    </div>
-    <div class="grade-body">
-      <a href="${videoUrl}" target="_blank" class="grade-title">${item.titulo}</a>
-      <div class="grade-details">
-        <span><strong>${item.canal}</strong> ${liveBadge} ${privacyNotice}</span>
-        <span>${formatLocalDateTime(item.dataPublicacao)}</span>
-      </div>
-      <div class="grade-footer">
-        <div class="status-container"></div>
-        ${duplicates.length > 0 ? `<button class="drawer-toggle occ-modal-btn" title="Ver ocorrências em Modal">+${duplicates.length}</button>` : ''}
-      </div>
-    </div>
-  `;
-
-  card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
-
-  if (duplicates.length > 0) {
-    card.querySelector('.occ-modal-btn').addEventListener('click', () => {
-      openOccurrencesModal(duplicates);
     });
   }
 
