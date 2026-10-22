@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // EVENTOS PARA O NOVO GRUPO "EXIBIR"
+  // EVENTOS PARA O GRUPO "EXIBIR"
   document.querySelectorAll('#displayModeGroup .btn-group-item').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const target = e.currentTarget;
@@ -216,17 +216,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.getElementById('sortBySelect')?.addEventListener('change', (e) => {
-    state.sortBy = e.target.value;
+  // EVENTOS PARA O GRUPO "ORDENAR"
+  // Lógica para abrir/fechar o menu dropdown de Ordenar
+  const sortToggleBtn = document.getElementById('sortToggleBtn');
+  const sortMenu = document.getElementById('sortMenu');
+  const sortOrderCheckbox = document.getElementById('sortOrderCheckbox');
+
+  sortToggleBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    sortMenu.style.display = sortMenu.style.display === 'none' ? 'flex' : 'none';
+  });
+
+  // Evento ao clicar em um critério de ordenação (ex: Data, Título)
+  document.querySelectorAll('#sortMenu .dropdown-item').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget;
+      state.sortBy = target.dataset.sort;
+      syncButtonGroupsUI();
+      saveState();
+      renderList();
+      if (sortMenu) sortMenu.style.display = 'none';
+    });
+  });
+
+  // Evento do Checkbox de Ordem Inversa
+  sortOrderCheckbox?.addEventListener('change', (e) => {
+    // Se o checkbox "Ordem inversa" está marcado, a ordem ascendente torna-se false
+    state.sortAscending = !e.target.checked;
+    syncButtonGroupsUI();
     saveState();
     renderList();
   });
 
-  document.getElementById('sortOrderBtn')?.addEventListener('click', () => {
-    state.sortAscending = !state.sortAscending;
-    updateSortBtnText();
-    saveState();
-    renderList();
+  // Fecha o dropdown de ordenação ao clicar fora da área
+  window.addEventListener('click', (e) => {
+    if (sortMenu && !sortMenu.contains(e.target) && e.target !== sortToggleBtn) {
+      sortMenu.style.display = 'none';
+    }
   });
 
   // FECHAMENTO DOS MODAIS
