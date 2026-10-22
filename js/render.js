@@ -361,10 +361,10 @@ export function renderList() {
       } else if (state.sortBy === 'progresso') {
         valA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined) ? Number(window.userProgressCache[a.videoId]) : 99;
         valB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined) ? Number(window.userProgressCache[b.videoId]) : 99;
-      } else if (state.sortBy === 'titulo') {
-        valA = a.titulo.toLowerCase();
-        valB = b.titulo.toLowerCase();
-        return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+        //} else if (state.sortBy === 'titulo') {
+        //valA = a.titulo.toLowerCase();
+        //valB = b.titulo.toLowerCase();
+        //return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA); FALTA LÓGICA OCORRENCIAS
       } else if (state.sortBy === 'duracao') {
         valA = a.duracaoSegundos || 0;
         valB = b.duracaoSegundos || 0;
