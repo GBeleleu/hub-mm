@@ -8,7 +8,9 @@ window.renderList = renderList;
 
 function adjustBodyPadding() {
   const topBar = document.getElementById('topBar');
-  if (topBar) document.body.style.paddingTop = `${topBar.offsetHeight + 15}px`;
+  const navTime = document.getElementById('navTimeContainer');
+  const totalHeight = (topBar ? topBar.offsetHeight : 60) + (navTime ? navTime.offsetHeight : 35);
+  document.body.style.paddingTop = `${totalHeight + 15}px`;
 }
 
 function updateSortBtnText() {
