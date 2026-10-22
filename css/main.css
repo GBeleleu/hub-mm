@@ -53,6 +53,74 @@ body {
   margin: 0 auto;
 }
 
+/* Destaque em verde escuro para o botão Consolidado ativo */
+#organizeGroup .btn-group-item.highlighted.active {
+  background-color: #1b5e20 !important; /* Verde escuro */
+  color: #ffffff !important;
+  border-color: #0d3811 !important;
+}
+
+/* Estilo do Dropdown do Sequenciado */
+.dropdown-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  background-color: var(--bg-card, #ffffff);
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu .dropdown-item {
+  padding: 8px 12px;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-main, #333);
+  font-size: 13px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: var(--bg-hover, #757575);
+}
+
+/* Separador interno do dropdown */
+.dropdown-divider {
+  height: 1px;
+  background-color: var(--border-color, #e0e0e0);
+  margin: 4px 0;
+}
+
+/* Item estilo checkbox dentro do menu dropdown */
+.dropdown-item-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-main, #333);
+  user-select: none;
+}
+
+.dropdown-item-checkbox:hover {
+  background-color: var(--bg-hover, #757575);
+}
+
+.dropdown-item-checkbox input[type="checkbox"] {
+  cursor: pointer;
+}
+
 .search-box {
   flex: 1;
   min-width: 200px;

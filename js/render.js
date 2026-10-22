@@ -361,13 +361,21 @@ export function renderList() {
       } else if (state.sortBy === 'progresso') {
         valA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined) ? Number(window.userProgressCache[a.videoId]) : 99;
         valB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined) ? Number(window.userProgressCache[b.videoId]) : 99;
-      } else if (state.sortBy === 'titulo') {
-        valA = a.titulo.toLowerCase();
-        valB = b.titulo.toLowerCase();
-        return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
       } else if (state.sortBy === 'duracao') {
         valA = a.duracaoSegundos || 0;
         valB = b.duracaoSegundos || 0;
+      } else if (state.sortBy === 'ocorrencias') {
+        const getCount = (item) => {
+          const targetId = item.isMaster ? item.videoId : item.masterId;
+          if (!targetId) return 1;
+          let count = 0;
+          videoDatabase.forEach(v => {
+            if (v.videoId === targetId || v.masterId === targetId) count++;
+          });
+          return count > 0 ? count : 1;
+        };
+        valA = getCount(a);
+        valB = getCount(b);
       } else {
         valA = new Date(a.dataPublicacao);
         valB = new Date(b.dataPublicacao);
