@@ -41,6 +41,7 @@ body {
   padding: 10px 16px;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  overflow: visible !important; /* Permite que o dropdown saia para fora da barra */
 }
 
 .controls-container {
@@ -51,8 +52,7 @@ body {
   justify-content: space-between;
   max-width: 1600px;
   margin: 0 auto;
-  overflow-x: auto; /* Permite rolagem lateral suave se a tela for menor */
-  padding-bottom: 2px;
+  overflow: visible !important; /* Evita qualquer corte lateral */
 }
 
 /* CONTAINER PRINCIPAL DE LARGURA EXPANDIDA */
@@ -92,14 +92,14 @@ body {
 }
 
 .dropdown-menu {
-  position: fixed;
+  position: absolute;
   top: 100%;
   left: 0;
   z-index: 9999;
   background-color: var(--bg-card, #ffffff);
   border: 1px solid var(--border-color, #ccc);
   border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
   min-width: 120px;
   display: flex;
   flex-direction: column;
