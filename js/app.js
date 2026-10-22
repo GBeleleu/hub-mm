@@ -60,7 +60,6 @@ function syncButtonGroupsUI() {
   // Mapeamento das opções de ordenação para exibição no botão
   const sortLabels = {
     'data': 'Data',
-    //'titulo': 'Título', REMOVER DEAD CODE
     'duracao': 'Duração',
     'ocorrencias': 'Ocorrências',
     'categoria': 'Categoria',
