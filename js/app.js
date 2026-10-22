@@ -4,7 +4,6 @@ import { renderList } from './render.js';
 
 let debounceTimer = null;
 
-// Expor renderList globalmente para o firebase-config.js atualizar a interface após o login
 window.renderList = renderList;
 
 function adjustBodyPadding() {
@@ -13,8 +12,20 @@ function adjustBodyPadding() {
 }
 
 function updateSortBtnText() {
-  const btn = document.getElementById('sortOrderBtn');
-  if (btn) btn.textContent = state.sortAscending ? 'Asc ▲' : 'Desc ▼';
+  const label = document.getElementById('sortOrderLabel');
+  if (label) label.textContent = state.sortAscending ? 'Asc ▲' : 'Desc ▼';
+}
+
+function syncButtonGroupsUI() {
+  // Sincronizar Grupo EXIBIR
+  document.querySelectorAll('#displayModeGroup .btn-group-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.display === state.displayMode);
+  });
+
+  // Sincronizar Grupo ORGANIZAR
+  document.querySelectorAll('#organizeGroup .btn-group-item').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.organize === state.organizeMode);
+  });
 }
 
 async function loadDatabase() {
@@ -77,6 +88,7 @@ function populateChannelsModal() {
 
 document.addEventListener('DOMContentLoaded', () => {
   loadState();
+  syncButtonGroupsUI();
   adjustBodyPadding();
   window.addEventListener('resize', adjustBodyPadding);
 
@@ -108,10 +120,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  document.getElementById('viewModeSelect')?.addEventListener('change', (e) => {
-    state.viewMode = e.target.value;
-    saveState();
-    renderList();
+  // EVENTOS PARA O NOVO GRUPO "EXIBIR"
+  document.querySelectorAll('#displayModeGroup .btn-group-item').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget;
+      state.displayMode = target.dataset.display;
+      syncButtonGroupsUI();
+      saveState();
+      renderList();
+    });
+  });
+
+  // EVENTOS PARA O GRUPO "ORGANIZAR"
+  document.querySelectorAll('#organizeGroup .btn-group-item').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget;
+      state.organizeMode = target.dataset.organize;
+      syncButtonGroupsUI();
+      saveState();
+      renderList();
+    });
   });
 
   document.getElementById('sortBySelect')?.addEventListener('change', (e) => {
@@ -125,6 +153,15 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSortBtnText();
     saveState();
     renderList();
+  });
+
+  // FECHAMENTO DOS MODAIS
+  document.getElementById('closeThumbModalBtn')?.addEventListener('click', () => {
+    document.getElementById('thumbPreviewModal')?.classList.remove('open');
+  });
+
+  document.getElementById('closeOccurrencesModalBtn')?.addEventListener('click', () => {
+    document.getElementById('occurrencesModal')?.classList.remove('open');
   });
 
   document.getElementById('channelsModalBtn')?.addEventListener('click', () => {
