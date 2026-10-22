@@ -47,10 +47,17 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  align-items: flex-end;
+  align-items: center; /* Ajustado para alinhar perfeitamente os elementos no eixo vertical */
   justify-content: space-between;
-  max-width: 1600px; /* Aumentado para desktop */
+  max-width: 1600px;
   margin: 0 auto;
+}
+
+/* CONTAINER PRINCIPAL DE LARGURA EXPANDIDA */
+.container {
+  max-width: 1500px;
+  margin: 15px auto;
+  padding: 0 16px;
 }
 
 /* Destaque em verde escuro para o botão Consolidado ativo */
@@ -253,11 +260,4 @@ button:disabled, select:disabled {
   background: transparent;
   border: none;
   line-height: 1;
-}
-
-/* CONTAINER PRINCIPAL DE LARGURA EXPANDIDA */
-.container {
-  max-width: 1500px;
-  margin: 15px auto;
-  padding: 0 16px;
 }
