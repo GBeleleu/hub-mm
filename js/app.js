@@ -24,21 +24,33 @@ function syncButtonGroupsUI() {
 
   // Sincronizar Grupo ORGANIZAR
   const isConsolidado = state.organizeMode === 'consolidado';
-  
-  // Destaca o botão Consolidado
+  const seqToggleBtn = document.getElementById('sequencedToggleBtn');
+  const labelSpan = document.getElementById('sequencedActiveLabel');
+
+  // 1. Botão Consolidado
   document.querySelectorAll('#organizeGroup [data-organize="consolidado"]').forEach(btn => {
     btn.classList.toggle('active', isConsolidado);
   });
 
-  // Atualiza o rótulo do botão Sequenciado dependendo se está em 'sequenciado' ou 'sequenciado-canais'
-  const labelSpan = document.getElementById('sequencedActiveLabel');
-  if (labelSpan) {
-    if (state.organizeMode === 'sequenciado-canais') {
-      labelSpan.textContent = 'Blocos';
-    } else {
+  // 2. Botão/Rótulo do Menu Sequenciado
+  if (labelSpan && seqToggleBtn) {
+    if (state.organizeMode === 'sequenciado') {
       labelSpan.textContent = 'Misturado';
+      seqToggleBtn.classList.add('active');
+    } else if (state.organizeMode === 'sequenciado-canais') {
+      labelSpan.textContent = 'Blocos';
+      seqToggleBtn.classList.add('active');
+    } else {
+      // Quando "Consolidado" está selecionado
+      labelSpan.textContent = 'Sequenciado';
+      seqToggleBtn.classList.remove('active');
     }
   }
+
+  // 3. Marcação do item ativo dentro do dropdown
+  document.querySelectorAll('#sequencedMenu .dropdown-item').forEach(item => {
+    item.classList.toggle('active', item.dataset.organize === state.organizeMode);
+  });
 }
 
 async function loadDatabase() {
