@@ -59,8 +59,8 @@ function syncButtonGroupsUI() {
 
   // Mapeamento das opções de ordenação para exibição no botão
   const sortLabels = {
-    'data': 'Data de Publicação',
-    'titulo': 'Título',
+    'data': 'Data',
+    //'titulo': 'Título', REMOVER DEAD CODE
     'duracao': 'Duração',
     'ocorrencias': 'Ocorrências',
     'categoria': 'Categoria',
@@ -68,7 +68,7 @@ function syncButtonGroupsUI() {
   };
 
   if (sortActiveLabel) {
-    sortActiveLabel.textContent = sortLabels[state.sortBy] || 'Data de Publicação';
+    sortActiveLabel.textContent = sortLabels[state.sortBy] || 'Data';
   }
 
   // Seta de ordenação: ▲ para Ascendente, ▼ para Descendente (Inversa)
