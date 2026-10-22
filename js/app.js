@@ -23,9 +23,22 @@ function syncButtonGroupsUI() {
   });
 
   // Sincronizar Grupo ORGANIZAR
-  document.querySelectorAll('#organizeGroup .btn-group-item').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.organize === state.organizeMode);
+  const isConsolidado = state.organizeMode === 'consolidado';
+  
+  // Destaca o botão Consolidado
+  document.querySelectorAll('#organizeGroup [data-organize="consolidado"]').forEach(btn => {
+    btn.classList.toggle('active', isConsolidado);
   });
+
+  // Atualiza o rótulo do botão Sequenciado dependendo se está em 'sequenciado' ou 'sequenciado-canais'
+  const labelSpan = document.getElementById('sequencedActiveLabel');
+  if (labelSpan) {
+    if (state.organizeMode === 'sequenciado-canais') {
+      labelSpan.textContent = 'Blocos';
+    } else {
+      labelSpan.textContent = 'Misturado';
+    }
+  }
 }
 
 async function loadDatabase() {
@@ -132,13 +145,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // EVENTOS PARA O GRUPO "ORGANIZAR"
-  document.querySelectorAll('#organizeGroup .btn-group-item').forEach(btn => {
+  // Lógica para abrir/fechar o menu dropdown do Sequenciado
+  const seqToggleBtn = document.getElementById('sequencedToggleBtn');
+  const seqMenu = document.getElementById('sequencedMenu');
+
+  seqToggleBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    seqMenu.style.display = seqMenu.style.display === 'none' ? 'flex' : 'none';
+  });
+
+  // Fecha o dropdown ao clicar fora
+  window.addEventListener('click', () => {
+    if (seqMenu) seqMenu.style.display = 'none';
+  });
+
+  // Eventos para as opções/dropdown
+  document.querySelectorAll('#organizeGroup [data-organize]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const target = e.currentTarget;
       state.organizeMode = target.dataset.organize;
       syncButtonGroupsUI();
       saveState();
       renderList();
+      if (seqMenu) seqMenu.style.display = 'none';
     });
   });
 
