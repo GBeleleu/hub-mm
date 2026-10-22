@@ -111,18 +111,44 @@
         </button>
       </div>
 
-      <!-- USER AUTH -->
-      <div id="authContainer" style="display: flex; gap: 8px; align-items: center;">
-        <button id="loginBtn" onclick="window.loginWithGoogle()" title="Entre para registrar seu progresso">Entrar</button>
-        <span id="userEmailSpan" style="display: none; font-size: 12px; color: var(--accent-color); font-weight: bold;"></span>
-        <button id="logoutBtn" onclick="window.logoutFromFirebase()" style="display: none;">Sair</button>
-      </div>
+      <!-- LOGIN -->
+      <div class="auth-wrapper" id="authContainer">
+        
+        <!-- Estado Deslogado -->
+        <button id="loginBtn" class="btn-group-item highlighted" onclick="window.loginWithGoogle()" title="Entre para registrar seu progresso">
+          Entrar
+        </button>
 
-      <!-- EXPORT / IMPORT -->
-      <div id="dataToolsGroup" style="display: flex; gap: 6px; align-items: center;">
-        <button onclick="window.exportProgressJSON()" title="Exportar progresso (JSON)">📤</button>
-        <button onclick="document.getElementById('importJsonInput').click()" title="Importar progresso (JSON)">📥</button>
-        <input type="file" id="importJsonInput" accept=".json" style="display: none;" onchange="window.importProgressJSON(event)">
+        <!-- Estado Logado (Círculo com foto e Menu Dropdown) -->
+        <div id="userProfileDropdown" class="user-profile-dropdown" style="display: none;">
+          <button id="userAvatarBtn" class="user-avatar-btn" title="Conta Google">
+            <img id="userAvatarImg" src="" alt="Foto de Perfil" referrerpolicy="no-referrer">
+          </button>
+          
+          <div class="dropdown-menu user-menu" id="userMenu" style="display: none;">
+            <div class="user-info-header">
+              <span id="userNameSpan" class="user-name"></span>
+              <span id="userEmailSpan" class="user-email"></span>
+            </div>
+            
+            <div class="dropdown-divider"></div>
+            
+            <button class="dropdown-item" onclick="window.exportProgressJSON()">
+              📤 Exportar JSON
+            </button>
+            <button class="dropdown-item" onclick="document.getElementById('importJsonInput').click()">
+              📥 Importar JSON
+            </button>
+            <input type="file" id="importJsonInput" accept=".json" style="display: none;" onchange="window.importProgressJSON(event)">
+            
+            <div class="dropdown-divider"></div>
+            
+            <button class="dropdown-item text-danger" onclick="window.logoutFromFirebase()">
+              Sair
+            </button>
+          </div>
+        </div>
+
       </div>
 
       <!-- CONTROLE TEMPORAL -->
