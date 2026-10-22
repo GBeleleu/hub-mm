@@ -94,6 +94,33 @@ body {
   background-color: var(--bg-hover, #f0f0f0);
 }
 
+/* Separador interno do dropdown */
+.dropdown-divider {
+  height: 1px;
+  background-color: var(--border-color, #e0e0e0);
+  margin: 4px 0;
+}
+
+/* Item estilo checkbox dentro do menu dropdown */
+.dropdown-item-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-main, #333);
+  user-select: none;
+}
+
+.dropdown-item-checkbox:hover {
+  background-color: var(--bg-hover, #f0f0f0);
+}
+
+.dropdown-item-checkbox input[type="checkbox"] {
+  cursor: pointer;
+}
+
 .search-box {
   flex: 1;
   min-width: 200px;
