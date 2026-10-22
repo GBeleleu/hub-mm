@@ -32,7 +32,7 @@ body {
    2. BARRA FIXA
    ========================================================================== */
 .top-bar {
-  position: fixed !important;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -330,8 +330,8 @@ button:disabled, select:disabled {
 
 /* Bloco do Controle Temporal Fixo e Centralizado abaixo da barra superior */
 .nav-time-fixed-bar {
-  position: fixed !important;
-  top: 70px; /* Altura da barra superior */
+  position: fixed;
+  top: 77px; /* Altura da barra superior */
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
