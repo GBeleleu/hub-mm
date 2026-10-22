@@ -39,18 +39,25 @@
       <div class="control-group-wrapper">
         <span class="control-label">Organizar:</span>
         <div class="button-group" id="organizeGroup">
-          <button class="btn-group-item active highlighted" data-organize="consolidado" title="Ideal para estudo. Agrupa vídeos iguais.">
+          
+          <!-- Botão Consolidado (Verde Escuro quando ativo) -->
+          <button class="btn-group-item highlighted" data-organize="consolidado" title="Ideal para estudo. Agrupa vídeos iguais.">
             <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M19,11H5V9H19M16,15H8V13H16M20,3H4C2.9,3 2,3.9 2,5V19C2,20.1 2.9,21 4,21H20C21.1,21 22,20.1 22,19V5C22,3.9 21.1,3 20,3Z"/></svg>
             Consolidado
           </button>
-          <button class="btn-group-item" data-organize="sequenciado" title="Todos em ordem cronológica.">
-            <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3,13H15V11H3M3,6V8H21V6M3,18H9V16H3V18Z"/></svg>
-            Misturado
-          </button>
-          <button class="btn-group-item" data-organize="sequenciado-canais" title="Agrupados por blocos canais em ordem cronológica.">
-            <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4,11h6a1,1,0,0,0,1-1V4a1,1,0,0,0-1-1H4A1,1,0,0,0,3,4v6A1,1,0,0,0,4,11ZM4,21h6a1,1,0,0,0,1-1V14a1,1,0,0,0-1-1H4a1,1,0,0,0-1,1v6A1,1,0,0,0,4,21Zm10,0h6a1,1,0,0,0,1-1V14a1,1,0,0,0-1-1H14a1,1,0,0,0-1,1v6A1,1,0,0,0,14,21Z"/></svg>
-            Blocos
-          </button>
+
+          <!-- Menu Dropdown para Sequenciado (Misturado / Blocos) -->
+          <div class="dropdown-wrapper" id="sequencedDropdown">
+            <button class="btn-group-item dropdown-toggle-btn" id="sequencedToggleBtn" title="Opções Sequenciadas">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3,13H15V11H3M3,6V8H21V6M3,18H9V16H3V18Z"/></svg>
+              <span id="sequencedActiveLabel">Misturado</span> ▼
+            </button>
+            <div class="dropdown-menu" id="sequencedMenu" style="display: none;">
+              <button class="dropdown-item" data-organize="sequenciado">Misturado</button>
+              <button class="dropdown-item" data-organize="sequenciado-canais">Blocos</button>
+            </div>
+          </div>
+
         </div>
       </div>
 
