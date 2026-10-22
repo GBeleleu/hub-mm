@@ -74,14 +74,17 @@
           <div class="dropdown-wrapper" id="sortDropdown">
             <button class="btn-group-item dropdown-toggle-btn" id="sortToggleBtn" title="Opções de Ordenação">
               <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>
-              <span id="sortActiveLabel">Data de Publicação</span>
+              <span id="sortActiveLabel">Data</span>
               <span id="sortDirectionArrow">▲</span>
             </button>
             <div class="dropdown-menu" id="sortMenu" style="display: none;">
-              <button class="dropdown-item" data-sort="data">Data de Publicação</button>
-              <button class="dropdown-item" data-sort="titulo">Título</button>
+              <button class="dropdown-item" data-sort="data">Data</button>
+              <!-- <button class="dropdown-item" data-sort="titulo">Título</button>  REMOVER DEAD CODE -->
               <button class="dropdown-item" data-sort="duracao">Duração</button>
               <button class="dropdown-item" data-sort="ocorrencias">Ocorrências</button>
+
+              <div class="dropdown-divider"></div>
+              
               <button class="dropdown-item" data-sort="categoria">Categoria</button>
               <button class="dropdown-item" data-sort="progresso">Status</button>
               
@@ -89,7 +92,7 @@
               
               <label class="dropdown-item-checkbox">
                 <input type="checkbox" id="sortOrderCheckbox">
-                <span>Ordem inversa</span>
+                <span>Inverter</span>
               </label>
             </div>
           </div>
