@@ -344,3 +344,19 @@ button:disabled, select:disabled {
   gap: 12px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
+
+@media (max-width: 768px) {
+  body {
+    /* Permite que o padding se ajuste de forma segura em telas menores */
+    padding-top: 180px !important; 
+  }
+
+  .top-bar {
+    padding: 8px 10px;
+  }
+
+  .controls-container {
+    flex-wrap: wrap; /* Permite que os elementos se acomodem em mais de uma linha se necessário */
+    gap: 8px;
+  }
+}
