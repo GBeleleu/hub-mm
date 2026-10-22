@@ -45,12 +45,14 @@ body {
 
 .controls-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center; /* Ajustado para alinhar perfeitamente os elementos no eixo vertical */
+  flex-wrap: nowrap; /* Mantém todos os itens na mesma linha horizontal */
+  gap: 10px;
+  align-items: center; /* Alinha perfeitamente todos os elementos no centro vertical */
   justify-content: space-between;
   max-width: 1600px;
   margin: 0 auto;
+  overflow-x: auto; /* Permite rolagem lateral suave se a tela for menor */
+  padding-bottom: 2px;
 }
 
 /* CONTAINER PRINCIPAL DE LARGURA EXPANDIDA */
@@ -58,6 +60,22 @@ body {
   max-width: 1500px;
   margin: 15px auto;
   padding: 0 16px;
+}
+
+/* Caixa de busca expansível com prioridade */
+.search-box {
+  flex: 1 1 180px;
+  min-width: 140px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-size: 13px;
 }
 
 /* Destaque em verde escuro para o botão Consolidado ativo */
@@ -126,21 +144,6 @@ body {
 
 .dropdown-item-checkbox input[type="checkbox"] {
   cursor: pointer;
-}
-
-.search-box {
-  flex: 1;
-  min-width: 200px;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 7px 12px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-primary);
-  color: var(--text-main);
-  font-size: 13px;
 }
 
 /* GRUPOS COM RÓTULOS SUPORTADOS */
@@ -323,4 +326,21 @@ button:disabled, select:disabled {
   background: transparent;
   border: none;
   line-height: 1;
+}
+
+/* Bloco do Controle Temporal Fixo e Centralizado abaixo da barra superior */
+.nav-time-fixed-bar {
+  position: fixed;
+  top: 61px; /* Altura exata aproximada da barra superior */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 4px 12px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
 }
