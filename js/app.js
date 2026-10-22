@@ -268,11 +268,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Fecha o menu do usuário ao clicar fora dele
-  window.addEventListener('click', (e) => {
-    if (userMenu && !userMenu.contains(e.target) && e.target !== avatarBtn) {
-      userMenu.style.display = 'none';
-    }
+  // Fechar menus ao clicar em qualquer lugar fora
+  window.addEventListener('click', () => {
+    if (seqMenu) seqMenu.style.display = 'none';
+    if (sortMenu) sortMenu.style.display = 'none';
+    if (userMenu) userMenu.style.display = 'none';
   });
 
   // FECHAMENTO DOS MODAIS
