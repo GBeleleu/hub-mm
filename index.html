@@ -61,31 +61,48 @@
         </div>
       </div>
 
-      <!-- BUSCA -->
+      <!-- BARRA DE BUSCA -->
       <div class="search-box" style="position: relative;">
         <input type="text" id="searchInput" placeholder="Buscar por título..." style="padding-right: 32px;">
         <button id="clearSearchBtn" title="Limpar busca" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--text-muted); font-size: 14px; cursor: pointer; display: none; padding: 2px 6px;">✕</button>
       </div>
 
-      <!-- ORDENAÇÃO E FILTROS -->
-      <div class="filter-group">
-        <select id="sortBySelect">
-          <option value="data">Data de Publicação</option>
-          <option value="titulo">Título</option>
-          <option value="duracao">Duração</option>
-          <option value="ocorrencias">Ocorrências</option>
-          <option value="categoria">Categoria</option>
-          <option value="progresso">Status</option>
-        </select>
+      <!-- BOTÕES DE ORDENAÇÃO (ORDENAR) -->
+      <div class="control-group-wrapper">
+        <span class="control-label">Ordenar:</span>
+        <div class="button-group" id="sortGroup">
+          <div class="dropdown-wrapper" id="sortDropdown">
+            <button class="btn-group-item dropdown-toggle-btn" id="sortToggleBtn" title="Opções de Ordenação">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>
+              <span id="sortActiveLabel">Data de Publicação</span>
+              <span id="sortDirectionArrow">▲</span>
+            </button>
+            <div class="dropdown-menu" id="sortMenu" style="display: none;">
+              <button class="dropdown-item" data-sort="data">Data de Publicação</button>
+              <button class="dropdown-item" data-sort="titulo">Título</button>
+              <button class="dropdown-item" data-sort="duracao">Duração</button>
+              <button class="dropdown-item" data-sort="ocorrencias">Ocorrências</button>
+              <button class="dropdown-item" data-sort="categoria">Categoria</button>
+              <button class="dropdown-item" data-sort="progresso">Status</button>
+              
+              <div class="dropdown-divider"></div>
+              
+              <label class="dropdown-item-checkbox">
+                <input type="checkbox" id="sortOrderCheckbox">
+                <span>Ordem inversa</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <button id="sortOrderBtn" title="Inverter Ordem">
-          <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3L5 7h3v7h2V7h3L9 3zm6 18l4-4h-3V10h-2v7h-3l4 4z"/></svg>
-          <span id="sortOrderLabel">Asc ▲</span>
-        </button>
+         <!-- GRUPOS -->
         <button id="taxonomyModalBtn">
           <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
           Grupos
         </button>
+
+         <!-- CANAIS -->
         <button id="channelsModalBtn">
           <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15l7-3-7-3v6z"/></svg>
           Canais
