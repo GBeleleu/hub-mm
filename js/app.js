@@ -9,8 +9,12 @@ window.renderList = renderList;
 function adjustBodyPadding() {
   const topBar = document.getElementById('topBar');
   const navTime = document.getElementById('navTimeContainer');
-  const totalHeight = (topBar ? topBar.offsetHeight : 60) + (navTime ? navTime.offsetHeight : 35);
-  document.body.style.paddingTop = `${totalHeight + 15}px`;
+  const topBarHeight = topBar ? topBar.offsetHeight : 60;
+  const navTimeHeight = navTime ? navTime.offsetHeight : 35;
+  
+  // Adiciona um respiro extra de segurança (ex: +20px) para evitar qualquer sobreposição
+  const totalHeight = topBarHeight + navTimeHeight;
+  document.body.style.paddingTop = `${totalHeight + 20}px`;
 }
 
 function updateSortBtnText() {
