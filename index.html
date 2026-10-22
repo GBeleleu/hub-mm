@@ -15,14 +15,8 @@
   <!-- BARRA FIXA SUPERIOR -->
   <header class="top-bar" id="topBar">
     <div class="controls-container">
-      
-      <!-- BUSCA -->
-      <div class="search-box" style="position: relative;">
-        <input type="text" id="searchInput" placeholder="Buscar por título..." style="padding-right: 32px;">
-        <button id="clearSearchBtn" title="Limpar busca" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--text-muted); font-size: 14px; cursor: pointer; display: none; padding: 2px 6px;">✕</button>
-      </div>
 
-<!-- BOTÕES DE MODO DE EXIBIÇÃO (EXIBIR) -->
+      <!-- BOTÕES DE MODO DE EXIBIÇÃO (EXIBIR) -->
       <div class="control-group-wrapper">
         <span class="control-label">Exibir:</span>
         <div class="button-group" id="displayModeGroup">
@@ -58,6 +52,12 @@
             Blocos
           </button>
         </div>
+      </div>
+
+      <!-- BUSCA -->
+      <div class="search-box" style="position: relative;">
+        <input type="text" id="searchInput" placeholder="Buscar por título..." style="padding-right: 32px;">
+        <button id="clearSearchBtn" title="Limpar busca" style="position: absolute; right: 6px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--text-muted); font-size: 14px; cursor: pointer; display: none; padding: 2px 6px;">✕</button>
       </div>
 
       <!-- ORDENAÇÃO E FILTROS -->
