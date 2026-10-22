@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CONFIGURAÇÕES E ESTADO GLOBAL
+   CONFIGURAÇÕES E ESTADO GLOBAL 
    ========================================================================== */
 export const CONFIG = {
   DEBOUNCE_DELAY_MS: 300,
