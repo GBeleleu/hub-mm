@@ -51,6 +51,39 @@ function syncButtonGroupsUI() {
   document.querySelectorAll('#sequencedMenu .dropdown-item').forEach(item => {
     item.classList.toggle('active', item.dataset.organize === state.organizeMode);
   });
+
+  // Sincronizar Grupo ORDENAR
+  const sortActiveLabel = document.getElementById('sortActiveLabel');
+  const sortDirectionArrow = document.getElementById('sortDirectionArrow');
+  const sortOrderCheckbox = document.getElementById('sortOrderCheckbox');
+
+  // Mapeamento das opções de ordenação para exibição no botão
+  const sortLabels = {
+    'data': 'Data de Publicação',
+    'titulo': 'Título',
+    'duracao': 'Duração',
+    'ocorrencias': 'Ocorrências',
+    'categoria': 'Categoria',
+    'progresso': 'Status'
+  };
+
+  if (sortActiveLabel) {
+    sortActiveLabel.textContent = sortLabels[state.sortBy] || 'Data de Publicação';
+  }
+
+  // Seta de ordenação: ▲ para Ascendente, ▼ para Descendente (Inversa)
+  if (sortDirectionArrow) {
+    sortDirectionArrow.textContent = state.sortAscending ? '▲' : '▼';
+  }
+
+  if (sortOrderCheckbox) {
+    sortOrderCheckbox.checked = !state.sortAscending;
+  }
+
+  // Marca a opção de ordenação ativa no menu
+  document.querySelectorAll('#sortMenu .dropdown-item').forEach(item => {
+    item.classList.toggle('active', item.dataset.sort === state.sortBy);
+  });
 }
 
 async function loadDatabase() {
