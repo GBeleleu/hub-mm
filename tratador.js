@@ -8,7 +8,7 @@ const path = require('path');
 const CONFIG_TRAT = {
   ARQUIVO_BRUTO: path.join(__dirname, 'videos_bruto.json'),
   ARQUIVO_OVERRIDES: path.join(__dirname, 'overrides.json'),
-  ARQUIVO_TAXONOMIA: path.join(__dirname, 'taxonomia.json'),
+  ARQUIVO_collections: path.join(__dirname, 'collections.json'),
   ARQUIVO_FINAL: path.join(__dirname, 'database.json'),
   
   CRITERIO_A_MAX_DURACAO_DIFF: 120,
@@ -107,7 +107,7 @@ function avaliarCorrespondencia(master, candidato) {
 }
 
 /**
- * Função utilitária para extrair os prefixos das TAGs do taxonomia.json
+ * Função utilitária para extrair os prefixos das TAGs do collections.json
  */
 function parseTagsString(tagString) {
   if (!tagString || typeof tagString !== 'string') return {};
@@ -220,27 +220,27 @@ function processarDados() {
     }
   }
 
-  // 3. ESTRUTURAÇÃO DE TAGS/TAXONOMIA (Merge Direto)
-  let taxonomiaMap = {};
+  // 3. ESTRUTURAÇÃO DE COLEÇÕES (Merge Direto)
+  let collectionsMap = {};
   let tagsCount = 0;
 
-  if (fs.existsSync(CONFIG_TRAT.ARQUIVO_TAXONOMIA)) {
+  if (fs.existsSync(CONFIG_TRAT.ARQUIVO_collections)) {
     try {
-      taxonomiaMap = JSON.parse(fs.readFileSync(CONFIG_TRAT.ARQUIVO_TAXONOMIA, 'utf-8'));
+      collectionsMap = JSON.parse(fs.readFileSync(CONFIG_TRAT.ARQUIVO_collections, 'utf-8'));
     } catch (e) {
-      console.warn("⚠️ Aviso: Não foi possível ler taxonomia.json. Prosseguindo sem tags.");
+      console.warn("⚠️ Aviso: Não foi possível ler collections.json. Prosseguindo sem tags.");
     }
   }
 
   resultadoProcessado.forEach(item => {
-    // Limpa propriedades antigas de taxonomia para garantir estado limpo
+    // Limpa propriedades antigas de collections para garantir estado limpo
     delete item.categoria;
     delete item.grupo;
     delete item.playlist;
 
-    // Se houver registro no taxonomia.json para este ID, injeta as propriedades diretamente
-    if (taxonomiaMap[item.videoId]) {
-      const dadosTags = taxonomiaMap[item.videoId];
+    // Se houver registro no collections.json para este ID, injeta as propriedades diretamente
+    if (collectionsMap[item.videoId]) {
+      const dadosTags = collectionsMap[item.videoId];
       
       if (dadosTags.categoria) item.categoria = dadosTags.categoria;
       if (dadosTags.grupo) item.grupo = dadosTags.grupo;
