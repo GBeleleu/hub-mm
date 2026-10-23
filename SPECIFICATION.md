@@ -24,15 +24,15 @@ Este documento detalha o comportamento esperado de cada componente, rotina e ele
   * **Critério C:** Algoritmo de Jaccard com similaridade de texto >= 75% e duração <= 2 minutos.
   * **Trava de Segurança:** Se os vídeos possuírem numerações de episódios/partes distintas (ex: *Parte 1* vs *Parte 2*), a aglutinação é bloqueada.
 * **Overrides Manuais (`overrides.json`):** Permite forçar ou corrigir agrupamentos de vídeos manualmente informando quem deve ser o `masterId`.
-* **Taxonomia (`taxonomia.json`):** Injeta categorias e marcadores nos vídeos processados antes de gerar a base final `database.json`.
+* **Collections (`collections.json`):** Injeta categorias e marcadores nos vídeos processados antes de gerar a base final `database.json`.
 
 ---
 
-## 2. Painel Administrativo de Taxonomia (`admin.html`)
+## 2. Painel Administrativo de Collections (`admin.html`)
 
 * **Finalidade:** Interface gráfica leve para atribuição rápida de categorias e tags por vídeo.
 * **Formato do Input:** Aceita valores no formato `cat:Categoria | grupo:Nome | #tag`.
-* **Exportação:** Gera e baixa diretamente o arquivo `taxonomia.json` atualizado para ser commitado no repositório.
+* **Exportação:** Gera e baixa diretamente o arquivo `collections.json` atualizado para ser commitado no repositório.
 
 ---
 
@@ -45,7 +45,7 @@ Este documento detalha o comportamento esperado de cada componente, rotina e ele
   * **Sequência Mesclada:** Exibe todos os vídeos em ordem cronológica pura.
   * **Sequência Separada:** Agrupa e exibe vídeos divididos por cabeçalhos de canal.
 * **Ordenação (`sortBySelect` & `sortOrderBtn`):** Ordena por Data, Título, Duração, Categoria ou Status. Permite alternar a direção entre Crescente (`Asc ▲`) e Decrescente (`Desc ▼`).
-* **Filtro de Grupos/Taxonomia (`taxonomyModalBtn`):** Abre modal com checkboxes para ocultar/exibir categorias específicas.
+* **Filtro de Grupos/Collections (`collectionsModalBtn`):** Abre modal com checkboxes para ocultar/exibir categorias específicas.
 * **Filtro de Canais (`channelsModalBtn`):** Abre modal com checkboxes para ocultar/exibir canais específicos.
 
 ### 3.2. Autenticação & Progresso do Usuário
