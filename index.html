@@ -93,7 +93,7 @@
 
       <!-- GRUPOS -->
       <div class="filter-group">
-        <button id="taxonomyModalBtn" title="Filtrar por Grupos">
+        <button id="collectionsModalBtn" title="Filtrar por Grupos">
           <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
           Grupos
         </button>
@@ -188,20 +188,20 @@
     </div>
   </div>
 
-  <!-- MODAL DINÂMICO DE TAXONOMIA -->
-  <div class="modal-overlay" id="taxonomyModal">
+  <!-- MODAL DINÂMICO DE COLEÇÕES -->
+  <div class="modal-overlay" id="collectionsModal">
     <div class="modal-card">
       <div class="modal-header">
-        <h3>Filtrar por Taxonomia</h3>
-        <button id="closeTaxonomyModalBtn">&times;</button>
+        <h3>Filtrar por Coleções</h3>
+        <button id="closecollectionsModalBtn">&times;</button>
       </div>
-      <div class="modal-body" id="taxonomyListContainer"></div>
+      <div class="modal-body" id="collectionsListContainer"></div>
       <div class="modal-actions">
         <div>
-          <button id="selectAllTaxonomyBtn">Marcar Todos</button>
-          <button id="deselectAllTaxonomyBtn">Desmarcar Todos</button>
+          <button id="selectAllcollectionsBtn">Marcar Todos</button>
+          <button id="deselectAllcollectionsBtn">Desmarcar Todos</button>
         </div>
-        <button id="applyTaxonomyBtn" style="border-color: var(--accent-color);">Aplicar</button>
+        <button id="applycollectionsBtn" style="border-color: var(--accent-color);">Aplicar</button>
       </div>
     </div>
   </div>
