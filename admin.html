@@ -144,7 +144,7 @@
         <span id="unsavedStatus" class="status-badge">Sem alterações pendentes</span>
       </div>
       <div class="btn-group">
-        <button id="exportcollectionsBtn">Exportar collections.json</button>
+        <button id="exportCollectionsBtn">Exportar collections.json</button>
         <button id="exportOverridesBtn">Exportar overrides.json</button>
         <button id="exportAllBtn" class="primary">Exportar Ambos 💾</button>
       </div>
@@ -166,10 +166,10 @@
 
   <script>
     let database = [];
-    let initialcollectionsMap = {};
+    let initialCollectionsMap = {};
     let initialOverridesMap = {};
 
-    let currentcollectionsMap = {};
+    let currentCollectionsMap = {};
     let currentOverridesMap = {};
 
     let modifiedItems = new Set();
@@ -183,11 +183,11 @@
         ]);
 
         if (resDb.status === 'fulfilled') database = resDb.value;
-        if (resCol.status === 'fulfilled') initialcollectionsMap = resCol.value;
+        if (resCol.status === 'fulfilled') initialCollectionsMap = resCol.value;
         if (resOv.status === 'fulfilled') initialOverridesMap = resOv.value;
 
         // Clona os estados iniciais
-        currentcollectionsMap = JSON.parse(JSON.stringify(initialcollectionsMap));
+        currentCollectionsMap = JSON.parse(JSON.stringify(initialCollectionsMap));
         currentOverridesMap = JSON.parse(JSON.stringify(initialOverridesMap));
 
         renderAdminList();
@@ -205,12 +205,12 @@
         const row = document.createElement('div');
         
         // Recupera os dados atuais do mapa de collections
-        const itemCol = currentcollectionsMap[vId] || {};
+        const itemCol = currentCollectionsMap[vId] || {};
         const catVal = itemCol.categoria || '';
         const grpVal = itemCol.grupo || '';
         const masterVal = currentOverridesMap[vId] || '';
 
-        const hasExisting = !!(initialcollectionsMap[vId] || initialOverridesMap[vId]);
+        const hasExisting = !!(initialCollectionsMap[vId] || initialOverridesMap[vId]);
         const isModified = modifiedItems.has(vId);
 
         row.className = `item-row ${isModified ? 'is-modified' : (hasExisting ? 'has-existing' : '')}`;
@@ -239,9 +239,9 @@
 
       // Atualiza collections
       if (Object.keys(novoObjetoTag).length > 0) {
-        currentcollectionsMap[videoId] = novoObjetoTag;
+        currentCollectionsMap[videoId] = novoObjetoTag;
       } else {
-        delete currentcollectionsMap[videoId];
+        delete currentCollectionsMap[videoId];
       }
 
       // Atualiza Overrides
@@ -280,8 +280,8 @@
       downloadAnchor.remove();
     }
 
-    document.getElementById('exportcollectionsBtn').addEventListener('click', () => {
-      downloadJSON('collections.json', currentcollectionsMap);
+    document.getElementById('exportCollectionsBtn').addEventListener('click', () => {
+      downloadJSON('collections.json', currentCollectionsMap);
     });
 
     document.getElementById('exportOverridesBtn').addEventListener('click', () => {
@@ -289,7 +289,7 @@
     });
 
     document.getElementById('exportAllBtn').addEventListener('click', () => {
-      downloadJSON('collections.json', currentcollectionsMap);
+      downloadJSON('collections.json', currentCollectionsMap);
       setTimeout(() => {
         downloadJSON('overrides.json', currentOverridesMap);
       }, 300);
