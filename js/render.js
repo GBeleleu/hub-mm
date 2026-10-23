@@ -117,7 +117,10 @@ function createStatusSelect(videoId) {
 }
 
 export function createCardElement(item, duplicates = [], forceDisplayMode = null) {
-  const displayMode = forceDisplayMode || state.displayMode;
+  let displayMode = forceDisplayMode || state.displayMode;
+  if (!['lista', 'compacto', 'grade'].includes(displayMode)) {
+    displayMode = 'compacto'; // Garante o modo compacto como padrão seguro
+  }
   const taxInfo = parseTaxonomy(item);
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
   const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
@@ -324,6 +327,10 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
 
     return card;
   }
+  const fallbackCard = document.createElement('div');
+  fallbackCard.className = 'card-display-compacto';
+  fallbackCard.textContent = item?.titulo || 'Item inválido';
+  return fallbackCard;
 }
 
 export function renderList() {
