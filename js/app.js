@@ -143,6 +143,7 @@ function populateChannelsModal() {
   });
 }
 
+//DOM LISTENERS
 document.addEventListener('DOMContentLoaded', () => {
   loadState();
   syncButtonGroupsUI();
@@ -251,6 +252,24 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('click', (e) => {
     if (sortMenu && !sortMenu.contains(e.target) && e.target !== sortToggleBtn) {
       sortMenu.style.display = 'none';
+    }
+  });
+
+  // Lógica para abrir/fechar o menu dropdown do perfil do usuário (Avatar do Google)
+  const avatarBtn = document.getElementById('userAvatarBtn');
+  const userMenu = document.getElementById('userMenu');
+
+  avatarBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (userMenu) {
+      userMenu.style.display = userMenu.style.display === 'none' ? 'flex' : 'none';
+    }
+  });
+
+  // Fecha o menu do usuário ao clicar fora dele
+  window.addEventListener('click', (e) => {
+    if (userMenu && !userMenu.contains(e.target) && e.target !== avatarBtn) {
+      userMenu.style.display = 'none';
     }
   });
 

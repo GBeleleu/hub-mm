@@ -128,26 +128,29 @@ window.updateVideoProgress = async function(videoId, selectedValue) {
   }
 };
 
-// Atualiza os elementos visuais da barra superior (Botão Entrar/Sair e Email)
+// Atualiza os elementos visuais da barra superior (Botão Entrar e Perfil com Foto/Dropdown)
 function updateAuthUI(user) {
   const loginBtn = document.getElementById('loginBtn');
+  const userProfileDropdown = document.getElementById('userProfileDropdown');
+  const userAvatarImg = document.getElementById('userAvatarImg');
+  const userNameSpan = document.getElementById('userNameSpan');
   const userEmailSpan = document.getElementById('userEmailSpan');
-  const logoutBtn = document.getElementById('logoutBtn');
+  const userMenu = document.getElementById('userMenu');
 
   if (user) {
+    // Estado Logado
     if (loginBtn) loginBtn.style.display = 'none';
-    if (userEmailSpan) {
-      userEmailSpan.textContent = user.email || user.displayName || 'Usuário Logado';
-      userEmailSpan.style.display = 'inline';
-    }
-    if (logoutBtn) logoutBtn.style.display = 'inline-block';
+    if (userProfileDropdown) userProfileDropdown.style.display = 'block';
+
+    // Preenche as informações do usuário logado
+    if (userAvatarImg) userAvatarImg.src = user.photoURL || 'https://via.placeholder.com/36';
+    if (userNameSpan) userNameSpan.textContent = user.displayName || 'Usuário';
+    if (userEmailSpan) userEmailSpan.textContent = user.email || '';
   } else {
-    if (loginBtn) loginBtn.style.display = 'inline-block';
-    if (userEmailSpan) {
-      userEmailSpan.textContent = '';
-      userEmailSpan.style.display = 'none';
-    }
-    if (logoutBtn) logoutBtn.style.display = 'none';
+    // Estado Deslogado
+    if (loginBtn) loginBtn.style.display = 'block';
+    if (userProfileDropdown) userProfileDropdown.style.display = 'none';
+    if (userMenu) userMenu.style.display = 'none'; // Fecha o menu se estiver aberto
   }
 }
 
