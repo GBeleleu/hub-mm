@@ -1,5 +1,5 @@
-import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddencollectionsTags, videoDatabase } from './state.js';
-import { populatecollectionsModal } from './collections.js';
+import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddenCollectionsTags, videoDatabase } from './state.js';
+import { populateCollectionsModal } from './collections.js';
 import { renderList } from './render.js';
 
 let debounceTimer = null;
@@ -305,20 +305,20 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.getElementById('collectionsModalBtn')?.addEventListener('click', () => {
-    populatecollectionsModal();
+    populateCollectionsModal();
     document.getElementById('collectionsModal')?.classList.add('open');
   });
 
-  document.getElementById('closecollectionsModalBtn')?.addEventListener('click', () => {
+  document.getElementById('closeCollectionsModalBtn')?.addEventListener('click', () => {
     document.getElementById('collectionsModal')?.classList.remove('open');
   });
 
-  document.getElementById('applycollectionsBtn')?.addEventListener('click', () => {
+  document.getElementById('applyCollectionsBtn')?.addEventListener('click', () => {
     const hidden = [];
     document.querySelectorAll('#collectionsListContainer input[type="checkbox"]').forEach(cb => {
       if (!cb.checked) hidden.push(cb.value);
     });
-    setHiddencollectionsTags(hidden);
+    setHiddenCollectionsTags(hidden);
     saveState();
     renderList();
     document.getElementById('collectionsModal')?.classList.remove('open');
