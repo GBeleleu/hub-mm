@@ -295,7 +295,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     card.className = 'card-display-grade'; // Mantendo a classe CSS existente para não quebrar estilos
 
     card.innerHTML = `
-      <div class="grade-cat-bar" data-cat="${taxInfo.categoria}" title="Categoria: ${taxInfo.categoria}"></div>
+      <div class="grade-cat-bar" data-cat="${taxInfo.categoria}" title="${taxInfo.categoria}"></div>
       <div class="grade-media-block">
         <a href="${videoUrl}" target="_blank">
           <img class="grade-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
