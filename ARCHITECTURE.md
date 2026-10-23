@@ -10,16 +10,16 @@ Este documento especifica a estrutura, os contratos de integração, o fluxo de 
 [YouTube Data API / Fontes]
           │
           ▼
-     importador.js (ETL - Coleta)
+     extractor.js (ETL - Coleta)
           │
           ▼
-      tratador.js (ETL - Tratamento, Merges & Overrides)
+      transformer.js (ETL - Tratamento, Merges & Overrides)
           │
           ├──── overrides.json
           └──── collections.json
           │
           ▼
-    database.json (Base estática consumida pelo Frontend)
+    dataset.json (Base estática consumida pelo Frontend)
           │
           ▼
    Frontend Modular (GitHub Pages ES Modules + Firebase Firestore)

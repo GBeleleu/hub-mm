@@ -4,7 +4,7 @@
 export const CONFIG = {
   DEBOUNCE_DELAY_MS: 300,
   LOCALSTORAGE_KEY: 'app_video_list_official_state',
-  DATA_URL: 'database.json'
+  DATA_URL: 'dataset.json'
 };
 
 // Cache do progresso do usuário acessível globalmente
