@@ -41,16 +41,18 @@ body {
   padding: 10px 16px;
   z-index: 1000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  overflow: visible !important; /* Permite que o dropdown saia para fora da barra */
 }
 
 .controls-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center; /* Ajustado para alinhar perfeitamente os elementos no eixo vertical */
+  flex-wrap: nowrap; /* Mantém todos os itens na mesma linha horizontal */
+  gap: 10px;
+  align-items: center; /* Alinha perfeitamente todos os elementos no centro vertical */
   justify-content: space-between;
   max-width: 1600px;
   margin: 0 auto;
+  overflow: visible !important; /* Evita qualquer corte lateral */
 }
 
 /* CONTAINER PRINCIPAL DE LARGURA EXPANDIDA */
@@ -58,6 +60,22 @@ body {
   max-width: 1500px;
   margin: 15px auto;
   padding: 0 16px;
+}
+
+/* Caixa de busca expansível com prioridade */
+.search-box {
+  flex: 1 1 180px;
+  min-width: 140px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-size: 13px;
 }
 
 /* Destaque em verde escuro para o botão Consolidado ativo */
@@ -77,11 +95,11 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 100;
+  z-index: 9999;
   background-color: var(--bg-card, #ffffff);
   border: 1px solid var(--border-color, #ccc);
   border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
   min-width: 120px;
   display: flex;
   flex-direction: column;
@@ -126,21 +144,6 @@ body {
 
 .dropdown-item-checkbox input[type="checkbox"] {
   cursor: pointer;
-}
-
-.search-box {
-  flex: 1;
-  min-width: 200px;
-}
-
-.search-box input {
-  width: 100%;
-  padding: 7px 12px;
-  border-radius: 6px;
-  border: 1px solid var(--border-color);
-  background-color: var(--bg-primary);
-  color: var(--text-main);
-  font-size: 13px;
 }
 
 /* GRUPOS COM RÓTULOS SUPORTADOS */
@@ -323,4 +326,37 @@ button:disabled, select:disabled {
   background: transparent;
   border: none;
   line-height: 1;
+}
+
+/* Bloco do Controle Temporal Fixo e Centralizado abaixo da barra superior */
+.nav-time-fixed-bar {
+  position: fixed;
+  top: 77px; /* Altura da barra superior */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 4px 12px;
+  display: flex;
+  gap: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+  body {
+    /* Permite que o padding se ajuste de forma segura em telas menores */
+    padding-top: 180px !important; 
+  }
+
+  .top-bar {
+    padding: 8px 10px;
+  }
+
+  .controls-container {
+    flex-wrap: wrap; /* Permite que os elementos se acomodem em mais de uma linha se necessário */
+    gap: 8px;
+  }
 }

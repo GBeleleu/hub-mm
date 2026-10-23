@@ -8,7 +8,13 @@ window.renderList = renderList;
 
 function adjustBodyPadding() {
   const topBar = document.getElementById('topBar');
-  if (topBar) document.body.style.paddingTop = `${topBar.offsetHeight + 15}px`;
+  const navTime = document.getElementById('navTimeContainer');
+  const topBarHeight = topBar ? topBar.offsetHeight : 60;
+  const navTimeHeight = navTime ? navTime.offsetHeight : 35;
+  
+  // Adiciona um respiro extra de segurança (ex: +20px) para evitar qualquer sobreposição
+  const totalHeight = topBarHeight + navTimeHeight;
+  document.body.style.paddingTop = `${totalHeight + 20}px`;
 }
 
 function updateSortBtnText() {
@@ -189,22 +195,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // EVENTOS PARA O GRUPO "ORGANIZAR"
-  // Lógica para abrir/fechar o menu dropdown do Sequenciado
+  // Elementos e menus dropdown
   const seqToggleBtn = document.getElementById('sequencedToggleBtn');
   const seqMenu = document.getElementById('sequencedMenu');
+  
+  const sortToggleBtn = document.getElementById('sortToggleBtn');
+  const sortMenu = document.getElementById('sortMenu');
+  const sortOrderCheckbox = document.getElementById('sortOrderCheckbox');
+  
+  const avatarBtn = document.getElementById('userAvatarBtn');
+  const userMenu = document.getElementById('userMenu');
 
+  // Função centralizadora: fecha todos os menus, exceto o opcionalmente informado
+  function closeAllDropdowns(exceptMenu = null) {
+    if (seqMenu && seqMenu !== exceptMenu) seqMenu.style.display = 'none';
+    if (sortMenu && sortMenu !== exceptMenu) sortMenu.style.display = 'none';
+    if (userMenu && userMenu !== exceptMenu) userMenu.style.display = 'none';
+  }
+
+  // 1. EVENTOS PARA O GRUPO "ORGANIZAR"
   seqToggleBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    seqMenu.style.display = seqMenu.style.display === 'none' ? 'flex' : 'none';
+    const willOpen = seqMenu.style.display === 'none';
+    closeAllDropdowns(willOpen ? seqMenu : null);
+    seqMenu.style.display = willOpen ? 'flex' : 'none';
   });
 
-  // Fecha o dropdown ao clicar fora
-  window.addEventListener('click', () => {
-    if (seqMenu) seqMenu.style.display = 'none';
-  });
-
-  // Eventos para as opções/dropdown
   document.querySelectorAll('#organizeGroup [data-organize]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const target = e.currentTarget;
@@ -216,18 +232,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // EVENTOS PARA O GRUPO "ORDENAR"
-  // Lógica para abrir/fechar o menu dropdown de Ordenar
-  const sortToggleBtn = document.getElementById('sortToggleBtn');
-  const sortMenu = document.getElementById('sortMenu');
-  const sortOrderCheckbox = document.getElementById('sortOrderCheckbox');
-
+  // 2. EVENTOS PARA O GRUPO "ORDENAR"
   sortToggleBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    sortMenu.style.display = sortMenu.style.display === 'none' ? 'flex' : 'none';
+    const willOpen = sortMenu.style.display === 'none';
+    closeAllDropdowns(willOpen ? sortMenu : null);
+    sortMenu.style.display = willOpen ? 'flex' : 'none';
   });
 
-  // Evento ao clicar em um critério de ordenação (ex: Data, Título)
   document.querySelectorAll('#sortMenu .dropdown-item').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const target = e.currentTarget;
@@ -239,38 +251,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Evento do Checkbox de Ordem Inversa
   sortOrderCheckbox?.addEventListener('change', (e) => {
-    // Se o checkbox "Ordem inversa" está marcado, a ordem ascendente torna-se false
     state.sortAscending = !e.target.checked;
     syncButtonGroupsUI();
     saveState();
     renderList();
   });
 
-  // Fecha o dropdown de ordenação ao clicar fora da área
-  window.addEventListener('click', (e) => {
-    if (sortMenu && !sortMenu.contains(e.target) && e.target !== sortToggleBtn) {
-      sortMenu.style.display = 'none';
-    }
-  });
-
-  // Lógica para abrir/fechar o menu dropdown do perfil do usuário (Avatar do Google)
-  const avatarBtn = document.getElementById('userAvatarBtn');
-  const userMenu = document.getElementById('userMenu');
-
+  // 3. EVENTOS PARA O PERFIL DO USUÁRIO (AVATAR)
   avatarBtn?.addEventListener('click', (e) => {
     e.stopPropagation();
-    if (userMenu) {
-      userMenu.style.display = userMenu.style.display === 'none' ? 'flex' : 'none';
-    }
+    const willOpen = userMenu.style.display === 'none';
+    closeAllDropdowns(willOpen ? userMenu : null);
+    userMenu.style.display = willOpen ? 'flex' : 'none';
   });
 
-  // Fecha o menu do usuário ao clicar fora dele
-  window.addEventListener('click', (e) => {
-    if (userMenu && !userMenu.contains(e.target) && e.target !== avatarBtn) {
-      userMenu.style.display = 'none';
-    }
+  // 4. Fechamento global ao clicar em qualquer lugar fora dos menus
+  window.addEventListener('click', () => {
+    closeAllDropdowns();
   });
 
   // FECHAMENTO DOS MODAIS
