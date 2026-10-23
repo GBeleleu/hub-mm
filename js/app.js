@@ -1,5 +1,5 @@
-import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddenTaxonomyTags, videoDatabase } from './state.js';
-import { populateTaxonomyModal } from './taxonomy.js';
+import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddenCollectionsTags, videoDatabase } from './state.js';
+import { populateCollectionsModal } from './collections.js';
 import { renderList } from './render.js';
 
 let debounceTimer = null;
@@ -152,6 +152,10 @@ function populateChannelsModal() {
 //DOM LISTENERS
 document.addEventListener('DOMContentLoaded', () => {
   loadState();
+  // Normaliza o modo de exibição na carga inicial para garantir sincronia com os botões
+  if (!['lista', 'compacto', 'grade'].includes(state.displayMode)) {
+    state.displayMode = 'compacto';
+  }
   syncButtonGroupsUI();
   adjustBodyPadding();
   window.addEventListener('resize', adjustBodyPadding);
@@ -300,24 +304,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('channelsModal')?.classList.remove('open');
   });
 
-  document.getElementById('taxonomyModalBtn')?.addEventListener('click', () => {
-    populateTaxonomyModal();
-    document.getElementById('taxonomyModal')?.classList.add('open');
+  document.getElementById('collectionsModalBtn')?.addEventListener('click', () => {
+    populateCollectionsModal();
+    document.getElementById('collectionsModal')?.classList.add('open');
   });
 
-  document.getElementById('closeTaxonomyModalBtn')?.addEventListener('click', () => {
-    document.getElementById('taxonomyModal')?.classList.remove('open');
+  document.getElementById('closeCollectionsModalBtn')?.addEventListener('click', () => {
+    document.getElementById('collectionsModal')?.classList.remove('open');
   });
 
-  document.getElementById('applyTaxonomyBtn')?.addEventListener('click', () => {
+  document.getElementById('applyCollectionsBtn')?.addEventListener('click', () => {
     const hidden = [];
-    document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => {
+    document.querySelectorAll('#collectionsListContainer input[type="checkbox"]').forEach(cb => {
       if (!cb.checked) hidden.push(cb.value);
     });
-    setHiddenTaxonomyTags(hidden);
+    setHiddenCollectionsTags(hidden);
     saveState();
     renderList();
-    document.getElementById('taxonomyModal')?.classList.remove('open');
+    document.getElementById('collectionsModal')?.classList.remove('open');
   });
 
   window.addEventListener('scroll', saveState);

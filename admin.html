@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin - Gestão de Taxonomia e Overrides</title>
+  <title>Admin - Gestão de Collections e Overrides</title>
   <style>
     :root {
       --bg-primary: #121212;
@@ -140,11 +140,11 @@
   <div class="container">
     <div class="header-bar">
       <div>
-        <h2>Admin — Taxonomia & Overrides</h2>
+        <h2>Admin — Collections & Overrides</h2>
         <span id="unsavedStatus" class="status-badge">Sem alterações pendentes</span>
       </div>
       <div class="btn-group">
-        <button id="exportTaxonomyBtn">Exportar taxonomia.json</button>
+        <button id="exportCollectionsBtn">Exportar collections.json</button>
         <button id="exportOverridesBtn">Exportar overrides.json</button>
         <button id="exportAllBtn" class="primary">Exportar Ambos 💾</button>
       </div>
@@ -166,28 +166,28 @@
 
   <script>
     let database = [];
-    let initialTaxonomyMap = {};
+    let initialCollectionsMap = {};
     let initialOverridesMap = {};
 
-    let currentTaxonomyMap = {};
+    let currentCollectionsMap = {};
     let currentOverridesMap = {};
 
     let modifiedItems = new Set();
 
     async function init() {
       try {
-        const [resDb, resTax, resOv] = await Promise.allSettled([
-          fetch('database.json').then(r => r.json()),
-          fetch('taxonomia.json').then(r => r.json()),
+        const [resDb, resCol, resOv] = await Promise.allSettled([
+          fetch('dataset.json').then(r => r.json()),
+          fetch('collections.json').then(r => r.json()),
           fetch('overrides.json').then(r => r.json())
         ]);
 
         if (resDb.status === 'fulfilled') database = resDb.value;
-        if (resTax.status === 'fulfilled') initialTaxonomyMap = resTax.value;
+        if (resCol.status === 'fulfilled') initialCollectionsMap = resCol.value;
         if (resOv.status === 'fulfilled') initialOverridesMap = resOv.value;
 
         // Clona os estados iniciais
-        currentTaxonomyMap = JSON.parse(JSON.stringify(initialTaxonomyMap));
+        currentCollectionsMap = JSON.parse(JSON.stringify(initialCollectionsMap));
         currentOverridesMap = JSON.parse(JSON.stringify(initialOverridesMap));
 
         renderAdminList();
@@ -204,13 +204,13 @@
         const vId = item.videoId;
         const row = document.createElement('div');
         
-        // Recupera os dados atuais do mapa de taxonomia
-        const itemTax = currentTaxonomyMap[vId] || {};
-        const catVal = itemTax.categoria || '';
-        const grpVal = itemTax.grupo || '';
+        // Recupera os dados atuais do mapa de collections
+        const itemCol = currentCollectionsMap[vId] || {};
+        const catVal = itemCol.categoria || '';
+        const grpVal = itemCol.grupo || '';
         const masterVal = currentOverridesMap[vId] || '';
 
-        const hasExisting = !!(initialTaxonomyMap[vId] || initialOverridesMap[vId]);
+        const hasExisting = !!(initialCollectionsMap[vId] || initialOverridesMap[vId]);
         const isModified = modifiedItems.has(vId);
 
         row.className = `item-row ${isModified ? 'is-modified' : (hasExisting ? 'has-existing' : '')}`;
@@ -232,16 +232,16 @@
       const grp = document.getElementById(`grp-${videoId}`).value.trim();
       const ov = document.getElementById(`ov-${videoId}`).value.trim();
 
-      // Reconstrói o objeto de taxonomia estritamente com os campos permitidos
+      // Reconstrói o objeto de collections estritamente com os campos permitidos
       const novoObjetoTag = {};
       if (cat) novoObjetoTag.categoria = cat;
       if (grp) novoObjetoTag.grupo = grp;
 
-      // Atualiza Taxonomia
+      // Atualiza collections
       if (Object.keys(novoObjetoTag).length > 0) {
-        currentTaxonomyMap[videoId] = novoObjetoTag;
+        currentCollectionsMap[videoId] = novoObjetoTag;
       } else {
-        delete currentTaxonomyMap[videoId];
+        delete currentCollectionsMap[videoId];
       }
 
       // Atualiza Overrides
@@ -280,8 +280,8 @@
       downloadAnchor.remove();
     }
 
-    document.getElementById('exportTaxonomyBtn').addEventListener('click', () => {
-      downloadJSON('taxonomia.json', currentTaxonomyMap);
+    document.getElementById('exportCollectionsBtn').addEventListener('click', () => {
+      downloadJSON('collections.json', currentCollectionsMap);
     });
 
     document.getElementById('exportOverridesBtn').addEventListener('click', () => {
@@ -289,7 +289,7 @@
     });
 
     document.getElementById('exportAllBtn').addEventListener('click', () => {
-      downloadJSON('taxonomia.json', currentTaxonomyMap);
+      downloadJSON('collections.json', currentCollectionsMap);
       setTimeout(() => {
         downloadJSON('overrides.json', currentOverridesMap);
       }, 300);

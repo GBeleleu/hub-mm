@@ -6,17 +6,17 @@ Este documento detalha o comportamento esperado de cada componente, rotina e ele
 
 ## 1. Pipeline de Coleta e Tratamento de Dados (ETL & Automations)
 
-### 1.1. Automação via GitHub Actions (`coleta.yml`)
+### 1.1. Automação via GitHub Actions (`pipeline.yml`)
 * **Agendamento Rápido:** Executado de hora em hora (`cron: '21 * * * *'`) para buscar vídeos recém-publicados nos canais monitorados.
 * **Varredura Completa Diária:** Executada de madrugada (`cron: '21 3 * * *'`) para auditar a base inteira e reconciliar vídeos privados, não listados ou removidos (`privacyStatus: 'removed'`).
-* **Disparo Manual (`workflow_dispatch`):** Permite executar apenas o tratamento (`tratador.js`) ou forçar varredura completa.
+* **Disparo Manual (`workflow_dispatch`):** Permite executar apenas o tratamento (`transformer.js`) ou forçar varredura completa.
 
-### 1.2. Módulo Importador (`importador.js`)
+### 1.2. Módulo Importador (`extractor.js`)
 * **Fontes:** Coleta vídeos via YouTube Data API v3 dos canais configurados.
 * **Early Exit (Parada Antecipada):** Na checagem rápida, assim que encontra um vídeo já conhecido na base, encerra a busca no canal para economizar a quota da API.
-* **Persistência:** Salva o resultado bruto em `videos_bruto.json`.
+* **Persistência:** Salva o resultado bruto em `raw-data.json`.
 
-### 1.3. Módulo Tratador e Deduplicação (`tratador.js`)
+### 1.3. Módulo Tratador e Deduplicação (`transformer.js`)
 * **AutoMaster (Cronológico):** Ordena os vídeos por data de publicação; o vídeo mais antigo de um grupo é eleito como `Master Original` (`isMaster: true`).
 * **Critérios de Deduplicação Automática:**
   * **Critério A:** Títulos idênticos com variação de duração <= 2 minutos.
@@ -24,15 +24,15 @@ Este documento detalha o comportamento esperado de cada componente, rotina e ele
   * **Critério C:** Algoritmo de Jaccard com similaridade de texto >= 75% e duração <= 2 minutos.
   * **Trava de Segurança:** Se os vídeos possuírem numerações de episódios/partes distintas (ex: *Parte 1* vs *Parte 2*), a aglutinação é bloqueada.
 * **Overrides Manuais (`overrides.json`):** Permite forçar ou corrigir agrupamentos de vídeos manualmente informando quem deve ser o `masterId`.
-* **Taxonomia (`taxonomia.json`):** Injeta categorias e marcadores nos vídeos processados antes de gerar a base final `database.json`.
+* **Collections (`collections.json`):** Injeta categorias e marcadores nos vídeos processados antes de gerar a base final `dataset.json`.
 
 ---
 
-## 2. Painel Administrativo de Taxonomia (`admin.html`)
+## 2. Painel Administrativo de Collections (`admin.html`)
 
 * **Finalidade:** Interface gráfica leve para atribuição rápida de categorias e tags por vídeo.
 * **Formato do Input:** Aceita valores no formato `cat:Categoria | grupo:Nome | #tag`.
-* **Exportação:** Gera e baixa diretamente o arquivo `taxonomia.json` atualizado para ser commitado no repositório.
+* **Exportação:** Gera e baixa diretamente o arquivo `collections.json` atualizado para ser commitado no repositório.
 
 ---
 
@@ -45,7 +45,7 @@ Este documento detalha o comportamento esperado de cada componente, rotina e ele
   * **Sequência Mesclada:** Exibe todos os vídeos em ordem cronológica pura.
   * **Sequência Separada:** Agrupa e exibe vídeos divididos por cabeçalhos de canal.
 * **Ordenação (`sortBySelect` & `sortOrderBtn`):** Ordena por Data, Título, Duração, Categoria ou Status. Permite alternar a direção entre Crescente (`Asc ▲`) e Decrescente (`Desc ▼`).
-* **Filtro de Grupos/Taxonomia (`taxonomyModalBtn`):** Abre modal com checkboxes para ocultar/exibir categorias específicas.
+* **Filtro de Grupos/Collections (`collectionsModalBtn`):** Abre modal com checkboxes para ocultar/exibir categorias específicas.
 * **Filtro de Canais (`channelsModalBtn`):** Abre modal com checkboxes para ocultar/exibir canais específicos.
 
 ### 3.2. Autenticação & Progresso do Usuário

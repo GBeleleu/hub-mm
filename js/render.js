@@ -1,5 +1,5 @@
 import { videoDatabase, state } from './state.js';
-import { parseTaxonomy, isVideoTaxonomyVisible } from './taxonomy.js';
+import { parseCollections, isVideoCollectionsVisible } from './collections.js';
 
 export function normalizeText(str) {
   if (!str) return '';
@@ -117,8 +117,11 @@ function createStatusSelect(videoId) {
 }
 
 export function createCardElement(item, duplicates = [], forceDisplayMode = null) {
-  const displayMode = forceDisplayMode || state.displayMode;
-  const taxInfo = parseTaxonomy(item);
+  let displayMode = forceDisplayMode || state.displayMode;
+  if (!['lista', 'compacto', 'grade'].includes(displayMode)) {
+    displayMode = 'compacto'; // Garante o modo compacto como padrão seguro
+  }
+  const colInfo = parseCollections(item);
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
   const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
   const liveBadge = item.eLive ? `<span class="live-badge" title="Live"></span>` : '';
@@ -134,8 +137,8 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     // 1. Faixa fina lateral com a cor referente à categoria
     const stripe = document.createElement('div');
     stripe.className = 'category-stripe-thin';
-    stripe.dataset.cat = taxInfo.categoria;
-    stripe.title = taxInfo.categoria;
+    stripe.dataset.cat = colInfo.categoria;
+    stripe.title = colInfo.categoria;
     row.appendChild(stripe);
 
     // 2. Thumbnail com duração no canto inferior direito
@@ -198,7 +201,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     const tagsCell = document.createElement('div');
     tagsCell.className = 'list-item-cell';
     let tagsContent = `${liveBadge}${privacyNotice}`;
-    if (taxInfo.grupo) tagsContent += ` <span style="font-size:10px; color:var(--accent-color);">[${taxInfo.grupo}]</span>`;
+    if (colInfo.grupo) tagsContent += ` <span style="font-size:10px; color:var(--accent-color);">[${colInfo.grupo}]</span>`;
     tagsCell.innerHTML = tagsContent;
     row.appendChild(tagsCell);
 
@@ -236,12 +239,12 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     card.className = 'card-display-compacto';
 
     let badgesHtml = '';
-    if (taxInfo.grupo) badgesHtml += `<span class="badge-grupo">📁 ${taxInfo.grupo}</span>`;
-    if (taxInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${taxInfo.playlist}</span>`;
+    if (colInfo.grupo) badgesHtml += `<span class="badge-grupo">📁 ${colInfo.grupo}</span>`;
+    if (colInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${colInfo.playlist}</span>`;
 
     card.innerHTML = `
-      <div class="category-stripe" data-cat="${taxInfo.categoria}">
-        <span class="category-stripe-text">${taxInfo.categoria}</span>
+      <div class="category-stripe" data-cat="${colInfo.categoria}">
+        <span class="category-stripe-text">${colInfo.categoria}</span>
       </div>
       <div class="card-media-block" title="Clique para ampliar thumbnail">
         <img class="card-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
@@ -292,7 +295,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     card.className = 'card-display-grade'; // Mantendo a classe CSS existente para não quebrar estilos
 
     card.innerHTML = `
-      <div class="grade-cat-bar" data-cat="${taxInfo.categoria}" title="Categoria: ${taxInfo.categoria}"></div>
+      <div class="grade-cat-bar" data-cat="${colInfo.categoria}" title="${colInfo.categoria}"></div>
       <div class="grade-media-block">
         <a href="${videoUrl}" target="_blank">
           <img class="grade-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
@@ -324,6 +327,10 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
 
     return card;
   }
+  const fallbackCard = document.createElement('div');
+  fallbackCard.className = 'card-display-compacto';
+  fallbackCard.textContent = item?.titulo || 'Item inválido';
+  return fallbackCard;
 }
 
 export function renderList() {
@@ -338,8 +345,8 @@ export function renderList() {
 
   let items = videoDatabase.filter(item => {
     const isChannelVisible = !state.hiddenChannels.includes(item.canal);
-    const isTaxonomyVisible = isVideoTaxonomyVisible(item);
-    return isChannelVisible && isTaxonomyVisible;
+    const isCollectionsVisible = isVideoCollectionsVisible(item);
+    return isChannelVisible && isCollectionsVisible;
   });
 
   if (state.searchQuery.trim() !== '') {
@@ -436,10 +443,16 @@ export function renderList() {
         container.appendChild(groupTarget);
       }
 
-      groupItems.forEach(item => groupTarget.appendChild(createCardElement(item, [])));
+      groupItems.forEach(item => {
+        const el = createCardElement(item, []);
+        if (el instanceof Node) groupTarget.appendChild(el);
+      });
     });
   } else {
-    items.forEach(item => targetContainer.appendChild(createCardElement(item, [])));
+    items.forEach(item => {
+      const el = createCardElement(item, []);
+      if (el instanceof Node) targetContainer.appendChild(el);
+    });
   }
 
   const isLogged = !!window.currentUser;
