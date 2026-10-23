@@ -436,10 +436,16 @@ export function renderList() {
         container.appendChild(groupTarget);
       }
 
-      groupItems.forEach(item => groupTarget.appendChild(createCardElement(item, [])));
+      groupItems.forEach(item => {
+        const el = createCardElement(item, []);
+        if (el instanceof Node) groupTarget.appendChild(el);
+      });
     });
   } else {
-    items.forEach(item => targetContainer.appendChild(createCardElement(item, [])));
+    items.forEach(item => {
+      const el = createCardElement(item, []);
+      if (el instanceof Node) targetContainer.appendChild(el);
+    });
   }
 
   const isLogged = !!window.currentUser;
