@@ -8,7 +8,7 @@ const path = require('path');
 const CONFIG_TRAT = {
   ARQUIVO_BRUTO: path.join(__dirname, 'videos_bruto.json'),
   ARQUIVO_OVERRIDES: path.join(__dirname, 'overrides.json'),
-  ARQUIVO_collections: path.join(__dirname, 'collections.json'),
+  ARQUIVO_COLLECTIONS: path.join(__dirname, 'collections.json'),
   ARQUIVO_FINAL: path.join(__dirname, 'database.json'),
   
   CRITERIO_A_MAX_DURACAO_DIFF: 120,
@@ -224,7 +224,7 @@ function processarDados() {
   let collectionsMap = {};
   let tagsCount = 0;
 
-  if (fs.existsSync(CONFIG_TRAT.ARQUIVO_collections)) {
+  if (fs.existsSync(CONFIG_TRAT.ARQUIVO_COLLECTIONS)) {
     try {
       collectionsMap = JSON.parse(fs.readFileSync(CONFIG_TRAT.ARQUIVO_collections, 'utf-8'));
     } catch (e) {
