@@ -152,6 +152,10 @@ function populateChannelsModal() {
 //DOM LISTENERS
 document.addEventListener('DOMContentLoaded', () => {
   loadState();
+  // Normaliza o modo de exibição na carga inicial para garantir sincronia com os botões
+  if (!['lista', 'compacto', 'grade'].includes(state.displayMode)) {
+    state.displayMode = 'compacto';
+  }
   syncButtonGroupsUI();
   adjustBodyPadding();
   window.addEventListener('resize', adjustBodyPadding);
