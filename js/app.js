@@ -1,5 +1,5 @@
-import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddenTaxonomyTags, videoDatabase } from './state.js';
-import { populateTaxonomyModal } from './taxonomy.js';
+import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddencollectionsTags, videoDatabase } from './state.js';
+import { populatecollectionsModal } from './collections.js';
 import { renderList } from './render.js';
 
 let debounceTimer = null;
@@ -304,24 +304,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('channelsModal')?.classList.remove('open');
   });
 
-  document.getElementById('taxonomyModalBtn')?.addEventListener('click', () => {
-    populateTaxonomyModal();
-    document.getElementById('taxonomyModal')?.classList.add('open');
+  document.getElementById('collectionsModalBtn')?.addEventListener('click', () => {
+    populatecollectionsModal();
+    document.getElementById('collectionsModal')?.classList.add('open');
   });
 
-  document.getElementById('closeTaxonomyModalBtn')?.addEventListener('click', () => {
-    document.getElementById('taxonomyModal')?.classList.remove('open');
+  document.getElementById('closecollectionsModalBtn')?.addEventListener('click', () => {
+    document.getElementById('collectionsModal')?.classList.remove('open');
   });
 
-  document.getElementById('applyTaxonomyBtn')?.addEventListener('click', () => {
+  document.getElementById('applycollectionsBtn')?.addEventListener('click', () => {
     const hidden = [];
-    document.querySelectorAll('#taxonomyListContainer input[type="checkbox"]').forEach(cb => {
+    document.querySelectorAll('#collectionsListContainer input[type="checkbox"]').forEach(cb => {
       if (!cb.checked) hidden.push(cb.value);
     });
-    setHiddenTaxonomyTags(hidden);
+    setHiddencollectionsTags(hidden);
     saveState();
     renderList();
-    document.getElementById('taxonomyModal')?.classList.remove('open');
+    document.getElementById('collectionsModal')?.classList.remove('open');
   });
 
   window.addEventListener('scroll', saveState);
