@@ -15,9 +15,9 @@ export function setVideoDatabase(data) {
   videoDatabase = data;
 }
 
-export let hiddenTaxonomyTags = [];
-export function setHiddenTaxonomyTags(tags) {
-  hiddenTaxonomyTags = tags;
+export let hiddenCollectionsTags = [];
+export function setHiddenCollectionsTags(tags) {
+  hiddenCollectionsTags = tags;
 }
 
 export let state = {
