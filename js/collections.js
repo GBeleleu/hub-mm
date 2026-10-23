@@ -1,9 +1,9 @@
 /**
  * js/collections.js - Extrator e Gerenciador de Coleções (Consumidor Nativo)
  */
-import { videoDatabase, hiddencollectionsTags } from './state.js';
+import { videoDatabase, hiddenCollectionsTags } from './state.js';
 
-export function parsecollections(item) {
+export function parseCollections(item) {
   return {
     categoria: item.categoria || '',
     grupo: item.grupo || '',
@@ -11,7 +11,7 @@ export function parsecollections(item) {
   };
 }
 
-export function extractAllcollectionsTags() {
+export function extractAllCollectionsTags() {
   const collectionsTree = {
     categoria: new Set(),
     grupo: new Set(),
@@ -27,12 +27,12 @@ export function extractAllcollectionsTags() {
   return collectionsTree;
 }
 
-export function populatecollectionsModal() {
+export function populateCollectionsModal() {
   const container = document.getElementById('collectionsListContainer');
   if (!container) return;
   container.innerHTML = '';
 
-  const collectionsTree = extractAllcollectionsTags();
+  const collectionsTree = extractAllCollectionsTags();
   const keys = Object.keys(collectionsTree).filter(k => collectionsTree[k].size > 0);
 
   if (keys.length === 0) {
@@ -57,7 +57,7 @@ export function populatecollectionsModal() {
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.value = tagKey;
-      checkbox.checked = !hiddencollectionsTags.includes(tagKey);
+      checkbox.checked = !hiddenCollectionsTags.includes(tagKey);
 
       label.appendChild(checkbox);
       label.appendChild(document.createTextNode(val));
@@ -68,9 +68,9 @@ export function populatecollectionsModal() {
   });
 }
 
-export function isVideocollectionsVisible(item) {
-  if (item.categoria && hiddencollectionsTags.includes(`categoria:${item.categoria}`)) return false;
-  if (item.grupo && hiddencollectionsTags.includes(`grupo:${item.grupo}`)) return false;
-  if (item.playlist && hiddencollectionsTags.includes(`playlist:${item.playlist}`)) return false;
+export function isVideoCollectionsVisible(item) {
+  if (item.categoria && hiddenCollectionsTags.includes(`categoria:${item.categoria}`)) return false;
+  if (item.grupo && hiddenCollectionsTags.includes(`grupo:${item.grupo}`)) return false;
+  if (item.playlist && hiddenCollectionsTags.includes(`playlist:${item.playlist}`)) return false;
   return true;
 }
