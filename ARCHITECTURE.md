@@ -16,7 +16,7 @@ Este documento especifica a estrutura, os contratos de integração, o fluxo de 
       tratador.js (ETL - Tratamento, Merges & Overrides)
           │
           ├──── overrides.json
-          └──── taxonomia.json
+          └──── collections.json
           │
           ▼
     database.json (Base estática consumida pelo Frontend)
@@ -34,13 +34,13 @@ O frontend adota **ES Modules nativos (`type="module"`)** e está estritamente s
 ```text
 /
 ├── index.html            # Markup semântico e barras de controle (sem CSS/JS inline).
-├── admin.html            # Painel administrativo web para gestão visual do taxonomia.json.
+├── admin.html            # Painel administrativo web para gestão visual do collections.json.
 ├── css/
 │   ├── main.css          # Variáveis CSS (Tema Escuro), reset, layout top-bar e container.
 │   └── components.css    # Estilos de cards, badges, gavetas, seletores e modais.
 ├── js/
 │   ├── state.js          # Objeto de estado global (state), configurações e cache.
-│   ├── taxonomy.js       # Extrator/Parser de taxonomia (cat/grupo/tags) e lógica do modal.
+│   ├── collections.js       # Extrator/Parser de collections (cat/grupo/tags) e lógica do modal.
 │   ├── render.js         # Geração sintética do DOM dos cards, fuzzy search, ordenação e renderização.
 │   └── app.js            # Ponto de entrada (bootstrap), event listeners do DOM e controle de estado.
 └── firebase-config.js    # Inicialização do Firebase Auth, Firestore Listener e Hooks Globais.
