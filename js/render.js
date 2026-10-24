@@ -68,7 +68,7 @@ export function openThumbModal(item) {
   if (modal && img && title && watchBtn) {
     img.src = `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
     img.onerror = () => { img.src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`; };
-    title.textContent = item.titulo;
+    title.textContent = item.title;
     watchBtn.href = `https://www.youtube.com/watch?v=${item.videoId}`;
     modal.classList.add('open');
   }
@@ -124,7 +124,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   const colInfo = parseCollections(item);
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
   const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
-  const liveBadge = item.eLive ? `<span class="live-badge" title="Live"></span>` : '';
+  const liveBadge = item.isLive ? `<span class="live-badge" title="Live"></span>` : '';
   const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">(Removido)</span>` : '';
 
   // ------------------------------------------------------------------------
@@ -147,7 +147,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     thumbWrap.title = 'Clique para ampliar thumbnail';
     thumbWrap.innerHTML = `
       <img class="list-thumb-img" src="${thumbUrl}" alt="Thumb" loading="lazy">
-      <span class="list-duration-tag">${formatDuration(item.duracaoSegundos)}</span>
+      <span class="list-duration-tag">${formatDuration(item.durationSeconds)}</span>
     `;
     thumbWrap.addEventListener('click', () => openThumbModal(item));
     row.appendChild(thumbWrap);
@@ -155,7 +155,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     // 3. Título (com scroll horizontal arrastável se grande)
     const titleWrap = document.createElement('div');
     titleWrap.className = 'list-title-wrapper';
-    titleWrap.innerHTML = `<a href="${videoUrl}" target="_blank" class="list-title">${item.titulo}</a>`;
+    titleWrap.innerHTML = `<a href="${videoUrl}" target="_blank" class="list-title">${item.title}</a>`;
     row.appendChild(titleWrap);
 
     // 4. Numeral que abre Gaveta de Ocorrências (se houver duplicatas)
@@ -186,7 +186,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     const dateCell = document.createElement('div');
     dateCell.className = 'list-item-cell';
     dateCell.style.color = 'var(--text-secondary)';
-    dateCell.textContent = formatLocalDateTime(item.dataPublicacao);
+    dateCell.textContent = formatLocalDateTime(item.publishedAt);
     row.appendChild(dateCell);
 
     // 7. Canal
@@ -194,7 +194,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     channelCell.className = 'list-item-cell';
     channelCell.style.fontWeight = 'bold';
     channelCell.style.color = 'var(--text-secondary)';
-    channelCell.textContent = item.canal;
+    channelCell.textContent = item.channelTitle;
     row.appendChild(channelCell);
 
     // 8. live-Removido-TAGs
@@ -250,16 +250,16 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
         <img class="card-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
         <div class="thumb-footer-bar">
           <span class="videoid-tag">${item.videoId}</span>
-          <span class="duration-tag">${formatDuration(item.duracaoSegundos)}</span>
+          <span class="duration-tag">${formatDuration(item.durationSeconds)}</span>
         </div>
       </div>
       <div class="card-content">
         <div>
-          <a href="${videoUrl}" target="_blank" class="card-title">${item.titulo}</a>
+          <a href="${videoUrl}" target="_blank" class="card-title">${item.title}</a>
           ${privacyNotice}
         </div>
-        <span class="card-channel">${item.canal}</span>
-        <span class="card-date">${formatLocalDateTime(item.dataPublicacao)}${liveBadge}</span>
+        <span class="card-channel">${item.channelTitle}</span>
+        <span class="card-date">${formatLocalDateTime(item.publishedAt)}${liveBadge}</span>
         ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
 
         <div class="status-container" style="margin-top:6px;"></div>
@@ -301,14 +301,14 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
           <img class="grade-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
         </a>
         <span class="duration-tag" style="position:absolute; bottom:6px; right:6px; background:rgba(0,0,0,0.8); padding:2px 4px; border-radius:3px; font-size:11px;">
-          ${formatDuration(item.duracaoSegundos)}
+          ${formatDuration(item.durationSeconds)}
         </span>
       </div>
       <div class="grade-body">
-        <a href="${videoUrl}" target="_blank" class="grade-title">${item.titulo}</a>
+        <a href="${videoUrl}" target="_blank" class="grade-title">${item.title}</a>
         <div class="grade-details">
-          <span><strong>${item.canal}</strong> ${liveBadge} ${privacyNotice}</span>
-          <span>${formatLocalDateTime(item.dataPublicacao)}</span>
+          <span><strong>${item.channelTitle}</strong> ${liveBadge} ${privacyNotice}</span>
+          <span>${formatLocalDateTime(item.publishedAt)}</span>
         </div>
         <div class="grade-footer">
           <div class="status-container"></div>
@@ -329,7 +329,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   }
   const fallbackCard = document.createElement('div');
   fallbackCard.className = 'card-display-compacto';
-  fallbackCard.textContent = item?.titulo || 'Item inválido';
+  fallbackCard.textContent = item?.title || 'Item inválido';
   return fallbackCard;
 }
 
@@ -344,13 +344,13 @@ export function renderList() {
   }
 
   let items = videoDatabase.filter(item => {
-    const isChannelVisible = !state.hiddenChannels.includes(item.canal);
+    const isChannelVisible = !state.hiddenChannels.includes(item.channelTitle);
     const isCollectionsVisible = isVideoCollectionsVisible(item);
     return isChannelVisible && isCollectionsVisible;
   });
 
   if (state.searchQuery.trim() !== '') {
-    items = items.filter(item => fuzzyMatch(item.titulo, state.searchQuery));
+    items = items.filter(item => fuzzyMatch(item.title, state.searchQuery));
   }
 
   if (items.length === 0) {
@@ -369,8 +369,8 @@ export function renderList() {
         valA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined) ? Number(window.userProgressCache[a.videoId]) : 99;
         valB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined) ? Number(window.userProgressCache[b.videoId]) : 99;
       } else if (state.sortBy === 'duracao') {
-        valA = a.duracaoSegundos || 0;
-        valB = b.duracaoSegundos || 0;
+        valA = a.durationSeconds || 0;
+        valB = b.durationSeconds || 0;
       } else if (state.sortBy === 'ocorrencias') {
         const getCount = (item) => {
           const targetId = item.isMaster ? item.videoId : item.masterId;
@@ -384,8 +384,8 @@ export function renderList() {
         valA = getCount(a);
         valB = getCount(b);
       } else {
-        valA = new Date(a.dataPublicacao);
-        valB = new Date(b.dataPublicacao);
+        valA = new Date(a.publishedAt);
+        valB = new Date(b.publishedAt);
       }
       return state.sortAscending ? valA - valB : valB - valA;
     });
@@ -426,8 +426,8 @@ export function renderList() {
   } else if (state.organizeMode === 'sequenciado-canais') {
     const channelGroups = new Map();
     items.forEach(item => {
-      if (!channelGroups.has(item.canal)) channelGroups.set(item.canal, []);
-      channelGroups.get(item.canal).push(item);
+      if (!channelGroups.has(item.channelTitle)) channelGroups.set(item.channelTitle, []);
+      channelGroups.get(item.channelTitle).push(item);
     });
 
     channelGroups.forEach((groupItems, channelName) => {

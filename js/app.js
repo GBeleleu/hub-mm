@@ -122,7 +122,7 @@ function populateYearSelector() {
   if (!yearSelect) return;
   yearSelect.innerHTML = '<option value="">Ano</option>';
 
-  const years = [...new Set(videoDatabase.map(v => new Date(v.dataPublicacao).getFullYear()))]
+  const years = [...new Set(videoDatabase.map(v => new Date(v.publishedAt).getFullYear()))]
     .filter(y => !isNaN(y))
     .sort((a, b) => a - b);
 
@@ -139,7 +139,7 @@ function populateChannelsModal() {
   if (!container) return;
   container.innerHTML = '';
 
-  const channels = [...new Set(videoDatabase.map(v => v.canal))].filter(Boolean).sort();
+  const channels = [...new Set(videoDatabase.map(v => v.channelTitle))].filter(Boolean).sort();
   channels.forEach(channel => {
     const label = document.createElement('label');
     label.className = 'channel-checkbox-item';
