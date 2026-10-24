@@ -9,7 +9,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "jBQG06BNH4U",
@@ -57,7 +58,8 @@
     "privacyStatus": "public",
     "masterId": "EYeC98jy14k",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "ZzfbcG_8ubA",
@@ -69,7 +71,8 @@
     "privacyStatus": "public",
     "masterId": "ZzfbcG_8ubA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "gIsTZZ6F2Ig",
@@ -105,7 +108,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "_O94WxHxFqQ",
@@ -213,7 +217,8 @@
     "privacyStatus": "public",
     "masterId": "VJSH1B1H8bs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "jww4aqScaDU",
@@ -225,7 +230,8 @@
     "privacyStatus": "public",
     "masterId": "jww4aqScaDU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "7V87AazHwnk",
@@ -237,7 +243,8 @@
     "privacyStatus": "public",
     "masterId": "jww4aqScaDU",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "Gc2t9ndUq0A",
@@ -381,7 +388,8 @@
     "privacyStatus": "public",
     "masterId": "jww4aqScaDU",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "GCRPluUV9PU",
@@ -405,7 +413,8 @@
     "privacyStatus": "public",
     "masterId": "icZGEhYGsiY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "fjLSRbvZufo",
@@ -441,7 +450,8 @@
     "privacyStatus": "public",
     "masterId": "bnQ8fUTNMrE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "sDHSe8qhlCU",
@@ -477,7 +487,8 @@
     "privacyStatus": "public",
     "masterId": "icZGEhYGsiY",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "zdO9_VsFdHs",
@@ -489,7 +500,8 @@
     "privacyStatus": "public",
     "masterId": "icZGEhYGsiY",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "bwFfnFsXn-8",
@@ -501,7 +513,8 @@
     "privacyStatus": "public",
     "masterId": "bwFfnFsXn-8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "kUFBieATFpg",
@@ -525,7 +538,8 @@
     "privacyStatus": "public",
     "masterId": "KglaESI2by0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "Iq62odHvBvQ",
@@ -537,7 +551,8 @@
     "privacyStatus": "public",
     "masterId": "Iq62odHvBvQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "-sW_HZbt7Zk",
@@ -549,7 +564,8 @@
     "privacyStatus": "public",
     "masterId": "-sW_HZbt7Zk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "ftF_A1B7Rkk",
@@ -561,7 +577,8 @@
     "privacyStatus": "public",
     "masterId": "ftF_A1B7Rkk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "dGytfUaW61A",
@@ -573,7 +590,8 @@
     "privacyStatus": "public",
     "masterId": "dGytfUaW61A",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "5-1KTL0qqYs",
@@ -585,7 +603,8 @@
     "privacyStatus": "public",
     "masterId": "5-1KTL0qqYs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "JyVNYvpNtFk",
@@ -597,7 +616,8 @@
     "privacyStatus": "public",
     "masterId": "JyVNYvpNtFk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "F_P46dyDaVU",
@@ -621,7 +641,8 @@
     "privacyStatus": "public",
     "masterId": "B3q4alABGMo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "gNWSPLcmMjg",
@@ -633,7 +654,8 @@
     "privacyStatus": "public",
     "masterId": "gNWSPLcmMjg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "rW0um-iojZk",
@@ -681,7 +703,8 @@
     "privacyStatus": "public",
     "masterId": "0pOjtceFYCI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "nBHg5W_jeCQ",
@@ -717,7 +740,8 @@
     "privacyStatus": "public",
     "masterId": "0E3kkpYb_z4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "LoO6keEuzFc",
@@ -741,7 +765,8 @@
     "privacyStatus": "public",
     "masterId": "Vx6TsL0CxKE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "NTHneEcA5M4",
@@ -753,7 +778,8 @@
     "privacyStatus": "public",
     "masterId": "NTHneEcA5M4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "Z1-et63vDeQ",
@@ -777,7 +803,8 @@
     "privacyStatus": "public",
     "masterId": "UYDjJ2Leoy8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "m4rsYhCsiw0",
@@ -789,7 +816,8 @@
     "privacyStatus": "public",
     "masterId": "m4rsYhCsiw0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "A4OGpu3MAWU",
@@ -801,7 +829,8 @@
     "privacyStatus": "public",
     "masterId": "A4OGpu3MAWU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ifksubcsMfY",
@@ -825,7 +854,8 @@
     "privacyStatus": "public",
     "masterId": "R3c3jmVrpE0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "KORanAq8JQ8",
@@ -849,7 +879,8 @@
     "privacyStatus": "public",
     "masterId": "M0MuirU7IDo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "IJd_A_Kaq38",
@@ -861,7 +892,8 @@
     "privacyStatus": "public",
     "masterId": "IJd_A_Kaq38",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "TUvCZvoFUd0",
@@ -897,7 +929,8 @@
     "privacyStatus": "public",
     "masterId": "RqpQLP0xvmo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "cC8T1fvFN1o",
@@ -981,7 +1014,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy - Different Duration (100%)"
+    "masterType": "Duplicate - Exact Copy - Different Duration (100%)",
+    "category": "Meditação"
   },
   {
     "videoId": "zgsXZBSqzbA",
@@ -1077,7 +1111,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "NVGuzaGpht0",
@@ -1125,7 +1160,8 @@
     "privacyStatus": "public",
     "masterId": "RqpQLP0xvmo",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)",
+    "category": "Relato"
   },
   {
     "videoId": "ULgMNZk-zsU",
@@ -1161,7 +1197,8 @@
     "privacyStatus": "public",
     "masterId": "R3c3jmVrpE0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy - Different Duration (100%)"
+    "masterType": "Duplicate - Exact Copy - Different Duration (100%)",
+    "category": "Análise"
   },
   {
     "videoId": "OPv2ZlY4k0c",
@@ -1185,7 +1222,8 @@
     "privacyStatus": "public",
     "masterId": "bwFfnFsXn-8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)",
+    "category": "Relato"
   },
   {
     "videoId": "VahE1YMDy-0",
@@ -1281,7 +1319,8 @@
     "privacyStatus": "public",
     "masterId": "jww4aqScaDU",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "amegvuAm-d0",
@@ -1293,7 +1332,8 @@
     "privacyStatus": "public",
     "masterId": "icZGEhYGsiY",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "BJbabj37HCA",
@@ -1305,7 +1345,8 @@
     "privacyStatus": "public",
     "masterId": "BJbabj37HCA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "5S6ansNKi0k",
@@ -1317,7 +1358,8 @@
     "privacyStatus": "public",
     "masterId": "5S6ansNKi0k",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "VOEZ0hfljxI",
@@ -1329,7 +1371,8 @@
     "privacyStatus": "public",
     "masterId": "VJSH1B1H8bs",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)",
+    "category": "Relato"
   },
   {
     "videoId": "1Uluv1rgHbU",
@@ -1365,7 +1408,8 @@
     "privacyStatus": "public",
     "masterId": "bnQ8fUTNMrE",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)",
+    "category": "Relato"
   },
   {
     "videoId": "nVzCYMShMCU",
@@ -1461,7 +1505,8 @@
     "privacyStatus": "public",
     "masterId": "EYeC98jy14k",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)",
+    "category": "Análise"
   },
   {
     "videoId": "eiP3R5d7e1c",
@@ -1485,7 +1530,8 @@
     "privacyStatus": "public",
     "masterId": "BJftdQvdiug",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "V4BdQLnfUU0",
@@ -1497,7 +1543,8 @@
     "privacyStatus": "public",
     "masterId": "BJftdQvdiug",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "meA6aKDAhFo",
@@ -1533,7 +1580,8 @@
     "privacyStatus": "public",
     "masterId": "t-cQMAd5y60",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "nvJpNnzslj4",
@@ -1545,7 +1593,8 @@
     "privacyStatus": "public",
     "masterId": "nvJpNnzslj4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "lh3p1mIsQB0",
@@ -1557,7 +1606,8 @@
     "privacyStatus": "public",
     "masterId": "nvJpNnzslj4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "NezKPIiK-rI",
@@ -1569,7 +1619,8 @@
     "privacyStatus": "public",
     "masterId": "NezKPIiK-rI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "183dK-CtSe8",
@@ -1581,7 +1632,8 @@
     "privacyStatus": "public",
     "masterId": "NezKPIiK-rI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "8vRQYjRqun4",
@@ -1617,7 +1669,8 @@
     "privacyStatus": "public",
     "masterId": "cdnpsufVsD4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "_4XByUv9V0I",
@@ -1629,7 +1682,8 @@
     "privacyStatus": "public",
     "masterId": "cdnpsufVsD4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "xHoRTG2gJXc",
@@ -1665,7 +1719,8 @@
     "privacyStatus": "public",
     "masterId": "2YKmEE8JM4I",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "9z3F6iG1eNU",
@@ -1677,7 +1732,8 @@
     "privacyStatus": "public",
     "masterId": "2YKmEE8JM4I",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "l8lrh8mxINM",
@@ -1689,7 +1745,8 @@
     "privacyStatus": "public",
     "masterId": "l8lrh8mxINM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "H-1g4nmKmlw",
@@ -1701,7 +1758,8 @@
     "privacyStatus": "public",
     "masterId": "l8lrh8mxINM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "lK0Aj96kWic",
@@ -1737,7 +1795,8 @@
     "privacyStatus": "public",
     "masterId": "3X5bEScoIt8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "XESROTsjNHw",
@@ -1749,7 +1808,8 @@
     "privacyStatus": "public",
     "masterId": "3X5bEScoIt8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "yZ-y2vqqaK8",
@@ -1761,7 +1821,8 @@
     "privacyStatus": "public",
     "masterId": "yZ-y2vqqaK8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "hXASa_dWsmY",
@@ -1773,7 +1834,8 @@
     "privacyStatus": "public",
     "masterId": "yZ-y2vqqaK8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "vxu0xKfQ9K0",
@@ -1785,7 +1847,8 @@
     "privacyStatus": "public",
     "masterId": "vxu0xKfQ9K0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ddbK-fzrPUc",
@@ -1797,7 +1860,8 @@
     "privacyStatus": "public",
     "masterId": "vxu0xKfQ9K0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "UYeGBkHD5sQ",
@@ -1809,7 +1873,8 @@
     "privacyStatus": "public",
     "masterId": "UYeGBkHD5sQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "E17eFbfH0Ag",
@@ -1821,7 +1886,8 @@
     "privacyStatus": "public",
     "masterId": "E17eFbfH0Ag",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "5uG2BvqYGHM",
@@ -1833,7 +1899,8 @@
     "privacyStatus": "public",
     "masterId": "E17eFbfH0Ag",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "UlpEM1pxKYU",
@@ -1845,7 +1912,8 @@
     "privacyStatus": "public",
     "masterId": "UlpEM1pxKYU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ED1ZTHwASdI",
@@ -1857,7 +1925,8 @@
     "privacyStatus": "public",
     "masterId": "UlpEM1pxKYU",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "9mYVDH3uD98",
@@ -1869,7 +1938,8 @@
     "privacyStatus": "public",
     "masterId": "9mYVDH3uD98",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "y3xGmjMVi-g",
@@ -1905,7 +1975,8 @@
     "privacyStatus": "public",
     "masterId": "3rhxrAixZ7I",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "mzsEsMyPjWI",
@@ -1917,7 +1988,8 @@
     "privacyStatus": "public",
     "masterId": "3rhxrAixZ7I",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Análise"
   },
   {
     "videoId": "5AxV64kQJYY",
@@ -1929,7 +2001,8 @@
     "privacyStatus": "public",
     "masterId": "5AxV64kQJYY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "GLX-Q5QOGxE",
@@ -1941,7 +2014,8 @@
     "privacyStatus": "public",
     "masterId": "5AxV64kQJYY",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "kQVEzvaf7JQ",
@@ -2121,7 +2195,8 @@
     "privacyStatus": "public",
     "masterId": "cCRUSUCBW6I",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "F8J0ANqz6tU",
@@ -2133,7 +2208,8 @@
     "privacyStatus": "public",
     "masterId": "cCRUSUCBW6I",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "VDLbRgi_D78",
@@ -2145,7 +2221,8 @@
     "privacyStatus": "public",
     "masterId": "VDLbRgi_D78",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ySJH2AhtYjA",
@@ -2157,7 +2234,8 @@
     "privacyStatus": "public",
     "masterId": "VDLbRgi_D78",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "sQv5T4qoegY",
@@ -2169,7 +2247,8 @@
     "privacyStatus": "public",
     "masterId": "sQv5T4qoegY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "IhBFPeiAe6w",
@@ -2205,7 +2284,8 @@
     "privacyStatus": "public",
     "masterId": "NUiANXL-rac",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ekDuiY617HE",
@@ -2217,7 +2297,8 @@
     "privacyStatus": "public",
     "masterId": "NUiANXL-rac",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "YdRg1BVbW7g",
@@ -2229,7 +2310,8 @@
     "privacyStatus": "public",
     "masterId": "YdRg1BVbW7g",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "blMQ6wevN2Y",
@@ -2241,7 +2323,8 @@
     "privacyStatus": "public",
     "masterId": "blMQ6wevN2Y",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "B671kwRkluw",
@@ -2253,7 +2336,8 @@
     "privacyStatus": "public",
     "masterId": "B671kwRkluw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Wd8h7yLi9Ro",
@@ -2265,7 +2349,8 @@
     "privacyStatus": "public",
     "masterId": "B671kwRkluw",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "E8d6zCpL2I8",
@@ -2301,7 +2386,8 @@
     "privacyStatus": "public",
     "masterId": "phl2CGsrxiA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "18p4_Mzt8q4",
@@ -2313,7 +2399,8 @@
     "privacyStatus": "public",
     "masterId": "phl2CGsrxiA",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "ylFFIgdXpGE",
@@ -2421,7 +2508,8 @@
     "privacyStatus": "public",
     "masterId": "yDMUG136FZU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "DAM8osJ_2aw",
@@ -2949,7 +3037,8 @@
     "privacyStatus": "public",
     "masterId": "aWz5iBXPSAE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "wAwavShzOU8",
@@ -2961,7 +3050,8 @@
     "privacyStatus": "public",
     "masterId": "aWz5iBXPSAE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "OrhWQHp4Dgw",
@@ -2985,7 +3075,8 @@
     "privacyStatus": "public",
     "masterId": "SY1b94rdzas",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "mq4wCuIpVRA",
@@ -3393,7 +3484,8 @@
     "privacyStatus": "public",
     "masterId": "3xpKk-VC_Os",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "OGcR1F1uQOk",
@@ -3405,7 +3497,8 @@
     "privacyStatus": "public",
     "masterId": "3xpKk-VC_Os",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "f_WAKM5lE0Y",
@@ -3417,7 +3510,8 @@
     "privacyStatus": "public",
     "masterId": "f_WAKM5lE0Y",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "9VA6vX_BF0k",
@@ -3429,7 +3523,8 @@
     "privacyStatus": "public",
     "masterId": "f_WAKM5lE0Y",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "6SRWJTwPkQU",
@@ -3453,7 +3548,8 @@
     "privacyStatus": "public",
     "masterId": "mXSsEkE-L7U",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "MBiakfyOZ48",
@@ -3465,7 +3561,8 @@
     "privacyStatus": "public",
     "masterId": "mXSsEkE-L7U",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "_35lB6qGahc",
@@ -3477,7 +3574,8 @@
     "privacyStatus": "public",
     "masterId": "_35lB6qGahc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "y7UaKtbUVdw",
@@ -3489,7 +3587,8 @@
     "privacyStatus": "public",
     "masterId": "_35lB6qGahc",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "sKFNgMqzyMI",
@@ -3501,7 +3600,8 @@
     "privacyStatus": "public",
     "masterId": "sKFNgMqzyMI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "gkc1B-xaI-Y",
@@ -3513,7 +3613,8 @@
     "privacyStatus": "public",
     "masterId": "sKFNgMqzyMI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "QSPbNUgTNr8",
@@ -3525,7 +3626,8 @@
     "privacyStatus": "public",
     "masterId": "QSPbNUgTNr8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "vnb5kG_z5Vk",
@@ -3537,7 +3639,8 @@
     "privacyStatus": "public",
     "masterId": "QSPbNUgTNr8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "5ORFd5dmJ0I",
@@ -3549,7 +3652,8 @@
     "privacyStatus": "public",
     "masterId": "5ORFd5dmJ0I",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "puehew6YtYA",
@@ -3561,7 +3665,8 @@
     "privacyStatus": "public",
     "masterId": "5ORFd5dmJ0I",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "eGS-iR7Xmr0",
@@ -3573,7 +3678,8 @@
     "privacyStatus": "public",
     "masterId": "eGS-iR7Xmr0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "FPd1eLgjHbI",
@@ -3585,7 +3691,8 @@
     "privacyStatus": "public",
     "masterId": "eGS-iR7Xmr0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "htgiAZXHMJA",
@@ -3681,7 +3788,8 @@
     "privacyStatus": "public",
     "masterId": "RENXjGpOmNI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "g_6Pz_kAbwQ",
@@ -3693,7 +3801,8 @@
     "privacyStatus": "public",
     "masterId": "RENXjGpOmNI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Análise"
   },
   {
     "videoId": "mhWJhpWeRHI",
@@ -3777,7 +3886,8 @@
     "privacyStatus": "public",
     "masterId": "i2OradNr44E",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "bi4ayKJyVRA",
@@ -3789,7 +3899,8 @@
     "privacyStatus": "public",
     "masterId": "i2OradNr44E",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "biQrHycsCr8",
@@ -4041,7 +4152,8 @@
     "privacyStatus": "public",
     "masterId": "mCRAaW1BXj0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "H089SI6_4Mg",
@@ -4053,7 +4165,8 @@
     "privacyStatus": "public",
     "masterId": "mCRAaW1BXj0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "iNFlq66XaLM",
@@ -4065,7 +4178,8 @@
     "privacyStatus": "public",
     "masterId": "iNFlq66XaLM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "EION4sZtrVk",
@@ -4077,7 +4191,8 @@
     "privacyStatus": "public",
     "masterId": "iNFlq66XaLM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "hgYB6WahDuA",
@@ -4113,7 +4228,8 @@
     "privacyStatus": "public",
     "masterId": "NYy5Zr_7yY4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "4jJQv6h8bIQ",
@@ -4125,7 +4241,8 @@
     "privacyStatus": "public",
     "masterId": "NYy5Zr_7yY4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "z8n8GIKvUhs",
@@ -4185,7 +4302,8 @@
     "privacyStatus": "public",
     "masterId": "quXs9-r5Yk0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "27GAyDzjGo4",
@@ -4197,7 +4315,8 @@
     "privacyStatus": "public",
     "masterId": "quXs9-r5Yk0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "7D-U6lM0bbE",
@@ -4425,7 +4544,8 @@
     "privacyStatus": "public",
     "masterId": "GmAoCxQ0Osk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "jRKIUWZ7_14",
@@ -4557,7 +4677,8 @@
     "privacyStatus": "public",
     "masterId": "IcEObqP5jU8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "6_pjFKb0bmY",
@@ -4569,7 +4690,8 @@
     "privacyStatus": "public",
     "masterId": "IcEObqP5jU8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "DVBta88Jk40",
@@ -4581,7 +4703,8 @@
     "privacyStatus": "public",
     "masterId": "DVBta88Jk40",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "rwpfK7NzDqg",
@@ -4593,7 +4716,8 @@
     "privacyStatus": "public",
     "masterId": "DVBta88Jk40",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "3tfOhlfh5C4",
@@ -4605,7 +4729,8 @@
     "privacyStatus": "public",
     "masterId": "3tfOhlfh5C4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "dRLFuDVBTgk",
@@ -4617,7 +4742,8 @@
     "privacyStatus": "public",
     "masterId": "3tfOhlfh5C4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "e-uy1mwcHjA",
@@ -4629,7 +4755,8 @@
     "privacyStatus": "public",
     "masterId": "e-uy1mwcHjA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "3dXWo1LKpak",
@@ -4641,7 +4768,8 @@
     "privacyStatus": "public",
     "masterId": "e-uy1mwcHjA",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "neCAoZOb6gQ",
@@ -4653,7 +4781,8 @@
     "privacyStatus": "public",
     "masterId": "neCAoZOb6gQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "7775xa5yYgE",
@@ -4665,7 +4794,8 @@
     "privacyStatus": "public",
     "masterId": "neCAoZOb6gQ",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "5mTuTaqfh4Q",
@@ -4677,7 +4807,8 @@
     "privacyStatus": "public",
     "masterId": "5mTuTaqfh4Q",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "nt5NwV6DapE",
@@ -4689,7 +4820,8 @@
     "privacyStatus": "public",
     "masterId": "5mTuTaqfh4Q",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "e2K4pM6mbN0",
@@ -4701,7 +4833,8 @@
     "privacyStatus": "public",
     "masterId": "e2K4pM6mbN0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "moFeTXBpY0Y",
@@ -4713,7 +4846,8 @@
     "privacyStatus": "public",
     "masterId": "e2K4pM6mbN0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "4uUs_kifiG8",
@@ -4725,7 +4859,8 @@
     "privacyStatus": "public",
     "masterId": "4uUs_kifiG8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "R0suMDFWq4A",
@@ -4737,7 +4872,8 @@
     "privacyStatus": "public",
     "masterId": "4uUs_kifiG8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "O9-DEx7wwu4",
@@ -4785,7 +4921,8 @@
     "privacyStatus": "public",
     "masterId": "1inB2L9dMcw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "081XA3dwCr4",
@@ -4797,7 +4934,8 @@
     "privacyStatus": "public",
     "masterId": "1inB2L9dMcw",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "Yy1wlDlEoeI",
@@ -4989,7 +5127,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "mC1Sn7HCOl0",
@@ -5001,7 +5140,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "39EwM_7dP5E",
@@ -5037,7 +5177,8 @@
     "privacyStatus": "public",
     "masterId": "eh61zYNhFyk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "IjMUgbwceFM",
@@ -5049,7 +5190,8 @@
     "privacyStatus": "public",
     "masterId": "eh61zYNhFyk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "ojnY3N-1ueI",
@@ -5145,7 +5287,8 @@
     "privacyStatus": "public",
     "masterId": "vZuiLQCFi48",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "wZlZh37pmUY",
@@ -5157,7 +5300,8 @@
     "privacyStatus": "public",
     "masterId": "vZuiLQCFi48",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "1yXr7sLDr48",
@@ -5193,7 +5337,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "MkLUHMnW91Q",
@@ -5205,7 +5350,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "PYxhoZAVGlc",
@@ -5721,7 +5867,8 @@
     "privacyStatus": "public",
     "masterId": "WWf-nOjWnWM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "rbWbgdAScGM",
@@ -5769,7 +5916,8 @@
     "privacyStatus": "public",
     "masterId": "J4oHJnBE4bc",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "2NL--70hK_U",
@@ -5805,7 +5953,8 @@
     "privacyStatus": "public",
     "masterId": "23H0VmNhJqI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "QWZ8MOZedZg",
@@ -5817,7 +5966,8 @@
     "privacyStatus": "public",
     "masterId": "23H0VmNhJqI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "NPFlgIf7Cvg",
@@ -5829,7 +5979,8 @@
     "privacyStatus": "public",
     "masterId": "NPFlgIf7Cvg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "rwZVk9XgAQ8",
@@ -5841,7 +5992,8 @@
     "privacyStatus": "public",
     "masterId": "rwZVk9XgAQ8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "-dyHrOi5W5M",
@@ -5853,7 +6005,8 @@
     "privacyStatus": "public",
     "masterId": "-dyHrOi5W5M",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "lODKPwyt8S4",
@@ -5889,7 +6042,8 @@
     "privacyStatus": "public",
     "masterId": "MIZZvXtTqIA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "XYS54pAA3mI",
@@ -5901,7 +6055,8 @@
     "privacyStatus": "public",
     "masterId": "XYS54pAA3mI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "oBN9CySu9NQ",
@@ -5913,7 +6068,8 @@
     "privacyStatus": "public",
     "masterId": "oBN9CySu9NQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "onvtla8K6h8",
@@ -5925,7 +6081,8 @@
     "privacyStatus": "public",
     "masterId": "onvtla8K6h8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "YplqF7jzXhQ",
@@ -6009,7 +6166,8 @@
     "privacyStatus": "public",
     "masterId": "5Y7l8LCOcx0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "EDBICXsc344",
@@ -6021,7 +6179,8 @@
     "privacyStatus": "public",
     "masterId": "EDBICXsc344",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "UGvEPWubxpY",
@@ -6033,7 +6192,8 @@
     "privacyStatus": "public",
     "masterId": "UGvEPWubxpY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "0A41AFffYHI",
@@ -6045,7 +6205,8 @@
     "privacyStatus": "public",
     "masterId": "0A41AFffYHI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "5gK9Dw4eOrU",
@@ -6297,7 +6458,8 @@
     "privacyStatus": "public",
     "masterId": "Wp2yp0vziFE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "_Zip9TrdLtQ",
@@ -6309,7 +6471,8 @@
     "privacyStatus": "public",
     "masterId": "Wp2yp0vziFE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "l--YH8KzGgI",
@@ -6393,7 +6556,8 @@
     "privacyStatus": "public",
     "masterId": "7apJWqZJKBQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "ymrrq5kPGac",
@@ -6405,7 +6569,8 @@
     "privacyStatus": "public",
     "masterId": "7apJWqZJKBQ",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "P9yyh0MilDU",
@@ -6609,7 +6774,8 @@
     "privacyStatus": "public",
     "masterId": "AKq4dXVeer8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "4ikyZE9F5FY",
@@ -6621,7 +6787,8 @@
     "privacyStatus": "public",
     "masterId": "AKq4dXVeer8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "94xj3x3WU_Q",
@@ -7749,7 +7916,8 @@
     "privacyStatus": "public",
     "masterId": "m7hyeEhZagM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "de4JFDXOyhY",
@@ -7761,7 +7929,8 @@
     "privacyStatus": "public",
     "masterId": "m7hyeEhZagM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "7UivcPl9Yes",
@@ -7797,7 +7966,8 @@
     "privacyStatus": "public",
     "masterId": "rp_h_kjCwd0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "-_Fi91l_mlo",
@@ -7809,7 +7979,8 @@
     "privacyStatus": "public",
     "masterId": "rp_h_kjCwd0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "RlS4i2honX0",
@@ -7821,7 +7992,8 @@
     "privacyStatus": "public",
     "masterId": "RlS4i2honX0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "pfSjDOJRtdI",
@@ -7833,7 +8005,8 @@
     "privacyStatus": "public",
     "masterId": "RlS4i2honX0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "IkSftksHQ24",
@@ -7845,7 +8018,8 @@
     "privacyStatus": "public",
     "masterId": "IkSftksHQ24",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "R3irYqwefH0",
@@ -7857,7 +8031,8 @@
     "privacyStatus": "public",
     "masterId": "IkSftksHQ24",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "wmJQU5sbgvA",
@@ -7893,7 +8068,8 @@
     "privacyStatus": "public",
     "masterId": "_xOslYIvwNY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "52AeGHpqpbo",
@@ -7905,7 +8081,8 @@
     "privacyStatus": "public",
     "masterId": "_xOslYIvwNY",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "jL6m0pcd3nk",
@@ -7917,7 +8094,8 @@
     "privacyStatus": "public",
     "masterId": "jL6m0pcd3nk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "CwgpfYu3ICs",
@@ -7929,7 +8107,8 @@
     "privacyStatus": "public",
     "masterId": "jL6m0pcd3nk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "tC1O3R_UVgA",
@@ -7989,7 +8168,8 @@
     "privacyStatus": "public",
     "masterId": "5EfmYETqFyQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "YIBMABY3OKg",
@@ -8001,7 +8181,8 @@
     "privacyStatus": "public",
     "masterId": "5EfmYETqFyQ",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "NAOe3LOrrR0",
@@ -8013,7 +8194,8 @@
     "privacyStatus": "public",
     "masterId": "NAOe3LOrrR0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "41n5Fno2G28",
@@ -8025,7 +8207,8 @@
     "privacyStatus": "public",
     "masterId": "NAOe3LOrrR0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "gZNIDnwZoAc",
@@ -8037,7 +8220,8 @@
     "privacyStatus": "public",
     "masterId": "gZNIDnwZoAc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "yIfawiCc2Zs",
@@ -8049,7 +8233,8 @@
     "privacyStatus": "public",
     "masterId": "gZNIDnwZoAc",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "Vj4agBpVBP0",
@@ -8061,7 +8246,8 @@
     "privacyStatus": "public",
     "masterId": "Vj4agBpVBP0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "bpzO8bOb4V8",
@@ -8073,7 +8259,8 @@
     "privacyStatus": "public",
     "masterId": "Vj4agBpVBP0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "fxXoNjnenA0",
@@ -8085,7 +8272,8 @@
     "privacyStatus": "public",
     "masterId": "fxXoNjnenA0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ggSLMcrJMSY",
@@ -8097,7 +8285,8 @@
     "privacyStatus": "public",
     "masterId": "fxXoNjnenA0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "GmXJoUYO7ZM",
@@ -8109,7 +8298,8 @@
     "privacyStatus": "public",
     "masterId": "GmXJoUYO7ZM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "LgtkanarJBg",
@@ -8121,7 +8311,8 @@
     "privacyStatus": "public",
     "masterId": "GmXJoUYO7ZM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "sjHV8wK02wk",
@@ -8253,7 +8444,8 @@
     "privacyStatus": "public",
     "masterId": "AKVdOXvTRq4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "qEWjw3PzLLM",
@@ -8265,7 +8457,8 @@
     "privacyStatus": "public",
     "masterId": "AKVdOXvTRq4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "gi8i0wlU4wA",
@@ -8301,7 +8494,8 @@
     "privacyStatus": "public",
     "masterId": "Bd-Lus3c6wA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "KObgNw6uceM",
@@ -8313,7 +8507,8 @@
     "privacyStatus": "public",
     "masterId": "Bd-Lus3c6wA",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "tz19Ef-gXHE",
@@ -8745,7 +8940,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "cBjq-mecWwA",
@@ -8757,7 +8953,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "eqwQbnDErto",
@@ -8937,7 +9134,8 @@
     "privacyStatus": "public",
     "masterId": "_iqbsmBa1Ks",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "sTYeag1JfhQ",
@@ -8949,7 +9147,8 @@
     "privacyStatus": "public",
     "masterId": "_iqbsmBa1Ks",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "JKyCJSTViHE",
@@ -8961,7 +9160,8 @@
     "privacyStatus": "public",
     "masterId": "JKyCJSTViHE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "u7dNpSdQG0w",
@@ -8973,7 +9173,8 @@
     "privacyStatus": "public",
     "masterId": "JKyCJSTViHE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "KciH3oY8Ll4",
@@ -8985,7 +9186,8 @@
     "privacyStatus": "public",
     "masterId": "KciH3oY8Ll4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Co3B08_XlgE",
@@ -8997,7 +9199,8 @@
     "privacyStatus": "public",
     "masterId": "KciH3oY8Ll4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "kT38hiJJPDs",
@@ -9009,7 +9212,8 @@
     "privacyStatus": "public",
     "masterId": "kT38hiJJPDs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "5VHHmKTEBB0",
@@ -9021,7 +9225,8 @@
     "privacyStatus": "public",
     "masterId": "kT38hiJJPDs",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "XRAxW2naXKU",
@@ -9033,7 +9238,8 @@
     "privacyStatus": "public",
     "masterId": "XRAxW2naXKU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "gzsFxvw2Ypc",
@@ -9045,7 +9251,8 @@
     "privacyStatus": "public",
     "masterId": "XRAxW2naXKU",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "i8YVBYRZ4oI",
@@ -9057,7 +9264,8 @@
     "privacyStatus": "public",
     "masterId": "i8YVBYRZ4oI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "PNf9SGIjMAA",
@@ -9069,7 +9277,8 @@
     "privacyStatus": "public",
     "masterId": "i8YVBYRZ4oI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "4oXljiHSm-U",
@@ -9081,7 +9290,8 @@
     "privacyStatus": "public",
     "masterId": "4oXljiHSm-U",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "tcaYX8f4TH0",
@@ -9093,7 +9303,8 @@
     "privacyStatus": "public",
     "masterId": "4oXljiHSm-U",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "HOixHvJvgFQ",
@@ -9105,7 +9316,8 @@
     "privacyStatus": "public",
     "masterId": "HOixHvJvgFQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "i4Cy0k-gDhM",
@@ -9117,7 +9329,8 @@
     "privacyStatus": "public",
     "masterId": "HOixHvJvgFQ",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "oqd35b3a3aA",
@@ -9201,7 +9414,8 @@
     "privacyStatus": "public",
     "masterId": "vdtdWR1MhoY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "mkPCpRo0UKI",
@@ -9609,7 +9823,8 @@
     "privacyStatus": "public",
     "masterId": "FICM5xkv4Q4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "jD0XtXfqbSA",
@@ -9621,7 +9836,8 @@
     "privacyStatus": "public",
     "masterId": "FICM5xkv4Q4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "7oKjZxpqDeo",
@@ -9633,7 +9849,8 @@
     "privacyStatus": "public",
     "masterId": "7oKjZxpqDeo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "he1P1TVd-k4",
@@ -9645,7 +9862,8 @@
     "privacyStatus": "public",
     "masterId": "7oKjZxpqDeo",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "JjkncOcNw50",
@@ -9729,7 +9947,8 @@
     "privacyStatus": "public",
     "masterId": "dNy084tq6_4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "FYm735cDqnU",
@@ -9741,7 +9960,8 @@
     "privacyStatus": "public",
     "masterId": "dNy084tq6_4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "giFemzAS5D4",
@@ -9753,7 +9973,8 @@
     "privacyStatus": "public",
     "masterId": "giFemzAS5D4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "SVmin3lwpfQ",
@@ -9765,7 +9986,8 @@
     "privacyStatus": "public",
     "masterId": "giFemzAS5D4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "b0nHFA7IO6s",
@@ -9777,7 +9999,8 @@
     "privacyStatus": "public",
     "masterId": "b0nHFA7IO6s",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "AJjHANkeGIs",
@@ -9789,7 +10012,8 @@
     "privacyStatus": "public",
     "masterId": "b0nHFA7IO6s",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "mhZgp1WPhRs",
@@ -9969,7 +10193,8 @@
     "privacyStatus": "public",
     "masterId": "J7LpXI-lYPU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "NZSJQWaTEx0",
@@ -9981,7 +10206,8 @@
     "privacyStatus": "public",
     "masterId": "J7LpXI-lYPU",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "a5OXe960cJU",
@@ -9993,7 +10219,8 @@
     "privacyStatus": "public",
     "masterId": "a5OXe960cJU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Wyz6c9NXWyM",
@@ -10005,7 +10232,8 @@
     "privacyStatus": "public",
     "masterId": "a5OXe960cJU",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "bI6VlbcAvKk",
@@ -10017,7 +10245,8 @@
     "privacyStatus": "public",
     "masterId": "bI6VlbcAvKk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "CYEUjAdCXKw",
@@ -10029,7 +10258,8 @@
     "privacyStatus": "public",
     "masterId": "bI6VlbcAvKk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "xbsAmju4XnI",
@@ -10041,7 +10271,8 @@
     "privacyStatus": "public",
     "masterId": "xbsAmju4XnI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "QjE5mr8k98Q",
@@ -10053,7 +10284,8 @@
     "privacyStatus": "public",
     "masterId": "xbsAmju4XnI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "LEpCes1xyLM",
@@ -10065,7 +10297,8 @@
     "privacyStatus": "public",
     "masterId": "LEpCes1xyLM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "0fYXNhOHrvE",
@@ -10077,7 +10310,8 @@
     "privacyStatus": "public",
     "masterId": "LEpCes1xyLM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "vXiC008kJ04",
@@ -10137,7 +10371,8 @@
     "privacyStatus": "public",
     "masterId": "UiDhztBpojE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "A9Lz_X_t2Ig",
@@ -10149,7 +10384,8 @@
     "privacyStatus": "public",
     "masterId": "UiDhztBpojE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "IglvnGKqKPU",
@@ -10257,7 +10493,8 @@
     "privacyStatus": "public",
     "masterId": "_nO7wAgmoEc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "pabFZIH0UtU",
@@ -10269,7 +10506,8 @@
     "privacyStatus": "public",
     "masterId": "_nO7wAgmoEc",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "VA350LeODdA",
@@ -10353,7 +10591,8 @@
     "privacyStatus": "public",
     "masterId": "GKGYGQg_254",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "a7xwFh_9ENM",
@@ -10365,7 +10604,8 @@
     "privacyStatus": "public",
     "masterId": "GKGYGQg_254",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "q7zaJPZrLvw",
@@ -10617,7 +10857,8 @@
     "privacyStatus": "public",
     "masterId": "lEdlkGgEVy8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "Er55OvFmMlU",
@@ -10629,7 +10870,8 @@
     "privacyStatus": "public",
     "masterId": "lEdlkGgEVy8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "STClI3uM3rg",
@@ -10809,7 +11051,8 @@
     "privacyStatus": "public",
     "masterId": "Rg842_Ev0fs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "lkEQ_tQU-g8",
@@ -10821,7 +11064,8 @@
     "privacyStatus": "public",
     "masterId": "Rg842_Ev0fs",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "45JEcgeOoic",
@@ -11025,7 +11269,8 @@
     "privacyStatus": "public",
     "masterId": "0PYo4FCIerc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "xuAZs3YNJ9w",
@@ -11037,7 +11282,8 @@
     "privacyStatus": "public",
     "masterId": "0PYo4FCIerc",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "90K2bsqH-Ck",
@@ -11049,7 +11295,8 @@
     "privacyStatus": "public",
     "masterId": "90K2bsqH-Ck",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ySVye52hN_I",
@@ -11061,7 +11308,8 @@
     "privacyStatus": "public",
     "masterId": "90K2bsqH-Ck",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "H-qFNoRvog4",
@@ -11073,7 +11321,8 @@
     "privacyStatus": "public",
     "masterId": "H-qFNoRvog4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "GLeReIZmhKY",
@@ -11085,7 +11334,8 @@
     "privacyStatus": "public",
     "masterId": "H-qFNoRvog4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "MuZkCKYHUPU",
@@ -11097,7 +11347,8 @@
     "privacyStatus": "public",
     "masterId": "MuZkCKYHUPU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "wHVfTQtkw9E",
@@ -11109,7 +11360,8 @@
     "privacyStatus": "public",
     "masterId": "MuZkCKYHUPU",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "0w8VS2f9L8c",
@@ -11817,7 +12069,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "otgpmKM4aSQ",
@@ -11829,7 +12082,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "5rUuRLGuBuQ",
@@ -11925,7 +12179,8 @@
     "privacyStatus": "public",
     "masterId": "am73ggw3Tpo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "SwqtzbIdibw",
@@ -11937,7 +12192,8 @@
     "privacyStatus": "public",
     "masterId": "am73ggw3Tpo",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "bgrYkEeLOis",
@@ -12033,7 +12289,8 @@
     "privacyStatus": "public",
     "masterId": "ACDcxl-ovV8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "trQb5VMZhIs",
@@ -12045,7 +12302,8 @@
     "privacyStatus": "public",
     "masterId": "ACDcxl-ovV8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "6H9lOe0b3sk",
@@ -12057,7 +12315,8 @@
     "privacyStatus": "public",
     "masterId": "6H9lOe0b3sk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "W-LvchHgSEY",
@@ -12069,7 +12328,8 @@
     "privacyStatus": "public",
     "masterId": "6H9lOe0b3sk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "FoB4ndAMtpo",
@@ -12081,7 +12341,8 @@
     "privacyStatus": "public",
     "masterId": "FoB4ndAMtpo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Fhh0Rm2eY4A",
@@ -12093,7 +12354,8 @@
     "privacyStatus": "public",
     "masterId": "FoB4ndAMtpo",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "TBrhoypD694",
@@ -12105,7 +12367,8 @@
     "privacyStatus": "public",
     "masterId": "TBrhoypD694",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "gNlbul72BZ8",
@@ -12117,7 +12380,8 @@
     "privacyStatus": "public",
     "masterId": "TBrhoypD694",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "TMCFZhocFyM",
@@ -12297,7 +12561,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "QrH3SrOpecE",
@@ -12309,7 +12574,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "okZIDcEnVWA",
@@ -12597,7 +12863,8 @@
     "privacyStatus": "public",
     "masterId": "9MWbTWzrcLs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "6N-WY3iCUek",
@@ -12609,7 +12876,8 @@
     "privacyStatus": "public",
     "masterId": "9MWbTWzrcLs",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "JOGFCzoRaZQ",
@@ -12789,7 +13057,8 @@
     "privacyStatus": "public",
     "masterId": "KkMkGJfQSno",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "DvR9sNvnZYE",
@@ -12801,7 +13070,8 @@
     "privacyStatus": "public",
     "masterId": "KkMkGJfQSno",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (100%) (Criterion B)",
+    "category": "Análise"
   },
   {
     "videoId": "wzkXhLMBbtA",
@@ -12861,7 +13131,8 @@
     "privacyStatus": "public",
     "masterId": "JzsozzVpQFA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "gez59hbxpHI",
@@ -12873,7 +13144,8 @@
     "privacyStatus": "public",
     "masterId": "gez59hbxpHI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "RoOEtC15T5o",
@@ -12957,7 +13229,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "zX0QxkraD5Q",
@@ -12969,7 +13242,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "6SmkK694VQw",
@@ -12981,7 +13255,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "GZDo33OUFjI",
@@ -12993,7 +13268,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "2cxfbAIhqq4",
@@ -13125,7 +13401,8 @@
     "privacyStatus": "public",
     "masterId": "u8Nm1uEgdtY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "tZWoi8xvxxk",
@@ -13137,7 +13414,8 @@
     "privacyStatus": "public",
     "masterId": "u8Nm1uEgdtY",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "j3gqgr7DJw8",
@@ -13149,7 +13427,8 @@
     "privacyStatus": "public",
     "masterId": "j3gqgr7DJw8",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "r9yqX09EETk",
@@ -13161,7 +13440,8 @@
     "privacyStatus": "public",
     "masterId": "j3gqgr7DJw8",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "rR7mV778Y8E",
@@ -13197,7 +13477,8 @@
     "privacyStatus": "public",
     "masterId": "NWZs3qozm10",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "DR90pbXcA9k",
@@ -13209,7 +13490,8 @@
     "privacyStatus": "public",
     "masterId": "NWZs3qozm10",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "1ZjdTSls2NU",
@@ -13221,7 +13503,8 @@
     "privacyStatus": "public",
     "masterId": "1ZjdTSls2NU",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "LG3ip1_jUG8",
@@ -13233,7 +13516,8 @@
     "privacyStatus": "public",
     "masterId": "1ZjdTSls2NU",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "eaxHcKwmVNk",
@@ -13245,7 +13529,8 @@
     "privacyStatus": "public",
     "masterId": "eaxHcKwmVNk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "Wk13w6HYxeM",
@@ -13257,7 +13542,8 @@
     "privacyStatus": "public",
     "masterId": "eaxHcKwmVNk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "j3RjSBun9z8",
@@ -13269,7 +13555,8 @@
     "privacyStatus": "public",
     "masterId": "j3RjSBun9z8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "bYjkqLteZfU",
@@ -13281,7 +13568,8 @@
     "privacyStatus": "public",
     "masterId": "j3RjSBun9z8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "gnhBVJMLoLg",
@@ -13293,7 +13581,8 @@
     "privacyStatus": "public",
     "masterId": "gnhBVJMLoLg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "dgq3SHs1vZM",
@@ -13305,7 +13594,8 @@
     "privacyStatus": "public",
     "masterId": "gnhBVJMLoLg",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "GDllrNmAc3o",
@@ -13389,7 +13679,8 @@
     "privacyStatus": "public",
     "masterId": "QnLM_4EaZt4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "gE2YSijkoNk",
@@ -13401,7 +13692,8 @@
     "privacyStatus": "public",
     "masterId": "QnLM_4EaZt4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "ocXDMaHwlTc",
@@ -13545,7 +13837,8 @@
     "privacyStatus": "public",
     "masterId": "Z2DG-FMFP0Q",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "N4WM5D8JP8o",
@@ -13557,7 +13850,8 @@
     "privacyStatus": "public",
     "masterId": "Z2DG-FMFP0Q",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "P-VeV4NfARI",
@@ -13569,7 +13863,8 @@
     "privacyStatus": "public",
     "masterId": "P-VeV4NfARI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "cmviPwjbq8g",
@@ -13581,7 +13876,8 @@
     "privacyStatus": "public",
     "masterId": "P-VeV4NfARI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "j1YZ4WWwg1o",
@@ -13593,7 +13889,8 @@
     "privacyStatus": "public",
     "masterId": "j1YZ4WWwg1o",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "XfarVkbmzgc",
@@ -13605,7 +13902,8 @@
     "privacyStatus": "public",
     "masterId": "j1YZ4WWwg1o",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "CrwQxCY6Yr8",
@@ -14649,7 +14947,8 @@
     "privacyStatus": "public",
     "masterId": "ZuTMgVOAvrA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "hDa0hi7SxJg",
@@ -15381,7 +15680,8 @@
     "privacyStatus": "public",
     "masterId": "BsJYPoD7AHM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "orTZfxbkjr4",
@@ -15393,7 +15693,8 @@
     "privacyStatus": "public",
     "masterId": "BsJYPoD7AHM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "rzmiwE5P30A",
@@ -16125,7 +16426,8 @@
     "privacyStatus": "public",
     "masterId": "RA1OP6RA_0g",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "LJ8V6vrLBco",
@@ -16137,7 +16439,8 @@
     "privacyStatus": "public",
     "masterId": "RA1OP6RA_0g",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "SUiKaN2dANc",
@@ -16185,7 +16488,8 @@
     "privacyStatus": "public",
     "masterId": "QWoSmHozITY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "LKuE_yeHXAA",
@@ -16197,7 +16501,8 @@
     "privacyStatus": "public",
     "masterId": "QWoSmHozITY",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "3KtLYjiiazE",
@@ -16449,7 +16754,8 @@
     "privacyStatus": "public",
     "masterId": "dil72hbv554",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "511WX6TY3xE",
@@ -16461,7 +16767,8 @@
     "privacyStatus": "public",
     "masterId": "dil72hbv554",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "_KXNFvteXRs",
@@ -16785,7 +17092,8 @@
     "privacyStatus": "public",
     "masterId": "xGYoWbR7JXQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "E1_TRgU4KQw",
@@ -16797,7 +17105,8 @@
     "privacyStatus": "public",
     "masterId": "xGYoWbR7JXQ",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "IDVhJH3Q4LQ",
@@ -16857,7 +17166,8 @@
     "privacyStatus": "public",
     "masterId": "oDTXyWp_qmw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "e7LDSpBJIS0",
@@ -16869,7 +17179,8 @@
     "privacyStatus": "public",
     "masterId": "oDTXyWp_qmw",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "BpZgEncbd3I",
@@ -16953,7 +17264,8 @@
     "privacyStatus": "public",
     "masterId": "45q4rcPxx3s",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "H-48O8l-B_w",
@@ -16965,7 +17277,8 @@
     "privacyStatus": "public",
     "masterId": "45q4rcPxx3s",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "fn04KFfBEbI",
@@ -17649,7 +17962,8 @@
     "privacyStatus": "public",
     "masterId": "ESegqVTTPMg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "Tmdte5yjIHI",
@@ -17661,7 +17975,8 @@
     "privacyStatus": "public",
     "masterId": "ESegqVTTPMg",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "X7ByPdPxGRs",
@@ -18189,7 +18504,8 @@
     "privacyStatus": "public",
     "masterId": "xjZG2_02yyM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "5UVwlU-ndxE",
@@ -18201,7 +18517,8 @@
     "privacyStatus": "public",
     "masterId": "xjZG2_02yyM",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "5VvKkYLiaJY",
@@ -18213,7 +18530,8 @@
     "privacyStatus": "public",
     "masterId": "5VvKkYLiaJY",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "t-2BQWBkOFw",
@@ -18225,7 +18543,8 @@
     "privacyStatus": "public",
     "masterId": "5VvKkYLiaJY",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "5TO1-kROz74",
@@ -18237,7 +18556,8 @@
     "privacyStatus": "public",
     "masterId": "5TO1-kROz74",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "D0ZEhf8IAUI",
@@ -18249,7 +18569,8 @@
     "privacyStatus": "public",
     "masterId": "5TO1-kROz74",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "JtkX2iK335U",
@@ -18261,7 +18582,8 @@
     "privacyStatus": "public",
     "masterId": "JtkX2iK335U",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "dEqP6Brqwe0",
@@ -18273,7 +18595,8 @@
     "privacyStatus": "public",
     "masterId": "JtkX2iK335U",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "oZ8YUEpK0AY",
@@ -18609,7 +18932,8 @@
     "privacyStatus": "public",
     "masterId": "2SPExlp9tFg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "_hsI9RIm67g",
@@ -18621,7 +18945,8 @@
     "privacyStatus": "public",
     "masterId": "2SPExlp9tFg",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "KeoFuc6aZTo",
@@ -19185,7 +19510,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "3EFEY5EF9z4",
@@ -19197,7 +19523,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "ji9DCwHgVPU",
@@ -19257,7 +19584,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "PFaWvB8LIHo",
@@ -19269,7 +19597,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "o-DGhTZugSY",
@@ -19281,7 +19610,8 @@
     "privacyStatus": "public",
     "masterId": "BJftdQvdiug",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "No0FMbIhfv0",
@@ -19293,7 +19623,8 @@
     "privacyStatus": "public",
     "masterId": "BJftdQvdiug",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "gpGe38oXV5M",
@@ -19305,7 +19636,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "2TTa82dKAYg",
@@ -19317,7 +19649,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "NXYT_HqM33c",
@@ -19329,7 +19662,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "XzJaJjxracg",
@@ -19341,7 +19675,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "WKJKIxAxuzM",
@@ -19401,7 +19736,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "rshyx1DJqaQ",
@@ -19413,7 +19749,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "qWflWY-uQ0A",
@@ -19449,7 +19786,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "OGyx2lasAPM",
@@ -19461,7 +19799,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "R4e_eonsmCo",
@@ -19497,7 +19836,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "v2wm_GuNjm0",
@@ -19509,7 +19849,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "PdoCjp3haLU",
@@ -19545,7 +19886,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "dO-eWKBCm7s",
@@ -19557,7 +19899,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (71%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "_H_gxD6zKCE",
@@ -19593,7 +19936,8 @@
     "privacyStatus": "public",
     "masterId": "9XTa9NHVqR8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "9hmlxrOT-PE",
@@ -19605,7 +19949,8 @@
     "privacyStatus": "public",
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "Yvqg6G1BYTA",
@@ -19713,7 +20058,8 @@
     "privacyStatus": "public",
     "masterId": "ykmyIlKSpjI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "3VldsFbAJ9w",
@@ -19725,7 +20071,8 @@
     "privacyStatus": "public",
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "y-hQnp3Y13o",
@@ -19833,7 +20180,8 @@
     "privacyStatus": "public",
     "masterId": "nbmXgrfdXuw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ak2Vpg6VLi0",
@@ -19857,7 +20205,8 @@
     "privacyStatus": "public",
     "masterId": "nbmXgrfdXuw",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy - Different Duration (100%)"
+    "masterType": "Duplicate - Exact Copy - Different Duration (100%)",
+    "category": "Série"
   },
   {
     "videoId": "sgoVS_3TRCs",
@@ -19869,7 +20218,8 @@
     "privacyStatus": "public",
     "masterId": "sgoVS_3TRCs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "f_nWICbHuFY",
@@ -19881,7 +20231,8 @@
     "privacyStatus": "public",
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "FzaCFfLYdJ0",
@@ -19893,7 +20244,8 @@
     "privacyStatus": "public",
     "masterId": "FzaCFfLYdJ0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "n21fvRAXwYA",
@@ -19905,7 +20257,8 @@
     "privacyStatus": "public",
     "masterId": "FzaCFfLYdJ0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "FZ4fbE90gd4",
@@ -19917,7 +20270,8 @@
     "privacyStatus": "public",
     "masterId": "FZ4fbE90gd4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "YEW1ww2G9ak",
@@ -19929,7 +20283,8 @@
     "privacyStatus": "public",
     "masterId": "FZ4fbE90gd4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "PkrndxaDOK8",
@@ -20073,7 +20428,8 @@
     "privacyStatus": "public",
     "masterId": "hlX0MGOBjec",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "VP_DJOTSZfo",
@@ -20085,7 +20441,8 @@
     "privacyStatus": "public",
     "masterId": "hlX0MGOBjec",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "_LSeKt8ePM8",
@@ -20097,7 +20454,8 @@
     "privacyStatus": "public",
     "masterId": "_LSeKt8ePM8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "GKPpU13fc9I",
@@ -20109,7 +20467,8 @@
     "privacyStatus": "public",
     "masterId": "_LSeKt8ePM8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "OHlbY2iFVC8",
@@ -20121,7 +20480,8 @@
     "privacyStatus": "public",
     "masterId": "OHlbY2iFVC8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "vxFXwfpGLEw",
@@ -20133,7 +20493,8 @@
     "privacyStatus": "public",
     "masterId": "OHlbY2iFVC8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "T_uSrRIIzbo",
@@ -20145,7 +20506,8 @@
     "privacyStatus": "public",
     "masterId": "T_uSrRIIzbo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "KC_J9gewg5I",
@@ -20157,7 +20519,8 @@
     "privacyStatus": "public",
     "masterId": "T_uSrRIIzbo",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "lAFFs4arbTk",
@@ -20169,7 +20532,8 @@
     "privacyStatus": "public",
     "masterId": "lAFFs4arbTk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "if-9URWZznI",
@@ -20181,7 +20545,8 @@
     "privacyStatus": "public",
     "masterId": "lAFFs4arbTk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "wWsNyV6woyI",
@@ -20193,7 +20558,8 @@
     "privacyStatus": "public",
     "masterId": "wWsNyV6woyI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "GfqpQHlLHCQ",
@@ -20205,7 +20571,8 @@
     "privacyStatus": "public",
     "masterId": "wWsNyV6woyI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "UVqB6pmzzRs",
@@ -20217,7 +20584,8 @@
     "privacyStatus": "public",
     "masterId": "UVqB6pmzzRs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "8fGQKXU1jc4",
@@ -20229,7 +20597,8 @@
     "privacyStatus": "public",
     "masterId": "UVqB6pmzzRs",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "ktGBTwx31u4",
@@ -20241,7 +20610,8 @@
     "privacyStatus": "public",
     "masterId": "ktGBTwx31u4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ItmlkmiMYKc",
@@ -20253,7 +20623,8 @@
     "privacyStatus": "public",
     "masterId": "ktGBTwx31u4",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "cZJpOKXgw2o",
@@ -20265,7 +20636,8 @@
     "privacyStatus": "public",
     "masterId": "cZJpOKXgw2o",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "afR3rlPA2z8",
@@ -20277,7 +20649,8 @@
     "privacyStatus": "public",
     "masterId": "cZJpOKXgw2o",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "weasKSz6IMY",
@@ -20289,7 +20662,8 @@
     "privacyStatus": "public",
     "masterId": "weasKSz6IMY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "OQ2h2uDOl7c",
@@ -20301,7 +20675,8 @@
     "privacyStatus": "public",
     "masterId": "weasKSz6IMY",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "hZdStoWHPWs",
@@ -20313,7 +20688,8 @@
     "privacyStatus": "public",
     "masterId": "hZdStoWHPWs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "RvdS7Qy4FCk",
@@ -20325,7 +20701,8 @@
     "privacyStatus": "public",
     "masterId": "hZdStoWHPWs",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "cbtdE9py5-8",
@@ -20337,7 +20714,8 @@
     "privacyStatus": "public",
     "masterId": "cbtdE9py5-8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Hl1ONjGaz_U",
@@ -20349,7 +20727,8 @@
     "privacyStatus": "public",
     "masterId": "cbtdE9py5-8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "e_YxQWaTFWw",
@@ -20361,7 +20740,8 @@
     "privacyStatus": "public",
     "masterId": "e_YxQWaTFWw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "fbW9073pTb4",
@@ -20373,7 +20753,8 @@
     "privacyStatus": "public",
     "masterId": "e_YxQWaTFWw",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "ydtvdjz8nXo",
@@ -20385,7 +20766,8 @@
     "privacyStatus": "public",
     "masterId": "ydtvdjz8nXo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "DAR33eeLlec",
@@ -20397,7 +20779,8 @@
     "privacyStatus": "public",
     "masterId": "ydtvdjz8nXo",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "uxD2MH4MkZ0",
@@ -20409,7 +20792,8 @@
     "privacyStatus": "public",
     "masterId": "uxD2MH4MkZ0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Ane-dkn5Uf0",
@@ -20421,7 +20805,8 @@
     "privacyStatus": "public",
     "masterId": "uxD2MH4MkZ0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "QxaTfqYuZko",
@@ -20541,7 +20926,8 @@
     "privacyStatus": "public",
     "masterId": "bvqmWnIfbkk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "20NzuN4byXs",
@@ -20553,7 +20939,8 @@
     "privacyStatus": "public",
     "masterId": "bvqmWnIfbkk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Análise"
   },
   {
     "videoId": "hK96WD-tKug",
@@ -20613,7 +21000,8 @@
     "privacyStatus": "public",
     "masterId": "0yGfc92hYFk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "8vfbcfF_ulQ",
@@ -20625,7 +21013,8 @@
     "privacyStatus": "public",
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "G1MtEyFVLvU",
@@ -20865,7 +21254,8 @@
     "privacyStatus": "public",
     "masterId": "5vR_J8D5VMc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "ttcpAFEZpVQ",
@@ -20877,7 +21267,8 @@
     "privacyStatus": "public",
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "OeiEyZKVcWw",
@@ -21081,7 +21472,8 @@
     "privacyStatus": "public",
     "masterId": "c1eY859uMs8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "e0F-83Jd2E4",
@@ -21093,7 +21485,8 @@
     "privacyStatus": "public",
     "masterId": "c1eY859uMs8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "nKbe7mry38U",
@@ -21285,7 +21678,8 @@
     "privacyStatus": "public",
     "masterId": "B-rLVmG5uXg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "KjzTztklU6I",
@@ -21297,7 +21691,8 @@
     "privacyStatus": "public",
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "LmG7C51Gnwg",
@@ -21477,7 +21872,8 @@
     "privacyStatus": "public",
     "masterId": "WATt7PvQrV8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "gcRUs7OZDxM",
@@ -21489,7 +21885,8 @@
     "privacyStatus": "public",
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "jKx3SzAb6WY",
@@ -21669,7 +22066,8 @@
     "privacyStatus": "public",
     "masterId": "zMbfIcbatBI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "-QlMx6JimBw",
@@ -21681,7 +22079,8 @@
     "privacyStatus": "public",
     "masterId": "zMbfIcbatBI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "Lpamq2K9T-M",
@@ -21765,7 +22164,8 @@
     "privacyStatus": "public",
     "masterId": "P5uKIpWPDmE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "uzmOXOSVa90",
@@ -21777,7 +22177,8 @@
     "privacyStatus": "public",
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "4MReEyhv_SI",
@@ -21861,7 +22262,8 @@
     "privacyStatus": "public",
     "masterId": "1McDGhB_wPg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "8zaZSwthU60",
@@ -21873,7 +22275,8 @@
     "privacyStatus": "public",
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "e0JfReHjzNg",
@@ -21945,7 +22348,8 @@
     "privacyStatus": "public",
     "masterId": "aB72x5xi2sw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "w5EcWi-WY7Y",
@@ -21957,7 +22361,8 @@
     "privacyStatus": "public",
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "xPCb1ooqkvY",
@@ -22065,7 +22470,8 @@
     "privacyStatus": "public",
     "masterId": "eaZB9SSrDBI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "hrYE9c1UsUA",
@@ -22077,7 +22483,8 @@
     "privacyStatus": "public",
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "dwBbac6E4U8",
@@ -22209,7 +22616,8 @@
     "privacyStatus": "public",
     "masterId": "eUp3hsqosn0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "E92OG2u4eMg",
@@ -22221,7 +22629,8 @@
     "privacyStatus": "public",
     "masterId": "eUp3hsqosn0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "4GTbE3dP_Ig",
@@ -22353,7 +22762,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "4OutxDy-K_w",
@@ -22365,7 +22775,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "_YhSiQgK_6Q",
@@ -22377,7 +22788,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "NqwPgxHvBFc",
@@ -22389,7 +22801,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "amIL9AZhJPs",
@@ -22401,7 +22814,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (78%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "m2PgzGFLMik",
@@ -22413,7 +22827,8 @@
     "privacyStatus": "public",
     "masterId": "BJftdQvdiug",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (57%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (57%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "Qx4RNRAlMvU",
@@ -22449,7 +22864,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (73%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (73%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "e339o9qVCnU",
@@ -22461,7 +22877,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (73%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (73%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "YrqQ-HEJ-P0",
@@ -22521,7 +22938,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "fVqgbmWrXRg",
@@ -22533,7 +22951,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "h5FV2beVDZw",
@@ -22569,7 +22988,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "pCO3uEkFbHk",
@@ -22581,7 +23001,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "6KWMLZFBb94",
@@ -22653,7 +23074,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "OjCa2qrNep8",
@@ -22665,7 +23087,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "NIdrfaeaAtI",
@@ -22701,7 +23124,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "EbCbfm-WWk0",
@@ -22713,7 +23137,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "YHVmIVuMlPY",
@@ -22749,7 +23174,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "sDwOHDAZVdw",
@@ -22761,7 +23187,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (63%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "SiJJp6_LCqM",
@@ -22821,7 +23248,8 @@
     "privacyStatus": "public",
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (70%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (70%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "p0udgWFj_P4",
@@ -22833,7 +23261,8 @@
     "privacyStatus": "public",
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (70%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (70%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "gYD0CndjkGg",
@@ -22845,7 +23274,8 @@
     "privacyStatus": "public",
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "_CBPXac0_gs",
@@ -22857,7 +23287,8 @@
     "privacyStatus": "public",
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "LLjEruJfWus",
@@ -22881,7 +23312,8 @@
     "privacyStatus": "public",
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "s7MU-nm8P4U",
@@ -22893,7 +23325,8 @@
     "privacyStatus": "public",
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "uavfXvHsaHE",
@@ -22953,7 +23386,8 @@
     "privacyStatus": "public",
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "KTE64Yhz0Kw",
@@ -22965,7 +23399,8 @@
     "privacyStatus": "public",
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "ElB4x7XlyoU",
@@ -22977,7 +23412,8 @@
     "privacyStatus": "public",
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "pBgnsRqj9sM",
@@ -22989,7 +23425,8 @@
     "privacyStatus": "public",
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (60%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "VRKkVeFK6xk",
@@ -23013,7 +23450,8 @@
     "privacyStatus": "public",
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "kEMLjtwHFpk",
@@ -23025,7 +23463,8 @@
     "privacyStatus": "public",
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (82%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "6s6jQsPib-k",
@@ -23061,7 +23500,8 @@
     "privacyStatus": "public",
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "vZMrfg6Vj4g",
@@ -23073,7 +23513,8 @@
     "privacyStatus": "public",
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "l-wy1qHrDQA",
@@ -23133,7 +23574,8 @@
     "privacyStatus": "public",
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "KlPVIqdw7oY",
@@ -23145,7 +23587,8 @@
     "privacyStatus": "public",
     "masterId": "zMbfIcbatBI",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "bvoCb6vlnno",
@@ -23193,7 +23636,8 @@
     "privacyStatus": "public",
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "oeEMH9OymrA",
@@ -23205,7 +23649,8 @@
     "privacyStatus": "public",
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "aup-S0j6fuI",
@@ -23217,7 +23662,8 @@
     "privacyStatus": "public",
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "0jekNznauvQ",
@@ -23229,7 +23675,8 @@
     "privacyStatus": "public",
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "0-nzKOVpoR8",
@@ -23265,7 +23712,8 @@
     "privacyStatus": "public",
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "yiPxa3Bi6XI",
@@ -23277,7 +23725,8 @@
     "privacyStatus": "public",
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "Wb00frPm7CY",
@@ -23289,7 +23738,8 @@
     "privacyStatus": "public",
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "4VJn0Ay0zWw",
@@ -23301,7 +23751,8 @@
     "privacyStatus": "public",
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (80%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "CY98Ne1OE_g",
@@ -23313,7 +23764,8 @@
     "privacyStatus": "public",
     "masterId": "CY98Ne1OE_g",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "6mVOV4CSaag",
@@ -23325,7 +23777,8 @@
     "privacyStatus": "public",
     "masterId": "CY98Ne1OE_g",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Análise"
   },
   {
     "videoId": "782G9RyVFmI",
@@ -23625,7 +24078,8 @@
     "privacyStatus": "public",
     "masterId": "xUgZ0_KyqI8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "u91tesZ-TrA",
@@ -23637,7 +24091,8 @@
     "privacyStatus": "public",
     "masterId": "xUgZ0_KyqI8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy - Different Duration (100%)"
+    "masterType": "Duplicate - Exact Copy - Different Duration (100%)",
+    "category": "Meditação"
   },
   {
     "videoId": "a9VU7vn8xHY",
@@ -23649,7 +24104,8 @@
     "privacyStatus": "public",
     "masterId": "xUgZ0_KyqI8",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "HnfIaILPieU",
@@ -23781,7 +24237,8 @@
     "privacyStatus": "public",
     "masterId": "xPv8CF-7HIc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "SQgUrQWUH2k",
@@ -23793,7 +24250,8 @@
     "privacyStatus": "public",
     "masterId": "xPv8CF-7HIc",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "UVCwZ-56eNs",
@@ -23937,7 +24395,8 @@
     "privacyStatus": "public",
     "masterId": "zZWvfMVYfU0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "3hR3pRE3eY8",
@@ -23949,7 +24408,8 @@
     "privacyStatus": "public",
     "masterId": "zZWvfMVYfU0",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "wRY2Q4qP3pE",
@@ -23961,7 +24421,8 @@
     "privacyStatus": "public",
     "masterId": "wRY2Q4qP3pE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "yxNZGEEw4bw",
@@ -23973,7 +24434,8 @@
     "privacyStatus": "public",
     "masterId": "wRY2Q4qP3pE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "CBMOmo4VxxY",
@@ -23985,7 +24447,8 @@
     "privacyStatus": "public",
     "masterId": "CBMOmo4VxxY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "cMMjwQJJ9gc",
@@ -23997,7 +24460,8 @@
     "privacyStatus": "public",
     "masterId": "CBMOmo4VxxY",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "x_4PghjStaI",
@@ -24009,7 +24473,8 @@
     "privacyStatus": "public",
     "masterId": "x_4PghjStaI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "6nYYLHAEFkU",
@@ -24021,7 +24486,8 @@
     "privacyStatus": "public",
     "masterId": "x_4PghjStaI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "CAHUfjjuASs",
@@ -24177,7 +24643,8 @@
     "privacyStatus": "public",
     "masterId": "sZzigrwPfSI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "T2tOaDgLokw",
@@ -24189,7 +24656,8 @@
     "privacyStatus": "public",
     "masterId": "sZzigrwPfSI",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "GvmlQZuBGxM",
@@ -24261,7 +24729,8 @@
     "privacyStatus": "public",
     "masterId": "sqjYaWP2ki8",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "H6oA2mqMnXA",
@@ -24573,7 +25042,8 @@
     "privacyStatus": "public",
     "masterId": "B-YF8fjolEY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "8EpoBwFtmeM",
@@ -24585,7 +25055,8 @@
     "privacyStatus": "public",
     "masterId": "B-YF8fjolEY",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Meditação"
   },
   {
     "videoId": "q9d1DaPVB3Y",
@@ -24885,7 +25356,8 @@
     "privacyStatus": "public",
     "masterId": "lTTQ19cuzJE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "0zWNAkLQ7cA",
@@ -24897,7 +25369,8 @@
     "privacyStatus": "public",
     "masterId": "lTTQ19cuzJE",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "4TUDbYSG6I0",
@@ -25797,7 +26270,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (69%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (69%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "zSaxXPLFBGk",
@@ -25821,7 +26295,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "URH3O65ZTag",
@@ -25845,7 +26320,8 @@
     "privacyStatus": "public",
     "masterId": "BJftdQvdiug",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (44%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (44%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "2iR3BNGp3gQ",
@@ -25857,7 +26333,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "SVXqcfRfhjo",
@@ -25869,7 +26346,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "agh5U_Xn24k",
@@ -25893,7 +26371,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "ftJ724l25tY",
@@ -25905,7 +26384,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "bkxDtVg_Vjg",
@@ -25929,7 +26409,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "nXkFEw4Jb1k",
@@ -25941,7 +26422,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "gyU1jg21uX0",
@@ -25953,7 +26435,8 @@
     "privacyStatus": "public",
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (58%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (58%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "p6pnhMcc7ZA",
@@ -25977,7 +26460,8 @@
     "privacyStatus": "public",
     "masterId": "DqAGHgDPAro",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "uKey6wKD7zI",
@@ -25989,7 +26473,8 @@
     "privacyStatus": "public",
     "masterId": "uKey6wKD7zI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "gE0qMIDHvX4",
@@ -26001,7 +26486,8 @@
     "privacyStatus": "public",
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "Yee51zytAVs",
@@ -26013,7 +26499,8 @@
     "privacyStatus": "public",
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "FBUlC_5M9r4",
@@ -26025,7 +26512,8 @@
     "privacyStatus": "public",
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "tqmyKfd4Q0Y",
@@ -26049,7 +26537,8 @@
     "privacyStatus": "public",
     "masterId": "5vR_J8D5VMc",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "rkvvw82FFpQ",
@@ -26073,7 +26562,8 @@
     "privacyStatus": "public",
     "masterId": "B-rLVmG5uXg",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "LR0i0Gaaicw",
@@ -26085,7 +26575,8 @@
     "privacyStatus": "public",
     "masterId": "WATt7PvQrV8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "MBjGt0N-u84",
@@ -26109,7 +26600,8 @@
     "privacyStatus": "public",
     "masterId": "zMbfIcbatBI",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "9oRnPLZKP4Y",
@@ -26121,7 +26613,8 @@
     "privacyStatus": "public",
     "masterId": "P5uKIpWPDmE",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "mG93LdsgoOQ",
@@ -26145,7 +26638,8 @@
     "privacyStatus": "public",
     "masterId": "1McDGhB_wPg",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (55%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (55%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "9X0NZ9MJVJc",
@@ -26157,7 +26651,8 @@
     "privacyStatus": "public",
     "masterId": "aB72x5xi2sw",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "6TZ3xj6gDgI",
@@ -26181,7 +26676,8 @@
     "privacyStatus": "public",
     "masterId": "eaZB9SSrDBI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "_ajXUesjQsw",
@@ -26193,7 +26689,8 @@
     "privacyStatus": "public",
     "masterId": "_ajXUesjQsw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "kiFAbg2jxBM",
@@ -26205,7 +26702,8 @@
     "privacyStatus": "public",
     "masterId": "xUgZ0_KyqI8",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "fC_dhsTPugs",
@@ -26229,7 +26727,8 @@
     "privacyStatus": "public",
     "masterId": "xPv8CF-7HIc",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "2GE2zv231l0",
@@ -26253,7 +26752,8 @@
     "privacyStatus": "public",
     "masterId": "sZzigrwPfSI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (75%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "kYWsqOR0460",
@@ -26265,7 +26765,8 @@
     "privacyStatus": "public",
     "masterId": "sqjYaWP2ki8",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "8WIFT0zK_JQ",
@@ -26337,7 +26838,8 @@
     "privacyStatus": "public",
     "masterId": "tYH2zNUCiEQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "WRbAndncxgA",
@@ -26349,7 +26851,8 @@
     "privacyStatus": "public",
     "masterId": "WRbAndncxgA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "fxzdUzf45L4",
@@ -26361,7 +26864,8 @@
     "privacyStatus": "public",
     "masterId": "fxzdUzf45L4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "dH3ot6xErcQ",
@@ -26373,7 +26877,8 @@
     "privacyStatus": "public",
     "masterId": "dH3ot6xErcQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "RQt7DqK-AUc",
@@ -26385,7 +26890,8 @@
     "privacyStatus": "public",
     "masterId": "RQt7DqK-AUc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "d877ug4F1_c",
@@ -26409,7 +26915,8 @@
     "privacyStatus": "public",
     "masterId": "B-YF8fjolEY",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (73%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (73%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "1S-wTbmol-0",
@@ -26421,7 +26928,8 @@
     "privacyStatus": "public",
     "masterId": "1S-wTbmol-0",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "Ok_f_cdNwd8",
@@ -26445,7 +26953,8 @@
     "privacyStatus": "public",
     "masterId": "AHvIJsYWxYM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "sgDZOfxXKME",
@@ -26481,7 +26990,8 @@
     "privacyStatus": "public",
     "masterId": "gOfqMgShyfI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "anm8zxAhaRc",
@@ -26493,7 +27003,8 @@
     "privacyStatus": "public",
     "masterId": "anm8zxAhaRc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "EUYfQdTJvhE",
@@ -26505,7 +27016,8 @@
     "privacyStatus": "public",
     "masterId": "EUYfQdTJvhE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "lbynaFUPCcA",
@@ -26541,7 +27053,8 @@
     "privacyStatus": "public",
     "masterId": "XAqXrvnjckY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "VGRD0QCuTKw",
@@ -26589,7 +27102,8 @@
     "privacyStatus": "public",
     "masterId": "ZMz_-660qHw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "uFpJwiPiRrY",
@@ -26805,7 +27319,8 @@
     "privacyStatus": "public",
     "masterId": "P2HAupa1FDA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "VXIlLWm0u88",
@@ -26853,7 +27368,8 @@
     "privacyStatus": "public",
     "masterId": "tIg4z9voaks",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "eFaxXm2fnaU",
@@ -27141,7 +27657,8 @@
     "privacyStatus": "public",
     "masterId": "tkA6jkRfZA8",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "iP-aLMHgoKQ",
@@ -27165,7 +27682,8 @@
     "privacyStatus": "public",
     "masterId": "te1SPoFEvo0",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (64%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "DGt5KEa28I4",
@@ -27177,7 +27695,8 @@
     "privacyStatus": "public",
     "masterId": "BJftdQvdiug",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (44%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (44%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "TE4WSLGTZhk",
@@ -27201,7 +27720,8 @@
     "privacyStatus": "public",
     "masterId": "ttGVv0ItZtM",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "XESP3uR1y_s",
@@ -27225,7 +27745,8 @@
     "privacyStatus": "public",
     "masterId": "SVY2kUI0M9A",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "59tM8lAELj8",
@@ -27261,7 +27782,8 @@
     "privacyStatus": "public",
     "masterId": "bIyzi8sykCI",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "0qMUvomOXoQ",
@@ -27273,7 +27795,8 @@
     "privacyStatus": "public",
     "masterId": "DewqjWWYwKo",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (67%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "wkvHTmBb8zE",
@@ -27285,7 +27808,8 @@
     "privacyStatus": "public",
     "masterId": "phuDl30MpZ4",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "SU2qKcvxVuo",
@@ -27309,7 +27833,8 @@
     "privacyStatus": "public",
     "masterId": "Zavg6C0y0BE",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "LR2Rs5qgB54",
@@ -27357,7 +27882,8 @@
     "privacyStatus": "public",
     "masterId": "9XTa9NHVqR8",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (58%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (58%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "Sv5-0ZoQdIE",
@@ -27393,7 +27919,8 @@
     "privacyStatus": "public",
     "masterId": "ykmyIlKSpjI",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "yPW-Jq4S_Ek",
@@ -27489,7 +28016,8 @@
     "privacyStatus": "public",
     "masterId": "sgoVS_3TRCs",
     "isMaster": false,
-    "masterType": "Duplicate (Manually Forced)"
+    "masterType": "Duplicate (Manually Forced)",
+    "category": "Meditação"
   },
   {
     "videoId": "fRg8Z6eODbk",
@@ -27501,7 +28029,8 @@
     "privacyStatus": "public",
     "masterId": "0yGfc92hYFk",
     "isMaster": false,
-    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)"
+    "masterType": "Duplicate - Reupload/Subtitled (50%) (Criterion B)",
+    "category": "Meditação"
   },
   {
     "videoId": "6YKXNoGR9Sk",
@@ -27669,7 +28198,8 @@
     "privacyStatus": "public",
     "masterId": "buA3GzuxAqw",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "EKs-4VUNjhk",
@@ -27777,7 +28307,8 @@
     "privacyStatus": "public",
     "masterId": "5UptBv7FT1E",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "O7vQ7D3Wdrs",
@@ -27801,7 +28332,8 @@
     "privacyStatus": "public",
     "masterId": "nDHzWVa0lYc",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "PZ8BS4OJuo4",
@@ -27813,7 +28345,8 @@
     "privacyStatus": "public",
     "masterId": "PZ8BS4OJuo4",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "sOjCP0kc5sE",
@@ -27837,7 +28370,8 @@
     "privacyStatus": "public",
     "masterId": "gnKC_QCy2DE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "TB28j7SGHoU",
@@ -27861,7 +28395,8 @@
     "privacyStatus": "public",
     "masterId": "VJIl5swflcU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "yw4z6cNmW28",
@@ -27873,7 +28408,8 @@
     "privacyStatus": "public",
     "masterId": "yw4z6cNmW28",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "sUoitSPe_Hw",
@@ -27909,7 +28445,8 @@
     "privacyStatus": "public",
     "masterId": "gNNTB0R71TM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "BYpXqsb8cTs",
@@ -27921,7 +28458,8 @@
     "privacyStatus": "public",
     "masterId": "BYpXqsb8cTs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "JzTzp3BPq4k",
@@ -27933,7 +28471,8 @@
     "privacyStatus": "public",
     "masterId": "JzTzp3BPq4k",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Ab_ROQAO6hE",
@@ -27945,7 +28484,8 @@
     "privacyStatus": "public",
     "masterId": "Ab_ROQAO6hE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "R25JM9J8_VE",
@@ -27969,7 +28509,8 @@
     "privacyStatus": "public",
     "masterId": "JBbb3p5aeCA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Fd-kaqA1zXY",
@@ -28137,7 +28678,8 @@
     "privacyStatus": "public",
     "masterId": "4eNiJCGpx7M",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "L8CweqBSD-A",
@@ -28149,7 +28691,8 @@
     "privacyStatus": "public",
     "masterId": "L8CweqBSD-A",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "PrhY3HH01h4",
@@ -28161,7 +28704,8 @@
     "privacyStatus": "public",
     "masterId": "PrhY3HH01h4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "KoBYLPXobQc",
@@ -28173,7 +28717,8 @@
     "privacyStatus": "public",
     "masterId": "KoBYLPXobQc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "0RBVUcHE6vI",
@@ -28185,7 +28730,8 @@
     "privacyStatus": "public",
     "masterId": "0RBVUcHE6vI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "GCu-ugitFOM",
@@ -28197,7 +28743,8 @@
     "privacyStatus": "public",
     "masterId": "GCu-ugitFOM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "0lpmXqVOlw0",
@@ -28221,7 +28768,8 @@
     "privacyStatus": "public",
     "masterId": "9swOU8GmIkA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "sGMHa3U26rs",
@@ -28233,7 +28781,8 @@
     "privacyStatus": "public",
     "masterId": "sGMHa3U26rs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "lNUpDrhaoys",
@@ -28773,7 +29322,8 @@
     "privacyStatus": "public",
     "masterId": "M5xPWSyX-To",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "gBVaaLrE7Ds",
@@ -28785,7 +29335,8 @@
     "privacyStatus": "public",
     "masterId": "gBVaaLrE7Ds",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "0DxFsQQHqeI",
@@ -28797,7 +29348,8 @@
     "privacyStatus": "public",
     "masterId": "0DxFsQQHqeI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "yELzRFoVljo",
@@ -28809,7 +29361,8 @@
     "privacyStatus": "public",
     "masterId": "yELzRFoVljo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "kdpNEfwLVQw",
@@ -28845,7 +29398,8 @@
     "privacyStatus": "public",
     "masterId": "HSQz4B2l8a0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Ti2Y7rgAJ7Q",
@@ -28857,7 +29411,8 @@
     "privacyStatus": "public",
     "masterId": "Ti2Y7rgAJ7Q",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "J_qzSndAj7Y",
@@ -28869,7 +29424,8 @@
     "privacyStatus": "public",
     "masterId": "J_qzSndAj7Y",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "21N4d3qnzys",
@@ -28881,7 +29437,8 @@
     "privacyStatus": "public",
     "masterId": "21N4d3qnzys",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "5P1NsQDzSO0",
@@ -28893,7 +29450,8 @@
     "privacyStatus": "public",
     "masterId": "5P1NsQDzSO0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "qwxHaUI6WAg",
@@ -28905,7 +29463,8 @@
     "privacyStatus": "public",
     "masterId": "qwxHaUI6WAg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "x7JKMOBXRho",
@@ -28917,7 +29476,8 @@
     "privacyStatus": "public",
     "masterId": "x7JKMOBXRho",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "zTBZM_0ph04",
@@ -28929,7 +29489,8 @@
     "privacyStatus": "public",
     "masterId": "zTBZM_0ph04",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "eQf-uyngUtg",
@@ -29265,7 +29826,8 @@
     "privacyStatus": "public",
     "masterId": "Zox__4ph6Fo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "-3cAi9euY2M",
@@ -29277,7 +29839,8 @@
     "privacyStatus": "public",
     "masterId": "-3cAi9euY2M",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ujPonuZbXEg",
@@ -29289,7 +29852,8 @@
     "privacyStatus": "public",
     "masterId": "ujPonuZbXEg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Mk_utFhw-AA",
@@ -29313,7 +29877,8 @@
     "privacyStatus": "public",
     "masterId": "LdpnttS2prM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "g-Gd0izE4B8",
@@ -29325,7 +29890,8 @@
     "privacyStatus": "public",
     "masterId": "g-Gd0izE4B8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Q0RePeopN4M",
@@ -29337,7 +29903,8 @@
     "privacyStatus": "public",
     "masterId": "Q0RePeopN4M",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "iHTRd0dzmcU",
@@ -29349,7 +29916,8 @@
     "privacyStatus": "public",
     "masterId": "iHTRd0dzmcU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "0BDRWvepPDA",
@@ -29601,7 +30169,8 @@
     "privacyStatus": "public",
     "masterId": "ooFMEtCgtqE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "zzdDizTYpac",
@@ -29613,7 +30182,8 @@
     "privacyStatus": "public",
     "masterId": "zzdDizTYpac",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "fuwWoimTsXY",
@@ -29625,7 +30195,8 @@
     "privacyStatus": "public",
     "masterId": "fuwWoimTsXY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "FHCM1gujN-I",
@@ -29637,7 +30208,8 @@
     "privacyStatus": "public",
     "masterId": "FHCM1gujN-I",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "t8ncULCoGD0",
@@ -29649,7 +30221,8 @@
     "privacyStatus": "public",
     "masterId": "t8ncULCoGD0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "z9p6AzuDaA0",
@@ -29661,7 +30234,8 @@
     "privacyStatus": "public",
     "masterId": "z9p6AzuDaA0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Es5uQQif7JQ",
@@ -29673,7 +30247,8 @@
     "privacyStatus": "public",
     "masterId": "Es5uQQif7JQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "0p5IjKfQJeg",
@@ -29685,7 +30260,8 @@
     "privacyStatus": "public",
     "masterId": "0p5IjKfQJeg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "CsID0xT5ysk",
@@ -29697,7 +30273,8 @@
     "privacyStatus": "public",
     "masterId": "CsID0xT5ysk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "5sLJp4qx5Hg",
@@ -29709,7 +30286,8 @@
     "privacyStatus": "public",
     "masterId": "5sLJp4qx5Hg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "raRg6X2u_-k",
@@ -29745,7 +30323,8 @@
     "privacyStatus": "public",
     "masterId": "PYCTXEl7sKY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "L_Qcjlp9fAw",
@@ -29769,7 +30348,8 @@
     "privacyStatus": "public",
     "masterId": "Rj-Z1cjgy3s",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "FgBS1iwN3Ng",
@@ -29781,7 +30361,8 @@
     "privacyStatus": "public",
     "masterId": "FgBS1iwN3Ng",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "PwpWh17-ZmQ",
@@ -29805,7 +30386,8 @@
     "privacyStatus": "public",
     "masterId": "6ye_fOlywfs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "Q2dNITw6E2U",
@@ -29817,7 +30399,8 @@
     "privacyStatus": "public",
     "masterId": "Q2dNITw6E2U",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "-Piy83__uFk",
@@ -29829,7 +30412,8 @@
     "privacyStatus": "public",
     "masterId": "-Piy83__uFk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "-0gXRjtImaU",
@@ -29841,7 +30425,8 @@
     "privacyStatus": "public",
     "masterId": "-0gXRjtImaU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "EnvpqlEJOkI",
@@ -29853,7 +30438,8 @@
     "privacyStatus": "public",
     "masterId": "EnvpqlEJOkI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "D9D0MjCWlV4",
@@ -29865,7 +30451,8 @@
     "privacyStatus": "public",
     "masterId": "D9D0MjCWlV4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "OiHZ_4CYkyQ",
@@ -29877,7 +30464,8 @@
     "privacyStatus": "public",
     "masterId": "OiHZ_4CYkyQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "pRfeRBJ3LNc",
@@ -29889,7 +30477,8 @@
     "privacyStatus": "public",
     "masterId": "pRfeRBJ3LNc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "hcaCD5mwkCU",
@@ -29901,7 +30490,8 @@
     "privacyStatus": "public",
     "masterId": "hcaCD5mwkCU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "0kOlmIPzM7k",
@@ -29913,7 +30503,8 @@
     "privacyStatus": "public",
     "masterId": "0kOlmIPzM7k",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "3ZmXSKQoDhM",
@@ -29925,7 +30516,8 @@
     "privacyStatus": "public",
     "masterId": "3ZmXSKQoDhM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "J801Vn0MKIQ",
@@ -29949,7 +30541,8 @@
     "privacyStatus": "public",
     "masterId": "ARIkdmEGehg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ph9T3e1DvAY",
@@ -29973,7 +30566,8 @@
     "privacyStatus": "public",
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ClHzoOFZTwQ",
@@ -29985,7 +30579,8 @@
     "privacyStatus": "public",
     "masterId": "ClHzoOFZTwQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "n-PpP6gFxbU",
@@ -29997,7 +30592,8 @@
     "privacyStatus": "public",
     "masterId": "n-PpP6gFxbU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "RwZy063kXVA",
@@ -30009,7 +30605,8 @@
     "privacyStatus": "public",
     "masterId": "RwZy063kXVA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "6Ck2ID9-HOs",
@@ -30021,7 +30618,8 @@
     "privacyStatus": "public",
     "masterId": "6Ck2ID9-HOs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "IzwJ7lZziYQ",
@@ -30057,7 +30655,8 @@
     "privacyStatus": "public",
     "masterId": "5E0Ae3SJdAs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "j6eJO_2YMsY",
@@ -30069,7 +30668,8 @@
     "privacyStatus": "public",
     "masterId": "j6eJO_2YMsY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "QSONnDSxP3k",
@@ -30081,7 +30681,8 @@
     "privacyStatus": "public",
     "masterId": "QSONnDSxP3k",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "u5vgI2ulkxs",
@@ -30093,7 +30694,8 @@
     "privacyStatus": "public",
     "masterId": "u5vgI2ulkxs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "c1we5wYrwt0",
@@ -30105,7 +30707,8 @@
     "privacyStatus": "public",
     "masterId": "c1we5wYrwt0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "VtoFsKzahh4",
@@ -30129,7 +30732,8 @@
     "privacyStatus": "public",
     "masterId": "tO7lFE7-N7Q",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "8ClSoY2vd8A",
@@ -30201,7 +30805,8 @@
     "privacyStatus": "public",
     "masterId": "ARIkdmEGehg",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "UflnST3W834",
@@ -30213,7 +30818,8 @@
     "privacyStatus": "public",
     "masterId": "ARIkdmEGehg",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "yW1XJ-iqst0",
@@ -30261,7 +30867,8 @@
     "privacyStatus": "public",
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "lZFSIhLFzJ0",
@@ -30273,7 +30880,8 @@
     "privacyStatus": "public",
     "masterId": "l9Cc1ctoQ3E",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "CGMhh0T8WH0",
@@ -30309,7 +30917,8 @@
     "privacyStatus": "public",
     "masterId": "ClHzoOFZTwQ",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "opCUeNZImWM",
@@ -30321,7 +30930,8 @@
     "privacyStatus": "public",
     "masterId": "ClHzoOFZTwQ",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Série"
   },
   {
     "videoId": "xoUxrChLQMY",
@@ -30357,7 +30967,8 @@
     "privacyStatus": "public",
     "masterId": "U-89DyGYThU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ZHjESmLErik",
@@ -30369,7 +30980,8 @@
     "privacyStatus": "public",
     "masterId": "ZHjESmLErik",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "4bumnUeCKoc",
@@ -30393,7 +31005,8 @@
     "privacyStatus": "public",
     "masterId": "tS3MWivrEVg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "zGqgHqTr1WA",
@@ -30453,7 +31066,8 @@
     "privacyStatus": "public",
     "masterId": "vSfChat3q-w",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "gr7ze7bOEj4",
@@ -30465,7 +31079,8 @@
     "privacyStatus": "public",
     "masterId": "gr7ze7bOEj4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "tWY_zklo7BE",
@@ -30501,7 +31116,8 @@
     "privacyStatus": "public",
     "masterId": "E323qlgXVLs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "bcGUcbnyH2M",
@@ -30537,7 +31153,8 @@
     "privacyStatus": "public",
     "masterId": "CbHAjsmyWCc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "OzLBm8GO21Q",
@@ -30549,7 +31166,8 @@
     "privacyStatus": "public",
     "masterId": "OzLBm8GO21Q",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Análise"
   },
   {
     "videoId": "qTdRdTKDZxY",
@@ -30561,7 +31179,8 @@
     "privacyStatus": "public",
     "masterId": "qTdRdTKDZxY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "oYsBXYGrDFk",
@@ -30573,7 +31192,8 @@
     "privacyStatus": "public",
     "masterId": "oYsBXYGrDFk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "MvJ5BPhJgjw",
@@ -30609,7 +31229,8 @@
     "privacyStatus": "public",
     "masterId": "YQrxLpEH5zc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "HdDgOpeYU7M",
@@ -30645,7 +31266,8 @@
     "privacyStatus": "public",
     "masterId": "sD0BE99BG2s",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "qoeSXRi0rAs",
@@ -30669,7 +31291,8 @@
     "privacyStatus": "public",
     "masterId": "rofLoEcYMko",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "Wyg-bZ-ivN0",
@@ -30825,7 +31448,8 @@
     "privacyStatus": "public",
     "masterId": "NOj6A5zjB4o",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "5lLMWIjpJYA",
@@ -30837,7 +31461,8 @@
     "privacyStatus": "public",
     "masterId": "5lLMWIjpJYA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "KdkCDZjyolI",
@@ -30849,7 +31474,8 @@
     "privacyStatus": "public",
     "masterId": "KdkCDZjyolI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "bVGq0HUSyBA",
@@ -31017,7 +31643,8 @@
     "privacyStatus": "public",
     "masterId": "cM-QbbRoefo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "boQhkp-AA5c",
@@ -31041,7 +31668,8 @@
     "privacyStatus": "public",
     "masterId": "qSPRLRaPxiY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "knRDlkqpH9A",
@@ -31053,7 +31681,8 @@
     "privacyStatus": "public",
     "masterId": "knRDlkqpH9A",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "d5MShwgq42U",
@@ -31065,7 +31694,8 @@
     "privacyStatus": "public",
     "masterId": "d5MShwgq42U",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Fd8LRahkXPk",
@@ -31077,7 +31707,8 @@
     "privacyStatus": "public",
     "masterId": "Fd8LRahkXPk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "S4XLNPXMmMc",
@@ -31089,7 +31720,8 @@
     "privacyStatus": "public",
     "masterId": "S4XLNPXMmMc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "GFxuAhO0qG8",
@@ -31101,7 +31733,8 @@
     "privacyStatus": "public",
     "masterId": "GFxuAhO0qG8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "XTVYVrkceII",
@@ -31113,7 +31746,8 @@
     "privacyStatus": "public",
     "masterId": "XTVYVrkceII",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "08OwDqAya6g",
@@ -31125,7 +31759,8 @@
     "privacyStatus": "public",
     "masterId": "08OwDqAya6g",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "HE6EAx_AfK8",
@@ -31137,7 +31772,8 @@
     "privacyStatus": "public",
     "masterId": "HE6EAx_AfK8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "Ja8MHQUpPbg",
@@ -31149,7 +31785,8 @@
     "privacyStatus": "public",
     "masterId": "Ja8MHQUpPbg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "hwPqbKDRaV8",
@@ -31161,7 +31798,8 @@
     "privacyStatus": "public",
     "masterId": "hwPqbKDRaV8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "F2hm2aUa4Qg",
@@ -31173,7 +31811,8 @@
     "privacyStatus": "public",
     "masterId": "F2hm2aUa4Qg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "QHJbr1aftOg",
@@ -31185,7 +31824,8 @@
     "privacyStatus": "public",
     "masterId": "QHJbr1aftOg",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "uKlTGTRVshA",
@@ -31197,7 +31837,8 @@
     "privacyStatus": "public",
     "masterId": "uKlTGTRVshA",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "NamZbP-B-uE",
@@ -31209,7 +31850,8 @@
     "privacyStatus": "public",
     "masterId": "NamZbP-B-uE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "fY-QJORtIh0",
@@ -31221,7 +31863,8 @@
     "privacyStatus": "public",
     "masterId": "fY-QJORtIh0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "K_qOtK7INTM",
@@ -31233,7 +31876,8 @@
     "privacyStatus": "public",
     "masterId": "K_qOtK7INTM",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "8853EyqHQQQ",
@@ -31245,7 +31889,8 @@
     "privacyStatus": "public",
     "masterId": "8853EyqHQQQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "1euYHCtqJ20",
@@ -31257,7 +31902,8 @@
     "privacyStatus": "public",
     "masterId": "1euYHCtqJ20",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "aPq6PUaSEv8",
@@ -31269,7 +31915,8 @@
     "privacyStatus": "public",
     "masterId": "aPq6PUaSEv8",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "V0LsAe0VuEU",
@@ -31281,7 +31928,8 @@
     "privacyStatus": "public",
     "masterId": "V0LsAe0VuEU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "02MAU9k73iY",
@@ -31293,7 +31941,8 @@
     "privacyStatus": "public",
     "masterId": "02MAU9k73iY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "f-s7IJsLBDs",
@@ -31305,7 +31954,8 @@
     "privacyStatus": "public",
     "masterId": "f-s7IJsLBDs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "DHKaWvtNtc4",
@@ -31317,7 +31967,8 @@
     "privacyStatus": "public",
     "masterId": "DHKaWvtNtc4",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ucUKzkbwvMI",
@@ -31329,7 +31980,8 @@
     "privacyStatus": "public",
     "masterId": "ucUKzkbwvMI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "09g_5g2_8gk",
@@ -31341,7 +31993,8 @@
     "privacyStatus": "public",
     "masterId": "09g_5g2_8gk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "8FY4CtdYB0s",
@@ -31353,7 +32006,8 @@
     "privacyStatus": "public",
     "masterId": "8FY4CtdYB0s",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "zGJmN3AoBj0",
@@ -31365,7 +32019,8 @@
     "privacyStatus": "public",
     "masterId": "zGJmN3AoBj0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Meditação"
   },
   {
     "videoId": "Q9MkDbHhIkQ",
@@ -31377,7 +32032,8 @@
     "privacyStatus": "public",
     "masterId": "Q9MkDbHhIkQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "dwHYieAC4_8",
@@ -31401,7 +32057,8 @@
     "privacyStatus": "public",
     "masterId": "UK2uCMnT85U",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "2sosDNlux-g",
@@ -31413,7 +32070,8 @@
     "privacyStatus": "public",
     "masterId": "2sosDNlux-g",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "GNHf7YafNxM",
@@ -31425,7 +32083,8 @@
     "privacyStatus": "public",
     "masterId": "GNHf7YafNxM",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "VxQvz9Tb4HQ",
@@ -31437,7 +32096,8 @@
     "privacyStatus": "public",
     "masterId": "VxQvz9Tb4HQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "RP2QtGNf8OA",
@@ -31461,7 +32121,8 @@
     "privacyStatus": "public",
     "masterId": "jH0JDXXeA3w",
     "isMaster": true,
-    "masterType": "Original Master (Manually Forced)"
+    "masterType": "Original Master (Manually Forced)",
+    "category": "Série"
   },
   {
     "videoId": "DMnxqzXsdpQ",
@@ -31509,7 +32170,8 @@
     "privacyStatus": "public",
     "masterId": "Llb-ifJ9zZo",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "_TO7OV6APvk",
@@ -31533,7 +32195,8 @@
     "privacyStatus": "public",
     "masterId": "lC6_G3ijjtk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "P3drmSXW3OQ",
@@ -31545,7 +32208,8 @@
     "privacyStatus": "public",
     "masterId": "P3drmSXW3OQ",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "SqipHj9vaS4",
@@ -31569,7 +32233,8 @@
     "privacyStatus": "public",
     "masterId": "_vZqS9Z8sYs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "nHMosUNpImQ",
@@ -31641,7 +32306,8 @@
     "privacyStatus": "public",
     "masterId": "L6qwWN1oPjE",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "UNh9uM1Sur8",
@@ -31665,7 +32331,8 @@
     "privacyStatus": "public",
     "masterId": "qCDKfNEeTrI",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "FoUBXSYLelM",
@@ -31689,7 +32356,8 @@
     "privacyStatus": "public",
     "masterId": "jqHKR_c1o6s",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "z3hYrJ-GsXU",
@@ -31701,7 +32369,8 @@
     "privacyStatus": "public",
     "masterId": "z3hYrJ-GsXU",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "bir1Be2wr50",
@@ -31725,7 +32394,8 @@
     "privacyStatus": "public",
     "masterId": "ZFQLMuTUqP0",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "5LcPQVOWvmc",
@@ -31737,7 +32407,8 @@
     "privacyStatus": "public",
     "masterId": "5LcPQVOWvmc",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "VlbEGiK4K0o",
@@ -31749,7 +32420,8 @@
     "privacyStatus": "public",
     "masterId": "VlbEGiK4K0o",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "ux4EuD0YWMY",
@@ -31761,7 +32433,8 @@
     "privacyStatus": "public",
     "masterId": "ux4EuD0YWMY",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "CQ6Lu30eRzk",
@@ -31773,7 +32446,8 @@
     "privacyStatus": "public",
     "masterId": "CQ6Lu30eRzk",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "RzO_r-0gPYs",
@@ -31785,7 +32459,8 @@
     "privacyStatus": "public",
     "masterId": "RzO_r-0gPYs",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Série"
   },
   {
     "videoId": "SFDv-w1bdr0",
