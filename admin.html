@@ -206,7 +206,7 @@
         
         // Recupera os dados atuais do mapa de collections
         const itemCol = currentCollectionsMap[vId] || {};
-        const catVal = itemCol.categoria || '';
+        const catVal = itemCol.category || '';
         const grpVal = itemCol.grupo || '';
         const masterVal = currentOverridesMap[vId] || '';
 
@@ -234,7 +234,7 @@
 
       // Reconstrói o objeto de collections estritamente com os campos permitidos
       const novoObjetoTag = {};
-      if (cat) novoObjetoTag.categoria = cat;
+      if (cat) novoObjetoTag.category = cat;
       if (grp) novoObjetoTag.grupo = grp;
 
       // Atualiza collections

@@ -134,11 +134,11 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     const row = document.createElement('div');
     row.className = 'card-display-lista';
 
-    // 1. Faixa fina lateral com a cor referente à categoria
+    // 1. Faixa fina lateral com a cor referente à category
     const stripe = document.createElement('div');
     stripe.className = 'category-stripe-thin';
-    stripe.dataset.cat = colInfo.categoria;
-    stripe.title = colInfo.categoria;
+    stripe.dataset.cat = colInfo.category;
+    stripe.title = colInfo.category;
     row.appendChild(stripe);
 
     // 2. Thumbnail com duração no canto inferior direito
@@ -243,8 +243,8 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     if (colInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${colInfo.playlist}</span>`;
 
     card.innerHTML = `
-      <div class="category-stripe" data-cat="${colInfo.categoria}">
-        <span class="category-stripe-text">${colInfo.categoria}</span>
+      <div class="category-stripe" data-cat="${colInfo.category}">
+        <span class="category-stripe-text">${colInfo.category}</span>
       </div>
       <div class="card-media-block" title="Clique para ampliar thumbnail">
         <img class="card-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
@@ -295,7 +295,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     card.className = 'card-display-grade'; // Mantendo a classe CSS existente para não quebrar estilos
 
     card.innerHTML = `
-      <div class="grade-cat-bar" data-cat="${colInfo.categoria}" title="${colInfo.categoria}"></div>
+      <div class="grade-cat-bar" data-cat="${colInfo.category}" title="${colInfo.category}"></div>
       <div class="grade-media-block">
         <a href="${videoUrl}" target="_blank">
           <img class="grade-thumb" src="${thumbUrl}" alt="Thumbnail" loading="lazy">
@@ -361,9 +361,9 @@ export function renderList() {
   const sortItems = (list) => {
     list.sort((a, b) => {
       let valA, valB;
-      if (state.sortBy === 'categoria') {
-        valA = (a.categoria || 'zzz').toLowerCase();
-        valB = (b.categoria || 'zzz').toLowerCase();
+      if (state.sortBy === 'category') {
+        valA = (a.category || 'zzz').toLowerCase();
+        valB = (b.category || 'zzz').toLowerCase();
         return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
       } else if (state.sortBy === 'progresso') {
         valA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined) ? Number(window.userProgressCache[a.videoId]) : 99;

@@ -68,7 +68,7 @@ function syncButtonGroupsUI() {
     'data': 'Data',
     'duracao': 'Duração',
     'ocorrencias': 'Ocorrências',
-    'categoria': 'Categoria',
+    'category': 'Categoria',
     'progresso': 'Status'
   };
 
