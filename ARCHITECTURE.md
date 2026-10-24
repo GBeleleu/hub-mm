@@ -1,4 +1,4 @@
-# 🏛️ Arquitetura do Projeto — [meuGuia]
+# 🏛️ Arquitetura do Projeto — [HUB-MM]
 
 Este documento especifica a estrutura, os contratos de integração, o fluxo de dados e as convenções do projeto. Todas as futuras modificações no código devem respeitar rigorosamente as diretrizes aqui estabelecidas.
 
