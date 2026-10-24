@@ -5,9 +5,9 @@ import { videoDatabase, hiddenCollectionsTags } from './state.js';
 
 export function parseCollections(item) {
   return {
-    category: item.category || '',
-    collection: item.collection || '',
-    playlist: item.playlist || ''
+    category: item.category ? item.category.trim() : '',
+    collection: item.collection ? item.collection.trim() : '',
+    playlist: item.playlist ? item.playlist.trim() : ''
   };
 }
 
@@ -19,9 +19,9 @@ export function extractAllCollectionsTags() {
   };
 
   videoDatabase.forEach(item => {
-    if (item.category) collectionsTree.category.add(item.category.trim());
-    if (item.collection) collectionsTree.collection.add(item.collection.trim());
-    if (item.playlist) collectionsTree.playlist.add(item.playlist.trim());
+    if (item.category && item.category.trim()) collectionsTree.category.add(item.category.trim());
+    if (item.collection && item.collection.trim()) collectionsTree.collection.add(item.collection.trim());
+    if (item.playlist && item.playlist.trim()) collectionsTree.playlist.add(item.playlist.trim());
   });
 
   return collectionsTree;
@@ -50,14 +50,14 @@ export function populateCollectionsModal() {
     groupDiv.appendChild(title);
 
     Array.from(collectionsTree[key]).sort().forEach(val => {
-      const tagKey = `${key}:${val}`;
+      const tagKey = `${key}:${val}`.toLowerCase();
       const label = document.createElement('label');
       label.className = 'collections-item';
 
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.value = tagKey;
-      checkbox.checked = !hiddenCollectionsTags.includes(tagKey);
+      checkbox.checked = !hiddenCollectionsTags.map(t => t.toLowerCase()).includes(tagKey);
 
       label.appendChild(checkbox);
       label.appendChild(document.createTextNode(val));
@@ -69,8 +69,11 @@ export function populateCollectionsModal() {
 }
 
 export function isVideoCollectionsVisible(item) {
-  if (item.category && hiddenCollectionsTags.includes(`category:${item.category}`)) return false;
-  if (item.collection && hiddenCollectionsTags.includes(`collection:${item.collection}`)) return false;
-  if (item.playlist && hiddenCollectionsTags.includes(`playlist:${item.playlist}`)) return false;
+  const hiddenNormalized = hiddenCollectionsTags.map(t => t.toLowerCase());
+  
+  if (item.category && hiddenNormalized.includes(`category:${item.category.trim().toLowerCase()}`)) return false;
+  if (item.collection && hiddenNormalized.includes(`collection:${item.collection.trim().toLowerCase()}`)) return false;
+  if (item.playlist && hiddenNormalized.includes(`playlist:${item.playlist.trim().toLowerCase()}`)) return false;
+  
   return true;
 }
