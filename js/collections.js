@@ -6,7 +6,7 @@ import { videoDatabase, hiddenCollectionsTags } from './state.js';
 export function parseCollections(item) {
   return {
     category: item.category || '',
-    grupo: item.grupo || '',
+    collection: item.collection || '',
     playlist: item.playlist || ''
   };
 }
@@ -14,13 +14,13 @@ export function parseCollections(item) {
 export function extractAllCollectionsTags() {
   const collectionsTree = {
     category: new Set(),
-    grupo: new Set(),
+    collection: new Set(),
     playlist: new Set()
   };
 
   videoDatabase.forEach(item => {
     if (item.category) collectionsTree.category.add(item.category.trim());
-    if (item.grupo) collectionsTree.grupo.add(item.grupo.trim());
+    if (item.collection) collectionsTree.collection.add(item.collection.trim());
     if (item.playlist) collectionsTree.playlist.add(item.playlist.trim());
   });
 
@@ -70,7 +70,7 @@ export function populateCollectionsModal() {
 
 export function isVideoCollectionsVisible(item) {
   if (item.category && hiddenCollectionsTags.includes(`category:${item.category}`)) return false;
-  if (item.grupo && hiddenCollectionsTags.includes(`grupo:${item.grupo}`)) return false;
+  if (item.collection && hiddenCollectionsTags.includes(`collection:${item.collection}`)) return false;
   if (item.playlist && hiddenCollectionsTags.includes(`playlist:${item.playlist}`)) return false;
   return true;
 }

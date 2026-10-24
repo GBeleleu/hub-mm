@@ -201,7 +201,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     const tagsCell = document.createElement('div');
     tagsCell.className = 'list-item-cell';
     let tagsContent = `${liveBadge}${privacyNotice}`;
-    if (colInfo.grupo) tagsContent += ` <span style="font-size:10px; color:var(--accent-color);">[${colInfo.grupo}]</span>`;
+    if (colInfo.collection) tagsContent += ` <span style="font-size:10px; color:var(--accent-color);">[${colInfo.collection}]</span>`;
     tagsCell.innerHTML = tagsContent;
     row.appendChild(tagsCell);
 
@@ -239,7 +239,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     card.className = 'card-display-compacto';
 
     let badgesHtml = '';
-    if (colInfo.grupo) badgesHtml += `<span class="badge-grupo">📁 ${colInfo.grupo}</span>`;
+    if (colInfo.collection) badgesHtml += `<span class="badge-collection">📁 ${colInfo.collection}</span>`;
     if (colInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${colInfo.playlist}</span>`;
 
     card.innerHTML = `

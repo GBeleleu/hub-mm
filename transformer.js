@@ -118,8 +118,8 @@ function parseTagsString(tagString) {
   segments.forEach(segment => {
     if (segment.startsWith('cat:')) {
       result.category = segment.replace('cat:', '').trim();
-    } else if (segment.startsWith('grupo:')) {
-      result.group = segment.replace('grupo:', '').trim();
+    } else if (segment.startsWith('collection:')) {
+      result.collection = segment.replace('collection:', '').trim();
     } else if (segment.startsWith('playlist:')) {
       result.playlist = segment.replace('playlist:', '').trim();
     } else if (segment.includes(':')) {
@@ -233,7 +233,7 @@ function processData() {
   processedResult.forEach(item => {
     // Clear legacy collection properties to ensure a clean state
     delete item.category;
-    delete item.group;
+    delete item.collection;
     delete item.playlist;
 
     // Inject collection properties if a record exists for this videoId
@@ -241,7 +241,7 @@ function processData() {
       const tagData = collectionsMap[item.videoId];
       
       if (tagData.category) item.category = tagData.category;
-      if (tagData.group) item.group = tagData.group;
+      if (tagData.collection) item.collection = tagData.collection;
       if (tagData.playlist) item.playlist = tagData.playlist;
 
       tagsCount++;
@@ -249,7 +249,7 @@ function processData() {
   });
 
   if (tagsCount > 0) {
-    console.log(`🏷️  ${tagsCount} video(s) with structured tags applied.`);
+    console.log(`🏷️  ${tagsCount} video(s) with Collections applied.`);
   }
 
   // 4. FINAL DATABASE PERSISTENCE
@@ -260,8 +260,8 @@ function processData() {
   console.log(`✅ Treatment completed successfully!`);
   console.log(`📊 Total Videos: ${processedResult.length}`);
   console.log(`🌟 Original Masters: ${totalMasters}`);
-  console.log(`📁 Duplicate/Grouped Videos: ${processedResult.length - totalMasters}`);
-  console.log(`💾 Final database saved to: ${CONFIG_TRANSFORMER.FINAL_DB_PATH}`);
+  console.log(`📁 Deduplicated Videos: ${processedResult.length - totalMasters}`);
+  console.log(`💾 Saved to: ${CONFIG_TRANSFORMER.FINAL_DB_PATH}`);
   console.log("--------------------------------------------------");
 }
 
