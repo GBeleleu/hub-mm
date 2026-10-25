@@ -4,10 +4,26 @@
 import { videoDatabase, hiddenCollectionsTags } from './state.js';
 
 export function parseCollections(item) {
+  // Trata collection (pode ser string ou array)
+  let colFormatted = '';
+  if (Array.isArray(item.collection)) {
+    colFormatted = item.collection.join(', ');
+  } else if (item.collection) {
+    colFormatted = item.collection.trim();
+  }
+
+  // Trata playlist (pode ser string ou array)
+  let playFormatted = '';
+  if (Array.isArray(item.playlist)) {
+    playFormatted = item.playlist.join(', ');
+  } else if (item.playlist) {
+    playFormatted = item.playlist.trim();
+  }
+
   return {
     category: item.category ? item.category.trim() : '',
-    collection: item.collection ? item.collection.trim() : '',
-    playlist: item.playlist ? item.playlist.trim() : ''
+    collection: colFormatted,
+    playlist: playFormatted
   };
 }
 
@@ -19,17 +35,23 @@ export function extractAllCollectionsTags() {
   };
 
   videoDatabase.forEach(item => {
-    if (item.category) collectionsTree.category.add(item.category.trim());
+    if (item.category && item.category.trim()) {
+      collectionsTree.category.add(item.category.trim());
+    }
     
     if (Array.isArray(item.collection)) {
-      item.collection.forEach(c => collectionsTree.collection.add(c.trim()));
-    } else if (item.collection) {
+      item.collection.forEach(c => {
+        if (c && c.trim()) collectionsTree.collection.add(c.trim());
+      });
+    } else if (item.collection && item.collection.trim()) {
       collectionsTree.collection.add(item.collection.trim());
     }
 
     if (Array.isArray(item.playlist)) {
-      item.playlist.forEach(p => collectionsTree.playlist.add(p.trim()));
-    } else if (item.playlist) {
+      item.playlist.forEach(p => {
+        if (p && p.trim()) collectionsTree.playlist.add(p.trim());
+      });
+    } else if (item.playlist && item.playlist.trim()) {
       collectionsTree.playlist.add(item.playlist.trim());
     }
   });
@@ -81,13 +103,19 @@ export function populateCollectionsModal() {
 export function isVideoCollectionsVisible(item) {
   const hiddenNormalized = hiddenCollectionsTags.map(t => t.toLowerCase());
   
-  if (item.category && hiddenNormalized.includes(`category:${item.category.trim().toLowerCase()}`)) return false;
+  if (item.category && hiddenNormalized.includes(`category:${item.category.trim().toLowerCase()}`)) {
+    return false;
+  }
   
   const collections = Array.isArray(item.collection) ? item.collection : [item.collection];
-  if (collections.some(c => c && hiddenNormalized.includes(`collection:${c.trim().toLowerCase()}`))) return false;
+  if (collections.some(c => c && hiddenNormalized.includes(`collection:${c.trim().toLowerCase()}`))) {
+    return false;
+  }
 
   const playlists = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
-  if (playlists.some(p => p && hiddenNormalized.includes(`playlist:${p.trim().toLowerCase()}`))) return false;
+  if (playlists.some(p => p && hiddenNormalized.includes(`playlist:${p.trim().toLowerCase()}`))) {
+    return false;
+  }
   
   return true;
 }
