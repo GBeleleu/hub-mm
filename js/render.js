@@ -220,8 +220,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     // 8. Coleção/Playlists Badges
     const tagsCell = document.createElement('div');
     tagsCell.className = 'list-item-cell';
-    let tagsContent = `${liveBadge}${privacyNotice} ${renderBadgesHtml(item)}`;
-    tagsCell.innerHTML = tagsContent;
+    tagsCell.innerHTML = `${liveBadge}${privacyNotice} ${renderBadgesHtml(item)}`;
     row.appendChild(tagsCell);
 
     // 9. videoID
@@ -258,8 +257,6 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     card.className = 'card-display-compacto';
 
     let badgesHtml = renderBadgesHtml(item);
-    if (colInfo.collection) badgesHtml += `<span class="badge-collection">📁 ${colInfo.collection}</span>`;
-    if (colInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${colInfo.playlist}</span>`;
 
     card.innerHTML = `
       <div class="category-stripe" data-cat="${colInfo.category}">
@@ -329,7 +326,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
           <span><strong>${item.channelTitle}</strong> ${liveBadge} ${privacyNotice}</span>
           <span>${formatLocalDateTime(item.publishedAt)}</span>
         </div>
-        <div style="margin-top: 4px;">
+        <div class="grade-badges-container" style="margin-top:4px;">
           ${renderBadgesHtml(item)}
         </div>
         <div class="grade-footer">
