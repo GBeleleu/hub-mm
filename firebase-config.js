@@ -19,12 +19,12 @@ import {
 
 // Credenciais do Projeto Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDQ_bQKTnPryYQEfzzcu4H0gHopajv4RP4",
-  authDomain: "meuguia-progresso.firebaseapp.com",
-  projectId: "meuguia-progresso",
-  storageBucket: "meuguia-progresso.firebasestorage.app",
-  messagingSenderId: "391949244186",
-  appId: "1:391949244186:web:02d5b1da5ffe4e1dadfea3"
+  apiKey: "AIzaSyAn9MNfRLSGJ2hHMZSkTRLrn0W8Q46b0T4",
+  authDomain: "hubmarins.firebaseapp.com",
+  projectId: "hubmarins",
+  storageBucket: "hubmarins.firebasestorage.app",
+  messagingSenderId: "136722182300",
+  appId: "1:136722182300:web:5794d763ec2d86dd247d59"
 };
 
 // Inicializa o Firebase e o Firestore com suporte a múltiplas abas
