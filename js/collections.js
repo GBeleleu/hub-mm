@@ -4,26 +4,10 @@
 import { videoDatabase, hiddenCollectionsTags } from './state.js';
 
 export function parseCollections(item) {
-  // Trata collection (pode ser string ou array)
-  let colFormatted = '';
-  if (Array.isArray(item.collection)) {
-    colFormatted = item.collection.join(', ');
-  } else if (item.collection) {
-    colFormatted = item.collection.trim();
-  }
-
-  // Trata playlist (pode ser string ou array)
-  let playFormatted = '';
-  if (Array.isArray(item.playlist)) {
-    playFormatted = item.playlist.join(', ');
-  } else if (item.playlist) {
-    playFormatted = item.playlist.trim();
-  }
-
   return {
     category: item.category ? item.category.trim() : '',
-    collection: colFormatted,
-    playlist: playFormatted
+    collection: item.collection || '',
+    playlist: item.playlist || ''
   };
 }
 

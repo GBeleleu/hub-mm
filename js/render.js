@@ -3,18 +3,18 @@ import { parseCollections, isVideoCollectionsVisible } from './collections.js';
 
 function renderBadgesHtml(item) {
   let html = '';
-  
+
   if (item.collection) {
     const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
     cols.forEach(c => {
-      if (c) html += `<span class="badge-collection" style="margin-right:4px;">📁 ${c}</span>`;
+      if (c && c.trim()) html += `<span class="badge-collection" style="margin-right:4px;">📁 ${c.trim()}</span>`;
     });
   }
 
   if (item.playlist) {
     const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
     pls.forEach(p => {
-      if (p) html += `<span class="badge-tag" style="margin-right:4px;">🎵 ${p}</span>`;
+      if (p && p.trim()) html += `<span class="badge-tag" style="margin-right:4px;">🎵 ${p.trim()}</span>`;
     });
   }
 
