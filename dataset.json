@@ -11,7 +11,10 @@
     "isMaster": true,
     "masterType": "Original Master",
     "category": "Meditação",
-    "collection": "collection Série Teste 1"
+    "collection": [
+      "collection Série Teste 1",
+      "collection Série Teste 2"
+    ]
   },
   {
     "videoId": "jBQG06BNH4U",
@@ -24,7 +27,9 @@
     "masterId": "jBQG06BNH4U",
     "isMaster": true,
     "masterType": "Original Master",
-    "collection": "collection Série Teste 1"
+    "collection": [
+      "collection Série Teste 1"
+    ]
   },
   {
     "videoId": "Wd6Ha54Hx-s",
@@ -37,7 +42,9 @@
     "masterId": "Wd6Ha54Hx-s",
     "isMaster": true,
     "masterType": "Original Master",
-    "collection": "collection Série Teste 1"
+    "collection": [
+      "collection Série Teste 1"
+    ]
   },
   {
     "videoId": "8pkYsvSqYZE",
@@ -50,7 +57,9 @@
     "masterId": "8pkYsvSqYZE",
     "isMaster": true,
     "masterType": "Original Master",
-    "collection": "collection Série Teste 2"
+    "collection": [
+      "collection Série Teste 2"
+    ]
   },
   {
     "videoId": "EYeC98jy14k",
@@ -64,7 +73,9 @@
     "isMaster": true,
     "masterType": "Original Master",
     "category": "Análise",
-    "collection": "collection Série Teste 2"
+    "collection": [
+      "collection Série Teste 2"
+    ]
   },
   {
     "videoId": "ZzfbcG_8ubA",
