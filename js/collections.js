@@ -19,9 +19,19 @@ export function extractAllCollectionsTags() {
   };
 
   videoDatabase.forEach(item => {
-    if (item.category && item.category.trim()) collectionsTree.category.add(item.category.trim());
-    if (item.collection && item.collection.trim()) collectionsTree.collection.add(item.collection.trim());
-    if (item.playlist && item.playlist.trim()) collectionsTree.playlist.add(item.playlist.trim());
+    if (item.category) collectionsTree.category.add(item.category.trim());
+    
+    if (Array.isArray(item.collection)) {
+      item.collection.forEach(c => collectionsTree.collection.add(c.trim()));
+    } else if (item.collection) {
+      collectionsTree.collection.add(item.collection.trim());
+    }
+
+    if (Array.isArray(item.playlist)) {
+      item.playlist.forEach(p => collectionsTree.playlist.add(p.trim()));
+    } else if (item.playlist) {
+      collectionsTree.playlist.add(item.playlist.trim());
+    }
   });
 
   return collectionsTree;
@@ -72,8 +82,12 @@ export function isVideoCollectionsVisible(item) {
   const hiddenNormalized = hiddenCollectionsTags.map(t => t.toLowerCase());
   
   if (item.category && hiddenNormalized.includes(`category:${item.category.trim().toLowerCase()}`)) return false;
-  if (item.collection && hiddenNormalized.includes(`collection:${item.collection.trim().toLowerCase()}`)) return false;
-  if (item.playlist && hiddenNormalized.includes(`playlist:${item.playlist.trim().toLowerCase()}`)) return false;
+  
+  const collections = Array.isArray(item.collection) ? item.collection : [item.collection];
+  if (collections.some(c => c && hiddenNormalized.includes(`collection:${c.trim().toLowerCase()}`))) return false;
+
+  const playlists = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+  if (playlists.some(p => p && hiddenNormalized.includes(`playlist:${p.trim().toLowerCase()}`))) return false;
   
   return true;
 }

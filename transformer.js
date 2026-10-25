@@ -207,9 +207,21 @@ function processData() {
     if (collectionsMap[item.videoId]) {
       const tagData = collectionsMap[item.videoId];
       
-      if (tagData.category && tagData.category.trim()) item.category = tagData.category.trim();
-      if (tagData.collection && tagData.collection.trim()) item.collection = tagData.collection.trim();
-      if (tagData.playlist && tagData.playlist.trim()) item.playlist = tagData.playlist.trim();
+      if (tagData.category && tagData.category.trim()) {
+        item.category = tagData.category.trim();
+      }
+      
+      if (tagData.collection) {
+        item.collection = typeof tagData.collection === 'string' 
+          ? tagData.collection.split(',').map(s => s.trim()).filter(Boolean)
+          : tagData.collection;
+      }
+      
+      if (tagData.playlist) {
+        item.playlist = typeof tagData.playlist === 'string'
+          ? tagData.playlist.split(',').map(s => s.trim()).filter(Boolean)
+          : tagData.playlist;
+      }
 
       tagsCount++;
     }

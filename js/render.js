@@ -1,6 +1,26 @@
 import { videoDatabase, state } from './state.js';
 import { parseCollections, isVideoCollectionsVisible } from './collections.js';
 
+function renderBadgesHtml(item) {
+  let html = '';
+  
+  if (item.collection) {
+    const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
+    cols.forEach(c => {
+      if (c) html += `<span class="badge-collection" style="margin-right:4px;">📁 ${c}</span>`;
+    });
+  }
+
+  if (item.playlist) {
+    const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+    pls.forEach(p => {
+      if (p) html += `<span class="badge-tag" style="margin-right:4px;">🎵 ${p}</span>`;
+    });
+  }
+
+  return html;
+}
+
 export function normalizeText(str) {
   if (!str) return '';
   return str.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s]/g, '').trim();
@@ -197,11 +217,10 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     channelCell.textContent = item.channelTitle;
     row.appendChild(channelCell);
 
-    // 8. live-Removido-TAGs
+    // 8. Coleção/Playlists Badges
     const tagsCell = document.createElement('div');
     tagsCell.className = 'list-item-cell';
-    let tagsContent = `${liveBadge}${privacyNotice}`;
-    if (colInfo.collection) tagsContent += ` <span style="font-size:10px; color:var(--accent-color);">[${colInfo.collection}]</span>`;
+    let tagsContent = `${liveBadge}${privacyNotice} ${renderBadgesHtml(item)}`;
     tagsCell.innerHTML = tagsContent;
     row.appendChild(tagsCell);
 
@@ -238,7 +257,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     const card = document.createElement('div');
     card.className = 'card-display-compacto';
 
-    let badgesHtml = '';
+    let badgesHtml = renderBadgesHtml(item);
     if (colInfo.collection) badgesHtml += `<span class="badge-collection">📁 ${colInfo.collection}</span>`;
     if (colInfo.playlist) badgesHtml += `<span class="badge-tag">🎵 ${colInfo.playlist}</span>`;
 
@@ -309,6 +328,9 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
         <div class="grade-details">
           <span><strong>${item.channelTitle}</strong> ${liveBadge} ${privacyNotice}</span>
           <span>${formatLocalDateTime(item.publishedAt)}</span>
+        </div>
+        <div style="margin-top: 4px;">
+          ${renderBadgesHtml(item)}
         </div>
         <div class="grade-footer">
           <div class="status-container"></div>
