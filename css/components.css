@@ -496,3 +496,55 @@
   justify-content: space-between;
   gap: 10px;
 }
+
+.card-badges-wrapper {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.card-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-secondary, #1e1e1e);
+  border: 1px solid var(--border-color, #333333);
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-muted, #aaa);
+}
+
+.card-meta-badge:hover {
+  border-color: var(--accent-color, #66b3ab);
+  color: var(--accent-color, #66b3ab);
+}
+
+.card-meta-badge svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Tooltip / Modal Flutuante */
+.badge-popup-tooltip {
+  position: absolute;
+  background: var(--bg-secondary, #1e1e1e);
+  color: var(--text-main, #e0e0e0);
+  border: 1px solid var(--accent-color, #66b3ab);
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  z-index: 1000;
+  white-space: nowrap;
+  animation: fadeIn 0.15s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-3px); }
+  to { opacity: 1; transform: translateY(0); }
+}

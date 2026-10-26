@@ -4,21 +4,37 @@ import { parseCollections, isVideoCollectionsVisible } from './collections.js';
 function renderBadgesHtml(item) {
   let html = '';
 
+  // 1. Badge de Coleção (Ícone SVG)
   if (item.collection) {
     const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
-    cols.forEach(c => {
-      if (c && c.trim()) html += `<span class="badge-collection" style="margin-right:4px;">📁 ${c.trim()}</span>`;
-    });
+    const validCols = cols.filter(c => c && c.trim());
+    
+    if (validCols.length > 0) {
+      const namesList = validCols.map(c => c.trim()).join(', ');
+      html += `
+        <span class="card-meta-badge collection-badge" title="Ver Coleções" onclick="window.openBadgePopup(event, '${namesList}')">
+          <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+        </span>
+      `;
+    }
   }
 
+  // 2. Badge de Playlist (Ícone SVG)
   if (item.playlist) {
     const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
-    pls.forEach(p => {
-      if (p && p.trim()) html += `<span class="badge-tag" style="margin-right:4px;">🎵 ${p.trim()}</span>`;
-    });
+    const validPls = pls.filter(p => p && p.trim());
+    
+    if (validPls.length > 0) {
+      const namesList = validPls.map(p => p.trim()).join(', ');
+      html += `
+        <span class="card-meta-badge playlist-badge" title="Ver Playlists" onclick="window.openBadgePopup(event, '${namesList}')">
+          <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15l7-3-7-3v6z"/></svg>
+        </span>
+      `;
+    }
   }
 
-  return html;
+  return html ? `<div class="card-badges-wrapper">${html}</div>` : '';
 }
 
 export function normalizeText(str) {
@@ -477,3 +493,32 @@ export function renderList() {
   const isLogged = !!window.currentUser;
   container.querySelectorAll('.card-status-select').forEach(el => el.disabled = !isLogged);
 }
+
+// Gerenciador global do pop-up flutuante das badges
+window.openBadgePopup = function(event, text) {
+  event.stopPropagation();
+  
+  // Remove pop-up anterior se houver
+  document.querySelectorAll('.badge-popup-tooltip').forEach(el => el.remove());
+
+  const popup = document.createElement('div');
+  popup.className = 'badge-popup-tooltip';
+  popup.textContent = text;
+  document.body.appendChild(popup);
+
+  const rect = event.currentTarget.getBoundingClientRect();
+  popup.style.top = `${rect.bottom + window.scrollY + 6}px`;
+  popup.style.left = `${rect.left + window.scrollX}px`;
+
+  // Fecha ao clicar em qualquer lugar da tela ou ao rolar
+  const closePopup = () => {
+    popup.remove();
+    window.removeEventListener('click', closePopup);
+    window.removeEventListener('scroll', closePopup);
+  };
+
+  setTimeout(() => {
+    window.addEventListener('click', closePopup);
+    window.addEventListener('scroll', closePopup);
+  }, 10);
+};
