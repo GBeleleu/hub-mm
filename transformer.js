@@ -17,7 +17,6 @@ const CONFIG_TRANSFORMER = {
   JACCARD_THRESHOLD: 0.75
 };
 
-// Basic normalization for deduplication algorithms (does not alter original title)
 function normalizeBasic(text) {
   if (!text) return '';
   return text.toString().toLowerCase().trim().replace(/\s+/g, ' ');
@@ -106,33 +105,6 @@ function evaluateCorrespondence(master, candidate) {
   return null;
 }
 
-/**
- * Utility function to parse tag string prefixes from collections
- */
-function parseTagsString(tagString) {
-  if (!tagString || typeof tagString !== 'string') return {};
-
-  const result = {};
-  const segments = tagString.split('|').map(s => s.trim()).filter(Boolean);
-
-  segments.forEach(segment => {
-    if (segment.startsWith('cat:')) {
-      result.category = segment.replace('cat:', '').trim();
-    } else if (segment.startsWith('grupo:')) {
-      result.group = segment.replace('grupo:', '').trim();
-    } else if (segment.startsWith('playlist:')) {
-      result.playlist = segment.replace('playlist:', '').trim();
-    } else if (segment.includes(':')) {
-      const [key, value] = segment.split(':');
-      if (key && value) result[key.trim().toLowerCase()] = value.trim();
-    } else {
-      result.category = segment;
-    }
-  });
-
-  return result;
-}
-
 function processData() {
   console.log("🚀 Starting Data Treatment, Deduplication, and Collections Structuring Module...");
 
@@ -149,7 +121,6 @@ function processData() {
   const confirmedMasters = [];
   const processedResult = [];
 
-  // 1. AUTOMASTER (Automatic Assignment)
   for (const video of sortedVideos) {
     let item = {
       ...video,
@@ -192,7 +163,6 @@ function processData() {
     processedResult.push(item);
   }
 
-  // 2. MANUAL OVERRIDES
   if (fs.existsSync(CONFIG_TRANSFORMER.OVERRIDES_PATH)) {
     try {
       const overrides = JSON.parse(fs.readFileSync(CONFIG_TRANSFORMER.OVERRIDES_PATH, 'utf-8'));
@@ -218,7 +188,6 @@ function processData() {
     }
   }
 
-  // 3. COLLECTIONS STRUCTURING (Direct Merge)
   let collectionsMap = {};
   let tagsCount = 0;
 
@@ -231,28 +200,37 @@ function processData() {
   }
 
   processedResult.forEach(item => {
-    // Clear legacy collection properties to ensure a clean state
     delete item.category;
-    delete item.group;
+    delete item.collection;
     delete item.playlist;
 
-    // Inject collection properties if a record exists for this videoId
     if (collectionsMap[item.videoId]) {
       const tagData = collectionsMap[item.videoId];
       
-      if (tagData.category) item.category = tagData.category;
-      if (tagData.group) item.group = tagData.group;
-      if (tagData.playlist) item.playlist = tagData.playlist;
+      if (tagData.category && tagData.category.trim()) {
+        item.category = tagData.category.trim();
+      }
+      
+      if (tagData.collection) {
+        item.collection = typeof tagData.collection === 'string' 
+          ? tagData.collection.split(',').map(s => s.trim()).filter(Boolean)
+          : tagData.collection;
+      }
+      
+      if (tagData.playlist) {
+        item.playlist = typeof tagData.playlist === 'string'
+          ? tagData.playlist.split(',').map(s => s.trim()).filter(Boolean)
+          : tagData.playlist;
+      }
 
       tagsCount++;
     }
   });
 
   if (tagsCount > 0) {
-    console.log(`🏷️  ${tagsCount} video(s) with structured tags applied.`);
+    console.log(`🏷️  ${tagsCount} video(s) with Collections applied.`);
   }
 
-  // 4. FINAL DATABASE PERSISTENCE
   fs.writeFileSync(CONFIG_TRANSFORMER.FINAL_DB_PATH, JSON.stringify(processedResult, null, 2), 'utf-8');
 
   const totalMasters = processedResult.filter(v => v.isMaster).length;
@@ -260,8 +238,8 @@ function processData() {
   console.log(`✅ Treatment completed successfully!`);
   console.log(`📊 Total Videos: ${processedResult.length}`);
   console.log(`🌟 Original Masters: ${totalMasters}`);
-  console.log(`📁 Duplicate/Grouped Videos: ${processedResult.length - totalMasters}`);
-  console.log(`💾 Final database saved to: ${CONFIG_TRANSFORMER.FINAL_DB_PATH}`);
+  console.log(`📁 Deduplicated Videos: ${processedResult.length - totalMasters}`);
+  console.log(`💾 Saved to: ${CONFIG_TRANSFORMER.FINAL_DB_PATH}`);
   console.log("--------------------------------------------------");
 }
 
