@@ -5,8 +5,8 @@ import { videoDatabase, hiddenCollectionsTags } from './state.js';
 
 export function parseCollections(item) {
   return {
-    category: item.category || '',
-    grupo: item.grupo || '',
+    category: item.category ? item.category.trim() : '',
+    collection: item.collection || '',
     playlist: item.playlist || ''
   };
 }
@@ -14,14 +14,30 @@ export function parseCollections(item) {
 export function extractAllCollectionsTags() {
   const collectionsTree = {
     category: new Set(),
-    grupo: new Set(),
+    collection: new Set(),
     playlist: new Set()
   };
 
   videoDatabase.forEach(item => {
-    if (item.category) collectionsTree.category.add(item.category.trim());
-    if (item.grupo) collectionsTree.grupo.add(item.grupo.trim());
-    if (item.playlist) collectionsTree.playlist.add(item.playlist.trim());
+    if (item.category && item.category.trim()) {
+      collectionsTree.category.add(item.category.trim());
+    }
+    
+    if (Array.isArray(item.collection)) {
+      item.collection.forEach(c => {
+        if (c && c.trim()) collectionsTree.collection.add(c.trim());
+      });
+    } else if (item.collection && item.collection.trim()) {
+      collectionsTree.collection.add(item.collection.trim());
+    }
+
+    if (Array.isArray(item.playlist)) {
+      item.playlist.forEach(p => {
+        if (p && p.trim()) collectionsTree.playlist.add(p.trim());
+      });
+    } else if (item.playlist && item.playlist.trim()) {
+      collectionsTree.playlist.add(item.playlist.trim());
+    }
   });
 
   return collectionsTree;
@@ -50,14 +66,14 @@ export function populateCollectionsModal() {
     groupDiv.appendChild(title);
 
     Array.from(collectionsTree[key]).sort().forEach(val => {
-      const tagKey = `${key}:${val}`;
+      const tagKey = `${key}:${val}`.toLowerCase();
       const label = document.createElement('label');
       label.className = 'collections-item';
 
       const checkbox = document.createElement('input');
       checkbox.type = 'checkbox';
       checkbox.value = tagKey;
-      checkbox.checked = !hiddenCollectionsTags.includes(tagKey);
+      checkbox.checked = !hiddenCollectionsTags.map(t => t.toLowerCase()).includes(tagKey);
 
       label.appendChild(checkbox);
       label.appendChild(document.createTextNode(val));
@@ -69,8 +85,21 @@ export function populateCollectionsModal() {
 }
 
 export function isVideoCollectionsVisible(item) {
-  if (item.category && hiddenCollectionsTags.includes(`category:${item.category}`)) return false;
-  if (item.grupo && hiddenCollectionsTags.includes(`grupo:${item.grupo}`)) return false;
-  if (item.playlist && hiddenCollectionsTags.includes(`playlist:${item.playlist}`)) return false;
+  const hiddenNormalized = hiddenCollectionsTags.map(t => t.toLowerCase());
+  
+  if (item.category && hiddenNormalized.includes(`category:${item.category.trim().toLowerCase()}`)) {
+    return false;
+  }
+  
+  const collections = Array.isArray(item.collection) ? item.collection : [item.collection];
+  if (collections.some(c => c && hiddenNormalized.includes(`collection:${c.trim().toLowerCase()}`))) {
+    return false;
+  }
+
+  const playlists = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+  if (playlists.some(p => p && hiddenNormalized.includes(`playlist:${p.trim().toLowerCase()}`))) {
+    return false;
+  }
+  
   return true;
 }

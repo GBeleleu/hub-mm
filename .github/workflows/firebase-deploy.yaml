@@ -1,0 +1,21 @@
+name: Deploy to Firebase Hosting
+
+on:
+  workflow_dispatch: # Permite disparar manualmente a qualquer momento pela aba Actions
+  release:
+    types: [published] # Dispara automaticamente assim que você publicar uma nova Release
+
+jobs:
+  deploy_to_firebase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_HUB_MM }}'
+          channelId: live
+          projectId: PROJECT_ID
