@@ -106,7 +106,7 @@ function evaluateCorrespondence(master, candidate) {
 }
 
 function processData() {
-  console.log("🚀 Starting Data Treatment, Deduplication, and Collections Structuring Module...");
+  console.log("🪄 Running Data Transformer...");
 
   if (!fs.existsSync(CONFIG_TRANSFORMER.RAW_DATA_PATH)) {
     console.error(`❌ Raw data file not found at: ${CONFIG_TRANSFORMER.RAW_DATA_PATH}`);
@@ -181,7 +181,7 @@ function processData() {
       });
 
       if (overridesCount > 0) {
-        console.log(`📋 ${overridesCount} manual assignment(s) applied via overrides.json.`);
+        console.log(` 📝 ${overridesCount} Master IDs overrides.`);
       }
     } catch (error) {
       console.warn("⚠️ Warning: Could not read overrides.json. Keeping automatic deduplication.");
@@ -228,19 +228,19 @@ function processData() {
   });
 
   if (tagsCount > 0) {
-    console.log(`🏷️  ${tagsCount} video(s) with Collections applied.`);
+    console.log(` 📚  ${tagsCount} Tags Structures applied.`);
   }
 
   fs.writeFileSync(CONFIG_TRANSFORMER.FINAL_DB_PATH, JSON.stringify(processedResult, null, 2), 'utf-8');
 
   const totalMasters = processedResult.filter(v => v.isMaster).length;
-  console.log("--------------------------------------------------");
+  console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
   console.log(`✅ Treatment completed successfully!`);
-  console.log(`📊 Total Videos: ${processedResult.length}`);
-  console.log(`🌟 Original Masters: ${totalMasters}`);
-  console.log(`📁 Deduplicated Videos: ${processedResult.length - totalMasters}`);
-  console.log(`💾 Saved to: ${CONFIG_TRANSFORMER.FINAL_DB_PATH}`);
-  console.log("--------------------------------------------------");
+  console.log(` - Original Masters: ${totalMasters}`);
+  console.log(` - Deduplicated: ${processedResult.length - totalMasters}`);
+  console.log(` 📊 Total: ${processedResult.length}`);  
+  console.log(`💾 ${CONFIG_TRANSFORMER.FINAL_DB_PATH}`);
+  console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 }
 
 processData();

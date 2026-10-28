@@ -13,11 +13,11 @@ on:
       action:
         description: 'Select action:'
         type: choice
-        default: 'only_transform'
+        default: 'transform'
         options:
-          - 'quick_extraction_and_transform'
-          - 'full_extraction_and_transform'
-          - 'only_transform'
+          - 'quick'
+          - 'full'
+          - 'transform'
 
 jobs:
   run-pipeline:
@@ -34,9 +34,9 @@ jobs:
 
       # 1. EXTRACTOR STEP
       - name: Run Extractor Script
-        if: ${{ github.event_name == 'schedule' || github.event.inputs.action == 'quick_extraction_and_transform' || github.event.inputs.action == 'full_extraction_and_transform' }}
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.action == 'quick' || github.event.inputs.action == 'full' }}
         run: |
-          if [ "${{ github.event.schedule }}" = "21 3 * * *" ] || [ "${{ github.event.inputs.action }}" = "full_extraction_and_transform" ]; then
+          if [ "${{ github.event.schedule }}" = "21 3 * * *" ] || [ "${{ github.event.inputs.action }}" = "full" ]; then
             node extractor.js --full
           else
             node extractor.js
@@ -56,9 +56,8 @@ jobs:
 
       # 3. TRANSFORMER STEP
       - name: Run Transformer Script (ETL)
-        if: ${{ steps.check_raw.outputs.raw_changed == 'true' || github.event.inputs.action == 'only_transform' }}
+        if: ${{ steps.check_raw.outputs.raw_changed == 'true' || github.event.inputs.action == 'transform' }}
         run: |
-          echo "🚀 Running Data Transformer..."
           node transformer.js
 
       # 4. AUTO COMMIT
