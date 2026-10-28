@@ -92,17 +92,24 @@ async function fetchBatchDetails(videoIds, playlistMap = {}) {
 
   if (!response || !response.items) return [];
 
-  return response.items.map(v => ({
-    videoId: v.id,
-    title: v.snippet.title,
-    channelTitle: v.snippet.channelTitle,
-    durationSeconds: isoToSeconds(v.contentDetails.duration),
-    publishedAt: v.snippet.publishedAt,
-    isLive: !!v.liveStreamingDetails,
-    privacyStatus: v.status ? v.status.privacyStatus : 'public',
-    playlist: Array.from(playlistMap[v.id] || [])
-  }));
-}
+return response.items.map(v => {
+    const playlists = Array.from(playlistMap[v.id] || []);
+    const videoObj = {
+      videoId: v.id,
+      title: v.snippet.title,
+      channelTitle: v.snippet.channelTitle,
+      durationSeconds: isoToSeconds(v.contentDetails.duration),
+      publishedAt: v.snippet.publishedAt,
+      isLive: !!v.liveStreamingDetails,
+      privacyStatus: v.status ? v.status.privacyStatus : 'public'
+    };
+
+    if (playlists.length > 0) {
+      videoObj.playlist = playlists;
+    }
+
+    return videoObj;
+  });
 
 // ============================================================================
 // 2. EXTRACTION ROUTINES
