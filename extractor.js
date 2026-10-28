@@ -33,17 +33,64 @@ function isoToSeconds(isoDuration) {
 }
 
 /**
+ * Utility: Fetches all public playlists for a channel (excluding the 'Uploads' auto-playlist)
+ * and maps videoIds to their playlist titles.
+ */
+async function getVideoPlaylistMap(channelId) {
+  const map = {};
+  let pageToken = '';
+
+  try {
+    do {
+      const url = `https://www.googleapis.com/youtube/v3/playlists?part=snippet&maxResults=50&channelId=${channelId}&key=${API_KEY}` + (pageToken ? `&pageToken=${pageToken}` : '');
+      const response = await fetch(url).then(res => res.json());
+
+      if (!response || !response.items) break;
+
+      for (const playlist of response.items) {
+        const pId = playlist.id;
+        const pTitle = playlist.snippet.title;
+        
+        // Skip common auto-generated or "Uploads" playlists if they appear
+        if (pTitle === 'Uploads' || pTitle === 'Vídeos marcados como "Gostei"') continue;
+
+        let itemToken = '';
+        do {
+          const itemUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${pId}&key=${API_KEY}` + (itemToken ? `&pageToken=${itemToken}` : '');
+          const itemRes = await fetch(itemUrl).then(res => res.json());
+
+          if (!itemRes || !itemRes.items) break;
+
+          for (const item of itemRes.items) {
+            const vId = item.snippet.resourceId.videoId;
+            if (!vId) continue;
+            if (!map[vId]) map[vId] = new Set();
+            map[vId].add(pTitle);
+          }
+          itemToken = itemRes.nextPageToken || '';
+        } while (itemToken);
+      }
+      pageToken = response.nextPageToken || '';
+    } while (pageToken);
+  } catch (error) {
+    console.warn(`⚠️  Could not fetch playlist mapping for ${channelId}:`, error.message);
+  }
+
+  return map;
+}
+
+/**
  * Utility: Fetches detailed metadata for a batch of up to 50 video IDs.
  * API Quota Cost: 1 unit per call.
  */
-async function fetchBatchDetails(videoIds) {
+async function fetchBatchDetails(videoIds, playlistMap = {}) {
   if (!videoIds || videoIds.length === 0) return [];
 
   const idsParam = videoIds.join(',');
   const urlDetails = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,liveStreamingDetails,status&id=${idsParam}&key=${API_KEY}`;
   const response = await fetch(urlDetails).then(res => res.json());
 
-  if (!response.items) return [];
+  if (!response || !response.items) return [];
 
   return response.items.map(v => ({
     videoId: v.id,
@@ -52,7 +99,8 @@ async function fetchBatchDetails(videoIds) {
     durationSeconds: isoToSeconds(v.contentDetails.duration),
     publishedAt: v.snippet.publishedAt,
     isLive: !!v.liveStreamingDetails,
-    privacyStatus: v.status ? v.status.privacyStatus : 'public'
+    privacyStatus: v.status ? v.status.privacyStatus : 'public',
+    playlist: Array.from(playlistMap[v.id] || [])
   }));
 }
 
@@ -68,17 +116,20 @@ async function extractAllVideos(channelIds) {
   const allVideos = [];
 
   for (const channelId of channelIds) {
-    const playlistId = channelId.startsWith('UC') ? channelId.replace('UC', 'UU') : channelId;
+    console.log(`🔍 Mapping playlists for channel: ${channelId}`);
+    const playlistMap = await getVideoPlaylistMap(channelId);
+
+    const uploadsPlaylistId = channelId.startsWith('UC') ? channelId.replace('UC', 'UU') : channelId;
     let pageToken = '';
 
     do {
-      const urlList = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}` + (pageToken ? `&pageToken=${pageToken}` : '');
+      const urlList = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${uploadsPlaylistId}&key=${API_KEY}` + (pageToken ? `&pageToken=${pageToken}` : '');
       const response = await fetch(urlList).then(res => res.json());
 
       if (response.error || !response.items || response.items.length === 0) break;
 
       const batchIds = response.items.map(item => item.snippet.resourceId.videoId).filter(Boolean);
-      const batchDetails = await fetchBatchDetails(batchIds);
+      const batchDetails = await fetchBatchDetails(batchIds, playlistMap);
       
       allVideos.push(...batchDetails);
       pageToken = response.nextPageToken || '';
@@ -96,12 +147,15 @@ async function extractNewVideosOnly(channelIds, existingIdsSet) {
   const newVideosFound = [];
 
   for (const channelId of channelIds) {
-    const playlistId = channelId.startsWith('UC') ? channelId.replace('UC', 'UU') : channelId;
+    console.log(`🔍 Mapping playlists for channel: ${channelId}`);
+    const playlistMap = await getVideoPlaylistMap(channelId);
+
+    const uploadsPlaylistId = channelId.startsWith('UC') ? channelId.replace('UC', 'UU') : channelId;
     let pageToken = '';
     let foundExisting = false;
 
     do {
-      const urlList = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}` + (pageToken ? `&pageToken=${pageToken}` : '');
+      const urlList = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${uploadsPlaylistId}&key=${API_KEY}` + (pageToken ? `&pageToken=${pageToken}` : '');
       const response = await fetch(urlList).then(res => res.json());
 
       if (response.error || !response.items || response.items.length === 0) break;
@@ -120,7 +174,7 @@ async function extractNewVideosOnly(channelIds, existingIdsSet) {
       }
 
       if (idsToFetch.length > 0) {
-        const batchDetails = await fetchBatchDetails(idsToFetch);
+        const batchDetails = await fetchBatchDetails(idsToFetch, playlistMap);
         newVideosFound.push(...batchDetails);
       }
 
@@ -161,6 +215,13 @@ function loadLocalData() {
 async function runFullScanTask(channelIds = CHANNEL_IDS) {
   console.log("⏰ Running: Full Scan & Data Reconciliation...");
 
+  // Pre-map playlists for all monitored channels
+  const globalPlaylistMap = {};
+  for (const channelId of channelIds) {
+    const channelMap = await getVideoPlaylistMap(channelId);
+    Object.assign(globalPlaylistMap, channelMap);
+  }
+
   const playlistVideos = await extractAllVideos(channelIds);
   const currentData = loadLocalData();
   const existingMap = new Map(currentData.map(v => [v.videoId, v]));
@@ -174,7 +235,7 @@ async function runFullScanTask(channelIds = CHANNEL_IDS) {
 
   for (let i = 0; i < allIds.length; i += 50) {
     const batchIds = allIds.slice(i, i + 50);
-    const apiDetailsBatch = await fetchBatchDetails(batchIds);
+    const apiDetailsBatch = await fetchBatchDetails(batchIds, globalPlaylistMap);
     const apiMap = new Map(apiDetailsBatch.map(v => [v.videoId, v]));
 
     for (const id of batchIds) {

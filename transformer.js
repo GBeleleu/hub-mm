@@ -202,7 +202,6 @@ function processData() {
   processedResult.forEach(item => {
     delete item.category;
     delete item.collection;
-    delete item.playlist;
 
     if (collectionsMap[item.videoId]) {
       const tagData = collectionsMap[item.videoId];
@@ -215,12 +214,6 @@ function processData() {
         item.collection = typeof tagData.collection === 'string' 
           ? tagData.collection.split(',').map(s => s.trim()).filter(Boolean)
           : tagData.collection;
-      }
-      
-      if (tagData.playlist) {
-        item.playlist = typeof tagData.playlist === 'string'
-          ? tagData.playlist.split(',').map(s => s.trim()).filter(Boolean)
-          : tagData.playlist;
       }
 
       tagsCount++;
