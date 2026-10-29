@@ -374,8 +374,8 @@
   display: block;
 }
 
-/* SELETOR DE STATUS */
-.card-status-select {
+/* SELETOR DE MARCADOR */
+.card-marker-select {
   padding: 3px 6px;
   font-size: 11px;
   font-weight: 600;
@@ -386,43 +386,43 @@
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 
-.card-status-select.status-null {
+.card-marker-select.marker-null {
   background-color: var(--bg-primary);
   color: var(--text-muted);
   border-color: var(--border-color);
 }
 
-.card-status-select.status-0 {
+.card-marker-select.marker-0 {
   background-color: #2e7d32;
   color: #ffffff;
   border-color: #4caf50;
 }
 
-.card-status-select.status-1 {
+.card-marker-select.marker-1 {
   background-color: #c62828;
   color: #ffffff;
   border-color: #ef5350;
 }
 
-.card-status-select.status-2 {
+.card-marker-select.marker-2 {
   background-color: #ef6c00;
   color: #ffffff;
   border-color: #ff9800;
 }
 
-.card-status-select.status-3 {
+.card-marker-select.marker-3 {
   background-color: #fbc02d;
   color: #121212;
   border-color: #fdd835;
 }
 
-.marker-5 {
+.card-marker-select.marker-5 {
   background-color: var(--marker-rever-bg, #1b3dff);
   color: #fff;
   border-color: #2e4dff;
 }
 
-.card-status-select option {
+.card-marker-select option {
   background-color: var(--bg-secondary);
   color: var(--text-main);
 }
