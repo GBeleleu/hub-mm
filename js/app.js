@@ -69,7 +69,7 @@ function syncButtonGroupsUI() {
     'duracao': 'Duração',
     'ocorrencias': 'Ocorrências',
     'category': 'Categoria',
-    'progresso': 'Status'
+    'progresso': 'Marcadores'
   };
 
   if (sortActiveLabel) {

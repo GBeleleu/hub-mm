@@ -38,7 +38,7 @@ const auth = getAuth(app);
 
 // Estado global
 window.currentUser = null;
-window.userProgressCache = {};
+window.userMarkerCache = {};
 let unsubscribeSnapshot = null;
 
 // Observa mudanças na autenticação do usuário
@@ -46,7 +46,6 @@ onAuthStateChanged(auth, (user) => {
   window.currentUser = user;
   updateAuthUI(user);
 
-  // Se houver um ouvinte ativo anterior, cancela ele antes de criar um novo ou deslogar
   if (unsubscribeSnapshot) {
     unsubscribeSnapshot();
     unsubscribeSnapshot = null;
@@ -54,19 +53,17 @@ onAuthStateChanged(auth, (user) => {
 
   if (user) {
     console.log("Usuário autenticado:", user.email || user.uid);
-    const progressRef = doc(db, "users", user.uid);
+    const markerRef = doc(db, "users", user.uid);
     
-    // Armazena a função de cancelamento retornada pelo onSnapshot
-    unsubscribeSnapshot = onSnapshot(progressRef, (docSnap) => {
+    unsubscribeSnapshot = onSnapshot(markerRef, (docSnap) => {
       if (!window.currentUser) return; 
       
       if (docSnap.exists()) {
-        window.userProgressCache = docSnap.data().progress || {};
+        window.userMarkerCache = docSnap.data().markers || docSnap.data().progress || {};
       } else {
-        window.userProgressCache = {};
+        window.userMarkerCache = {};
       }
       
-      // Re-renderiza a lista com os status atualizados do Firebase
       if (typeof window.renderList === 'function') {
         window.renderList();
       }
@@ -75,7 +72,7 @@ onAuthStateChanged(auth, (user) => {
       console.error("Erro no listener do Firestore:", error);
     });
   } else {
-    window.userProgressCache = {};
+    window.userMarkerCache = {};
     console.log("Nenhum usuário autenticado.");
     if (typeof window.renderList === 'function') {
       window.renderList();
@@ -99,28 +96,28 @@ window.loginWithGoogle = async function() {
   }
 };
 
-// Função global para salvar/remover o progresso de um vídeo
-window.updateVideoProgress = async function(videoId, selectedValue) {
+// Função global para salvar/remover o marcador de um vídeo
+window.updateVideoMarker = async function(videoId, selectedValue) {
   if (!window.currentUser) {
     alert("Usuário não autenticado no Firebase.");
     return;
   }
 
   const userId = window.currentUser.uid;
-  const userProgressDoc = doc(db, "users", userId);
+  const userDoc = doc(db, "users", userId);
 
   try {
     if (selectedValue === "" || selectedValue === null) {
-      delete window.userProgressCache[videoId];
+      delete window.userMarkerCache[videoId];
       
-      await updateDoc(userProgressDoc, {
-        [`progress.${videoId}`]: deleteField()
+      await updateDoc(userDoc, {
+        [`markers.${videoId}`]: deleteField()
       });
     } else {
-      window.userProgressCache[videoId] = Number(selectedValue);
+      window.userMarkerCache[videoId] = Number(selectedValue);
 
-      await setDoc(userProgressDoc, {
-        progress: window.userProgressCache
+      await setDoc(userDoc, {
+        markers: window.userMarkerCache
       }, { merge: true });
     }
   } catch (err) {
@@ -170,26 +167,25 @@ window.logoutFromFirebase = async function() {
   }
 };
 
-// Exportar progresso para arquivo JSON
-window.exportProgressJSON = function() {
-  if (!window.userProgressCache || Object.keys(window.userProgressCache).length === 0) {
-    alert("Nenhum dado de progresso para exportar.");
+// Importar/Exportar marcadores para arquivo JSON
+window.exportMarkerJSON = function() {
+  if (!window.userMarkerCache || Object.keys(window.userMarkerCache).length === 0) {
+    alert("Nenhum dado de marcador para exportar.");
     return;
   }
 
-  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(window.userProgressCache, null, 2));
+  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(window.userMarkerCache, null, 2));
   const downloadAnchor = document.createElement('a');
   downloadAnchor.setAttribute("href", dataStr);
-  downloadAnchor.setAttribute("download", `progresso_videos_${new Date().toISOString().slice(0, 10)}.json`);
+  downloadAnchor.setAttribute("download", `marcadores_videos_${new Date().toISOString().slice(0, 10)}.json`);
   document.body.appendChild(downloadAnchor);
   downloadAnchor.click();
   downloadAnchor.remove();
 };
 
-// Importar progresso de arquivo JSON
-window.importProgressJSON = function(event) {
+window.importMarkerJSON = function(event) {
   if (!window.currentUser) {
-    alert("Faça login antes de importar o progresso.");
+    alert("Faça login antes de importar os marcadores.");
     return;
   }
 
@@ -202,16 +198,16 @@ window.importProgressJSON = function(event) {
       const importedData = JSON.parse(e.target.result);
 
       if (typeof importedData !== 'object' || Array.isArray(importedData)) {
-        throw new Error("Formato JSON inválido. Esperado um objeto de mapa { videoId: status }.");
+        throw new Error("Formato JSON inválido. Esperado um objeto de mapa { videoId: valor }.");
       }
 
-      window.userProgressCache = { ...window.userProgressCache, ...importedData };
+      window.userMarkerCache = { ...window.userMarkerCache, ...importedData };
 
       const userId = window.currentUser.uid;
-      const userProgressDoc = doc(db, "users", userId);
-      await setDoc(userProgressDoc, { progress: window.userProgressCache }, { merge: true });
+      const userDoc = doc(db, "users", userId);
+      await setDoc(userDoc, { markers: window.userMarkerCache }, { merge: true });
 
-      alert("Progresso importado com sucesso!");
+      alert("Marcadores importados com sucesso!");
       if (typeof window.renderList === 'function') window.renderList();
     } catch (err) {
       alert("Erro ao importar o arquivo JSON: " + err.message);

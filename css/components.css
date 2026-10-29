@@ -221,6 +221,7 @@
 .card-display-lista .list-title-wrapper::-webkit-scrollbar {
   height: 3px;
 }
+
 .card-display-lista .list-title-wrapper::-webkit-scrollbar-thumb {
   background: var(--border-color);
 }
@@ -413,6 +414,12 @@
   background-color: #fbc02d;
   color: #121212;
   border-color: #fdd835;
+}
+
+.marker-5 {
+  background-color: var(--marker-rever-bg, #1b3dff);
+  color: #fff;
+  border-color: #2e4dff;
 }
 
 .card-status-select option {

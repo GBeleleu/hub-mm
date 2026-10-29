@@ -124,28 +124,29 @@ export function openOccurrencesModal(duplicates) {
   }
 }
 
-// Função de criação do seletor de status reutilizável
-function createStatusSelect(videoId) {
-  const currentStatus = (window.userProgressCache && window.userProgressCache[videoId] !== undefined)
-    ? window.userProgressCache[videoId] : '';
-  const statusClass = currentStatus !== '' ? `status-${currentStatus}` : 'status-null';
+// Função de criação do seletor de marcador reutilizável
+function createMarkerSelect(videoId) {
+  const currentMarker = (window.userMarkerCache && window.userMarkerCache[videoId] !== undefined)
+    ? window.userMarkerCache[videoId] : '';
+  const markerClass = currentMarker !== '' ? `marker-${currentMarker}` : 'marker-null';
 
   const select = document.createElement('select');
-  select.className = `card-status-select ${statusClass}`;
+  select.className = `card-marker-select ${markerClass}`;
   select.dataset.videoid = videoId;
   select.innerHTML = `
-    <option value="" ${currentStatus === '' ? 'selected' : ''}>...</option>
-    <option value="0" ${currentStatus === 0 ? 'selected' : ''}>Visto</option>
-    <option value="1" ${currentStatus === 1 ? 'selected' : ''}>Alta</option>
-    <option value="2" ${currentStatus === 2 ? 'selected' : ''}>Média</option>
-    <option value="3" ${currentStatus === 3 ? 'selected' : ''}>Baixa</option>
+    <option value="" ${currentMarker === '' ? 'selected' : ''}>...</option>
+    <option value="0" ${currentMarker === 0 ? 'selected' : ''}>Visto</option>
+    <option value="1" ${currentMarker === 1 ? 'selected' : ''}>Alta</option>
+    <option value="2" ${currentMarker === 2 ? 'selected' : ''}>Média</option>
+    <option value="3" ${currentMarker === 3 ? 'selected' : ''}>Baixa</option>
+    <option value="5" ${currentMarker === 5 ? 'selected' : ''}>Rever</option>
   `;
 
   select.addEventListener('change', (e) => {
     const value = e.target.value;
-    e.target.className = `card-status-select ${value !== "" ? `status-${value}` : 'status-null'}`;
-    if (typeof window.updateVideoProgress === 'function') {
-      window.updateVideoProgress(videoId, value);
+    e.target.className = `card-marker-select ${value !== "" ? `marker-${value}` : 'marker-null'}`;
+    if (typeof window.updateVideoMarker === 'function') {
+      window.updateVideoMarker(videoId, value);
     }
   });
 
@@ -215,7 +216,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     // 5. Seletor de Status
     const statusCell = document.createElement('div');
     statusCell.className = 'list-item-cell';
-    statusCell.appendChild(createStatusSelect(item.videoId));
+    statusCell.appendChild(createMarkerSelect(item.videoId));
     row.appendChild(statusCell);
 
     // 6. Data
@@ -304,7 +305,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     `;
 
     card.querySelector('.card-media-block').addEventListener('click', () => openThumbModal(item));
-    card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
+    card.querySelector('.status-container').appendChild(createMarkerSelect(item.videoId));
 
     if (duplicates.length > 0) {
       const toggleBtn = card.querySelector('.drawer-toggle');
@@ -352,7 +353,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
       </div>
     `;
 
-    card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
+    card.querySelector('.status-container').appendChild(createMarkerSelect(item.videoId));
 
     if (duplicates.length > 0) {
       card.querySelector('.occ-modal-btn').addEventListener('click', () => {
@@ -400,9 +401,9 @@ export function renderList() {
         valA = (a.category || 'zzz').toLowerCase();
         valB = (b.category || 'zzz').toLowerCase();
         return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
-      } else if (state.sortBy === 'progresso') {
-        valA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined) ? Number(window.userProgressCache[a.videoId]) : 99;
-        valB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined) ? Number(window.userProgressCache[b.videoId]) : 99;
+      } else if (state.sortBy === 'marcador') {
+        valA = (window.userMarkerCache && window.userMarkerCache[a.videoId] !== undefined) ? Number(window.userMarkerCache[a.videoId]) : 99;
+        valB = (window.userMarkerCache && window.userMarkerCache[b.videoId] !== undefined) ? Number(window.userMarkerCache[b.videoId]) : 99;
       } else if (state.sortBy === 'duracao') {
         valA = a.durationSeconds || 0;
         valB = b.durationSeconds || 0;
@@ -491,7 +492,7 @@ export function renderList() {
   }
 
   const isLogged = !!window.currentUser;
-  container.querySelectorAll('.card-status-select').forEach(el => el.disabled = !isLogged);
+  container.querySelectorAll('.card-marker-select').forEach(el => el.disabled = !isLogged);
 }
 
 // Gerenciador global do pop-up flutuante das badges
