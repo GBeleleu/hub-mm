@@ -109,7 +109,7 @@ return response.items.map(v => {
     }
 
     return videoObj;
-  });
+  })
 
 // ============================================================================
 // 2. EXTRACTION ROUTINES
