@@ -92,7 +92,7 @@ async function fetchBatchDetails(videoIds, playlistMap = {}) {
 
   if (!response || !response.items) return [];
 
-return response.items.map(v => {
+  return response.items.map(v => {
     const playlists = Array.from(playlistMap[v.id] || []);
     const videoObj = {
       videoId: v.id,
@@ -109,7 +109,8 @@ return response.items.map(v => {
     }
 
     return videoObj;
-  })
+  });
+}
 
 // ============================================================================
 // 2. EXTRACTION ROUTINES
