@@ -552,7 +552,7 @@ export function renderList() {
   }
 
   const isLogged = !!window.currentUser;
-  container.querySelectorAll('.card-marker-select').forEach(el => el.disabled = !isLogged);
+  container.querySelectorAll('.marker-dropdown-trigger').forEach(el => el.disabled = !isLogged);
 }
 
 // Gerenciador global genérico para pop-ups flutuantes (Badges, Marcadores, etc.)
