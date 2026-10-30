@@ -174,7 +174,6 @@ function createMarkerSelect(videoId) {
   container.className = `card-marker-dropdown ${currentConfig.class}`;
   container.dataset.videoid = videoId;
 
-  // Botão principal que exibe o ícone atual
   const trigger = document.createElement('button');
   trigger.type = 'button';
   trigger.className = 'marker-dropdown-trigger';
@@ -182,57 +181,38 @@ function createMarkerSelect(videoId) {
   trigger.innerHTML = `${currentConfig.svg} <span class="marker-label">${currentConfig.label}</span>`;
   
   const isLogged = !!window.currentUser;
-  if (!isLogged) {
-    trigger.disabled = true;
-  }
+  if (!isLogged) trigger.disabled = true;
 
-  // Lista de opções suspensa
-  const menu = document.createElement('div');
-  menu.className = 'marker-dropdown-menu';
-
-  Object.entries(MARKER_CONFIG).forEach(([val, cfg]) => {
-    const option = document.createElement('div');
-    option.className = `marker-dropdown-option ${cfg.class}`;
-    option.innerHTML = `${cfg.svg} <span>${cfg.label}</span>`;
-    
-    option.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (!isLogged) return;
-
-      container.className = `card-marker-dropdown ${cfg.class}`;
-      trigger.innerHTML = `${cfg.svg} <span class="marker-label">${cfg.label}</span>`;
-      trigger.title = cfg.label;
-      menu.classList.remove('open');
-
-      if (typeof window.updateVideoMarker === 'function') {
-        window.updateVideoMarker(videoId, val === '' ? '' : Number(val));
-      }
-    });
-
-    menu.appendChild(option);
-  });
-
-  // Abertura / Fechamento do menu
-  trigger.addEventListener('click', (e) => {
-    e.stopPropagation();
+  trigger.addEventListener('click', (event) => {
     if (!isLogged) return;
-    
-    // Fecha outros menus abertos
-    document.querySelectorAll('.marker-dropdown-menu.open').forEach(m => {
-      if (m !== menu) m.classList.remove('open');
+
+    window.openFloatingMenu(event, trigger, (popup, closePopup) => {
+      popup.classList.add('marker-popup-container'); // Opcional para estilização específica se necessário
+
+      Object.entries(MARKER_CONFIG).forEach(([val, cfg]) => {
+        const option = document.createElement('div');
+        option.className = `marker-dropdown-option ${cfg.class}`;
+        option.innerHTML = `${cfg.svg} <span>${cfg.label}</span>`;
+        
+        option.addEventListener('click', (e) => {
+          e.stopPropagation();
+          container.className = `card-marker-dropdown ${cfg.class}`;
+          trigger.innerHTML = `${cfg.svg} <span class="marker-label">${cfg.label}</span>`;
+          trigger.title = cfg.label;
+          closePopup();
+
+          if (typeof window.updateVideoMarker === 'function') {
+            window.updateVideoMarker(videoId, val === '' ? '' : Number(val));
+          }
+        });
+
+        popup.appendChild(option);
+      });
     });
-
-    menu.classList.toggle('open');
-  });
-
-  // Fecha ao clicar fora
-  document.addEventListener('click', () => {
-    menu.classList.remove('open');
   });
 
   container.appendChild(trigger);
-  container.appendChild(menu);
-
+  container.appendChild(window.openBadgePopup ? '' : ''); // Mantém referência se necessário
   return container;
 }
 
@@ -578,19 +558,22 @@ export function renderList() {
   container.querySelectorAll('.card-marker-select').forEach(el => el.disabled = !isLogged);
 }
 
-// Gerenciador global do pop-up flutuante das badges
-window.openBadgePopup = function(event, text) {
+// Gerenciador global genérico para pop-ups flutuantes (Badges, Marcadores, etc.)
+window.openFloatingMenu = function(event, triggerElement, renderContentCallback) {
   event.stopPropagation();
   
-  // Remove pop-up anterior se houver
-  document.querySelectorAll('.badge-popup-tooltip').forEach(el => el.remove());
+  // Remove pop-ups anteriores abertos para evitar sobreposição
+  document.querySelectorAll('.floating-popup-tooltip').forEach(el => el.remove());
 
   const popup = document.createElement('div');
-  popup.className = 'badge-popup-tooltip';
-  popup.textContent = text;
+  popup.className = 'floating-popup-tooltip';
+  
+  // Insere o conteúdo gerado pelo callback
+  renderContentCallback(popup, () => closePopup());
+
   document.body.appendChild(popup);
 
-  const rect = event.currentTarget.getBoundingClientRect();
+  const rect = triggerElement.getBoundingClientRect();
   popup.style.top = `${rect.bottom + window.scrollY + 6}px`;
   popup.style.left = `${rect.left + window.scrollX}px`;
 

@@ -656,19 +656,17 @@
   height: 14px;
 }
 
-/* Tooltip / Modal Flutuante */
+/* Estilo unificado para pop-ups flutuantes globais */
+.floating-popup-tooltip,
 .badge-popup-tooltip {
   position: absolute;
   background: var(--bg-secondary, #1e1e1e);
   color: var(--text-main, #e0e0e0);
-  border: 1px solid var(--accent-color, #66b3ab);
-  padding: 6px 10px;
+  border: 1px solid var(--border-color, #333333);
+  padding: 6px;
   border-radius: 6px;
-  font-size: 12px;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-  z-index: 1000;
-  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+  z-index: 2500;
   animation: fadeIn 0.15s ease-out;
 }
 
