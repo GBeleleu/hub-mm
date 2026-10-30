@@ -124,33 +124,116 @@ export function openOccurrencesModal(duplicates) {
   }
 }
 
-// Função de criação do seletor de marcador reutilizável
+// Criação dos Marcadores
+// Definição dos SVGs inline para cada tipo de marcador
+const MARKER_CONFIG = {
+  '': {
+    label: '...',
+    color: '#888888',
+    class: 'marker-null',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>`
+  },
+  '0': {
+    label: 'Visto',
+    color: '#4caf50',
+    class: 'marker-0',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`
+  },
+  '1': {
+    label: 'Alta',
+    color: '#e53935',
+    class: 'marker-1',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+  },
+  '2': {
+    label: 'Média',
+    color: '#fb8c00',
+    class: 'marker-2',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+  },
+  '3': {
+    label: 'Baixa',
+    color: '#fdd835',
+    class: 'marker-3',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+  },
+  '5': {
+    label: 'Rever',
+    color: '#2e4dff',
+    class: 'marker-5',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>`
+  }
+};
+
 function createMarkerSelect(videoId) {
-  const currentMarker = (window.userMarkerCache && window.userMarkerCache[videoId] !== undefined)
-    ? window.userMarkerCache[videoId] : '';
-  const markerClass = currentMarker !== '' ? `marker-${currentMarker}` : 'marker-null';
+  const currentKey = (window.userMarkerCache && window.userMarkerCache[videoId] !== undefined)
+    ? String(window.userMarkerCache[videoId]) : '';
+  const currentConfig = MARKER_CONFIG[currentKey] || MARKER_CONFIG[''];
 
-  const select = document.createElement('select');
-  select.className = `card-marker-select ${markerClass}`;
-  select.dataset.videoid = videoId;
-  select.innerHTML = `
-    <option value="" ${currentMarker === '' ? 'selected' : ''}>...</option>
-    <option value="0" ${currentMarker === 0 ? 'selected' : ''}>Visto</option>
-    <option value="1" ${currentMarker === 1 ? 'selected' : ''}>Alta</option>
-    <option value="2" ${currentMarker === 2 ? 'selected' : ''}>Média</option>
-    <option value="3" ${currentMarker === 3 ? 'selected' : ''}>Baixa</option>
-    <option value="5" ${currentMarker === 5 ? 'selected' : ''}>Rever</option>
-  `;
+  const container = document.createElement('div');
+  container.className = `card-marker-dropdown ${currentConfig.class}`;
+  container.dataset.videoid = videoId;
 
-  select.addEventListener('change', (e) => {
-    const value = e.target.value;
-    e.target.className = `card-marker-select ${value !== "" ? `marker-${value}` : 'marker-null'}`;
-    if (typeof window.updateVideoMarker === 'function') {
-      window.updateVideoMarker(videoId, value);
-    }
+  // Botão principal que exibe o ícone atual
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = 'marker-dropdown-trigger';
+  trigger.title = currentConfig.label;
+  trigger.innerHTML = `${currentConfig.svg} <span class="marker-label">${currentConfig.label}</span>`;
+  
+  const isLogged = !!window.currentUser;
+  if (!isLogged) {
+    trigger.disabled = true;
+  }
+
+  // Lista de opções suspensa
+  const menu = document.createElement('div');
+  menu.className = 'marker-dropdown-menu';
+
+  Object.entries(MARKER_CONFIG).forEach(([val, cfg]) => {
+    const option = document.createElement('div');
+    option.className = `marker-dropdown-option ${cfg.class}`;
+    option.innerHTML = `${cfg.svg} <span>${cfg.label}</span>`;
+    
+    option.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (!isLogged) return;
+
+      container.className = `card-marker-dropdown ${cfg.class}`;
+      trigger.innerHTML = `${cfg.svg} <span class="marker-label">${cfg.label}</span>`;
+      trigger.title = cfg.label;
+      menu.classList.remove('open');
+
+      if (typeof window.updateVideoMarker === 'function') {
+        window.updateVideoMarker(videoId, val === '' ? '' : Number(val));
+      }
+    });
+
+    menu.appendChild(option);
   });
 
-  return select;
+  // Abertura / Fechamento do menu
+  trigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!isLogged) return;
+    
+    // Fecha outros menus abertos
+    document.querySelectorAll('.marker-dropdown-menu.open').forEach(m => {
+      if (m !== menu) m.classList.remove('open');
+    });
+
+    menu.classList.toggle('open');
+  });
+
+  // Fecha ao clicar fora
+  document.addEventListener('click', () => {
+    menu.classList.remove('open');
+  });
+
+  container.appendChild(trigger);
+  container.appendChild(menu);
+
+  return container;
 }
 
 export function createCardElement(item, duplicates = [], forceDisplayMode = null) {
@@ -162,7 +245,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
   const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
   const liveBadge = item.isLive ? `<span class="live-badge" title="Live"></span>` : '';
-  const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">(Removido)</span>` : '';
+  const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">❌</span>` : '';
 
   // ------------------------------------------------------------------------
   // MODO 1: LISTA
