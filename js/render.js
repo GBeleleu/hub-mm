@@ -187,8 +187,6 @@ function createMarkerSelect(videoId) {
     if (!isLogged) return;
 
     window.openFloatingMenu(event, trigger, (popup, closePopup) => {
-      popup.classList.add('marker-popup-container'); // Opcional para estilização específica se necessário
-
       Object.entries(MARKER_CONFIG).forEach(([val, cfg]) => {
         const option = document.createElement('div');
         option.className = `marker-dropdown-option ${cfg.class}`;
@@ -212,7 +210,6 @@ function createMarkerSelect(videoId) {
   });
 
   container.appendChild(trigger);
-  container.appendChild(window.openBadgePopup ? '' : ''); // Mantém referência se necessário
   return container;
 }
 
