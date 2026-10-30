@@ -107,7 +107,7 @@
 
       <!-- LOGIN / PERFIL DO USUÁRIO -->
       <div class="auth-wrapper" id="authContainer">
-        <button id="loginBtn" class="btn-group-item highlighted" onclick="window.loginWithGoogle()" title="Entre para registrar seu progresso">
+        <button id="loginBtn" class="btn-group-item highlighted" onclick="window.loginWithGoogle()" title="Entre para atribuir seus marcadores">
           Entrar
         </button>
 
@@ -122,9 +122,9 @@
               <span id="userEmailSpan" class="user-email"></span>
             </div>
             <div class="dropdown-divider"></div>
-            <button class="dropdown-item" onclick="window.exportProgressJSON()">📤 Exportar JSON</button>
-            <button class="dropdown-item" onclick="document.getElementById('importJsonInput').click()">📥 Importar JSON</button>
-            <input type="file" id="importJsonInput" accept=".json" style="display: none;" onchange="window.importProgressJSON(event)">
+            <button class="dropdown-item" onclick="window.exportMarkerJSON()">📤 Exportar JSON</button>
+            <button class="dropdown-item" onclick="document.getElementById('importMarkerJsonInput').click()">📥 Importar JSON</button>
+            <input type="file" id="importMarkerJsonInput" accept=".json" style="display: none;" onchange="window.importMarkerJSON(event)">
             <div class="dropdown-divider"></div>
             <button class="dropdown-item text-danger" onclick="window.logoutFromFirebase()">Sair</button>
           </div>
