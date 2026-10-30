@@ -126,7 +126,7 @@ export function openOccurrencesModal(duplicates) {
   }
 }
 
-// Criação dos Marcadores com SVGs inline e menu flutuante unificado
+// Configuração dos marcadores com ícones SVG atualizados (bandeirolas estilo marcador de página para prioridades)
 const MARKER_CONFIG = {
   '': {
     label: '...',
@@ -144,19 +144,19 @@ const MARKER_CONFIG = {
     label: 'Alta',
     color: '#e53935',
     class: 'marker-1',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
   },
   '2': {
     label: 'Média',
     color: '#fb8c00',
     class: 'marker-2',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
   },
   '3': {
     label: 'Baixa',
     color: '#fdd835',
     class: 'marker-3',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6z"/></svg>`
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
   },
   '5': {
     label: 'Rever',
@@ -175,11 +175,12 @@ function createMarkerSelect(videoId) {
   container.className = `card-marker-dropdown ${currentConfig.class}`;
   container.dataset.videoid = videoId;
 
+  // Botão principal contendo apenas a imagem SVG maior e sem rótulo de texto
   const trigger = document.createElement('button');
   trigger.type = 'button';
   trigger.className = 'marker-dropdown-trigger';
   trigger.title = currentConfig.label;
-  trigger.innerHTML = `${currentConfig.svg} <span class="marker-label">${currentConfig.label}</span>`;
+  trigger.innerHTML = currentConfig.svg;
   
   const isLogged = !!window.currentUser;
   if (!isLogged) trigger.disabled = true;
@@ -191,12 +192,13 @@ function createMarkerSelect(videoId) {
       Object.entries(MARKER_CONFIG).forEach(([val, cfg]) => {
         const option = document.createElement('div');
         option.className = `marker-dropdown-option ${cfg.class}`;
+        // No menu suspenso mantemos o ícone e o texto para facilitar a leitura das opções
         option.innerHTML = `${cfg.svg} <span>${cfg.label}</span>`;
         
         option.addEventListener('click', (e) => {
           e.stopPropagation();
           container.className = `card-marker-dropdown ${cfg.class}`;
-          trigger.innerHTML = `${cfg.svg} <span class="marker-label">${cfg.label}</span>`;
+          trigger.innerHTML = cfg.svg;
           trigger.title = cfg.label;
           closePopup();
 

@@ -374,90 +374,36 @@
   display: block;
 }
 
-/* SELETOR DE MARCADOR 
-.card-marker-select {
-  padding: 3px 6px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 4px;
-  border: 1px solid var(--border-color);
-  cursor: pointer;
-  width: fit-content;
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.card-marker-select.marker-null {
-  background-color: var(--bg-primary);
-  color: var(--text-muted);
-  border-color: var(--border-color);
-}
-
-.card-marker-select.marker-0 {
-  background-color: #2e7d32;
-  color: #ffffff;
-  border-color: #4caf50;
-}
-
-.card-marker-select.marker-1 {
-  background-color: #c62828;
-  color: #ffffff;
-  border-color: #ef5350;
-}
-
-.card-marker-select.marker-2 {
-  background-color: #ef6c00;
-  color: #ffffff;
-  border-color: #ff9800;
-}
-
-.card-marker-select.marker-3 {
-  background-color: #fbc02d;
-  color: #121212;
-  border-color: #fdd835;
-}
-
-.card-marker-select.marker-5 {
-  background-color: var(--marker-rever-bg, #1b3dff);
-  color: #fff;
-  border-color: #2e4dff;
-}
-
-.card-marker-select option {
-  background-color: var(--bg-secondary);
-  color: var(--text-main);
-}
-*/
-
 /* ==========================================================================
    SISTEMA DE MARCADORES CUSTOMIZADO COM SVG INLINE
    ========================================================================== */
 .card-marker-dropdown {
   position: relative;
   display: inline-block;
-  font-size: 11px;
-  font-weight: 600;
   user-select: none;
 }
 
 .marker-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 8px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 4px;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 4px;
+  border-radius: 6px;
   border: 1px solid var(--border-color);
   cursor: pointer;
   background-color: var(--bg-primary);
   color: var(--text-main);
-  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
+/* SVG maior no botão principal do card */
 .marker-dropdown-trigger svg {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
+  fill: currentColor;
 }
 
 .marker-dropdown-trigger:disabled {
@@ -465,25 +411,7 @@
   cursor: not-allowed;
 }
 
-/* Menu Suspenso */
-.marker-dropdown-menu {
-  position: absolute;
-  top: calc(100% + 4px);
-  left: 0;
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  display: none;
-  min-width: 110px;
-  padding: 4px;
-}
-
-.marker-dropdown-menu.open {
-  display: block;
-}
-
+/* Opções dentro do menu flutuante (mantém texto e ícone menor) */
 .marker-dropdown-option {
   display: flex;
   align-items: center;
@@ -491,6 +419,8 @@
   padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
+  font-size: 11px;
+  font-weight: 600;
   transition: background 0.15s ease;
   color: var(--text-main);
 }
@@ -499,6 +429,7 @@
   width: 14px;
   height: 14px;
   flex-shrink: 0;
+  fill: currentColor;
 }
 
 .marker-dropdown-option:hover {
@@ -511,44 +442,40 @@
   color: #888888;
   border-color: var(--border-color);
 }
-.card-marker-dropdown.marker-null svg { color: #888888; }
 
 .card-marker-dropdown.marker-0 .marker-dropdown-trigger {
   background-color: #2e7d32;
   color: #ffffff;
   border-color: #4caf50;
 }
-.card-marker-dropdown.marker-0 svg { color: #ffffff; }
 
 .card-marker-dropdown.marker-1 .marker-dropdown-trigger {
   background-color: #c62828;
   color: #ffffff;
   border-color: #ef5350;
 }
-.card-marker-dropdown.marker-1 svg { color: #ffffff; }
 
 .card-marker-dropdown.marker-2 .marker-dropdown-trigger {
   background-color: #ef6c00;
   color: #ffffff;
   border-color: #ff9800;
 }
-.card-marker-dropdown.marker-2 svg { color: #ffffff; }
 
 .card-marker-dropdown.marker-3 .marker-dropdown-trigger {
   background-color: #fbc02d;
   color: #121212;
   border-color: #fdd835;
 }
-.card-marker-dropdown.marker-3 svg { color: #121212; }
 
 .card-marker-dropdown.marker-5 .marker-dropdown-trigger {
   background-color: #1b3dff;
   color: #ffffff;
   border-color: #2e4dff;
 }
-.card-marker-dropdown.marker-5 svg { color: #ffffff; }
 
-/* BOTÃO DE ASSISTIR NO YOUTUBE (MODAL DE PREVIEW) */
+/* ==========================================================================
+   BOTÃO DE ASSISTIR NO YOUTUBE (MODAL DE PREVIEW)
+   ========================================================================== */
 .yt-watch-btn {
   display: inline-flex;
   align-items: center;
