@@ -175,10 +175,9 @@ function createMarkerSelect(videoId) {
   container.className = `card-marker-dropdown ${currentConfig.class}`;
   container.dataset.videoid = videoId;
 
-  // Botão principal contendo apenas a imagem SVG maior e sem rótulo de texto
   const trigger = document.createElement('button');
   trigger.type = 'button';
-  trigger.className = 'marker-dropdown-trigger';
+  trigger.className = `marker-stamp-trigger ${currentConfig.class}`;
   trigger.title = currentConfig.label;
   trigger.innerHTML = currentConfig.svg;
   
@@ -198,6 +197,7 @@ function createMarkerSelect(videoId) {
         option.addEventListener('click', (e) => {
           e.stopPropagation();
           container.className = `card-marker-dropdown ${cfg.class}`;
+          trigger.className = `marker-stamp-trigger ${cfg.class}`;
           trigger.innerHTML = cfg.svg;
           trigger.title = cfg.label;
           closePopup();
@@ -555,7 +555,7 @@ export function renderList() {
   }
 
   const isLogged = !!window.currentUser;
-  container.querySelectorAll('.marker-dropdown-trigger').forEach(el => el.disabled = !isLogged);
+  container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 }
 
 // Gerenciador global unificado para pop-ups flutuantes
