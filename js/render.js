@@ -305,7 +305,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     `;
 
     card.querySelector('.card-media-block').addEventListener('click', () => openThumbModal(item));
-    card.querySelector('.status-container').appendChild(createMarkerSelect(item.videoId));
+    card.querySelector('.marker-container').appendChild(createMarkerSelect(item.videoId));
 
     if (duplicates.length > 0) {
       const toggleBtn = card.querySelector('.drawer-toggle');
@@ -347,7 +347,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
           ${renderBadgesHtml(item)}
         </div>
         <div class="grade-footer">
-          <div class="status-container"></div>
+          <div class="marker-container"></div>
           ${duplicates.length > 0 ? `<button class="drawer-toggle occ-modal-btn" title="Ver ocorrências em Modal">+${duplicates.length}</button>` : ''}
         </div>
       </div>

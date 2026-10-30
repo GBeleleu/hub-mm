@@ -8,7 +8,7 @@ export const CONFIG = {
 };
 
 // Cache do Marker do usuário acessível globalmente
-window.userProgressCache = window.userProgressCache || {};
+window.userMarkerCache = window.userMarkerCache || {};
 
 export let videoDatabase = [];
 export function setVideoDatabase(data) {

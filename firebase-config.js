@@ -158,7 +158,7 @@ window.logoutFromFirebase = async function() {
       unsubscribeSnapshot();
       unsubscribeSnapshot = null;
     }
-    window.userProgressCache = {};
+    window.userMarkerCache = {};
     
     await signOut(auth);
     console.log("Usuário deslogado com sucesso.");
