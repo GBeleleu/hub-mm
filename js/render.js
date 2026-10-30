@@ -11,8 +11,9 @@ function renderBadgesHtml(item) {
     
     if (validCols.length > 0) {
       const namesList = validCols.map(c => c.trim()).join(', ');
+      // Atualizado para chamar diretamente a função unificada
       html += `
-        <span class="card-meta-badge collection-badge" title="Ver Coleções" onclick="window.openBadgePopup(event, '${namesList}')">
+        <span class="card-meta-badge collection-badge" title="Ver Coleções" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
           <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
         </span>
       `;
@@ -26,8 +27,9 @@ function renderBadgesHtml(item) {
     
     if (validPls.length > 0) {
       const namesList = validPls.map(p => p.trim()).join(', ');
+      // Atualizado para chamar diretamente a função unificada
       html += `
-        <span class="card-meta-badge playlist-badge" title="Ver Playlists" onclick="window.openBadgePopup(event, '${namesList}')">
+        <span class="card-meta-badge playlist-badge" title="Ver Playlists" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
           <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15l7-3-7-3v6z"/></svg>
         </span>
       `;
@@ -124,8 +126,7 @@ export function openOccurrencesModal(duplicates) {
   }
 }
 
-// Criação dos Marcadores
-// Definição dos SVGs inline para cada tipo de marcador
+// Criação dos Marcadores com SVGs inline e menu flutuante unificado
 const MARKER_CONFIG = {
   '': {
     label: '...',
@@ -555,11 +556,11 @@ export function renderList() {
   container.querySelectorAll('.marker-dropdown-trigger').forEach(el => el.disabled = !isLogged);
 }
 
-// Gerenciador global genérico para pop-ups flutuantes (Badges, Marcadores, etc.)
+// Gerenciador global unificado para pop-ups flutuantes
 window.openFloatingMenu = function(event, triggerElement, renderContentCallback) {
   event.stopPropagation();
   
-  // Remove pop-ups anteriores abertos para evitar sobreposição
+  // Remove pop-up anterior
   document.querySelectorAll('.floating-popup-tooltip').forEach(el => el.remove());
 
   const popup = document.createElement('div');
