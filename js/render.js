@@ -213,11 +213,11 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     }
     row.appendChild(occCell);
 
-    // 5. Seletor de Status
-    const statusCell = document.createElement('div');
-    statusCell.className = 'list-item-cell';
-    statusCell.appendChild(createMarkerSelect(item.videoId));
-    row.appendChild(statusCell);
+    // 5. Marcadores
+    const markerCell = document.createElement('div');
+    markerCell.className = 'list-item-cell';
+    markerCell.appendChild(createMarkerSelect(item.videoId));
+    row.appendChild(markerCell);
 
     // 6. Data
     const dateCell = document.createElement('div');
@@ -295,7 +295,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
         <span class="card-date">${formatLocalDateTime(item.publishedAt)}${liveBadge}</span>
         ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
 
-        <div class="status-container" style="margin-top:6px;"></div>
+        <div class="marker-container" style="margin-top:6px;"></div>
 
         ${duplicates.length > 0 ? `
           <button class="drawer-toggle" title="Ver ocorrências" style="position:absolute; bottom:10px; right:10px;">+${duplicates.length}</button>
@@ -353,7 +353,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
       </div>
     `;
 
-    card.querySelector('.status-container').appendChild(createMarkerSelect(item.videoId));
+    card.querySelector('.marker-container').appendChild(createMarkerSelect(item.videoId));
 
     if (duplicates.length > 0) {
       card.querySelector('.occ-modal-btn').addEventListener('click', () => {

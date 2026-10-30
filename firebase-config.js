@@ -36,7 +36,7 @@ const db = initializeFirestore(app, {
 });
 const auth = getAuth(app);
 
-// Estado global
+// Estado global dos marcadores
 window.currentUser = null;
 window.userMarkerCache = {};
 let unsubscribeSnapshot = null;
@@ -55,11 +55,11 @@ onAuthStateChanged(auth, (user) => {
     console.log("Usuário autenticado:", user.email || user.uid);
     const markerRef = doc(db, "users", user.uid);
     
-    unsubscribeSnapshot = onSnapshot(markerRef, (docSnap) => {
+unsubscribeSnapshot = onSnapshot(markerRef, (docSnap) => {
       if (!window.currentUser) return; 
       
       if (docSnap.exists()) {
-        window.userMarkerCache = docSnap.data().markers || docSnap.data().progress || {};
+        window.userMarkerCache = docSnap.data().markers || {};
       } else {
         window.userMarkerCache = {};
       }
@@ -104,19 +104,19 @@ window.updateVideoMarker = async function(videoId, selectedValue) {
   }
 
   const userId = window.currentUser.uid;
-  const userDoc = doc(db, "users", userId);
+  const userMarkerDoc = doc(db, "users", userId);
 
   try {
     if (selectedValue === "" || selectedValue === null) {
       delete window.userMarkerCache[videoId];
       
-      await updateDoc(userDoc, {
+      await updateDoc(userMarkerDoc, {
         [`markers.${videoId}`]: deleteField()
       });
     } else {
       window.userMarkerCache[videoId] = Number(selectedValue);
 
-      await setDoc(userDoc, {
+      await setDoc(userMarkerDoc, {
         markers: window.userMarkerCache
       }, { merge: true });
     }
@@ -204,8 +204,8 @@ window.importMarkerJSON = function(event) {
       window.userMarkerCache = { ...window.userMarkerCache, ...importedData };
 
       const userId = window.currentUser.uid;
-      const userDoc = doc(db, "users", userId);
-      await setDoc(userDoc, { markers: window.userMarkerCache }, { merge: true });
+      const userMarkerDoc = doc(db, "users", userId);
+      await setDoc(userMarkerDoc, { markers: window.userMarkerCache }, { merge: true });
 
       alert("Marcadores importados com sucesso!");
       if (typeof window.renderList === 'function') window.renderList();
