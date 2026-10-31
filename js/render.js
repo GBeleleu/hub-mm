@@ -129,7 +129,7 @@ export function openOccurrencesModal(duplicates) {
 // Configuração dos marcadores com ícones SVG atualizados (bandeirolas estilo marcador de página para prioridades)
 const MARKER_CONFIG = {
   '': {
-    label: '...',
+    label: 'Marcar',
     color: '#888888',
     class: 'marker-null',
     svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>`

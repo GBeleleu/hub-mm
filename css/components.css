@@ -395,8 +395,8 @@
 }
 
 .marker-stamp-trigger svg {
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   flex-shrink: 0;
 }
 
@@ -410,13 +410,36 @@
   transform: none;
 }
 
-/* Cores dos Carimbos SVG */
-.marker-stamp-trigger.marker-null svg { color: #777777; }
-.marker-stamp-trigger.marker-0 svg { color: #4caf50; }
-.marker-stamp-trigger.marker-1 svg { color: #ef5350; }
-.marker-stamp-trigger.marker-2 svg { color: #ff9800; }
-.marker-stamp-trigger.marker-3 svg { color: #fdd835; }
-.marker-stamp-trigger.marker-5 svg { color: #2e4dff; }
+.marker-dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px; /* Tamanho do label/texto do menu */
+  font-weight: 600;
+  transition: background 0.15s ease;
+}
+
+/* Tamanho do ícone SVG dentro das opções do menu */
+.marker-dropdown-option svg {
+  width: 12px; 
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.marker-dropdown-option:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Cores específicas aplicadas ao ícone e texto de cada opção do menu */
+.marker-dropdown-option.marker-null svg, .marker-dropdown-option.marker-null span { color: #888888; }
+.marker-dropdown-option.marker-0 svg, .marker-dropdown-option.marker-0 span { color: #4caf50; }
+.marker-dropdown-option.marker-1 svg, .marker-dropdown-option.marker-1 span { color: #ef5350; }
+.marker-dropdown-option.marker-2 svg, .marker-dropdown-option.marker-2 span { color: #ff9800; }
+.marker-dropdown-option.marker-3 svg, .marker-dropdown-option.marker-3 span { color: #fdd835; }
+.marker-dropdown-option.marker-5 svg, .marker-dropdown-option.marker-5 span { color: #2e4dff; }
 
 /* ==========================================================================
    BOTÃO DE ASSISTIR NO YOUTUBE (MODAL DE PREVIEW)
