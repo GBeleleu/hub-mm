@@ -401,7 +401,7 @@
 }
 
 .marker-stamp-trigger:hover {
-  filter: brightness(1.3) drop-shadow(0 0 5px currentColor);
+  filter: brightness(1.3) drop-shadow(0 0 3px currentColor);
 }
 
 .marker-stamp-trigger:disabled {
