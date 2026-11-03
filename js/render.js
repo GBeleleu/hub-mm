@@ -186,7 +186,10 @@ function createMarkerSelect(videoId) {
     if (!isLogged) return;
 
     window.openFloatingMenu(event, trigger, (popup, closePopup) => {
-Object.entries(MARKER_CONFIG).forEach(([val, cfg]) => {
+      const MARKER_ORDER = ['0', '5', 'sep1', 'header_pri', '1', '2', '3', 'sep2', ''];
+      
+      MARKER_ORDER.forEach((val) => {
+        const cfg = MARKER_CONFIG[val];
         const option = document.createElement('div');
 
         if (cfg.isSeparator) {
