@@ -158,6 +158,7 @@ const MARKER_CONFIG = {
   'sep2': { isSeparator: true },
   '': {
     label: 'Marcar',
+    menuLabel: 'Desmarcar',
     class: 'marker-null',
     svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>`
   }
@@ -205,7 +206,7 @@ function createMarkerSelect(videoId) {
         }
 
         option.className = `marker-dropdown-option ${cfg.class}`;
-        option.innerHTML = `${cfg.svg} <span>${cfg.label}</span>`;
+        option.innerHTML = `${cfg.svg} <span>${cfg.menuLabel || cfg.label}</span>`;
         
         option.addEventListener('click', (e) => {
           e.stopPropagation();
