@@ -27,9 +27,9 @@
   margin-top: 20px;
 }
 
-/* --------------------------------------------------------------------------
-   FAIXA LATERAL DE CATEGORY (GERAL)
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   FAIXA LATERAL DE CATEGORIAS
+   ========================================================================== */
 .category-stripe {
   position: absolute;
   top: 0;
@@ -62,7 +62,7 @@
 .category-stripe[data-cat="Meditação"] { background-color: #7b1fa2; }
 
 /* --------------------------------------------------------------------------
-   MODO COMPACTO (CARD PADRÃO)
+   MODO COMPACTO
    -------------------------------------------------------------------------- */
 .card-display-compacto {
   position: relative;
@@ -151,7 +151,7 @@
 }
 
 /* --------------------------------------------------------------------------
-   MODO LISTA (UMA LINHA COM ELEMENTOS PERFEITAMENTE ALINHADOS)
+   MODO LISTA
    -------------------------------------------------------------------------- */
 .card-display-lista {
   position: relative;
@@ -375,7 +375,7 @@
 }
 
 /* ==========================================================================
-   SISTEMA DE MARCADORES CUSTOMIZADO COM SVG INLINE
+   SISTEMA DE MARCADORES
    ========================================================================== */
 .card-marker-dropdown {
   position: relative;
@@ -433,13 +433,30 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Cores específicas aplicadas ao ícone e texto de cada opção do menu */
-.marker-dropdown-option.marker-null svg, .marker-dropdown-option.marker-null span { color: #888888; }
-.marker-dropdown-option.marker-0 svg, .marker-dropdown-option.marker-0 span { color: #4caf50; }
-.marker-dropdown-option.marker-1 svg, .marker-dropdown-option.marker-1 span { color: #ef5350; }
-.marker-dropdown-option.marker-2 svg, .marker-dropdown-option.marker-2 span { color: #ff9800; }
-.marker-dropdown-option.marker-3 svg, .marker-dropdown-option.marker-3 span { color: #fdd835; }
-.marker-dropdown-option.marker-5 svg, .marker-dropdown-option.marker-5 span { color: #2e4dff; }
+/* Cores dos marcadores nos cards e menu */
+.marker-stamp-trigger.marker-null svg,
+.marker-dropdown-option.marker-null svg, 
+.marker-dropdown-option.marker-null span { color: #888888; }
+
+.marker-stamp-trigger.marker-0 svg,
+.marker-dropdown-option.marker-0 svg, 
+.marker-dropdown-option.marker-0 span { color: #4caf50; }
+
+.marker-stamp-trigger.marker-1 svg,
+.marker-dropdown-option.marker-1 svg, 
+.marker-dropdown-option.marker-1 span { color: #ef5350; }
+
+.marker-stamp-trigger.marker-2 svg,
+.marker-dropdown-option.marker-2 svg, 
+.marker-dropdown-option.marker-2 span { color: #ff9800; }
+
+.marker-stamp-trigger.marker-3 svg,
+.marker-dropdown-option.marker-3 svg, 
+.marker-dropdown-option.marker-3 span { color: #fdd835; }
+
+.marker-stamp-trigger.marker-5 svg,
+.marker-dropdown-option.marker-5 svg, 
+.marker-dropdown-option.marker-5 span { color: #2e4dff; }
 
 /* ==========================================================================
    BOTÃO DE ASSISTIR NO YOUTUBE (MODAL DE PREVIEW)
