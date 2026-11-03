@@ -422,6 +422,22 @@
   transition: background 0.15s ease;
 }
 
+.marker-dropdown-separator {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 4px 0;
+}
+
+.marker-dropdown-header {
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  padding: 4px 10px 2px 10px;
+  user-select: none;
+}
+
 /* Tamanho do ícone SVG dentro das opções do menu */
 .marker-dropdown-option svg {
   width: 12px; 
@@ -436,7 +452,7 @@
 /* Cores dos marcadores nos cards e menu */
 .marker-stamp-trigger.marker-null svg,
 .marker-dropdown-option.marker-null svg, 
-.marker-dropdown-option.marker-null span { color: #888888; }
+.marker-dropdown-option.marker-null span { color: #777777; }
 
 .marker-stamp-trigger.marker-0 svg,
 .marker-dropdown-option.marker-0 svg, 
