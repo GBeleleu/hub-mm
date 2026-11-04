@@ -6,7 +6,7 @@ import { renderList } from './render.js';
 
 export function parseCollections(item) {
   return {
-    category: item.category ? item.category.trim() : '',
+    category: item.category ? item.category : '',
     collection: item.collection || '',
     playlist: item.playlist || ''
   };
@@ -25,13 +25,15 @@ export function extractAllCollectionsTree() {
   videoDatabase.forEach(item => {
     // 1. Coleções
     if (Array.isArray(item.collection)) {
-      item.collection.forEach(c => c && c.trim() && tree.collections.add(c.trim()));
-    } else if (item.collection && item.collection.trim()) {
-      tree.collections.add(item.collection.trim());
+      item.collection.forEach(c => {
+        if (c) tree.collections.add(c);
+      });
+    } else if (item.collection) {
+      tree.collections.add(item.collection);
     }
 
-    // 2. Playlists por Canal
-    const ch = item.channelTitle ? item.channelTitle.trim() : 'Sem Canal';
+    // 2. Canais e Playlists por Canal
+    const ch = item.channelTitle ? item.channelTitle : 'Sem Canal';
     if (ch) tree.channels.add(ch);
 
     if (!tree.playlistsByChannel[ch]) {
@@ -39,14 +41,16 @@ export function extractAllCollectionsTree() {
     }
 
     if (Array.isArray(item.playlist)) {
-      item.playlist.forEach(p => p && p.trim() && tree.playlistsByChannel[ch].add(p.trim()));
-    } else if (item.playlist && item.playlist.trim()) {
-      tree.playlistsByChannel[ch].add(item.playlist.trim());
+      item.playlist.forEach(p => {
+        if (p) tree.playlistsByChannel[ch].add(p);
+      });
+    } else if (item.playlist) {
+      tree.playlistsByChannel[ch].add(item.playlist);
     }
 
-    // 3. Categorias
-    if (item.category && item.category.trim()) {
-      tree.categories.add(item.category.trim());
+    // 3. Categorias (Distinguindo nulos/ausentes nativamente)
+    if (item.category) {
+      tree.categories.add(item.category);
     } else {
       tree.hasUncategorized = true;
     }
@@ -185,7 +189,7 @@ export function populateCollectionsModal(container) {
     container.appendChild(group);
   }
 
-  // Rótulo: Categorias
+  // Rótulo: Categorias (Incluindo "Sem categoria")
   const groupCat = createGroupSection('Categorias');
   const catList = Array.from(tree.categories).sort();
   if (tree.hasUncategorized) catList.push('Sem categoria');
@@ -232,7 +236,7 @@ export function populateCollectionsModal(container) {
   container.appendChild(groupMark);
 }
 
-// Popula o Modal de "Filtro" (Toggle Buttons / Show/Hide)
+// Popula o Modal de "Filtro" (Show/Hide independente)
 export function populateFilterModal(container) {
   if (!container) return;
   container.innerHTML = '';
@@ -324,7 +328,7 @@ export function populateFilterModal(container) {
   });
   container.appendChild(chanSection);
 
-  // Removidos
+  // Removidos (Desativado por padrão)
   const remSection = createGroupSection('Removidos', false);
   const remBtn = createToggleButton('Exibir vídeos removidos', state.filterState.showRemoved, (active) => {
     state.filterState.showRemoved = active;
@@ -403,31 +407,30 @@ function createToggleButton(text, isActive, onToggle) {
   return btn;
 }
 
-// Avalia a visibilidade do vídeo baseando-se em Coleção Ativa ou Filtros
+// Avaliação estritamente fiel aos nomes literais e campos nulos/ausentes
 export function isVideoCollectionsVisible(item) {
-  // Garante que o estado de filtros está inicializado
   initFilterStateDefaults();
 
-  // 1. Filtragem por Privacidade (Removidos)
+  // 1. Tratamento nativo de Removidos (Desativado por padrão)
   if (item.privacyStatus === 'removed' && !state.filterState.showRemoved) {
     return false;
   }
 
-  // 2. Modo Seleção de Coleção Única (via menu Coleções)
+  // 2. Modo Seleção de Coleção Única
   if (state.activeSingleCollection) {
     const { type, value } = state.activeSingleCollection;
 
     if (type === 'collection') {
       const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
-      return cols.some(c => c && c.trim() === value);
+      return cols.some(c => c === value);
     }
     if (type === 'playlist') {
       const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
-      return pls.some(p => p && p.trim() === value);
+      return pls.some(p => p === value);
     }
     if (type === 'category') {
-      if (value === 'Sem categoria') return !item.category || !item.category.trim();
-      return item.category && item.category.trim() === value;
+      if (value === 'Sem categoria') return !item.category;
+      return item.category === value;
     }
     if (type === 'marker') {
       const mVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
@@ -438,12 +441,12 @@ export function isVideoCollectionsVisible(item) {
   }
 
   // 3. Modo Filtro (Show/Hide independente)
-  const channelName = item.channelTitle ? item.channelTitle.trim() : 'Sem Canal';
+  const channelName = item.channelTitle ? item.channelTitle : 'Sem Canal';
   if (!state.filterState.channels.includes(channelName)) {
     return false;
   }
 
-  const catName = (item.category && item.category.trim()) ? item.category.trim() : 'Sem categoria';
+  const catName = item.category ? item.category : 'Sem categoria';
   if (!state.filterState.categories.includes(catName)) {
     return false;
   }
