@@ -7,8 +7,8 @@ export const CONFIG = {
   DATA_URL: 'dataset.json'
 };
 
-// Cache do progresso do usuário acessível globalmente
-window.userProgressCache = window.userProgressCache || {};
+// Cache do Marker do usuário acessível globalmente
+window.userMarkerCache = window.userMarkerCache || {};
 
 export let videoDatabase = [];
 export function setVideoDatabase(data) {

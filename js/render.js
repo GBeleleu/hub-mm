@@ -11,8 +11,9 @@ function renderBadgesHtml(item) {
     
     if (validCols.length > 0) {
       const namesList = validCols.map(c => c.trim()).join(', ');
+      // Atualizado para chamar diretamente a função unificada
       html += `
-        <span class="card-meta-badge collection-badge" title="Ver Coleções" onclick="window.openBadgePopup(event, '${namesList}')">
+        <span class="card-meta-badge collection-badge" title="Ver Coleções" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
           <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
         </span>
       `;
@@ -26,8 +27,9 @@ function renderBadgesHtml(item) {
     
     if (validPls.length > 0) {
       const namesList = validPls.map(p => p.trim()).join(', ');
+      // Atualizado para chamar diretamente a função unificada
       html += `
-        <span class="card-meta-badge playlist-badge" title="Ver Playlists" onclick="window.openBadgePopup(event, '${namesList}')">
+        <span class="card-meta-badge playlist-badge" title="Ver Playlists" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
           <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15l7-3-7-3v6z"/></svg>
         </span>
       `;
@@ -124,32 +126,108 @@ export function openOccurrencesModal(duplicates) {
   }
 }
 
-// Função de criação do seletor de status reutilizável
-function createStatusSelect(videoId) {
-  const currentStatus = (window.userProgressCache && window.userProgressCache[videoId] !== undefined)
-    ? window.userProgressCache[videoId] : '';
-  const statusClass = currentStatus !== '' ? `status-${currentStatus}` : 'status-null';
+// Configuração dos marcadores com ícones SVG
+const MARKER_CONFIG = {
+  '0': {
+    label: 'Visto',
+    class: 'marker-0',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`
+  },
+  '5': {
+    label: 'Rever',
+    class: 'marker-5',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>`
+  },
+  'sep1': { isSeparator: true },
+  'header_pri': { isHeader: true, label: 'Prioridade:' },
+  '1': {
+    label: 'Alta',
+    class: 'marker-1',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
+  },
+  '2': {
+    label: 'Média',
+    class: 'marker-2',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
+  },
+  '3': {
+    label: 'Baixa',
+    class: 'marker-3',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
+  },
+  'sep2': { isSeparator: true },
+  '': {
+    label: 'Marcar',
+    menuLabel: 'Desmarcar',
+    class: 'marker-null',
+    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>`
+  }
+};
 
-  const select = document.createElement('select');
-  select.className = `card-status-select ${statusClass}`;
-  select.dataset.videoid = videoId;
-  select.innerHTML = `
-    <option value="" ${currentStatus === '' ? 'selected' : ''}>...</option>
-    <option value="0" ${currentStatus === 0 ? 'selected' : ''}>Visto</option>
-    <option value="1" ${currentStatus === 1 ? 'selected' : ''}>Alta</option>
-    <option value="2" ${currentStatus === 2 ? 'selected' : ''}>Média</option>
-    <option value="3" ${currentStatus === 3 ? 'selected' : ''}>Baixa</option>
-  `;
+function createMarkerSelect(videoId) {
+  const currentKey = (window.userMarkerCache && window.userMarkerCache[videoId] !== undefined)
+    ? String(window.userMarkerCache[videoId]) : '';
+  const currentConfig = MARKER_CONFIG[currentKey] || MARKER_CONFIG[''];
 
-  select.addEventListener('change', (e) => {
-    const value = e.target.value;
-    e.target.className = `card-status-select ${value !== "" ? `status-${value}` : 'status-null'}`;
-    if (typeof window.updateVideoProgress === 'function') {
-      window.updateVideoProgress(videoId, value);
-    }
+  const container = document.createElement('div');
+  container.className = `card-marker-dropdown ${currentConfig.class}`;
+  container.dataset.videoid = videoId;
+
+  const trigger = document.createElement('button');
+  trigger.type = 'button';
+  trigger.className = `marker-stamp-trigger ${currentConfig.class}`;
+  trigger.title = currentConfig.label;
+  trigger.innerHTML = currentConfig.svg;
+  
+  const isLogged = !!window.currentUser;
+  if (!isLogged) trigger.disabled = true;
+
+  trigger.addEventListener('click', (event) => {
+    if (!isLogged) return;
+
+    window.openFloatingMenu(event, trigger, (popup, closePopup) => {
+      const MARKER_ORDER = ['0', '5', 'sep1', 'header_pri', '1', '2', '3', 'sep2', ''];
+      
+      MARKER_ORDER.forEach((val) => {
+        const cfg = MARKER_CONFIG[val];
+        const option = document.createElement('div');
+
+        if (cfg.isSeparator) {
+          option.className = 'marker-dropdown-separator';
+          popup.appendChild(option);
+          return;
+        }
+
+        if (cfg.isHeader) {
+          option.className = 'marker-dropdown-header';
+          option.textContent = cfg.label;
+          popup.appendChild(option);
+          return;
+        }
+
+        option.className = `marker-dropdown-option ${cfg.class}`;
+        option.innerHTML = `${cfg.svg} <span>${cfg.menuLabel || cfg.label}</span>`;
+        
+        option.addEventListener('click', (e) => {
+          e.stopPropagation();
+          container.className = `card-marker-dropdown ${cfg.class}`;
+          trigger.className = `marker-stamp-trigger ${cfg.class}`;
+          trigger.innerHTML = cfg.svg;
+          trigger.title = cfg.label;
+          closePopup();
+
+          if (typeof window.updateVideoMarker === 'function') {
+            window.updateVideoMarker(videoId, val === '' ? '' : Number(val));
+          }
+        });
+
+        popup.appendChild(option);
+      });
+    });
   });
 
-  return select;
+  container.appendChild(trigger);
+  return container;
 }
 
 export function createCardElement(item, duplicates = [], forceDisplayMode = null) {
@@ -161,7 +239,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
   const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
   const liveBadge = item.isLive ? `<span class="live-badge" title="Live"></span>` : '';
-  const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">(Removido)</span>` : '';
+  const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">❌</span>` : '';
 
   // ------------------------------------------------------------------------
   // MODO 1: LISTA
@@ -212,11 +290,11 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     }
     row.appendChild(occCell);
 
-    // 5. Seletor de Status
-    const statusCell = document.createElement('div');
-    statusCell.className = 'list-item-cell';
-    statusCell.appendChild(createStatusSelect(item.videoId));
-    row.appendChild(statusCell);
+    // 5. Marcadores
+    const markerCell = document.createElement('div');
+    markerCell.className = 'list-item-cell';
+    markerCell.appendChild(createMarkerSelect(item.videoId));
+    row.appendChild(markerCell);
 
     // 6. Data
     const dateCell = document.createElement('div');
@@ -294,7 +372,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
         <span class="card-date">${formatLocalDateTime(item.publishedAt)}${liveBadge}</span>
         ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
 
-        <div class="status-container" style="margin-top:6px;"></div>
+        <div class="marker-container" style="margin-top:6px;"></div>
 
         ${duplicates.length > 0 ? `
           <button class="drawer-toggle" title="Ver ocorrências" style="position:absolute; bottom:10px; right:10px;">+${duplicates.length}</button>
@@ -304,7 +382,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     `;
 
     card.querySelector('.card-media-block').addEventListener('click', () => openThumbModal(item));
-    card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
+    card.querySelector('.marker-container').appendChild(createMarkerSelect(item.videoId));
 
     if (duplicates.length > 0) {
       const toggleBtn = card.querySelector('.drawer-toggle');
@@ -346,13 +424,13 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
           ${renderBadgesHtml(item)}
         </div>
         <div class="grade-footer">
-          <div class="status-container"></div>
+          <div class="marker-container"></div>
           ${duplicates.length > 0 ? `<button class="drawer-toggle occ-modal-btn" title="Ver ocorrências em Modal">+${duplicates.length}</button>` : ''}
         </div>
       </div>
     `;
 
-    card.querySelector('.status-container').appendChild(createStatusSelect(item.videoId));
+    card.querySelector('.marker-container').appendChild(createMarkerSelect(item.videoId));
 
     if (duplicates.length > 0) {
       card.querySelector('.occ-modal-btn').addEventListener('click', () => {
@@ -400,9 +478,9 @@ export function renderList() {
         valA = (a.category || 'zzz').toLowerCase();
         valB = (b.category || 'zzz').toLowerCase();
         return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
-      } else if (state.sortBy === 'progresso') {
-        valA = (window.userProgressCache && window.userProgressCache[a.videoId] !== undefined) ? Number(window.userProgressCache[a.videoId]) : 99;
-        valB = (window.userProgressCache && window.userProgressCache[b.videoId] !== undefined) ? Number(window.userProgressCache[b.videoId]) : 99;
+      } else if (state.sortBy === 'marcador') {
+        valA = (window.userMarkerCache && window.userMarkerCache[a.videoId] !== undefined) ? Number(window.userMarkerCache[a.videoId]) : 99;
+        valB = (window.userMarkerCache && window.userMarkerCache[b.videoId] !== undefined) ? Number(window.userMarkerCache[b.videoId]) : 99;
       } else if (state.sortBy === 'duracao') {
         valA = a.durationSeconds || 0;
         valB = b.durationSeconds || 0;
@@ -491,22 +569,25 @@ export function renderList() {
   }
 
   const isLogged = !!window.currentUser;
-  container.querySelectorAll('.card-status-select').forEach(el => el.disabled = !isLogged);
+  container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 }
 
-// Gerenciador global do pop-up flutuante das badges
-window.openBadgePopup = function(event, text) {
+// Gerenciador global unificado para pop-ups flutuantes
+window.openFloatingMenu = function(event, triggerElement, renderContentCallback) {
   event.stopPropagation();
   
-  // Remove pop-up anterior se houver
-  document.querySelectorAll('.badge-popup-tooltip').forEach(el => el.remove());
+  // Remove pop-up anterior
+  document.querySelectorAll('.floating-popup-tooltip').forEach(el => el.remove());
 
   const popup = document.createElement('div');
-  popup.className = 'badge-popup-tooltip';
-  popup.textContent = text;
+  popup.className = 'floating-popup-tooltip';
+  
+  // Insere o conteúdo gerado pelo callback
+  renderContentCallback(popup, () => closePopup());
+
   document.body.appendChild(popup);
 
-  const rect = event.currentTarget.getBoundingClientRect();
+  const rect = triggerElement.getBoundingClientRect();
   popup.style.top = `${rect.bottom + window.scrollY + 6}px`;
   popup.style.left = `${rect.left + window.scrollX}px`;
 
