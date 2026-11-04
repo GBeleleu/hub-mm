@@ -55,18 +55,25 @@ export function extractAllCollectionsTree() {
   return tree;
 }
 
-// Inicializa os padrões do Filtro caso estejam vazios
+// Inicializa os padrões do Filtro garantindo que tudo comece visível
 export function initFilterStateDefaults() {
   const tree = extractAllCollectionsTree();
   const allCats = Array.from(tree.categories);
   if (tree.hasUncategorized) allCats.push('Sem categoria');
 
+  // Se o estado de categorias estiver vazio ou não inicializado, preenche com todas
   if (!state.filterState.categories || state.filterState.categories.length === 0) {
     state.filterState.categories = [...allCats];
   }
 
+  // Se o estado de canais estiver vazio, preenche com todos os canais
   if (!state.filterState.channels || state.filterState.channels.length === 0) {
     state.filterState.channels = Array.from(tree.channels);
+  }
+
+  // Garante que todos os marcadores (incluindo 'null' para os sem marcador) estejam ativos por padrão
+  if (!state.filterState.markers || state.filterState.markers.length === 0) {
+    state.filterState.markers = ['0', '5', '1', '2', '3', 'null'];
   }
 }
 
@@ -398,12 +405,15 @@ function createToggleButton(text, isActive, onToggle) {
 
 // Avalia a visibilidade do vídeo baseando-se em Coleção Ativa ou Filtros
 export function isVideoCollectionsVisible(item) {
+  // Garante que o estado de filtros está inicializado
+  initFilterStateDefaults();
+
   // 1. Filtragem por Privacidade (Removidos)
   if (item.privacyStatus === 'removed' && !state.filterState.showRemoved) {
     return false;
   }
 
-  // 2. Modo Seleção de Coleção Única
+  // 2. Modo Seleção de Coleção Única (via menu Coleções)
   if (state.activeSingleCollection) {
     const { type, value } = state.activeSingleCollection;
 
@@ -428,17 +438,21 @@ export function isVideoCollectionsVisible(item) {
   }
 
   // 3. Modo Filtro (Show/Hide independente)
-  const isChannelMatch = state.filterState.channels.includes(item.channelTitle);
-  if (!isChannelMatch) return false;
+  const channelName = item.channelTitle ? item.channelTitle.trim() : 'Sem Canal';
+  if (!state.filterState.channels.includes(channelName)) {
+    return false;
+  }
 
   const catName = (item.category && item.category.trim()) ? item.category.trim() : 'Sem categoria';
-  const isCategoryMatch = state.filterState.categories.includes(catName);
-  if (!isCategoryMatch) return false;
+  if (!state.filterState.categories.includes(catName)) {
+    return false;
+  }
 
   const mVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
     ? String(window.userMarkerCache[item.videoId]) : 'null';
-  const isMarkerMatch = state.filterState.markers.includes(mVal);
-  if (!isMarkerMatch) return false;
+  if (!state.filterState.markers.includes(mVal)) {
+    return false;
+  }
 
   return true;
 }
