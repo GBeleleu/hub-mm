@@ -27,7 +27,15 @@ export let state = {
   sortBy: 'data',
   sortAscending: true,
   hiddenChannels: [],
-  scrollY: 0
+  scrollY: 0,
+  // Estado para Coleções e Filtros
+  activeSingleCollection: null, // { type: 'collection'|'playlist'|'category'|'marker', value: string|number, label: string }
+  filterState: {
+    markers: ['0', '5', '1', '2', '3', 'null'], // '0', '5', '1', '2', '3', 'null'
+    categories: [], // Populado dinamicamente
+    channels: [],   // Lista de canais ativos
+    showRemoved: false
+  }
 };
 
 export function saveState() {

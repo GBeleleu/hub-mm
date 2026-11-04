@@ -1,5 +1,5 @@
 import { videoDatabase, state } from './state.js';
-import { parseCollections, isVideoCollectionsVisible } from './collections.js';
+import { parseCollections, isVideoCollectionsVisible, renderCustomDisplayNotice } from './collections.js';
 
 function renderBadgesHtml(item) {
   let html = '';
@@ -451,15 +451,15 @@ export function renderList() {
   if (!container) return;
   container.innerHTML = '';
 
+  renderCustomDisplayNotice();
+
   if (videoDatabase.length === 0) {
     container.innerHTML = '<div class="status-message">Nenhum vídeo cadastrado.</div>';
     return;
   }
 
   let items = videoDatabase.filter(item => {
-    const isChannelVisible = !state.hiddenChannels.includes(item.channelTitle);
-    const isCollectionsVisible = isVideoCollectionsVisible(item);
-    return isChannelVisible && isCollectionsVisible;
+    return isVideoCollectionsVisible(item);
   });
 
   if (state.searchQuery.trim() !== '') {
