@@ -456,7 +456,7 @@ export function updateTopBannerNotice() {
     if (topBar) topBar.insertAdjacentElement('afterend', noticeContainer);
   }
 
-  // Verifica se há filtro ativo de Coleção/Atalho ou de Filtro customizado de categorias/marcadores
+  // Verifica se há algum filtro de categoria ou marcador desmarcado (exclui canais e removidos)
   const hasActiveCategoryOrMarkerFilter = Object.values(state.customFilterState.categories).includes(false) ||
                                           Object.values(state.customFilterState.markers).includes(false);
 
@@ -549,6 +549,18 @@ let items = videoDatabase.filter(item => {
 
     return true;
   });
+
+  // ------------------------------------------------------------------------
+  // BUSCA
+  // ------------------------------------------------------------------------
+  if (state.searchQuery.trim() !== '') {
+    items = items.filter(item => fuzzyMatch(item.title, state.searchQuery));
+  }
+
+  if (items.length === 0) {
+    container.innerHTML = '<div class="status-message">Nenhum resultado corresponde aos filtros aplicados.</div>';
+    return;
+  }
 
   const sortItems = (list) => {
     list.sort((a, b) => {
