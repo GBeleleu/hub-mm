@@ -462,6 +462,8 @@ export function updateTopBannerNotice() {
     noticeContainer.textContent = `Exibição personalizada - Coleção: ${state.activeCollectionFilter.name}. (clique aqui para voltar a exibir tudo)`;
     noticeContainer.onclick = () => {
       state.activeCollectionFilter = null;
+      state.customFilterNoticeActive = false;
+      state.customFilterState = { markers: {}, categories: {}, channels: {}, removed: false };
       updateTopBannerNotice();
       renderList();
     };
@@ -469,8 +471,8 @@ export function updateTopBannerNotice() {
     noticeContainer.style.display = 'block';
     noticeContainer.textContent = `Exibição personalizada - Filtro (clique aqui para voltar a exibir tudo)`;
     noticeContainer.onclick = () => {
+      state.activeCollectionFilter = null;
       state.customFilterNoticeActive = false;
-      // Reseta os filtros customizados para o padrão
       state.customFilterState = { markers: {}, categories: {}, channels: {}, removed: false };
       updateTopBannerNotice();
       renderList();
