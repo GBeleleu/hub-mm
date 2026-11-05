@@ -516,7 +516,7 @@ let items = videoDatabase.filter(item => {
     // 5. Filtro de Coleções Nativo
     if (!isVideoCollectionsVisible(item)) return false;
 
-    // 6. Coleção Selecionada via Atalho Direto
+    // 6. Coleção Selecionada via Atalho Direto (Sobrescreve o filtro global para exibir o alvo exato)
     if (state.activeCollectionFilter) {
       const { type, value } = state.activeCollectionFilter;
       if (type === 'collection') {
@@ -534,6 +534,7 @@ let items = videoDatabase.filter(item => {
       } else if (type === 'marker') {
         if (markerVal !== value) return false;
       }
+      return true; // Retorna direto para respeitar o atalho rápido independentemente dos checkboxes globais
     }
 
     return true;
