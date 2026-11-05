@@ -516,27 +516,6 @@ let items = videoDatabase.filter(item => {
     // 5. Filtro de Coleções Nativo
     if (!isVideoCollectionsVisible(item)) return false;
 
-    // 6. Coleção Selecionada via Atalho Direto (Sobrescreve o filtro global para exibir o alvo exato)
-    if (state.activeCollectionFilter) {
-      const { type, value } = state.activeCollectionFilter;
-      if (type === 'collection') {
-        const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
-        if (!cols.some(c => c && c.trim().toLowerCase() === value.toLowerCase())) return false;
-      } else if (type === 'playlist') {
-        const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
-        if (!pls.some(p => p && p.trim().toLowerCase() === value.toLowerCase())) return false;
-      } else if (type === 'category') {
-        if (value === 'NULL') {
-          if (item.category && item.category.trim()) return false;
-        } else {
-          if (!item.category || item.category.trim().toLowerCase() !== value.toLowerCase()) return false;
-        }
-      } else if (type === 'marker') {
-        if (markerVal !== value) return false;
-      }
-      return true; // Retorna direto para respeitar o atalho rápido independentemente dos checkboxes globais
-    }
-
     return true;
   });
 

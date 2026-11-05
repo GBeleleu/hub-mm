@@ -312,28 +312,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.applyCollectionShortcut = function(type, value) {
-  state.activeCollectionFilter = { type, value, name: value };
+  // Limpa o atalho restritivo para dar total liberdade aos checkboxes globais do filtro
+  state.activeCollectionFilter = null; 
+  state.customFilterNoticeActive = true;
 
   // Sincroniza o estado do Filtro Global para refletir apenas a seleção do atalho
   if (type === 'category') {
     state.customFilterState.categories = {};
-    // Marca apenas a categoria selecionada como true, e as outras como false
     const catSet = new Set();
     videoDatabase.forEach(item => {
       const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
       catSet.add(catKey);
     });
     catSet.forEach(cat => {
-      state.customFilterState.categories[cat] = (cat.toLowerCase() === value.toLowerCase() || (value === 'NULL' && cat === 'NULL'));
+      state.customFilterState.categories[cat] = (cat.toLowerCase() === String(value).toLowerCase() || (value === 'NULL' && cat === 'NULL'));
     });
-    state.customFilterNoticeActive = true;
   } else if (type === 'marker') {
     state.customFilterState.markers = {};
     const markerKeys = ['0', '5', '1', '2', '3', 'NULL'];
     markerKeys.forEach(mKey => {
       state.customFilterState.markers[mKey] = (mKey === String(value));
     });
-    state.customFilterNoticeActive = true;
+  } else if (type === 'collection') {
+    // Para coleções, podemos garantir que o filtro exiba os itens que possuem essa coleção
+    // Deixando o motor principal gerenciar pelos checkboxes ou tags
   }
   
   // Fecha o modal de coleções se estiver aberto
