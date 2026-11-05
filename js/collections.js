@@ -218,22 +218,23 @@ export function populateFilterModal() {
   if (!container) return;
   container.innerHTML = '';
 
-  // --- BOTÃO MESTRE: EXIBIR TUDO ---
+  // --- BOTÃO MESTRE: EXIBIR TUDO (Isolado para Categorias e Marcadores) ---
   const masterDiv = document.createElement('div');
   masterDiv.style.cssText = 'padding:8px 0; border-bottom:1px solid var(--border-color); margin-bottom:12px;';
   const masterBtn = document.createElement('button');
   masterBtn.className = 'btn-group-item highlighted';
   masterBtn.style.width = '100%';
   masterBtn.textContent = 'Exibir tudo';
-  masterBtn.title = 'Marca para exibir todos (exceto Canais e Removidos)';
+  masterBtn.title = 'Marca para exibir todas as categorias e marcadores';
   masterBtn.onclick = () => {
+    state.activeCollectionFilter = null;
     state.customFilterState.markers = {};
     state.customFilterState.categories = {};
-    state.customFilterState.channels = {};
-    state.hiddenChannels = [];
-    state.customFilterState.removed = false;
+    // PRESERVADO: Canais e Removidos não são tocados aqui!
     state.customFilterNoticeActive = false;
     populateFilterModal();
+    if (typeof updateTopBannerNotice === 'function') updateTopBannerNotice();
+    if (typeof renderList === 'function') renderList();
   };
   masterDiv.appendChild(masterBtn);
   container.appendChild(masterDiv);
@@ -349,7 +350,7 @@ export function populateFilterModal() {
     populateFilterModal();
   };
 
-  // --- BLOCO 3: CANAIS ---
+  // --- BLOCO 3: CANAIS (ISOLADO - NÃO ATIVA BANNER) ---
   const chanGroup = document.createElement('div');
   chanGroup.className = 'collections-group';
   chanGroup.style.marginBottom = '12px';
@@ -377,7 +378,7 @@ export function populateFilterModal() {
       } else {
         state.hiddenChannels = state.hiddenChannels.filter(c => c !== chan);
       }
-      state.customFilterNoticeActive = true;
+      // REMOVIDO o state.customFilterNoticeActive = true daqui para manter isolado
     };
 
     label.appendChild(chk);
@@ -385,7 +386,7 @@ export function populateFilterModal() {
     chanGroup.appendChild(label);
   });
 
-  // --- BLOCO 4: STATUS (REMOVIDOS) ---
+  // --- BLOCO 4: STATUS (REMOVIDOS) (ISOLADO - NÃO ATIVA BANNER) ---
   const remGroup = document.createElement('div');
   remGroup.className = 'collections-group';
   remGroup.innerHTML = '<div class="collections-group-title">STATUS</div>';
@@ -398,7 +399,7 @@ export function populateFilterModal() {
   remChk.checked = !!state.customFilterState.removed;
   remChk.onchange = (e) => {
     state.customFilterState.removed = e.target.checked;
-    state.customFilterNoticeActive = true;
+    // REMOVIDO o state.customFilterNoticeActive = true daqui para manter isolado
   };
 
   remLabel.appendChild(remChk);
