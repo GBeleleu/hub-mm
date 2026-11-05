@@ -1,7 +1,7 @@
 /**
  * js/collections.js - Extrator e Gerenciador de Coleções (Consumidor Nativo)
  */
-import { videoDatabase, hiddenCollectionsTags } from './state.js';
+import { videoDatabase, hiddenCollectionsTags, state } from './state.js';
 
 export function parseCollections(item) {
   return {
