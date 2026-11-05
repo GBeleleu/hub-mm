@@ -48,40 +48,149 @@ export function populateCollectionsModal() {
   if (!container) return;
   container.innerHTML = '';
 
-  const collectionsTree = extractAllCollectionsTags();
-  const keys = Object.keys(collectionsTree).filter(k => collectionsTree[k].size > 0);
-
-  if (keys.length === 0) {
-    container.innerHTML = '<p style="color:var(--text-muted); font-size:13px;">Nenhuma coleção cadastrada na base de dados.</p>';
-    return;
-  }
-
-  keys.forEach(key => {
-    const groupDiv = document.createElement('div');
-    groupDiv.className = 'collections-group';
-
-    const title = document.createElement('div');
-    title.className = 'collections-group-title';
-    title.textContent = key.toUpperCase();
-    groupDiv.appendChild(title);
-
-    Array.from(collectionsTree[key]).sort().forEach(val => {
-      const tagKey = `${key}:${val}`.toLowerCase();
-      const label = document.createElement('label');
-      label.className = 'collections-item';
-
-      const checkbox = document.createElement('input');
-      checkbox.type = 'checkbox';
-      checkbox.value = tagKey;
-      checkbox.checked = !hiddenCollectionsTags.map(t => t.toLowerCase()).includes(tagKey);
-
-      label.appendChild(checkbox);
-      label.appendChild(document.createTextNode(val));
-      groupDiv.appendChild(label);
-    });
-
-    container.appendChild(groupDiv);
+  // Bloco 1: Coleções
+  const colGroup = document.createElement('div');
+  colGroup.className = 'collections-group';
+  colGroup.innerHTML = '<div class="collections-group-title">COLEÇÕES</div>';
+  
+  const collectionsSet = new Set();
+  videoDatabase.forEach(item => {
+    const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
+    cols.forEach(c => { if (c && c.trim()) collectionsSet.add(c.trim()); });
   });
+
+  if (collectionsSet.size === 0) {
+    colGroup.innerHTML += '<p style="color:var(--text-muted); font-size:12px;">Nenhuma coleção cadastrada.</p>';
+  } else {
+    Array.from(collectionsSet).sort().forEach(val => {
+      const btn = document.createElement('button');
+      btn.className = 'btn-group-item';
+      btn.style.width = '100%';
+      btn.style.marginBottom = '4px';
+      btn.textContent = val;
+      btn.onclick = () => {
+        window.applyCollectionShortcut('collection', val);
+      };
+      colGroup.appendChild(btn);
+    });
+  }
+  container.appendChild(colGroup);
+
+  // Bloco 2: Playlists (separadas por canais)
+  const playlistGroup = document.createElement('div');
+  playlistGroup.className = 'collections-group';
+  playlistGroup.innerHTML = '<div class="collections-group-title">PLAYLISTS POR CANAL</div>';
+  
+  const channelPlaylists = new Map();
+  videoDatabase.forEach(item => {
+    const channel = item.channelTitle || 'Canal Desconhecido';
+    const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+    pls.forEach(p => {
+      if (p && p.trim()) {
+        if (!channelPlaylists.has(channel)) channelPlaylists.set(channel, new Set());
+        channelPlaylists.get(channel).add(p.trim());
+      }
+    });
+  });
+
+  if (channelPlaylists.size === 0) {
+    playlistGroup.innerHTML += '<p style="color:var(--text-muted); font-size:12px;">Nenhuma playlist cadastrada.</p>';
+  } else {
+    channelPlaylists.forEach((plsSet, channelName) => {
+      const chanDiv = document.createElement('div');
+      chanDiv.style.marginLeft = '8px';
+      chanDiv.style.marginBottom = '6px';
+      chanDiv.innerHTML = `<strong style="font-size:12px; color:var(--text-secondary);">${channelName}</strong>`;
+      
+      Array.from(plsSet).sort().forEach(pl => {
+        const btn = document.createElement('button');
+        btn.className = 'btn-group-item';
+        btn.style.display = 'block';
+        btn.style.width = '100%';
+        btn.style.marginTop = '2px';
+        btn.textContent = pl;
+        btn.onclick = () => window.applyCollectionShortcut('playlist', pl);
+        chanDiv.appendChild(btn);
+      });
+      playlistGroup.appendChild(chanDiv);
+    });
+  }
+  container.appendChild(playlistGroup);
+
+  // Bloco 3: Categorias
+  const catGroup = document.createElement('div');
+  catGroup.className = 'collections-group';
+  catGroup.innerHTML = '<div class="collections-group-title">CATEGORIAS</div>';
+  
+  const catSet = new Set();
+  let hasNullCategory = false;
+  videoDatabase.forEach(item => {
+    if (item.category && item.category.trim()) {
+      catSet.add(item.category.trim());
+    } else {
+      hasNullCategory = true;
+    }
+  });
+
+  Array.from(catSet).sort().forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'btn-group-item';
+    btn.style.width = '100%';
+    btn.style.marginBottom = '4px';
+    btn.textContent = cat;
+    btn.onclick = () => window.applyCollectionShortcut('category', cat);
+    catGroup.appendChild(btn);
+  });
+
+  if (hasNullCategory) {
+    const btnNull = document.createElement('button');
+    btnNull.className = 'btn-group-item';
+    btnNull.style.width = '100%';
+    btnNull.style.marginBottom = '4px';
+    btnNull.textContent = 'Sem categoria';
+    btnNull.onclick = () => window.applyCollectionShortcut('category', 'NULL');
+    catGroup.appendChild(btnNull);
+  }
+  container.appendChild(catGroup);
+
+  // Bloco 4: Marcadores
+  const markGroup = document.createElement('div');
+  markGroup.className = 'collections-group';
+  markGroup.innerHTML = '<div class="collections-group-title">MARCADORES</div>';
+  
+  const markersList = [
+    { label: 'Visto', val: '0' },
+    { label: 'Rever', val: '5', children: [
+      { label: 'Alta', val: '1' },
+      { label: 'Média', val: '2' },
+      { label: 'Baixa', val: '3' }
+    ]},
+    { label: 'Indefinidos', val: 'NULL' }
+  ];
+
+  markersList.forEach(m => {
+    const btn = document.createElement('button');
+    btn.className = 'btn-group-item';
+    btn.style.width = '100%';
+    btn.style.marginBottom = '4px';
+    btn.textContent = m.label;
+    btn.onclick = () => window.applyCollectionShortcut('marker', m.val);
+    markGroup.appendChild(btn);
+
+    if (m.children) {
+      m.children.forEach(sub => {
+        const subBtn = document.createElement('button');
+        subBtn.className = 'btn-group-item';
+        subBtn.style.width = 'calc(100% - 16px)';
+        subBtn.style.marginLeft = '16px';
+        subBtn.style.marginBottom = '4px';
+        subBtn.textContent = `Prioridade: ${sub.label}`;
+        subBtn.onclick = () => window.applyCollectionShortcut('marker', sub.val);
+        markGroup.appendChild(subBtn);
+      });
+    }
+  });
+  container.appendChild(markGroup);
 }
 
 export function isVideoCollectionsVisible(item) {

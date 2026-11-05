@@ -446,9 +446,46 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   return fallbackCard;
 }
 
+export function updateTopBannerNotice() {
+  let noticeContainer = document.getElementById('customNoticeBanner');
+  if (!noticeContainer) {
+    noticeContainer = document.createElement('div');
+    noticeContainer.id = 'customNoticeBanner';
+    noticeContainer.style.cssText = 'background:var(--bg-secondary); border-bottom:1px solid var(--border-color); text-align:center; padding:6px; font-size:12px; color:var(--accent-color); cursor:pointer; display:none;';
+    const topBar = document.getElementById('topBar');
+    if (topBar) topBar.insertAdjacentElement('afterend', noticeContainer);
+  }
+
+  // Verifica se há filtro ativo de Coleção ou de Filtro customizado
+  if (state.activeCollectionFilter) {
+    noticeContainer.style.display = 'block';
+    noticeContainer.textContent = `Exibição personalizada - Coleção: ${state.activeCollectionFilter.name}. (clique aqui para voltar a exibir tudo)`;
+    noticeContainer.onclick = () => {
+      state.activeCollectionFilter = null;
+      updateTopBannerNotice();
+      renderList();
+    };
+  } else if (state.customFilterNoticeActive) {
+    noticeContainer.style.display = 'block';
+    noticeContainer.textContent = `Exibição personalizada - Filtro (clique aqui para voltar a exibir tudo)`;
+    noticeContainer.onclick = () => {
+      state.customFilterNoticeActive = false;
+      // Reseta os filtros customizados para o padrão
+      state.customFilterState = { markers: {}, categories: {}, channels: {}, removed: false };
+      updateTopBannerNotice();
+      renderList();
+    };
+  } else {
+    noticeContainer.style.display = 'none';
+  }
+}
+
 export function renderList() {
   const container = document.getElementById('videoListContainer');
   if (!container) return;
+
+  updateTopBannerNotice();
+  
   container.innerHTML = '';
 
   if (videoDatabase.length === 0) {
@@ -456,9 +493,32 @@ export function renderList() {
     return;
   }
 
-  let items = videoDatabase.filter(item => {
+let items = videoDatabase.filter(item => {
     const isChannelVisible = !state.hiddenChannels.includes(item.channelTitle);
     const isCollectionsVisible = isVideoCollectionsVisible(item);
+    
+    // Se houver um filtro de coleção ativo via botão direto do modal:
+    if (state.activeCollectionFilter) {
+      const { type, value } = state.activeCollectionFilter;
+      if (type === 'collection') {
+        const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
+        if (!cols.some(c => c && c.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'playlist') {
+        const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+        if (!pls.some(p => p && p.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'category') {
+        if (value === 'NULL') {
+          if (item.category && item.category.trim()) return false;
+        } else {
+          if (!item.category || item.category.trim().toLowerCase() !== value.toLowerCase()) return false;
+        }
+      } else if (type === 'marker') {
+        const currentMarker = window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined 
+          ? String(window.userMarkerCache[item.videoId]) : 'NULL';
+        if (currentMarker !== value) return false;
+      }
+    }
+
     return isChannelVisible && isCollectionsVisible;
   });
 

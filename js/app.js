@@ -1,6 +1,6 @@
 import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddenCollectionsTags, videoDatabase } from './state.js';
 import { populateCollectionsModal } from './collections.js';
-import { renderList } from './render.js';
+import { renderList, updateTopBannerNotice } from './render.js';
 
 let debounceTimer = null;
 
@@ -326,3 +326,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', saveState);
 });
+
+window.applyCollectionShortcut = function(type, value) {
+  state.activeCollectionFilter = { type, value, name: value };
+  
+  // Fecha o modal de coleções se estiver aberto
+  const modal = document.getElementById('collectionsModal');
+  if (modal) modal.classList.remove('open');
+
+  updateTopBannerNotice();
+  renderList();
+};
