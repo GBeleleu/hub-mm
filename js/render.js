@@ -456,20 +456,22 @@ export function updateTopBannerNotice() {
     if (topBar) topBar.insertAdjacentElement('afterend', noticeContainer);
   }
 
-  // Verifica se há filtro ativo de Coleção ou de Atalho
+  // Verifica se há filtro ativo de Coleção/Atalho ou de Filtro customizado de categorias/marcadores
+  const hasActiveCategoryOrMarkerFilter = Object.values(state.customFilterState.categories).includes(false) ||
+                                          Object.values(state.customFilterState.markers).includes(false);
+
   if (state.activeCollectionFilter) {
     noticeContainer.style.display = 'block';
     noticeContainer.textContent = `Exibição personalizada - Coleção: ${state.activeCollectionFilter.name}. (clique aqui para voltar a exibir tudo)`;
     noticeContainer.onclick = () => {
       state.activeCollectionFilter = null;
       state.customFilterNoticeActive = false;
-      // Reseta apenas categorias e marcadores, preservando canais e removidos
       state.customFilterState.categories = {};
       state.customFilterState.markers = {};
       updateTopBannerNotice();
       renderList();
     };
-  } else if (state.customFilterNoticeActive) {
+  } else if (state.customFilterNoticeActive || hasActiveCategoryOrMarkerFilter) {
     noticeContainer.style.display = 'block';
     noticeContainer.textContent = `Exibição personalizada - Filtro (clique aqui para voltar a exibir tudo)`;
     noticeContainer.onclick = () => {
@@ -504,34 +506,49 @@ let items = videoDatabase.filter(item => {
       return false;
     }
 
-    // 2. Filtro por Canais
+    // 2. Filtro por Canais (Isolado, não afeta o banner central)
     const isChannelHidden = state.hiddenChannels.includes(item.channelTitle) || 
                             state.customFilterState.channels[item.channelTitle] === false;
     if (isChannelHidden) return false;
 
-    // 3. Filtro por Categorias (tratando nulos como 'NULL')
+    // 3. Se houver um atalho ativo de Coleção/Categoria/Marcador/Playlist
+    if (state.activeCollectionFilter) {
+      const { type, value } = state.activeCollectionFilter;
+      if (type === 'collection') {
+        const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
+        if (!cols.some(c => c && c.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'playlist') {
+        const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+        if (!pls.some(p => p && p.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'category') {
+        const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
+        if (value === 'NULL') {
+          if (item.category && item.category.trim()) return false;
+        } else {
+          if (!item.category || item.category.trim().toLowerCase() !== value.toLowerCase()) return false;
+        }
+      } else if (type === 'marker') {
+        const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
+          ? String(window.userMarkerCache[item.videoId]) : 'NULL';
+        if (markerVal !== value) return false;
+      }
+      return true;
+    }
+
+    // 4. Filtro Global por Categorias (Checkboxes do Modal de Filtro)
     const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
     if (state.customFilterState.categories[catKey] === false) return false;
 
-    // 4. Filtro por Marcadores (tratando nulos como 'NULL')
+    // 5. Filtro Global por Marcadores (Checkboxes do Modal de Filtro)
     const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
       ? String(window.userMarkerCache[item.videoId]) : 'NULL';
     if (state.customFilterState.markers[markerVal] === false) return false;
 
-    // 5. Filtro de Coleções Nativo
+    // 6. Filtro de Coleções Nativo
     if (!isVideoCollectionsVisible(item)) return false;
 
     return true;
   });
-
-  if (state.searchQuery.trim() !== '') {
-    items = items.filter(item => fuzzyMatch(item.title, state.searchQuery));
-  }
-
-  if (items.length === 0) {
-    container.innerHTML = '<div class="status-message">Nenhum resultado corresponde aos filtros aplicados.</div>';
-    return;
-  }
 
   const sortItems = (list) => {
     list.sort((a, b) => {
