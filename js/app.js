@@ -313,6 +313,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.applyCollectionShortcut = function(type, value) {
   state.activeCollectionFilter = { type, value, name: value };
+
+  // Sincroniza o estado do Filtro Global para refletir apenas a seleção do atalho
+  if (type === 'category') {
+    state.customFilterState.categories = {};
+    // Marca apenas a categoria selecionada como true, e as outras como false
+    const catSet = new Set();
+    videoDatabase.forEach(item => {
+      const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
+      catSet.add(catKey);
+    });
+    catSet.forEach(cat => {
+      state.customFilterState.categories[cat] = (cat.toLowerCase() === value.toLowerCase() || (value === 'NULL' && cat === 'NULL'));
+    });
+    state.customFilterNoticeActive = true;
+  } else if (type === 'marker') {
+    state.customFilterState.markers = {};
+    const markerKeys = ['0', '5', '1', '2', '3', 'NULL'];
+    markerKeys.forEach(mKey => {
+      state.customFilterState.markers[mKey] = (mKey === String(value));
+    });
+    state.customFilterNoticeActive = true;
+  }
   
   // Fecha o modal de coleções se estiver aberto
   const modal = document.getElementById('collectionsModal');
