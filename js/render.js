@@ -494,10 +494,29 @@ export function renderList() {
   }
 
 let items = videoDatabase.filter(item => {
-    const isChannelVisible = !state.hiddenChannels.includes(item.channelTitle);
-    const isCollectionsVisible = isVideoCollectionsVisible(item);
-    
-    // Se houver um filtro de coleção ativo via botão direto do modal:
+    // 1. Status de Removidos (Desativado por padrão)
+    if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
+      return false;
+    }
+
+    // 2. Filtro por Canais
+    const isChannelHidden = state.hiddenChannels.includes(item.channelTitle) || 
+                            state.customFilterState.channels[item.channelTitle] === false;
+    if (isChannelHidden) return false;
+
+    // 3. Filtro por Categorias (tratando nulos como 'NULL')
+    const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
+    if (state.customFilterState.categories[catKey] === false) return false;
+
+    // 4. Filtro por Marcadores (tratando nulos como 'NULL')
+    const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
+      ? String(window.userMarkerCache[item.videoId]) : 'NULL';
+    if (state.customFilterState.markers[markerVal] === false) return false;
+
+    // 5. Filtro de Coleções Nativo
+    if (!isVideoCollectionsVisible(item)) return false;
+
+    // 6. Coleção Selecionada via Atalho Direto
     if (state.activeCollectionFilter) {
       const { type, value } = state.activeCollectionFilter;
       if (type === 'collection') {
@@ -513,13 +532,11 @@ let items = videoDatabase.filter(item => {
           if (!item.category || item.category.trim().toLowerCase() !== value.toLowerCase()) return false;
         }
       } else if (type === 'marker') {
-        const currentMarker = window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined 
-          ? String(window.userMarkerCache[item.videoId]) : 'NULL';
-        if (currentMarker !== value) return false;
+        if (markerVal !== value) return false;
       }
     }
 
-    return isChannelVisible && isCollectionsVisible;
+    return true;
   });
 
   if (state.searchQuery.trim() !== '') {

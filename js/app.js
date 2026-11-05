@@ -1,5 +1,5 @@
 import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddenCollectionsTags, videoDatabase } from './state.js';
-import { populateCollectionsModal } from './collections.js';
+import { populateCollectionsModal, populateFilterModal } from './js/collections.js';
 import { renderList, updateTopBannerNotice } from './render.js';
 
 let debounceTimer = null;
@@ -102,7 +102,7 @@ async function loadDatabase() {
 
     setVideoDatabase(data);
     populateYearSelector();
-    populateChannelsModal();
+    populateFilterModal();
     renderList();
 
     if (state.scrollY) window.scrollTo(0, state.scrollY);
@@ -134,22 +134,9 @@ function populateYearSelector() {
   });
 }
 
-function populateChannelsModal() {
-  const container = document.getElementById('channelsListContainer');
-  if (!container) return;
-  container.innerHTML = '';
-
-  const channels = [...new Set(videoDatabase.map(v => v.channelTitle))].filter(Boolean).sort();
-  channels.forEach(channel => {
-    const label = document.createElement('label');
-    label.className = 'channel-checkbox-item';
-    const isChecked = !state.hiddenChannels.includes(channel);
-    label.innerHTML = `<input type="checkbox" value="${channel}" ${isChecked ? 'checked' : ''}><span>${channel}</span>`;
-    container.appendChild(label);
-  });
-}
-
-//DOM LISTENERS
+// ==========================================================================
+// INICIALIZAÇÃO DE EVENTOS DA APLICAÇÃO (Event Listeners)
+// ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   loadState();
   // Normaliza o modo de exibição na carga inicial para garantir sincronia com os botões
@@ -284,24 +271,21 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('occurrencesModal')?.classList.remove('open');
   });
 
-  document.getElementById('channelsModalBtn')?.addEventListener('click', () => {
-    populateChannelsModal();
-    document.getElementById('channelsModal')?.classList.add('open');
+  // EVENTOS PARA O MODAL DE FILTRO
+  document.getElementById('filterModalBtn')?.addEventListener('click', () => {
+    populateFilterModal();
+    document.getElementById('filterModal')?.classList.add('open');
   });
 
-  document.getElementById('closeModalBtn')?.addEventListener('click', () => {
-    document.getElementById('channelsModal')?.classList.remove('open');
+  document.getElementById('closeFilterModalBtn')?.addEventListener('click', () => {
+    document.getElementById('filterModal')?.classList.remove('open');
   });
 
-  document.getElementById('applyChannelsBtn')?.addEventListener('click', () => {
-    const hidden = [];
-    document.querySelectorAll('#channelsListContainer input[type="checkbox"]').forEach(cb => {
-      if (!cb.checked) hidden.push(cb.value);
-    });
-    state.hiddenChannels = hidden;
+  document.getElementById('applyFilterBtn')?.addEventListener('click', () => {
     saveState();
+    updateTopBannerNotice();
     renderList();
-    document.getElementById('channelsModal')?.classList.remove('open');
+    document.getElementById('filterModal')?.classList.remove('open');
   });
 
   document.getElementById('collectionsModalBtn')?.addEventListener('click', () => {

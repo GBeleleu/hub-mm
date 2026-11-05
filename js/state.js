@@ -27,8 +27,9 @@ export let state = {
   sortBy: 'data',
   sortAscending: true,
   hiddenChannels: [],
-  activeCollectionFilter: null, // Novo: Armazena o filtro ativo de coleção/categoria/marcador
-  customFilterState: {          // Novo: Estado detalhado do modal de Filtro
+  activeCollectionFilter: null,
+  customFilterNoticeActive: false,
+  customFilterState: {
     markers: {},
     categories: {},
     channels: {},
