@@ -456,14 +456,16 @@ export function updateTopBannerNotice() {
     if (topBar) topBar.insertAdjacentElement('afterend', noticeContainer);
   }
 
-  // Verifica se há filtro ativo de Coleção ou de Filtro customizado
+  // Verifica se há filtro ativo de Coleção ou de Atalho
   if (state.activeCollectionFilter) {
     noticeContainer.style.display = 'block';
     noticeContainer.textContent = `Exibição personalizada - Coleção: ${state.activeCollectionFilter.name}. (clique aqui para voltar a exibir tudo)`;
     noticeContainer.onclick = () => {
       state.activeCollectionFilter = null;
       state.customFilterNoticeActive = false;
-      state.customFilterState = { markers: {}, categories: {}, channels: {}, removed: false };
+      // Reseta apenas categorias e marcadores, preservando canais e removidos
+      state.customFilterState.categories = {};
+      state.customFilterState.markers = {};
       updateTopBannerNotice();
       renderList();
     };
@@ -473,7 +475,8 @@ export function updateTopBannerNotice() {
     noticeContainer.onclick = () => {
       state.activeCollectionFilter = null;
       state.customFilterNoticeActive = false;
-      state.customFilterState = { markers: {}, categories: {}, channels: {}, removed: false };
+      state.customFilterState.categories = {};
+      state.customFilterState.markers = {};
       updateTopBannerNotice();
       renderList();
     };
