@@ -499,7 +499,7 @@ export function renderList() {
     container.innerHTML = '<div class="status-message">Nenhum vídeo cadastrado.</div>';
     return;
   }
-
+  
 let items = videoDatabase.filter(item => {
     // 1. Status de Removidos (Desativado por padrão)
     if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
@@ -550,9 +550,37 @@ let items = videoDatabase.filter(item => {
     return true;
   });
 
-  // ------------------------------------------------------------------------
+  // ==========================================================================
+  // Mapeamento de Mestres para o modo CONSOLIDADO
+  // ==========================================================================
+  if (state.organizeMode === 'consolidado') {
+    // Cria um mapa de referência rápida para buscar itens por videoId no banco
+    const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
+    const resolvedMasterIds = new Set();
+    const consolidatedItems = [];
+
+    items.forEach(item => {
+      // Se o item já for mestre, mantemos ele
+      if (item.isMaster) {
+        if (!resolvedMasterIds.has(item.videoId)) {
+          resolvedMasterIds.add(item.videoId);
+          consolidatedItems.push(item);
+        }
+      } else if (item.masterId) {
+        // Se for um vídeo de playlist/secundário, buscamos o mestre correspondente no banco
+        const masterItem = videoMap.get(item.masterId);
+        if (masterItem && !resolvedMasterIds.has(masterItem.videoId)) {
+          resolvedMasterIds.add(masterItem.videoId);
+          consolidatedItems.push(masterItem);
+        }
+      }
+    });
+    items = consolidatedItems;
+  }
+
+  // ==========================================================================
   // BUSCA
-  // ------------------------------------------------------------------------
+  // ==========================================================================
   if (state.searchQuery.trim() !== '') {
     items = items.filter(item => fuzzyMatch(item.title, state.searchQuery));
   }
