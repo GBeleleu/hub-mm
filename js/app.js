@@ -1,5 +1,5 @@
 import { CONFIG, state, loadState, saveState, setVideoDatabase, setHiddenCollectionsTags, videoDatabase } from './state.js';
-import { populateCollectionsModal, populateFilterModal } from './js/collections.js';
+import { populateCollectionsModal, populateFilterModal } from './collections.js';
 import { renderList, updateTopBannerNotice } from './render.js';
 
 let debounceTimer = null;
