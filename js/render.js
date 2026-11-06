@@ -688,70 +688,17 @@ export function renderList() {
     });
   }
 
-  // ==========================================================================
-  // 6. ESTADO DE AUTENTICAÇÃO DOS BOTÕES DE MARCADORES
-  // ==========================================================================
+// ==========================================================================
+// 6. ESTADO DE AUTENTICAÇÃO DOS BOTÕES DE MARCADORES
+// ==========================================================================
   const isLogged = !!window.currentUser;
   container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 }
 
-  // Lógica de Organização
-  if (state.organizeMode === 'consolidado') {
-    const masterMap = new Map();
-    const duplicatesMap = new Map();
 
-    items.forEach(item => {
-      if (item.isMaster) {
-        masterMap.set(item.videoId, item);
-      } else {
-        if (!duplicatesMap.has(item.masterId)) duplicatesMap.set(item.masterId, []);
-        duplicatesMap.get(item.masterId).push(item);
-      }
-    });
-
-    let masterList = Array.from(masterMap.values());
-    sortItems(masterList);
-
-    masterList.forEach(masterItem => {
-      const duplicates = duplicatesMap.get(masterItem.videoId) || [];
-      targetContainer.appendChild(createCardElement(masterItem, duplicates));
-    });
-  } else if (state.organizeMode === 'sequenciado-canais') {
-    const channelGroups = new Map();
-    items.forEach(item => {
-      if (!channelGroups.has(item.channelTitle)) channelGroups.set(item.channelTitle, []);
-      channelGroups.get(item.channelTitle).push(item);
-    });
-
-    channelGroups.forEach((groupItems, channelName) => {
-      const groupTitle = document.createElement('div');
-      groupTitle.className = 'channel-group-title';
-      groupTitle.textContent = channelName;
-      container.appendChild(groupTitle);
-
-      let groupTarget = container;
-      if (state.displayMode === 'grade') {
-        groupTarget = document.createElement('div');
-        groupTarget.className = 'grid-container-grade';
-        container.appendChild(groupTarget);
-      }
-
-      groupItems.forEach(item => {
-        const el = createCardElement(item, []);
-        if (el instanceof Node) groupTarget.appendChild(el);
-      });
-    });
-  } else {
-    items.forEach(item => {
-      const el = createCardElement(item, []);
-      if (el instanceof Node) targetContainer.appendChild(el);
-    });
-  }
-
-  container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
-}
-
+// ==========================================================================
 // Gerenciador global unificado para pop-ups flutuantes
+// ==========================================================================
 window.openFloatingMenu = function(event, triggerElement, renderContentCallback) {
   event.stopPropagation();
   
@@ -761,7 +708,6 @@ window.openFloatingMenu = function(event, triggerElement, renderContentCallback)
   const popup = document.createElement('div');
   popup.className = 'floating-popup-tooltip';
   
-  // Insere o conteúdo gerado pelo callback
   renderContentCallback(popup, () => closePopup());
 
   document.body.appendChild(popup);
