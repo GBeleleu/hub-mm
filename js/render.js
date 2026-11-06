@@ -487,31 +487,34 @@ export function updateTopBannerNotice() {
   }
 }
 
+// ==========================================================================
+// RENDERLIST
+// ==========================================================================
 export function renderList() {
   const container = document.getElementById('videoListContainer');
   if (!container) return;
 
   updateTopBannerNotice();
-  
   container.innerHTML = '';
 
   if (videoDatabase.length === 0) {
     container.innerHTML = '<div class="status-message">Nenhum vídeo cadastrado.</div>';
     return;
   }
-  
-let items = videoDatabase.filter(item => {
-    // 1. Status de Removidos (Desativado por padrão)
+
+  // 1. FILTRAGEM INICIAL DE ITENS (Status, Canais, Atalhos e Categorias)
+  let items = videoDatabase.filter(item => {
+    // Status de Removidos (Desativado por padrão)
     if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
       return false;
     }
 
-    // 2. Filtro por Canais (Isolado, não afeta o banner central)
+    // Filtro por Canais
     const isChannelHidden = state.hiddenChannels.includes(item.channelTitle) || 
                             state.customFilterState.channels[item.channelTitle] === false;
     if (isChannelHidden) return false;
 
-    // 3. Se houver um atalho ativo de Coleção/Categoria/Marcador/Playlist
+    // Atalho ativo de Coleção/Categoria/Marcador/Playlist
     if (state.activeCollectionFilter) {
       const { type, value } = state.activeCollectionFilter;
       if (type === 'collection') {
@@ -535,118 +538,23 @@ let items = videoDatabase.filter(item => {
       return true;
     }
 
-    // 4. Filtro Global por Categorias (Checkboxes do Modal de Filtro)
+    // Filtro Global por Categorias
     const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
     if (state.customFilterState.categories[catKey] === false) return false;
 
-    // 5. Filtro Global por Marcadores (Checkboxes do Modal de Filtro)
+    // Filtro Global por Marcadores
     const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
       ? String(window.userMarkerCache[item.videoId]) : 'NULL';
     if (state.customFilterState.markers[markerVal] === false) return false;
 
-    // 6. Filtro de Coleções Nativo
+    // Filtro de Coleções Nativo
     if (!isVideoCollectionsVisible(item)) return false;
 
     return true;
   });
 
   // ==========================================================================
-  // Mapeamento de Mestres para o modo CONSOLIDADO
-  // ==========================================================================
-  if (state.organizeMode === 'consolidado') {
-    const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
-    const masterMap = new Map();
-    const duplicatesMap = new Map();
-
-    // 1. Identifica os mestres elegíveis e mapeia as ocorrências/duplicatas correspondentes
-    items.forEach(item => {
-      let targetMasterId = item.isMaster ? item.videoId : item.masterId;
-      if (!targetMasterId) return;
-
-      const masterItem = videoMap.get(targetMasterId);
-      if (!masterItem) return;
-
-      // Armazena o mestre único
-      if (!masterMap.has(masterItem.videoId)) {
-        masterMap.set(masterItem.videoId, masterItem);
-      }
-
-      // Se o item atual não for o mestre, ele entra como ocorrência/duplicata do mestre
-      if (item.videoId !== masterItem.videoId) {
-        if (!duplicatesMap.has(masterItem.videoId)) {
-          duplicatesMap.set(masterItem.videoId, []);
-        }
-        const dups = duplicatesMap.get(masterItem.videoId);
-        // Evita duplicar o mesmo item na gaveta se já estiver lá
-        if (!dups.some(d => d.videoId === item.videoId)) {
-          dups.push(item);
-        }
-      }
-    });
-
-    let masterList = Array.from(masterMap.values());
-    sortItems(masterList);
-
-    // Wrapper para o Modo Grade
-    let targetContainer = container;
-    if (state.displayMode === 'grade') {
-      const grid = document.createElement('div');
-      grid.className = 'grid-container-grade';
-      container.appendChild(grid);
-      targetContainer = grid;
-    }
-
-    // Renderiza cada mestre passando o seu respectivo array de duplicatas para a criação do card
-    masterList.forEach(masterItem => {
-      const duplicates = duplicatesMap.get(masterItem.videoId) || [];
-      const el = createCardElement(masterItem, duplicates);
-      if (el instanceof Node) targetContainer.appendChild(el);
-    });
-
-  } else {
-    // ==========================================================================
-    // 2. DEMAIS MODOS (Incluindo "sequenciado" / Misturado e Blocos de Canais)
-    // ==========================================================================
-    if (state.organizeMode === 'sequenciado-canais') {
-      const channelGroups = new Map();
-      items.forEach(item => {
-        if (!channelGroups.has(item.channelTitle)) channelGroups.set(item.channelTitle, []);
-        channelGroups.get(item.channelTitle).push(item);
-      });
-
-      channelGroups.forEach((groupItems, channelName) => {
-        const groupTitle = document.createElement('div');
-        groupTitle.className = 'channel-group-title';
-        groupTitle.textContent = channelName;
-        container.appendChild(groupTitle);
-
-        let groupTarget = container;
-        if (state.displayMode === 'grade') {
-          groupTarget = document.createElement('div');
-          groupTarget.className = 'grid-container-grade';
-          container.appendChild(groupTarget);
-        }
-
-        groupItems.forEach(item => {
-          const el = createCardElement(item, []);
-          if (el instanceof Node) groupTarget.appendChild(el);
-        });
-      });
-    } else {
-      // Modo Sequenciado Misturado (estado 'sequenciado') e outros padrões
-      sortItems(items);
-      items.forEach(item => {
-        const el = createCardElement(item, []);
-        if (el instanceof Node) targetContainer.appendChild(el);
-      });
-    }
-  }
-
-  const isLogged = !!window.currentUser;
-  container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
-
-  // ==========================================================================
-  // BUSCA
+  // 2. FILTRAGEM POR BUSCA (Fuzzy Match)
   // ==========================================================================
   if (state.searchQuery.trim() !== '') {
     items = items.filter(item => fuzzyMatch(item.title, state.searchQuery));
@@ -658,7 +566,7 @@ let items = videoDatabase.filter(item => {
   }
 
   // ==========================================================================
-  // SORT ITEMS
+  // 3. FUNÇÃO DE ORDENAÇÃO (Hoistable)
   // ==========================================================================
   function sortItems(list) {
     list.sort((a, b) => {
@@ -693,7 +601,99 @@ let items = videoDatabase.filter(item => {
     });
   }
 
-  sortItems(items);
+  // ==========================================================================
+  // 4. PREPARAÇÃO DO CONTAINER ALVO (Suporte ao Modo Grade)
+  // ==========================================================================
+  let targetContainer = container;
+  if (state.displayMode === 'grade') {
+    const grid = document.createElement('div');
+    grid.className = 'grid-container-grade';
+    container.appendChild(grid);
+    targetContainer = grid;
+  }
+
+  // ==========================================================================
+  // 5. RENDERIZAÇÃO CONFORME O MODO DE ORGANIZAÇÃO
+  // ==========================================================================
+  if (state.organizeMode === 'consolidado') {
+    // --- MODO CONSOLIDADO (Com resolução de mestres para coleções/playlists) ---
+    const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
+    const masterMap = new Map();
+    const duplicatesMap = new Map();
+
+    items.forEach(item => {
+      let targetMasterId = item.isMaster ? item.videoId : item.masterId;
+      if (!targetMasterId) return;
+
+      const masterItem = videoMap.get(targetMasterId);
+      if (!masterItem) return;
+
+      if (!masterMap.has(masterItem.videoId)) {
+        masterMap.set(masterItem.videoId, masterItem);
+      }
+
+      if (item.videoId !== masterItem.videoId) {
+        if (!duplicatesMap.has(masterItem.videoId)) {
+          duplicatesMap.set(masterItem.videoId, []);
+        }
+        const dups = duplicatesMap.get(masterItem.videoId);
+        if (!dups.some(d => d.videoId === item.videoId)) {
+          dups.push(item);
+        }
+      }
+    });
+
+    let masterList = Array.from(masterMap.values());
+    sortItems(masterList);
+
+    masterList.forEach(masterItem => {
+      const duplicates = duplicatesMap.get(masterItem.videoId) || [];
+      const el = createCardElement(masterItem, duplicates);
+      if (el instanceof Node) targetContainer.appendChild(el);
+    });
+
+  } else if (state.organizeMode === 'sequenciado-canais') {
+    // --- MODO BLOCOS DE CANAIS ---
+    const channelGroups = new Map();
+    items.forEach(item => {
+      if (!channelGroups.has(item.channelTitle)) channelGroups.set(item.channelTitle, []);
+      channelGroups.get(item.channelTitle).push(item);
+    });
+
+    channelGroups.forEach((groupItems, channelName) => {
+      const groupTitle = document.createElement('div');
+      groupTitle.className = 'channel-group-title';
+      groupTitle.textContent = channelName;
+      container.appendChild(groupTitle);
+
+      let groupTarget = container;
+      if (state.displayMode === 'grade') {
+        groupTarget = document.createElement('div');
+        groupTarget.className = 'grid-container-grade';
+        container.appendChild(groupTarget);
+      }
+
+      groupItems.forEach(item => {
+        const el = createCardElement(item, []);
+        if (el instanceof Node) groupTarget.appendChild(el);
+      });
+    });
+
+  } else {
+    // --- MODO SEQUENCIADO MISTURADO (Padrão) ---
+    sortItems(items);
+    items.forEach(item => {
+      const el = createCardElement(item, []);
+      if (el instanceof Node) targetContainer.appendChild(el);
+    });
+  }
+
+  // ==========================================================================
+  // 6. ESTADO DE AUTENTICAÇÃO DOS BOTÕES DE MARCADORES
+  // ==========================================================================
+  const isLogged = !!window.currentUser;
+  container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
+}
 
   // Lógica de Organização
   if (state.organizeMode === 'consolidado') {
@@ -748,7 +748,6 @@ let items = videoDatabase.filter(item => {
     });
   }
 
-  const isLogged = !!window.currentUser;
   container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 }
 
