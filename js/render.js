@@ -553,7 +553,7 @@ let items = videoDatabase.filter(item => {
   // ==========================================================================
   // Mapeamento de Mestres para o modo CONSOLIDADO
   // ==========================================================================
-if (state.organizeMode === 'consolidado') {
+  if (state.organizeMode === 'consolidado') {
     const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
     const masterMap = new Map();
     const duplicatesMap = new Map();
@@ -602,8 +602,48 @@ if (state.organizeMode === 'consolidado') {
       const el = createCardElement(masterItem, duplicates);
       if (el instanceof Node) targetContainer.appendChild(el);
     });
-    return;
+
+  } else {
+    // ==========================================================================
+    // 2. DEMAIS MODOS (Incluindo "sequenciado" / Misturado e Blocos de Canais)
+    // ==========================================================================
+    if (state.organizeMode === 'sequenciado-canais') {
+      const channelGroups = new Map();
+      items.forEach(item => {
+        if (!channelGroups.has(item.channelTitle)) channelGroups.set(item.channelTitle, []);
+        channelGroups.get(item.channelTitle).push(item);
+      });
+
+      channelGroups.forEach((groupItems, channelName) => {
+        const groupTitle = document.createElement('div');
+        groupTitle.className = 'channel-group-title';
+        groupTitle.textContent = channelName;
+        container.appendChild(groupTitle);
+
+        let groupTarget = container;
+        if (state.displayMode === 'grade') {
+          groupTarget = document.createElement('div');
+          groupTarget.className = 'grid-container-grade';
+          container.appendChild(groupTarget);
+        }
+
+        groupItems.forEach(item => {
+          const el = createCardElement(item, []);
+          if (el instanceof Node) groupTarget.appendChild(el);
+        });
+      });
+    } else {
+      // Modo Sequenciado Misturado (estado 'sequenciado') e outros padrões
+      sortItems(items);
+      items.forEach(item => {
+        const el = createCardElement(item, []);
+        if (el instanceof Node) targetContainer.appendChild(el);
+      });
+    }
   }
+
+  const isLogged = !!window.currentUser;
+  container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 
   // ==========================================================================
   // BUSCA
