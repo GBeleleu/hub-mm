@@ -608,6 +608,15 @@ if (state.organizeMode === 'consolidado') {
     return;
   }
 
+  // Wrapper para o Modo Grade
+  let targetContainer = container;
+  if (state.displayMode === 'grade') {
+    const grid = document.createElement('div');
+    grid.className = 'grid-container-grade';
+    container.appendChild(grid);
+    targetContainer = grid;
+  }
+
   // ==========================================================================
   // SORT ITEMS
   // ==========================================================================
@@ -645,15 +654,6 @@ if (state.organizeMode === 'consolidado') {
   }
 
   sortItems(items);
-
-  // Wrapper para o Modo Grade
-  let targetContainer = container;
-  if (state.displayMode === 'grade') {
-    const grid = document.createElement('div');
-    grid.className = 'grid-container-grade';
-    container.appendChild(grid);
-    targetContainer = grid;
-  }
 
   // Lógica de Organização
   if (state.organizeMode === 'consolidado') {
