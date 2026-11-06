@@ -587,6 +587,15 @@ if (state.organizeMode === 'consolidado') {
     let masterList = Array.from(masterMap.values());
     sortItems(masterList);
 
+    // Wrapper para o Modo Grade
+    let targetContainer = container;
+    if (state.displayMode === 'grade') {
+      const grid = document.createElement('div');
+      grid.className = 'grid-container-grade';
+      container.appendChild(grid);
+      targetContainer = grid;
+    }
+
     // Renderiza cada mestre passando o seu respectivo array de duplicatas para a criação do card
     masterList.forEach(masterItem => {
       const duplicates = duplicatesMap.get(masterItem.videoId) || [];
@@ -606,15 +615,6 @@ if (state.organizeMode === 'consolidado') {
   if (items.length === 0) {
     container.innerHTML = '<div class="status-message">Nenhum resultado corresponde aos filtros aplicados.</div>';
     return;
-  }
-
-  // Wrapper para o Modo Grade
-  let targetContainer = container;
-  if (state.displayMode === 'grade') {
-    const grid = document.createElement('div');
-    grid.className = 'grid-container-grade';
-    container.appendChild(grid);
-    targetContainer = grid;
   }
 
   // ==========================================================================
