@@ -554,28 +554,46 @@ let items = videoDatabase.filter(item => {
   // Mapeamento de Mestres para o modo CONSOLIDADO
   // ==========================================================================
   if (state.organizeMode === 'consolidado') {
-    // Cria um mapa de referência rápida para buscar itens por videoId no banco
     const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
-    const resolvedMasterIds = new Set();
-    const consolidatedItems = [];
+    const masterMap = new Map();
+    const duplicatesMap = new Map();
 
+    // 1. Identifica os mestres elegíveis e mapeia as ocorrências/duplicatas correspondentes
     items.forEach(item => {
-      // Se o item já for mestre, mantemos ele
-      if (item.isMaster) {
-        if (!resolvedMasterIds.has(item.videoId)) {
-          resolvedMasterIds.add(item.videoId);
-          consolidatedItems.push(item);
+      let targetMasterId = item.isMaster ? item.videoId : item.masterId;
+      if (!targetMasterId) return;
+
+      const masterItem = videoMap.get(targetMasterId);
+      if (!masterItem) return;
+
+      // Armazena o mestre único
+      if (!masterMap.has(masterItem.videoId)) {
+        masterMap.set(masterItem.videoId, masterItem);
+      }
+
+      // Se o item atual não for o mestre, ele entra como ocorrência/duplicata do mestre
+      if (item.videoId !== masterItem.videoId) {
+        if (!duplicatesMap.has(masterItem.videoId)) {
+          duplicatesMap.set(masterItem.videoId, []);
         }
-      } else if (item.masterId) {
-        // Se for um vídeo de playlist/secundário, buscamos o mestre correspondente no banco
-        const masterItem = videoMap.get(item.masterId);
-        if (masterItem && !resolvedMasterIds.has(masterItem.videoId)) {
-          resolvedMasterIds.add(masterItem.videoId);
-          consolidatedItems.push(masterItem);
+        const dups = duplicatesMap.get(masterItem.videoId);
+        // Evita duplicar o mesmo item na gaveta se já estiver lá
+        if (!dups.some(d => d.videoId === item.videoId)) {
+          dups.push(item);
         }
       }
     });
-    items = consolidatedItems;
+
+    let masterList = Array.from(masterMap.values());
+    sortItems(masterList);
+
+    // Renderiza cada mestre passando o seu respectivo array de duplicatas para a criação do card
+    masterList.forEach(masterItem => {
+      const duplicates = duplicatesMap.get(masterItem.videoId) || [];
+      const el = createCardElement(masterItem, duplicates);
+      if (el instanceof Node) targetContainer.appendChild(el);
+    });
+    return; // Retorna para evitar cair no loop padrão abaixo, já que os elementos já foram injetados
   }
 
   // ==========================================================================
