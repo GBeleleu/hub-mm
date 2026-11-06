@@ -553,7 +553,7 @@ let items = videoDatabase.filter(item => {
   // ==========================================================================
   // Mapeamento de Mestres para o modo CONSOLIDADO
   // ==========================================================================
-  if (state.organizeMode === 'consolidado') {
+if (state.organizeMode === 'consolidado') {
     const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
     const masterMap = new Map();
     const duplicatesMap = new Map();
@@ -593,7 +593,7 @@ let items = videoDatabase.filter(item => {
       const el = createCardElement(masterItem, duplicates);
       if (el instanceof Node) targetContainer.appendChild(el);
     });
-    return; // Retorna para evitar cair no loop padrão abaixo, já que os elementos já foram injetados
+    return;
   }
 
   // ==========================================================================
@@ -608,7 +608,10 @@ let items = videoDatabase.filter(item => {
     return;
   }
 
-  const sortItems = (list) => {
+  // ==========================================================================
+  // SORT ITEMS
+  // ==========================================================================
+  function sortItems(list) {
     list.sort((a, b) => {
       let valA, valB;
       if (state.sortBy === 'category') {
@@ -639,7 +642,7 @@ let items = videoDatabase.filter(item => {
       }
       return state.sortAscending ? valA - valB : valB - valA;
     });
-  };
+  }
 
   sortItems(items);
 
