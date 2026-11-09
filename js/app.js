@@ -260,13 +260,21 @@ function updateNavTimeOnScroll() {
       const currentYear = cardDate.getFullYear();
       const currentMonth = cardDate.getMonth();
 
+      // 1. Atualiza o Ano se mudou
       if (yearSelect && yearSelect.value !== String(currentYear)) {
-        yearSelect.value = currentYear;
-        updateAvailableMonths(); // Atualiza os meses válidos para o ano correto do card visível
+        yearSelect.value = String(currentYear);
+        updateAvailableMonths();
       }
       
-      if (monthSelect && monthSelect.value !== String(currentMonth)) {
-        monthSelect.value = currentMonth; // Sincroniza o mês correto (ex: pulando lacunas como janeiro)
+      // 2. Atualiza o Mês garantindo que ele seja válido (não desabilitado)
+      if (monthSelect) {
+        const targetOption = monthSelect.querySelector(`option[value="${currentMonth}"]`);
+        if (targetOption && !targetOption.disabled) {
+          monthSelect.value = String(currentMonth);
+        } else {
+          const firstValidOpt = Array.from(monthSelect.options).find(opt => !opt.disabled);
+          if (firstValidOpt) monthSelect.value = firstValidOpt.value;
+        }
       }
       break;
     }
