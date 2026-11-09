@@ -492,23 +492,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  document.getElementById('monthUpBtn')?.addEventListener('click', () => {
-    if (!monthSelect) return;
+document.getElementById('monthUpBtn')?.addEventListener('click', () => {
+    if (!monthSelect || !yearSelect) return;
     const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-    const currentIdx = enabledOpts.findIndex(o => o.value === monthSelect.value);
-    if (currentIdx > 0) {
-      monthSelect.value = enabledOpts[currentIdx - 1].value;
+    if (enabledOpts.length === 0) return;
+
+    const currentVal = monthSelect.value;
+    const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
+
+    if (currentIndex > 0) {
+      // Move para o mês anterior disponível no mesmo ano
+      monthSelect.value = enabledOpts[currentIndex - 1].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+    } else {
+      // Se estiver no primeiro mês disponível, tenta ir para o último mês do ano anterior com dados
+      const yearOpts = Array.from(yearSelect.options);
+      const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
+      if (currentYearIdx > 0) {
+        yearSelect.selectedIndex = currentYearIdx - 1;
+        updateAvailableMonths();
+        const newEnabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
+        if (newEnabledOpts.length > 0) {
+          monthSelect.value = newEnabledOpts[newEnabledOpts.length - 1].value;
+          scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+        }
+      }
     }
   });
 
   document.getElementById('monthDownBtn')?.addEventListener('click', () => {
-    if (!monthSelect) return;
+    if (!monthSelect || !yearSelect) return;
     const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-    const currentIdx = enabledOpts.findIndex(o => o.value === monthSelect.value);
-    if (currentIdx !== -1 && currentIdx < enabledOpts.length - 1) {
-      monthSelect.value = enabledOpts[currentIdx + 1].value;
+    if (enabledOpts.length === 0) return;
+
+    const currentVal = monthSelect.value;
+    const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
+
+    if (currentIndex !== -1 && currentIndex < enabledOpts.length - 1) {
+      // Move para o próximo mês disponível no mesmo ano
+      monthSelect.value = enabledOpts[currentIndex + 1].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+    } else {
+      // Se estiver no último mês disponível, tenta ir para o primeiro mês do próximo ano com dados
+      const yearOpts = Array.from(yearSelect.options);
+      const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
+      if (currentYearIdx !== -1 && currentYearIdx < yearOpts.length - 1) {
+        yearSelect.selectedIndex = currentYearIdx + 1;
+        updateAvailableMonths();
+        const newEnabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
+        if (newEnabledOpts.length > 0) {
+          monthSelect.value = newEnabledOpts[0].value;
+          scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+        }
+      }
     }
   });
 
