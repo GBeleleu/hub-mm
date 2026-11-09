@@ -210,6 +210,7 @@ function syncNavTimeState() {
 }
 
 let scrollTimeout = null;
+let isProgrammaticScroll = false; // Bandeira de proteção contra conflitos de scroll
 
 function scrollToTemporalTarget(year, month) {
   if (state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
@@ -220,7 +221,7 @@ function scrollToTemporalTarget(year, month) {
   const targetYear = Number(year);
   const targetMonth = Number(month);
 
-  // Procura o primeiro card que corresponda exatamente ao Ano e Mês selecionados
+  // 1. Procura o primeiro card correspondente ao Ano e Mês exatos
   for (const card of cards) {
     const rawDate = card.getAttribute('data-date');
     if (!rawDate) continue;
@@ -233,7 +234,7 @@ function scrollToTemporalTarget(year, month) {
     }
   }
 
-  // Fallback de segurança: se não achar o mês exato, procura pelo menos o ano correto
+  // 2. Fallback de segurança: se não achar o mês exato, busca pelo ano correto
   if (!targetCard) {
     for (const card of cards) {
       const rawDate = card.getAttribute('data-date');
@@ -250,6 +251,7 @@ function scrollToTemporalTarget(year, month) {
 
   if (targetCard) {
     isNavTimeScrolling = true;
+    isProgrammaticScroll = true; // Ativa a blindagem do scroll
     if (scrollTimeout) clearTimeout(scrollTimeout);
 
     const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
@@ -258,17 +260,20 @@ function scrollToTemporalTarget(year, month) {
 
     window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
 
-    // Garante liberação da trava de scroll mesmo sob cliques rápidos
+    // Janela de segurança estendida para absorver cliques em sequência rápida (stress test)
     scrollTimeout = setTimeout(() => {
       isNavTimeScrolling = false;
-    }, 400);
+      isProgrammaticScroll = false; // Libera o listener de scroll após a estabilização
+    }, 600); // 600ms garante o término da animação suave sem interferências
   } else {
     isNavTimeScrolling = false;
+    isProgrammaticScroll = false;
   }
 }
 
 function updateNavTimeOnScroll() {
-  if (isNavTimeScrolling || state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
+  // Se houver uma rolagem programada em curso (via clique/seta), ignora completamente o scroll manual
+  if (isProgrammaticScroll || isNavTimeScrolling || state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
 
   const cards = Array.from(document.querySelectorAll('#videoListContainer [data-date]'));
   const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
