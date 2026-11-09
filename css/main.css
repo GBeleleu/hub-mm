@@ -299,39 +299,12 @@ button:disabled, select:disabled {
   color: #d32f2f !important;
 }
 
-.nav-time-container {
-  display: flex;
-  gap: 6px;
-  align-items: center;
-}
-
-.nav-unit {
-  display: flex;
-  align-items: center;
-  background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  padding: 1px 4px;
-}
-
-.nav-unit select {
-  border: none;
-  background: transparent;
-  padding: 4px 2px;
-}
-
-.arrow-btn {
-  padding: 2px 4px;
-  font-size: 9px;
-  background: transparent;
-  border: none;
-  line-height: 1;
-}
-
-/* Bloco do Controle Temporal Fixo e Centralizado abaixo da barra superior */
+/* ==========================================================================
+   SISTEMA DE NAVEGAÇÃO
+   ========================================================================== */
 .nav-time-fixed-bar {
   position: fixed;
-  top: 77px; /* Altura da barra superior */
+  top: 77px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -339,10 +312,63 @@ button:disabled, select:disabled {
   border: 1px solid var(--border-color);
   border-top: none;
   border-radius: 0 0 6px 6px;
-  padding: 4px 12px;
+  padding: 4px 10px;
   display: flex;
-  gap: 12px;
+  gap: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.nav-time-fixed-bar.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.nav-unit {
+  display: inline-flex;
+  align-items: center;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 2px 4px;
+  gap: 2px;
+}
+
+.nav-unit select {
+  border: none;
+  background: transparent;
+  padding: 3px 6px;
+  color: var(--text-main);
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  order: 1;
+}
+
+.nav-unit select option:disabled {
+  color: var(--text-muted);
+  background-color: var(--bg-secondary);
+}
+
+.arrow-btn {
+  padding: 2px 5px;
+  font-size: 10px;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 4px;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+.nav-unit #yearUpBtn, .nav-unit #monthUpBtn { order: 2; }
+.nav-unit #yearDownBtn, .nav-unit #monthDownBtn { order: 3; }
+
+.arrow-btn:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-main);
 }
 
 @media (max-width: 768px) {

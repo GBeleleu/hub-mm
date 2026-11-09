@@ -89,6 +89,7 @@ function syncButtonGroupsUI() {
   document.querySelectorAll('#sortMenu .dropdown-item').forEach(item => {
     item.classList.toggle('active', item.dataset.sort === state.sortBy);
   });
+  syncNavTimeState();
 }
 
 async function loadDatabase() {
@@ -117,25 +118,162 @@ async function loadDatabase() {
   }
 }
 
+// ==========================================================================
+// SISTEMA DE NAVEGAÇÃO
+// ==========================================================================
+let isNavTimeScrolling = false;
+
+function getAvailableTemporalData() {
+  const dataMap = new Map();
+  videoDatabase.forEach(v => {
+    if (!v.publishedAt) return;
+    const date = new Date(v.publishedAt);
+    const year = date.getFullYear();
+    const month = date.getMonth();
+    if (isNaN(year)) return;
+
+    if (!dataMap.has(year)) {
+      dataMap.set(year, new Set());
+    }
+    dataMap.get(year).add(month);
+  });
+  return dataMap;
+}
+
 function populateYearSelector() {
   const yearSelect = document.getElementById('yearSelect');
   if (!yearSelect) return;
-  yearSelect.innerHTML = '<option value="">Ano</option>';
 
-  const years = [...new Set(videoDatabase.map(v => new Date(v.publishedAt).getFullYear()))]
-    .filter(y => !isNaN(y))
-    .sort((a, b) => a - b);
+  const dataMap = getAvailableTemporalData();
+  const years = Array.from(dataMap.keys()).sort((a, b) => state.sortAscending ? a - b : b - a);
 
+  yearSelect.innerHTML = '';
   years.forEach(year => {
     const opt = document.createElement('option');
     opt.value = year;
     opt.textContent = year;
     yearSelect.appendChild(opt);
   });
+
+  if (years.length > 0 && (!state.selectedYear || !dataMap.has(Number(state.selectedYear)))) {
+    state.selectedYear = years[0];
+  }
+  
+  if (state.selectedYear) {
+    yearSelect.value = state.selectedYear;
+  }
+
+  updateAvailableMonths();
+  syncNavTimeState();
+}
+
+function updateAvailableMonths() {
+  const yearSelect = document.getElementById('yearSelect');
+  const monthSelect = document.getElementById('monthSelect');
+  if (!yearSelect || !monthSelect) return;
+
+  const currentYear = Number(yearSelect.value);
+  const dataMap = getAvailableTemporalData();
+  const availableMonths = dataMap.get(currentYear) || new Set();
+
+  Array.from(monthSelect.options).forEach(opt => {
+    const monthVal = Number(opt.value);
+    const hasData = availableMonths.has(monthVal);
+    opt.disabled = !hasData;
+  });
+
+  // Se o mês selecionado não existir no novo ano, seleciona o primeiro mês disponível
+  if (!availableMonths.has(Number(monthSelect.value))) {
+    const firstAvailable = Array.from(availableMonths).sort((a, b) => a - b)[0];
+    if (firstAvailable !== undefined) {
+      monthSelect.value = firstAvailable;
+    }
+  }
+}
+
+function syncNavTimeState() {
+  const container = document.getElementById('navTimeContainer');
+  const yearSelect = document.getElementById('yearSelect');
+  const monthSelect = document.getElementById('monthSelect');
+  const yearUpBtn = document.getElementById('yearUpBtn');
+  const yearDownBtn = document.getElementById('yearDownBtn');
+  const monthUpBtn = document.getElementById('monthUpBtn');
+  const monthDownBtn = document.getElementById('monthDownBtn');
+
+  // Regra 4: Desabilitar se "Ordenar" != "Data" ou se houver busca ativa
+  const isDisabled = state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '');
+
+  if (container) container.classList.toggle('disabled', isDisabled);
+  [yearSelect, monthSelect, yearUpBtn, yearDownBtn, monthUpBtn, monthDownBtn].forEach(el => {
+    if (el) el.disabled = isDisabled;
+  });
+}
+
+function scrollToTemporalTarget(year, month) {
+  if (state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
+
+  const cards = Array.from(document.querySelectorAll('#videoListContainer .card-display-lista, #videoListContainer .card-display-compacto, #videoListContainer .card-display-grade'));
+  
+  let targetCard = null;
+  for (const card of cards) {
+    const dateEl = card.querySelector('.card-date, .list-item-cell:nth-child(6), .grade-details span:last-child');
+    if (!dateEl) continue;
+    const cardDate = new Date(dateEl.textContent);
+    if (isNaN(cardDate.getTime())) continue;
+
+    if (cardDate.getFullYear() === Number(year) && cardDate.getMonth() === Number(month)) {
+      targetCard = card;
+      break;
+    }
+  }
+
+  if (targetCard) {
+    isNavTimeScrolling = true;
+    const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
+    const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
+    const targetY = targetCard.getBoundingClientRect().top + window.scrollY - (topBarHeight + navTimeHeight + 20);
+
+    window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+    setTimeout(() => { isNavTimeScrolling = false; }, 600);
+  }
+}
+
+function updateNavTimeOnScroll() {
+  if (isNavTimeScrolling || state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
+
+  const cards = Array.from(document.querySelectorAll('#videoListContainer .card-display-lista, #videoListContainer .card-display-compacto, #videoListContainer .card-display-grade'));
+  const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
+  const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
+  const triggerY = topBarHeight + navTimeHeight + 40;
+
+  for (const card of cards) {
+    const rect = card.getBoundingClientRect();
+    if (rect.top <= triggerY && rect.bottom >= triggerY) {
+      const dateEl = card.querySelector('.card-date, .list-item-cell:nth-child(6), .grade-details span:last-child');
+      if (!dateEl) continue;
+      const cardDate = new Date(dateEl.textContent);
+      if (isNaN(cardDate.getTime())) continue;
+
+      const yearSelect = document.getElementById('yearSelect');
+      const monthSelect = document.getElementById('monthSelect');
+      
+      const currentYear = cardDate.getFullYear();
+      const currentMonth = cardDate.getMonth();
+
+      if (yearSelect && yearSelect.value !== String(currentYear)) {
+        yearSelect.value = currentYear;
+        updateAvailableMonths();
+      }
+      if (monthSelect && monthSelect.value !== String(currentMonth)) {
+        monthSelect.value = currentMonth;
+      }
+      break;
+    }
+  }
 }
 
 // ==========================================================================
-// INICIALIZAÇÃO DE EVENTOS DA APLICAÇÃO (Event Listeners)
+// INICIALIZAÇÃO DE EVENTOS DA APLICAÇÃO (DOM - Event Listeners)
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
   loadState();
@@ -308,8 +446,77 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('collectionsModal')?.classList.remove('open');
   });
 
-  window.addEventListener('scroll', saveState);
-});
+  document.getElementById('applyCollectionsBtn')?.addEventListener('click', () => {
+    const hidden = [];
+    document.querySelectorAll('#collectionsListContainer input[type="checkbox"]').forEach(cb => {
+      if (!cb.checked) hidden.push(cb.value);
+    });
+    setHiddenCollectionsTags(hidden);
+    saveState();
+    renderList();
+    document.getElementById('collectionsModal')?.classList.remove('open');
+  });
+
+  // ==========================================
+  // INÍCIO DOS EVENTOS DO NAVTIME
+  // ==========================================
+  const yearSelect = document.getElementById('yearSelect');
+  const monthSelect = document.getElementById('monthSelect');
+
+  yearSelect?.addEventListener('change', (e) => {
+    updateAvailableMonths();
+    scrollToTemporalTarget(e.target.value, monthSelect.value);
+  });
+
+  monthSelect?.addEventListener('change', (e) => {
+    scrollToTemporalTarget(yearSelect.value, e.target.value);
+  });
+
+  document.getElementById('yearUpBtn')?.addEventListener('click', () => {
+    if (!yearSelect || yearSelect.options.length === 0) return;
+    const idx = yearSelect.selectedIndex;
+    if (idx > 0) {
+      yearSelect.selectedIndex = idx - 1;
+      updateAvailableMonths();
+      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+    }
+  });
+
+  document.getElementById('yearDownBtn')?.addEventListener('click', () => {
+    if (!yearSelect || yearSelect.options.length === 0) return;
+    const idx = yearSelect.selectedIndex;
+    if (idx < yearSelect.options.length - 1) {
+      yearSelect.selectedIndex = idx + 1;
+      updateAvailableMonths();
+      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+    }
+  });
+
+  document.getElementById('monthUpBtn')?.addEventListener('click', () => {
+    if (!monthSelect) return;
+    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
+    const currentIdx = enabledOpts.findIndex(o => o.value === monthSelect.value);
+    if (currentIdx > 0) {
+      monthSelect.value = enabledOpts[currentIdx - 1].value;
+      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+    }
+  });
+
+  document.getElementById('monthDownBtn')?.addEventListener('click', () => {
+    if (!monthSelect) return;
+    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
+    const currentIdx = enabledOpts.findIndex(o => o.value === monthSelect.value);
+    if (currentIdx !== -1 && currentIdx < enabledOpts.length - 1) {
+      monthSelect.value = enabledOpts[currentIdx + 1].value;
+      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    saveState();
+    updateNavTimeOnScroll();
+  });
+}); // <-- FIM DO DOMContentLoaded
 
 window.applyCollectionShortcut = function(type, value) {
   state.activeCollectionFilter = { type, value, name: value };
