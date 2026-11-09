@@ -212,17 +212,17 @@ function syncNavTimeState() {
 function scrollToTemporalTarget(year, month) {
   if (state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
 
-  const cards = Array.from(document.querySelectorAll('#videoListContainer .card-display-lista, #videoListContainer .card-display-compacto, #videoListContainer .card-display-grade'));
-  
+  const cards = Array.from(document.querySelectorAll('#videoListContainer [data-date]'));
   let targetCard = null;
+
   for (const card of cards) {
-    const dateEl = card.querySelector('.card-date, .list-item-cell:nth-child(6), .grade-details span:last-child');
-    if (!dateEl) continue;
-    const cardDate = new Date(dateEl.textContent);
+    const rawDate = card.getAttribute('data-date');
+    if (!rawDate) continue;
+    const cardDate = new Date(rawDate);
     if (isNaN(cardDate.getTime())) continue;
 
     if (cardDate.getFullYear() === Number(year) && cardDate.getMonth() === Number(month)) {
-      targetCard = card;
+      targetCard = card.closest('.card-display-lista, .card-display-compacto, .card-display-grade') || card;
       break;
     }
   }
@@ -241,7 +241,7 @@ function scrollToTemporalTarget(year, month) {
 function updateNavTimeOnScroll() {
   if (isNavTimeScrolling || state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
 
-  const cards = Array.from(document.querySelectorAll('#videoListContainer .card-display-lista, #videoListContainer .card-display-compacto, #videoListContainer .card-display-grade'));
+  const cards = Array.from(document.querySelectorAll('#videoListContainer [data-date]'));
   const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
   const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
   const triggerY = topBarHeight + navTimeHeight + 40;
@@ -249,9 +249,9 @@ function updateNavTimeOnScroll() {
   for (const card of cards) {
     const rect = card.getBoundingClientRect();
     if (rect.top <= triggerY && rect.bottom >= triggerY) {
-      const dateEl = card.querySelector('.card-date, .list-item-cell:nth-child(6), .grade-details span:last-child');
-      if (!dateEl) continue;
-      const cardDate = new Date(dateEl.textContent);
+      const rawDate = card.getAttribute('data-date');
+      if (!rawDate) continue;
+      const cardDate = new Date(rawDate);
       if (isNaN(cardDate.getTime())) continue;
 
       const yearSelect = document.getElementById('yearSelect');
@@ -260,13 +260,11 @@ function updateNavTimeOnScroll() {
       const currentYear = cardDate.getFullYear();
       const currentMonth = cardDate.getMonth();
 
-      // 1. Atualiza o Ano se mudou
       if (yearSelect && yearSelect.value !== String(currentYear)) {
         yearSelect.value = String(currentYear);
         updateAvailableMonths();
       }
       
-      // 2. Atualiza o Mês garantindo que ele seja válido (não desabilitado)
       if (monthSelect) {
         const targetOption = monthSelect.querySelector(`option[value="${currentMonth}"]`);
         if (targetOption && !targetOption.disabled) {
