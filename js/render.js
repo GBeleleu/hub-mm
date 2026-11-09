@@ -299,6 +299,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     // 6. Data
     const dateCell = document.createElement('div');
     dateCell.className = 'list-item-cell';
+    dateCell.dataset.date = item.publishedAt;
     dateCell.style.color = 'var(--text-secondary)';
     dateCell.textContent = formatLocalDateTime(item.publishedAt);
     row.appendChild(dateCell);
@@ -369,7 +370,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
           ${privacyNotice}
         </div>
         <span class="card-channel">${item.channelTitle}</span>
-        <span class="card-date">${formatLocalDateTime(item.publishedAt)}${liveBadge}</span>
+        <span class="card-date" data-date="${item.publishedAt}">${formatLocalDateTime(item.publishedAt)}${liveBadge}</span>
         ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
 
         <div class="marker-container" style="margin-top:6px;"></div>
@@ -418,7 +419,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
         <a href="${videoUrl}" target="_blank" class="grade-title">${item.title}</a>
         <div class="grade-details">
           <span><strong>${item.channelTitle}</strong> ${liveBadge} ${privacyNotice}</span>
-          <span>${formatLocalDateTime(item.publishedAt)}</span>
+          <span data-date="${item.publishedAt}">${formatLocalDateTime(item.publishedAt)}</span>
         </div>
         <div class="grade-badges-container" style="margin-top:4px;">
           ${renderBadgesHtml(item)}
@@ -694,7 +695,6 @@ export function renderList() {
   const isLogged = !!window.currentUser;
   container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 }
-
 
 // ==========================================================================
 // Gerenciador global unificado para pop-ups flutuantes
