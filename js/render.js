@@ -446,9 +446,55 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   return fallbackCard;
 }
 
+export function updateTopBannerNotice() {
+  let noticeContainer = document.getElementById('customNoticeBanner');
+  if (!noticeContainer) {
+    noticeContainer = document.createElement('div');
+    noticeContainer.id = 'customNoticeBanner';
+    noticeContainer.style.cssText = 'background:var(--bg-secondary); border-bottom:1px solid var(--border-color); text-align:center; padding:6px; font-size:12px; color:var(--accent-color); cursor:pointer; display:none;';
+    const topBar = document.getElementById('topBar');
+    if (topBar) topBar.insertAdjacentElement('afterend', noticeContainer);
+  }
+
+  // Verifica se há algum filtro de categoria ou marcador desmarcado (exclui canais e removidos)
+  const hasActiveCategoryOrMarkerFilter = Object.values(state.customFilterState.categories).includes(false) ||
+                                          Object.values(state.customFilterState.markers).includes(false);
+
+  if (state.activeCollectionFilter) {
+    noticeContainer.style.display = 'block';
+    noticeContainer.textContent = `Exibição personalizada - Coleção: ${state.activeCollectionFilter.name}. (clique aqui para voltar a exibir tudo)`;
+    noticeContainer.onclick = () => {
+      state.activeCollectionFilter = null;
+      state.customFilterNoticeActive = false;
+      state.customFilterState.categories = {};
+      state.customFilterState.markers = {};
+      updateTopBannerNotice();
+      renderList();
+    };
+  } else if (state.customFilterNoticeActive || hasActiveCategoryOrMarkerFilter) {
+    noticeContainer.style.display = 'block';
+    noticeContainer.textContent = `Exibição personalizada - Filtro (clique aqui para voltar a exibir tudo)`;
+    noticeContainer.onclick = () => {
+      state.activeCollectionFilter = null;
+      state.customFilterNoticeActive = false;
+      state.customFilterState.categories = {};
+      state.customFilterState.markers = {};
+      updateTopBannerNotice();
+      renderList();
+    };
+  } else {
+    noticeContainer.style.display = 'none';
+  }
+}
+
+// ==========================================================================
+// RENDERLIST
+// ==========================================================================
 export function renderList() {
   const container = document.getElementById('videoListContainer');
   if (!container) return;
+
+  updateTopBannerNotice();
   container.innerHTML = '';
 
   if (videoDatabase.length === 0) {
@@ -456,12 +502,60 @@ export function renderList() {
     return;
   }
 
+  // 1. FILTRAGEM INICIAL DE ITENS (Status, Canais, Atalhos e Categorias)
   let items = videoDatabase.filter(item => {
-    const isChannelVisible = !state.hiddenChannels.includes(item.channelTitle);
-    const isCollectionsVisible = isVideoCollectionsVisible(item);
-    return isChannelVisible && isCollectionsVisible;
+    // Status de Removidos (Desativado por padrão)
+    if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
+      return false;
+    }
+
+    // Filtro por Canais
+    const isChannelHidden = state.hiddenChannels.includes(item.channelTitle) || 
+                            state.customFilterState.channels[item.channelTitle] === false;
+    if (isChannelHidden) return false;
+
+    // Atalho ativo de Coleção/Categoria/Marcador/Playlist
+    if (state.activeCollectionFilter) {
+      const { type, value } = state.activeCollectionFilter;
+      if (type === 'collection') {
+        const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
+        if (!cols.some(c => c && c.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'playlist') {
+        const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+        if (!pls.some(p => p && p.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'category') {
+        const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
+        if (value === 'NULL') {
+          if (item.category && item.category.trim()) return false;
+        } else {
+          if (!item.category || item.category.trim().toLowerCase() !== value.toLowerCase()) return false;
+        }
+      } else if (type === 'marker') {
+        const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
+          ? String(window.userMarkerCache[item.videoId]) : 'NULL';
+        if (markerVal !== value) return false;
+      }
+      return true;
+    }
+
+    // Filtro Global por Categorias
+    const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
+    if (state.customFilterState.categories[catKey] === false) return false;
+
+    // Filtro Global por Marcadores
+    const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
+      ? String(window.userMarkerCache[item.videoId]) : 'NULL';
+    if (state.customFilterState.markers[markerVal] === false) return false;
+
+    // Filtro de Coleções Nativo
+    if (!isVideoCollectionsVisible(item)) return false;
+
+    return true;
   });
 
+  // ==========================================================================
+  // 2. FILTRAGEM POR BUSCA (Fuzzy Match)
+  // ==========================================================================
   if (state.searchQuery.trim() !== '') {
     items = items.filter(item => fuzzyMatch(item.title, state.searchQuery));
   }
@@ -471,7 +565,10 @@ export function renderList() {
     return;
   }
 
-  const sortItems = (list) => {
+  // ==========================================================================
+  // 3. FUNÇÃO DE ORDENAÇÃO (Hoistable)
+  // ==========================================================================
+  function sortItems(list) {
     list.sort((a, b) => {
       let valA, valB;
       if (state.sortBy === 'category') {
@@ -502,11 +599,11 @@ export function renderList() {
       }
       return state.sortAscending ? valA - valB : valB - valA;
     });
-  };
+  }
 
-  sortItems(items);
-
-  // Wrapper para o Modo Grade
+  // ==========================================================================
+  // 4. PREPARAÇÃO DO CONTAINER ALVO (Suporte ao Modo Grade)
+  // ==========================================================================
   let targetContainer = container;
   if (state.displayMode === 'grade') {
     const grid = document.createElement('div');
@@ -515,17 +612,34 @@ export function renderList() {
     targetContainer = grid;
   }
 
-  // Lógica de Organização
+  // ==========================================================================
+  // 5. RENDERIZAÇÃO CONFORME O MODO DE ORGANIZAÇÃO
+  // ==========================================================================
   if (state.organizeMode === 'consolidado') {
+    // --- MODO CONSOLIDADO (Com resolução de mestres para coleções/playlists) ---
+    const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
     const masterMap = new Map();
     const duplicatesMap = new Map();
 
     items.forEach(item => {
-      if (item.isMaster) {
-        masterMap.set(item.videoId, item);
-      } else {
-        if (!duplicatesMap.has(item.masterId)) duplicatesMap.set(item.masterId, []);
-        duplicatesMap.get(item.masterId).push(item);
+      let targetMasterId = item.isMaster ? item.videoId : item.masterId;
+      if (!targetMasterId) return;
+
+      const masterItem = videoMap.get(targetMasterId);
+      if (!masterItem) return;
+
+      if (!masterMap.has(masterItem.videoId)) {
+        masterMap.set(masterItem.videoId, masterItem);
+      }
+
+      if (item.videoId !== masterItem.videoId) {
+        if (!duplicatesMap.has(masterItem.videoId)) {
+          duplicatesMap.set(masterItem.videoId, []);
+        }
+        const dups = duplicatesMap.get(masterItem.videoId);
+        if (!dups.some(d => d.videoId === item.videoId)) {
+          dups.push(item);
+        }
       }
     });
 
@@ -534,9 +648,12 @@ export function renderList() {
 
     masterList.forEach(masterItem => {
       const duplicates = duplicatesMap.get(masterItem.videoId) || [];
-      targetContainer.appendChild(createCardElement(masterItem, duplicates));
+      const el = createCardElement(masterItem, duplicates);
+      if (el instanceof Node) targetContainer.appendChild(el);
     });
+
   } else if (state.organizeMode === 'sequenciado-canais') {
+    // --- MODO BLOCOS DE CANAIS ---
     const channelGroups = new Map();
     items.forEach(item => {
       if (!channelGroups.has(item.channelTitle)) channelGroups.set(item.channelTitle, []);
@@ -561,18 +678,27 @@ export function renderList() {
         if (el instanceof Node) groupTarget.appendChild(el);
       });
     });
+
   } else {
+    // --- MODO SEQUENCIADO MISTURADO (Padrão) ---
+    sortItems(items);
     items.forEach(item => {
       const el = createCardElement(item, []);
       if (el instanceof Node) targetContainer.appendChild(el);
     });
   }
 
+// ==========================================================================
+// 6. ESTADO DE AUTENTICAÇÃO DOS BOTÕES DE MARCADORES
+// ==========================================================================
   const isLogged = !!window.currentUser;
   container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 }
 
+
+// ==========================================================================
 // Gerenciador global unificado para pop-ups flutuantes
+// ==========================================================================
 window.openFloatingMenu = function(event, triggerElement, renderContentCallback) {
   event.stopPropagation();
   
@@ -582,7 +708,6 @@ window.openFloatingMenu = function(event, triggerElement, renderContentCallback)
   const popup = document.createElement('div');
   popup.className = 'floating-popup-tooltip';
   
-  // Insere o conteúdo gerado pelo callback
   renderContentCallback(popup, () => closePopup());
 
   document.body.appendChild(popup);

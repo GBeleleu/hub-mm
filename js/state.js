@@ -22,11 +22,19 @@ export function setHiddenCollectionsTags(tags) {
 
 export let state = {
   searchQuery: '',
-  displayModeGroup: 'compacto', // 'lista' | 'compacto' | 'grade'
-  organizeMode: 'consolidado', // 'consolidado' | 'sequenciado' | 'sequenciado-canais'
+  displayModeGroup: 'compacto',
+  organizeMode: 'consolidado',
   sortBy: 'data',
   sortAscending: true,
   hiddenChannels: [],
+  activeCollectionFilter: null,
+  customFilterNoticeActive: false,
+  customFilterState: {
+    markers: {},
+    categories: {},
+    channels: {},
+    removed: false
+  },
   scrollY: 0
 };
 
