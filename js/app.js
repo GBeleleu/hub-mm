@@ -262,10 +262,11 @@ function updateNavTimeOnScroll() {
 
       if (yearSelect && yearSelect.value !== String(currentYear)) {
         yearSelect.value = currentYear;
-        updateAvailableMonths();
+        updateAvailableMonths(); // Atualiza os meses válidos para o ano correto do card visível
       }
+      
       if (monthSelect && monthSelect.value !== String(currentMonth)) {
-        monthSelect.value = currentMonth;
+        monthSelect.value = currentMonth; // Sincroniza o mês correto (ex: pulando lacunas como janeiro)
       }
       break;
     }
