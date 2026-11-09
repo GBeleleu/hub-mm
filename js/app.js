@@ -209,32 +209,61 @@ function syncNavTimeState() {
   });
 }
 
+let scrollTimeout = null;
+
 function scrollToTemporalTarget(year, month) {
   if (state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
 
   const cards = Array.from(document.querySelectorAll('#videoListContainer [data-date]'));
   let targetCard = null;
 
+  const targetYear = Number(year);
+  const targetMonth = Number(month);
+
+  // Procura o primeiro card que corresponda exatamente ao Ano e Mês selecionados
   for (const card of cards) {
     const rawDate = card.getAttribute('data-date');
     if (!rawDate) continue;
     const cardDate = new Date(rawDate);
     if (isNaN(cardDate.getTime())) continue;
 
-    if (cardDate.getFullYear() === Number(year) && cardDate.getMonth() === Number(month)) {
+    if (cardDate.getFullYear() === targetYear && cardDate.getMonth() === targetMonth) {
       targetCard = card.closest('.card-display-lista, .card-display-compacto, .card-display-grade') || card;
       break;
     }
   }
 
+  // Fallback de segurança: se não achar o mês exato, procura pelo menos o ano correto
+  if (!targetCard) {
+    for (const card of cards) {
+      const rawDate = card.getAttribute('data-date');
+      if (!rawDate) continue;
+      const cardDate = new Date(rawDate);
+      if (isNaN(cardDate.getTime())) continue;
+
+      if (cardDate.getFullYear() === targetYear) {
+        targetCard = card.closest('.card-display-lista, .card-display-compacto, .card-display-grade') || card;
+        break;
+      }
+    }
+  }
+
   if (targetCard) {
     isNavTimeScrolling = true;
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+
     const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
     const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
     const targetY = targetCard.getBoundingClientRect().top + window.scrollY - (topBarHeight + navTimeHeight + 20);
 
     window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
-    setTimeout(() => { isNavTimeScrolling = false; }, 600);
+
+    // Garante liberação da trava de scroll mesmo sob cliques rápidos
+    scrollTimeout = setTimeout(() => {
+      isNavTimeScrolling = false;
+    }, 400);
+  } else {
+    isNavTimeScrolling = false;
   }
 }
 
