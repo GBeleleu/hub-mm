@@ -1,43 +1,9 @@
 import { videoDatabase, state } from './state.js';
 import { parseCollections, isVideoCollectionsVisible } from './collections.js';
 
-function renderBadgesHtml(item) {
-  let html = '';
-
-  // 1. Badge de Coleção (Ícone SVG)
-  if (item.collection) {
-    const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
-    const validCols = cols.filter(c => c && c.trim());
-    
-    if (validCols.length > 0) {
-      const namesList = validCols.map(c => c.trim()).join(', ');
-      // Atualizado para chamar diretamente a função unificada
-      html += `
-        <span class="card-meta-badge collection-badge" title="Ver Coleções" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
-          <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
-        </span>
-      `;
-    }
-  }
-
-  // 2. Badge de Playlist (Ícone SVG)
-  if (item.playlist) {
-    const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
-    const validPls = pls.filter(p => p && p.trim());
-    
-    if (validPls.length > 0) {
-      const namesList = validPls.map(p => p.trim()).join(', ');
-      // Atualizado para chamar diretamente a função unificada
-      html += `
-        <span class="card-meta-badge playlist-badge" title="Ver Playlists" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
-          <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15l7-3-7-3v6z"/></svg>
-        </span>
-      `;
-    }
-  }
-
-  return html ? `<div class="card-badges-wrapper">${html}</div>` : '';
-}
+// ==========================================================================
+// FUNÇÕES AUXILIARES DE COMPOSIÇÃO (DRY & Single Responsibility)
+// ==========================================================================
 
 export function normalizeText(str) {
   if (!str) return '';
@@ -126,42 +92,49 @@ export function openOccurrencesModal(duplicates) {
   }
 }
 
+function renderBadgesHtml(item) {
+  let html = '';
+
+  if (item.collection) {
+    const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
+    const validCols = cols.filter(c => c && c.trim());
+    if (validCols.length > 0) {
+      const namesList = validCols.map(c => c.trim()).join(', ');
+      html += `
+        <span class="card-meta-badge collection-badge" title="Ver Coleções" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
+          <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+        </span>
+      `;
+    }
+  }
+
+  if (item.playlist) {
+    const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+    const validPls = pls.filter(p => p && p.trim());
+    if (validPls.length > 0) {
+      const namesList = validPls.map(p => p.trim()).join(', ');
+      html += `
+        <span class="card-meta-badge playlist-badge" title="Ver Playlists" onclick="window.openFloatingMenu(event, event.currentTarget, (popup) => { popup.textContent = '${namesList}'; })">
+          <svg class="btn-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15l7-3-7-3v6z"/></svg>
+        </span>
+      `;
+    }
+  }
+
+  return html ? `<div class="card-badges-wrapper">${html}</div>` : '';
+}
+
 // Configuração dos marcadores com ícones SVG
 const MARKER_CONFIG = {
-  '0': {
-    label: 'Visto',
-    class: 'marker-0',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`
-  },
-  '5': {
-    label: 'Rever',
-    class: 'marker-5',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>`
-  },
+  '0': { label: 'Visto', class: 'marker-0', svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>` },
+  '5': { label: 'Rever', class: 'marker-5', svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>` },
   'sep1': { isSeparator: true },
   'header_pri': { isHeader: true, label: 'Prioridade:' },
-  '1': {
-    label: 'Alta',
-    class: 'marker-1',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
-  },
-  '2': {
-    label: 'Média',
-    class: 'marker-2',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
-  },
-  '3': {
-    label: 'Baixa',
-    class: 'marker-3',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>`
-  },
+  '1': { label: 'Alta', class: 'marker-1', svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>` },
+  '2': { label: 'Média', class: 'marker-2', svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>` },
+  '3': { label: 'Baixa', class: 'marker-3', svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 2h12c1.1 0 2 .9 2 2v18l-8-4-8 4V4c0-1.1.9-2 2-2z"/></svg>` },
   'sep2': { isSeparator: true },
-  '': {
-    label: 'Marcar',
-    menuLabel: 'Desmarcar',
-    class: 'marker-null',
-    svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>`
-  }
+  '': { label: 'Marcar', menuLabel: 'Desmarcar', class: 'marker-null', svg: `<svg viewBox="0 0 24 24"><path fill="currentColor" d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>` }
 };
 
 function createMarkerSelect(videoId) {
@@ -184,10 +157,8 @@ function createMarkerSelect(videoId) {
 
   trigger.addEventListener('click', (event) => {
     if (!isLogged) return;
-
     window.openFloatingMenu(event, trigger, (popup, closePopup) => {
       const MARKER_ORDER = ['0', '5', 'sep1', 'header_pri', '1', '2', '3', 'sep2', ''];
-      
       MARKER_ORDER.forEach((val) => {
         const cfg = MARKER_CONFIG[val];
         const option = document.createElement('div');
@@ -197,7 +168,6 @@ function createMarkerSelect(videoId) {
           popup.appendChild(option);
           return;
         }
-
         if (cfg.isHeader) {
           option.className = 'marker-dropdown-header';
           option.textContent = cfg.label;
@@ -220,7 +190,6 @@ function createMarkerSelect(videoId) {
             window.updateVideoMarker(videoId, val === '' ? '' : Number(val));
           }
         });
-
         popup.appendChild(option);
       });
     });
@@ -230,16 +199,21 @@ function createMarkerSelect(videoId) {
   return container;
 }
 
+// ==========================================================================
+// RENDERIZAÇÃO CENTRALIZADA DE CARDS
+// ==========================================================================
+
 export function createCardElement(item, duplicates = [], forceDisplayMode = null) {
   let displayMode = forceDisplayMode || state.displayMode;
   if (!['lista', 'compacto', 'grade'].includes(displayMode)) {
-    displayMode = 'compacto'; // Garante o modo compacto como padrão seguro
+    displayMode = 'compacto';
   }
   const colInfo = parseCollections(item);
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
   const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
   const liveBadge = item.isLive ? `<span class="live-badge" title="Live"></span>` : '';
   const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">❌</span>` : '';
+  const formattedDate = formatLocalDateTime(item.publishedAt);
 
   // ------------------------------------------------------------------------
   // MODO 1: LISTA
@@ -248,14 +222,12 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     const row = document.createElement('div');
     row.className = 'card-display-lista';
 
-    // 1. Faixa fina lateral com a cor referente à category
     const stripe = document.createElement('div');
     stripe.className = 'category-stripe-thin';
     stripe.dataset.cat = colInfo.category;
     stripe.title = colInfo.category;
     row.appendChild(stripe);
 
-    // 2. Thumbnail com duração no canto inferior direito
     const thumbWrap = document.createElement('div');
     thumbWrap.className = 'list-thumb-wrapper';
     thumbWrap.title = 'Clique para ampliar thumbnail';
@@ -266,13 +238,11 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     thumbWrap.addEventListener('click', () => openThumbModal(item));
     row.appendChild(thumbWrap);
 
-    // 3. Título (com scroll horizontal arrastável se grande)
     const titleWrap = document.createElement('div');
     titleWrap.className = 'list-title-wrapper';
     titleWrap.innerHTML = `<a href="${videoUrl}" target="_blank" class="list-title">${item.title}</a>`;
     row.appendChild(titleWrap);
 
-    // 4. Numeral que abre Gaveta de Ocorrências (se houver duplicatas)
     const occCell = document.createElement('div');
     occCell.className = 'list-item-cell';
     if (duplicates.length > 0) {
@@ -290,21 +260,18 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     }
     row.appendChild(occCell);
 
-    // 5. Marcadores
     const markerCell = document.createElement('div');
     markerCell.className = 'list-item-cell';
     markerCell.appendChild(createMarkerSelect(item.videoId));
     row.appendChild(markerCell);
 
-    // 6. Data
     const dateCell = document.createElement('div');
     dateCell.className = 'list-item-cell';
-    dateCell.dataset.date = item.publishedAt;
+    dateCell.dataset.date = item.publishedAt; // Padronizado com data-date ISO
     dateCell.style.color = 'var(--text-secondary)';
-    dateCell.textContent = formatLocalDateTime(item.publishedAt);
+    dateCell.textContent = formattedDate;
     row.appendChild(dateCell);
 
-    // 7. Canal
     const channelCell = document.createElement('div');
     channelCell.className = 'list-item-cell';
     channelCell.style.fontWeight = 'bold';
@@ -312,13 +279,11 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     channelCell.textContent = item.channelTitle;
     row.appendChild(channelCell);
 
-    // 8. Coleção/Playlists Badges
     const tagsCell = document.createElement('div');
     tagsCell.className = 'list-item-cell';
     tagsCell.innerHTML = `${liveBadge}${privacyNotice} ${renderBadgesHtml(item)}`;
     row.appendChild(tagsCell);
 
-    // 9. videoID
     const idCell = document.createElement('div');
     idCell.className = 'list-item-cell';
     idCell.style.fontFamily = 'monospace';
@@ -327,7 +292,6 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
     idCell.textContent = item.videoId;
     row.appendChild(idCell);
 
-    // Suporte à Gaveta no Modo Lista
     if (duplicates.length > 0) {
       const wrapper = document.createElement('div');
       wrapper.appendChild(row);
@@ -345,7 +309,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   }
 
   // ------------------------------------------------------------------------
-  // MODO 2: COMPACTO (Padrão)
+  // MODO 2: COMPACTO (Base histórica padronizada)
   // ------------------------------------------------------------------------
   if (displayMode === 'compacto') {
     const card = document.createElement('div');
@@ -370,7 +334,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
           ${privacyNotice}
         </div>
         <span class="card-channel">${item.channelTitle}</span>
-        <span class="card-date" data-date="${item.publishedAt}">${formatLocalDateTime(item.publishedAt)}${liveBadge}</span>
+        <span class="card-date" data-date="${item.publishedAt}">${formattedDate}${liveBadge}</span>
         ${badgesHtml ? `<div style="margin-top:4px;">${badgesHtml}</div>` : ''}
 
         <div class="marker-container" style="margin-top:6px;"></div>
@@ -403,7 +367,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   // ------------------------------------------------------------------------
   if (displayMode === 'grade') {
     const card = document.createElement('div');
-    card.className = 'card-display-grade'; // Mantendo a classe CSS existente para não quebrar estilos
+    card.className = 'card-display-grade';
 
     card.innerHTML = `
       <div class="grade-cat-bar" data-cat="${colInfo.category}" title="${colInfo.category}"></div>
@@ -419,7 +383,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
         <a href="${videoUrl}" target="_blank" class="grade-title">${item.title}</a>
         <div class="grade-details">
           <span><strong>${item.channelTitle}</strong> ${liveBadge} ${privacyNotice}</span>
-          <span data-date="${item.publishedAt}">${formatLocalDateTime(item.publishedAt)}</span>
+          <span data-date="${item.publishedAt}">${formattedDate}</span>
         </div>
         <div class="grade-badges-container" style="margin-top:4px;">
           ${renderBadgesHtml(item)}
@@ -441,6 +405,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
 
     return card;
   }
+
   const fallbackCard = document.createElement('div');
   fallbackCard.className = 'card-display-compacto';
   fallbackCard.textContent = item?.title || 'Item inválido';
@@ -457,7 +422,6 @@ export function updateTopBannerNotice() {
     if (topBar) topBar.insertAdjacentElement('afterend', noticeContainer);
   }
 
-  // Verifica se há algum filtro de categoria ou marcador desmarcado (exclui canais e removidos)
   const hasActiveCategoryOrMarkerFilter = Object.values(state.customFilterState.categories).includes(false) ||
                                           Object.values(state.customFilterState.markers).includes(false);
 
@@ -489,7 +453,7 @@ export function updateTopBannerNotice() {
 }
 
 // ==========================================================================
-// RENDERLIST
+// RENDERLIST PRINCIPAL
 // ==========================================================================
 export function renderList() {
   const container = document.getElementById('videoListContainer');
@@ -503,19 +467,15 @@ export function renderList() {
     return;
   }
 
-  // 1. FILTRAGEM INICIAL DE ITENS (Status, Canais, Atalhos e Categorias)
   let items = videoDatabase.filter(item => {
-    // Status de Removidos (Desativado por padrão)
     if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
       return false;
     }
 
-    // Filtro por Canais
     const isChannelHidden = state.hiddenChannels.includes(item.channelTitle) || 
                             state.customFilterState.channels[item.channelTitle] === false;
     if (isChannelHidden) return false;
 
-    // Atalho ativo de Coleção/Categoria/Marcador/Playlist
     if (state.activeCollectionFilter) {
       const { type, value } = state.activeCollectionFilter;
       if (type === 'collection') {
@@ -539,24 +499,18 @@ export function renderList() {
       return true;
     }
 
-    // Filtro Global por Categorias
     const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
     if (state.customFilterState.categories[catKey] === false) return false;
 
-    // Filtro Global por Marcadores
     const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
       ? String(window.userMarkerCache[item.videoId]) : 'NULL';
     if (state.customFilterState.markers[markerVal] === false) return false;
 
-    // Filtro de Coleções Nativo
     if (!isVideoCollectionsVisible(item)) return false;
 
     return true;
   });
 
-  // ==========================================================================
-  // 2. FILTRAGEM POR BUSCA (Fuzzy Match)
-  // ==========================================================================
   if (state.searchQuery.trim() !== '') {
     items = items.filter(item => fuzzyMatch(item.title, state.searchQuery));
   }
@@ -566,9 +520,6 @@ export function renderList() {
     return;
   }
 
-  // ==========================================================================
-  // 3. FUNÇÃO DE ORDENAÇÃO (Hoistable)
-  // ==========================================================================
   function sortItems(list) {
     list.sort((a, b) => {
       let valA, valB;
@@ -602,9 +553,6 @@ export function renderList() {
     });
   }
 
-  // ==========================================================================
-  // 4. PREPARAÇÃO DO CONTAINER ALVO (Suporte ao Modo Grade)
-  // ==========================================================================
   let targetContainer = container;
   if (state.displayMode === 'grade') {
     const grid = document.createElement('div');
@@ -613,11 +561,7 @@ export function renderList() {
     targetContainer = grid;
   }
 
-  // ==========================================================================
-  // 5. RENDERIZAÇÃO CONFORME O MODO DE ORGANIZAÇÃO
-  // ==========================================================================
   if (state.organizeMode === 'consolidado') {
-    // --- MODO CONSOLIDADO (Com resolução de mestres para coleções/playlists) ---
     const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
     const masterMap = new Map();
     const duplicatesMap = new Map();
@@ -654,7 +598,6 @@ export function renderList() {
     });
 
   } else if (state.organizeMode === 'sequenciado-canais') {
-    // --- MODO BLOCOS DE CANAIS ---
     const channelGroups = new Map();
     items.forEach(item => {
       if (!channelGroups.has(item.channelTitle)) channelGroups.set(item.channelTitle, []);
@@ -681,7 +624,6 @@ export function renderList() {
     });
 
   } else {
-    // --- MODO SEQUENCIADO MISTURADO (Padrão) ---
     sortItems(items);
     items.forEach(item => {
       const el = createCardElement(item, []);
@@ -689,9 +631,6 @@ export function renderList() {
     });
   }
 
-// ==========================================================================
-// 6. ESTADO DE AUTENTICAÇÃO DOS BOTÕES DE MARCADORES
-// ==========================================================================
   const isLogged = !!window.currentUser;
   container.querySelectorAll('.marker-stamp-trigger').forEach(el => el.disabled = !isLogged);
 }
@@ -702,7 +641,6 @@ export function renderList() {
 window.openFloatingMenu = function(event, triggerElement, renderContentCallback) {
   event.stopPropagation();
   
-  // Remove pop-up anterior
   document.querySelectorAll('.floating-popup-tooltip').forEach(el => el.remove());
 
   const popup = document.createElement('div');
@@ -716,7 +654,6 @@ window.openFloatingMenu = function(event, triggerElement, renderContentCallback)
   popup.style.top = `${rect.bottom + window.scrollY + 6}px`;
   popup.style.left = `${rect.left + window.scrollX}px`;
 
-  // Fecha ao clicar em qualquer lugar da tela ou ao rolar
   const closePopup = () => {
     popup.remove();
     window.removeEventListener('click', closePopup);
