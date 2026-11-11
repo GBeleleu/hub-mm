@@ -210,7 +210,7 @@ function syncNavTimeState() {
 }
 
 let scrollTimeout = null;
-let isProgrammaticScroll = false; // Bandeira de proteção contra conflitos de scroll
+let isProgrammaticScroll = false;
 
 function scrollToTemporalTarget(year, month) {
   if (state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
@@ -221,7 +221,7 @@ function scrollToTemporalTarget(year, month) {
   const targetYear = Number(year);
   const targetMonth = Number(month);
 
-  // 1. Procura o primeiro card correspondente ao Ano e Mês exatos
+  // Procura o card exato que bate com o Ano e o Mês
   for (const card of cards) {
     const rawDate = card.getAttribute('data-date');
     if (!rawDate) continue;
@@ -230,11 +230,11 @@ function scrollToTemporalTarget(year, month) {
 
     if (cardDate.getFullYear() === targetYear && cardDate.getMonth() === targetMonth) {
       targetCard = card.closest('.card-display-lista, .card-display-compacto, .card-display-grade') || card;
-      break;
+      break; // Encontrou o primeiro do mês exato, para e usa este
     }
   }
 
-  // 2. Fallback de segurança: se não achar o mês exato, busca pelo ano correto
+  // Fallback de segurança: se não houver o mês exato, busca o primeiro card do ano correspondente
   if (!targetCard) {
     for (const card of cards) {
       const rawDate = card.getAttribute('data-date');
@@ -251,20 +251,23 @@ function scrollToTemporalTarget(year, month) {
 
   if (targetCard) {
     isNavTimeScrolling = true;
-    isProgrammaticScroll = true; // Ativa a blindagem do scroll
+    isProgrammaticScroll = true;
     if (scrollTimeout) clearTimeout(scrollTimeout);
 
     const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
     const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
-    const targetY = targetCard.getBoundingClientRect().top + window.scrollY - (topBarHeight + navTimeHeight + 20);
+    
+    // Cálculo preciso considerando a posição absoluta do documento
+    const elementRect = targetCard.getBoundingClientRect();
+    const absoluteElementTop = elementRect.top + window.pageYOffset;
+    const targetY = absoluteElementTop - (topBarHeight + navTimeHeight + 15);
 
     window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
 
-    // Janela de segurança estendida para absorver cliques em sequência rápida (stress test)
     scrollTimeout = setTimeout(() => {
       isNavTimeScrolling = false;
-      isProgrammaticScroll = false; // Libera o listener de scroll após a estabilização
-    }, 600); // 600ms garante o término da animação suave sem interferências
+      isProgrammaticScroll = false;
+    }, 600);
   } else {
     isNavTimeScrolling = false;
     isProgrammaticScroll = false;
