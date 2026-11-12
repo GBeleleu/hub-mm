@@ -62,10 +62,10 @@ export function formatDuration(totalSeconds) {
   return hours > 0 ? `${hours}:${pad(minutes)}:${pad(seconds)}` : `${minutes}:${pad(seconds)}`;
 }
 
-// Retorna um placeholder SVG embutido (zero requisições externas) para vídeos removidos
 export function getSafeThumbnailUrl(item) {
   if (item.privacyStatus === 'removed') {
-    return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="90" viewBox="0 0 120 90"><rect width="120" height="90" fill="%231a1a1a"/><text x="50%" y="50%" fill="%23666" font-family="sans-serif" font-size="11" font-weight="bold" dominant-baseline="middle" text-anchor="middle">REMOVIDO</text></svg>';
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="320" height="180" viewBox="0 0 320 180"><rect width="320" height="180" fill="#cccccc"/><path d="M214.6 62.6c-1.3-4.9-5.2-8.8-10.1-10.1C195.6 50 160 50 160 50s-35.6 0-44.5 2.5c-4.9 1.3-8.8 5.2-10.1 10.1C103 71.5 103 90 103 90s0 18.5 2.4 27.4c1.3 4.9 5.2 8.8 10.1 10.1 8.9 2.5 44.5 2.5 44.5 2.5s35.6 0 44.5-2.5c4.9-1.3 8.8-5.2 10.1-10.1 2.4-8.9 2.4-27.4 2.4-27.4s0-18.5-2.4-27.4z" fill="#7f7f7f"/><circle cx="141" cy="90" r="6.5" fill="#f2f2f2"/><circle cx="160" cy="90" r="6.5" fill="#f2f2f2"/><circle cx="179" cy="90" r="6.5" fill="#f2f2f2"/></svg>`;
+    return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
   }
   return `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
 }
@@ -226,7 +226,7 @@ export function createCardElement(item, duplicates = [], forceDisplayMode = null
   }
   const colInfo = parseCollections(item);
   const videoUrl = `https://www.youtube.com/watch?v=${item.videoId}`;
-  const thumbUrl = `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
+  const thumbUrl = getSafeThumbnailUrl(item);
   const liveBadge = item.isLive ? `<span class="live-badge" title="Live"></span>` : '';
   const privacyNotice = item.privacyStatus === 'removed' ? `<span class="status-removed">❌</span>` : '';
   const formattedDate = formatLocalDateTime(item.publishedAt);
