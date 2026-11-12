@@ -241,6 +241,74 @@ function buildTemporalIndexMap(items) {
 }
 
 /**
+ * Extrai e retorna a lista atual de vídeos aplicando os mesmos filtros e ordenação por data da renderList.
+ */
+function getCurrentFilteredItems() {
+  if (!window.videoDatabase) return [];
+
+  let items = videoDatabase.filter(item => {
+    // 1. Filtro de removidos
+    if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
+      return false;
+    }
+
+    // 2. Filtro de canais ocultos
+    const isChannelHidden = state.hiddenChannels.includes(item.channelTitle) || 
+                            state.customFilterState.channels[item.channelTitle] === false;
+    if (isChannelHidden) return false;
+
+    // 3. Filtro de coleções ativas
+    if (state.activeCollectionFilter) {
+      const { type, value } = state.activeCollectionFilter;
+      if (type === 'collection') {
+        const cols = Array.isArray(item.collection) ? item.collection : [item.collection];
+        if (!cols.some(c => c && c.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'playlist') {
+        const pls = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+        if (!pls.some(p => p && p.trim().toLowerCase() === value.toLowerCase())) return false;
+      } else if (type === 'category') {
+        const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
+        if (value === 'NULL') {
+          if (item.category && item.category.trim()) return false;
+        } else {
+          if (!item.category || item.category.trim().toLowerCase() !== value.toLowerCase()) return false;
+        }
+      } else if (type === 'marker') {
+        const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
+          ? String(window.userMarkerCache[item.videoId]) : 'NULL';
+        if (markerVal !== value) return false;
+      }
+      return true;
+    }
+
+    // 4. Filtros customizados de categorias e marcadores
+    const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
+    if (state.customFilterState.categories[catKey] === false) return false;
+
+    const markerVal = (window.userMarkerCache && window.userMarkerCache[item.videoId] !== undefined)
+      ? String(window.userMarkerCache[item.videoId]) : 'NULL';
+    if (state.customFilterState.markers[markerVal] === false) return false;
+
+    return true;
+  });
+
+  // 5. Aplicação da busca textual (se houver)
+  if (state.searchQuery && state.searchQuery.trim() !== '') {
+    // Caso utilize fuzzyMatch ou includes, mantemos compatibilidade com o escopo
+    items = items.filter(item => item.title && item.title.toLowerCase().includes(state.searchQuery.toLowerCase()));
+  }
+
+  // 6. Garante a ordenação estrita por data para o mapeamento temporal
+  items.sort((a, b) => {
+    const valA = new Date(a.publishedAt);
+    const valB = new Date(b.publishedAt);
+    return state.sortAscending ? valA - valB : valB - valA;
+  });
+
+  return items;
+}
+
+/**
  * Salto temporal determinístico consultando o mapa em memória.
  */
 function scrollToTemporalTarget(year, month) {
