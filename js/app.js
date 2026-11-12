@@ -209,73 +209,103 @@ function syncNavTimeState() {
   });
 }
 
-let scrollTimeout = null;
-let isProgrammaticScroll = false;
+// ==========================================================================
+// SISTEMA DE NAVEGAÇÃO TEMPORAL BASEADO EM MAPA EM MEMÓRIA
+// ==========================================================================
 
+let isProgrammaticScroll = false;
+let scrollDebounceTimer = null;
+
+/**
+ * Constrói o mapa de índices temporais em memória com base nos itens atualmente renderizados/filtrados.
+ * Estrutura: { [year]: { [month]: firstVideoId } }
+ */
+function buildTemporalIndexMap(items) {
+  const map = {};
+  // Percorre na ordem cronológica correta (do mais antigo para o mais recente ou vice-versa)
+  items.forEach(item => {
+    if (!item.publishedAt) return;
+    const date = new Date(item.publishedAt);
+    if (isNaN(date.getTime())) return;
+
+    const year = date.getFullYear();
+    const month = date.getMonth(); // 0 a 11
+
+    if (!map[year]) map[year] = {};
+    // Armazena apenas o primeiro ID encontrado para aquele mês/ano
+    if (!map[year][month]) {
+      map[year][month] = item.videoId;
+    }
+  });
+  return map;
+}
+
+/**
+ * Salto temporal determinístico consultando o mapa em memória.
+ */
 function scrollToTemporalTarget(year, month) {
   if (state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
-
-  const cards = Array.from(document.querySelectorAll('#videoListContainer [data-date]'));
-  let targetCard = null;
 
   const targetYear = Number(year);
   const targetMonth = Number(month);
 
-  // Procura o card exato que bate com o Ano e o Mês
-  for (const card of cards) {
-    const rawDate = card.getAttribute('data-date');
-    if (!rawDate) continue;
-    const cardDate = new Date(rawDate);
-    if (isNaN(cardDate.getTime())) continue;
+  // Obtém a lista atual filtrada de itens
+  const activeItems = getCurrentFilteredItems();
+  const temporalMap = buildTemporalIndexMap(activeItems);
 
-    if (cardDate.getFullYear() === targetYear && cardDate.getMonth() === targetMonth) {
-      targetCard = card.closest('.card-display-lista, .card-display-compacto, .card-display-grade') || card;
-      break; // Encontrou o primeiro do mês exato, para e usa este
-    }
-  }
+  let targetVideoId = null;
 
-  // Fallback de segurança: se não houver o mês exato, busca o primeiro card do ano correspondente
-  if (!targetCard) {
-    for (const card of cards) {
-      const rawDate = card.getAttribute('data-date');
-      if (!rawDate) continue;
-      const cardDate = new Date(rawDate);
-      if (isNaN(cardDate.getTime())) continue;
-
-      if (cardDate.getFullYear() === targetYear) {
-        targetCard = card.closest('.card-display-lista, .card-display-compacto, .card-display-grade') || card;
-        break;
+  // 1. Tenta buscar o ID exato no mês e ano especificados
+  if (temporalMap[targetYear] && temporalMap[targetYear][targetMonth]) {
+    targetVideoId = temporalMap[targetYear][targetMonth];
+  } else {
+    // 2. Fallback: Se o mês exato não existir, pega o primeiro mês disponível daquele ano
+    const availableMonths = temporalMap[targetYear] ? Object.keys(temporalMap[targetYear]) : [];
+    if (availableMonths.length > 0) {
+      targetVideoId = temporalMap[targetYear][availableMonths[0]];
+    } else {
+      // 3. Fallback absoluto: pega o ano mais próximo disponível no mapa
+      const availableYears = Object.keys(temporalMap).map(Number).sort((a, b) => a - b);
+      const closestYear = availableYears.find(y => y >= targetYear) || availableYears[availableYears.length - 1];
+      if (closestYear && temporalMap[closestYear]) {
+        const monthsInClosest = Object.keys(temporalMap[closestYear]).map(Number).sort((a, b) => a - b);
+        targetVideoId = temporalMap[closestYear][monthsInClosest[0]];
       }
     }
   }
 
-  if (targetCard) {
+  if (!targetVideoId) return;
+
+  // Localiza o elemento exato no DOM através do ID unívoco do vídeo
+  const targetElement = document.querySelector(`[data-videoid="${targetVideoId}"]`) || 
+                        document.querySelector(`[href*="v=${targetVideoId}"]`)?.closest('.card-display-lista, .card-display-compacto, .card-display-grade');
+
+  if (targetElement) {
     isNavTimeScrolling = true;
     isProgrammaticScroll = true;
-    if (scrollTimeout) clearTimeout(scrollTimeout);
+    if (scrollDebounceTimer) clearTimeout(scrollDebounceTimer);
 
     const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
     const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
     
-    // Cálculo preciso considerando a posição absoluta do documento
-    const elementRect = targetCard.getBoundingClientRect();
-    const absoluteElementTop = elementRect.top + window.pageYOffset;
-    const targetY = absoluteElementTop - (topBarHeight + navTimeHeight + 15);
+    // Cálculo de posição absoluto e seguro
+    const elementRect = targetElement.getBoundingClientRect();
+    const absoluteTop = elementRect.top + window.pageYOffset;
+    const targetY = absoluteTop - (topBarHeight + navTimeHeight + 15);
 
     window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
 
-    scrollTimeout = setTimeout(() => {
+    scrollDebounceTimer = setTimeout(() => {
       isNavTimeScrolling = false;
       isProgrammaticScroll = false;
     }, 600);
-  } else {
-    isNavTimeScrolling = false;
-    isProgrammaticScroll = false;
   }
 }
 
+/**
+ * Atualização dos selects durante o scroll manual, utilizando o mesmo princípio determinístico.
+ */
 function updateNavTimeOnScroll() {
-  // Se houver uma rolagem programada em curso (via clique/seta), ignora completamente o scroll manual
   if (isProgrammaticScroll || isNavTimeScrolling || state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
 
   const cards = Array.from(document.querySelectorAll('#videoListContainer [data-date]'));
