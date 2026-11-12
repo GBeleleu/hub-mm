@@ -625,8 +625,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('yearUpBtn')?.addEventListener('click', () => {
     if (!yearSelect || yearSelect.options.length === 0) return;
     const idx = yearSelect.selectedIndex;
-    if (idx > 0) {
-      yearSelect.selectedIndex = idx - 1;
+    
+    const targetIdx = state.sortAscending ? idx - 1 : idx + 1;
+
+    if (targetIdx >= 0 && targetIdx < yearSelect.options.length) {
+      yearSelect.selectedIndex = targetIdx;
       updateAvailableMonths();
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     }
@@ -635,8 +638,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('yearDownBtn')?.addEventListener('click', () => {
     if (!yearSelect || yearSelect.options.length === 0) return;
     const idx = yearSelect.selectedIndex;
-    if (idx < yearSelect.options.length - 1) {
-      yearSelect.selectedIndex = idx + 1;
+    
+    const targetIdx = state.sortAscending ? idx + 1 : idx - 1;
+
+    if (targetIdx >= 0 && targetIdx < yearSelect.options.length) {
+      yearSelect.selectedIndex = targetIdx;
       updateAvailableMonths();
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     }
@@ -650,18 +656,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentVal = monthSelect.value;
     const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
 
-    if (currentIndex > 0) {
-      monthSelect.value = enabledOpts[currentIndex - 1].value;
+    const step = state.sortAscending ? -1 : 1;
+    const targetIndex = currentIndex + step;
+
+    if (targetIndex >= 0 && targetIndex < enabledOpts.length) {
+      monthSelect.value = enabledOpts[targetIndex].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
       const yearOpts = Array.from(yearSelect.options);
       const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
-      if (currentYearIdx > 0) {
-        yearSelect.selectedIndex = currentYearIdx - 1;
+      const yearStep = state.sortAscending ? -1 : 1;
+      const targetYearIdx = currentYearIdx + yearStep;
+
+      if (targetYearIdx >= 0 && targetYearIdx < yearOpts.length) {
+        yearSelect.selectedIndex = targetYearIdx;
         updateAvailableMonths();
         const newEnabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
         if (newEnabledOpts.length > 0) {
-          monthSelect.value = newEnabledOpts[newEnabledOpts.length - 1].value;
+          monthSelect.value = state.sortAscending ? newEnabledOpts[newEnabledOpts.length - 1].value : newEnabledOpts[0].value;
           scrollToTemporalTarget(yearSelect.value, monthSelect.value);
         }
       }
@@ -676,18 +688,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const currentVal = monthSelect.value;
     const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
 
-    if (currentIndex !== -1 && currentIndex < enabledOpts.length - 1) {
-      monthSelect.value = enabledOpts[currentIndex + 1].value;
+    const step = state.sortAscending ? 1 : -1;
+    const targetIndex = currentIndex + step;
+
+    if (targetIndex >= 0 && targetIndex < enabledOpts.length) {
+      monthSelect.value = enabledOpts[targetIndex].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
       const yearOpts = Array.from(yearSelect.options);
       const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
-      if (currentYearIdx !== -1 && currentYearIdx < yearOpts.length - 1) {
-        yearSelect.selectedIndex = currentYearIdx + 1;
+      const yearStep = state.sortAscending ? 1 : -1;
+      const targetYearIdx = currentYearIdx + yearStep;
+
+      if (targetYearIdx >= 0 && targetYearIdx < yearOpts.length) {
+        yearSelect.selectedIndex = targetYearIdx;
         updateAvailableMonths();
         const newEnabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
         if (newEnabledOpts.length > 0) {
-          monthSelect.value = newEnabledOpts[0].value;
+          monthSelect.value = state.sortAscending ? newEnabledOpts[0].value : newEnabledOpts[newEnabledOpts.length - 1].value;
           scrollToTemporalTarget(yearSelect.value, monthSelect.value);
         }
       }
