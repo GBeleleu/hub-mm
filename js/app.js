@@ -387,26 +387,22 @@ function updateNavTimeOnScroll() {
 
   const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
   const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
-  const triggerY = topBarHeight + navTimeHeight + 50;
+  const triggerY = topBarHeight + navTimeHeight + 40;
 
   let activeCard = null;
 
-  // No modo grade, como os cards formam linhas horizontais, priorizamos o primeiro card cuja linha cruze o triggerY
-  if (state.displayMode === 'grade') {
-    activeCard = cards.find(card => {
-      const rect = card.getBoundingClientRect();
-      return rect.bottom >= triggerY;
-    }) || cards[0];
-  } else {
-    // Modo lista ou compacto (vertical estrito)
-    for (const card of cards) {
-      const rect = card.getBoundingClientRect();
-      if (rect.top <= triggerY && rect.bottom >= triggerY) {
-        activeCard = card;
-        break;
-      }
+  // Abordagem vertical pura e determinística para todos os modos
+  for (const card of cards) {
+    const rect = card.getBoundingClientRect();
+    if (rect.top <= triggerY && rect.bottom >= triggerY) {
+      activeCard = card;
+      break;
     }
-    if (!activeCard && cards.length > 0) activeCard = cards[0];
+  }
+
+  // Fallback de segurança caso nenhum card cruze exatamente a linha de gatilho
+  if (!activeCard) {
+    activeCard = cards.find(card => card.getBoundingClientRect().top >= triggerY) || cards[0];
   }
 
   if (activeCard) {
