@@ -173,6 +173,7 @@ function updateAvailableMonths() {
   if (!yearSelect || !monthSelect) return;
 
   const currentYear = Number(yearSelect.value);
+  state.selectedYear = currentYear; // Sincroniza o estado global
   const dataMap = getAvailableTemporalData();
   const availableMonths = dataMap.get(currentYear) || new Set();
 
@@ -229,7 +230,7 @@ function buildTemporalIndexMap(items) {
     if (isNaN(date.getTime())) return;
 
     const year = date.getFullYear();
-    const month = date.getMonth(); // 0 a 11
+    const month = date.getMonth();
 
     if (!map[year]) map[year] = {};
     // Armazena apenas o primeiro ID encontrado para aquele mês/ano
@@ -244,9 +245,10 @@ function buildTemporalIndexMap(items) {
  * Extrai e retorna a lista atual de vídeos aplicando os mesmos filtros e ordenação por data da renderList.
  */
 function getCurrentFilteredItems() {
-  if (!window.videoDatabase) return [];
+  if (!window.videoDatabase && typeof videoDatabase === 'undefined') return [];
+  const db = window.videoDatabase || videoDatabase;
 
-  let items = videoDatabase.filter(item => {
+  let items = db.filter(item => {
     // 1. Filtro de removidos
     if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
       return false;
@@ -316,6 +318,7 @@ function scrollToTemporalTarget(year, month) {
 
   const targetYear = Number(year);
   const targetMonth = Number(month);
+  state.selectedYear = targetYear;
 
   // Obtém a lista atual filtrada de itens
   const activeItems = getCurrentFilteredItems();
@@ -397,6 +400,7 @@ function updateNavTimeOnScroll() {
 
       if (yearSelect && yearSelect.value !== String(currentYear)) {
         yearSelect.value = String(currentYear);
+        state.selectedYear = currentYear;
         updateAvailableMonths();
       }
       
@@ -469,11 +473,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Elementos e menus dropdown
   const seqToggleBtn = document.getElementById('sequencedToggleBtn');
   const seqMenu = document.getElementById('sequencedMenu');
-  
   const sortToggleBtn = document.getElementById('sortToggleBtn');
   const sortMenu = document.getElementById('sortMenu');
   const sortOrderCheckbox = document.getElementById('sortOrderCheckbox');
-  
   const avatarBtn = document.getElementById('userAvatarBtn');
   const userMenu = document.getElementById('userMenu');
 
@@ -588,17 +590,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('collectionsModal')?.classList.remove('open');
   });
 
-  document.getElementById('applyCollectionsBtn')?.addEventListener('click', () => {
-    const hidden = [];
-    document.querySelectorAll('#collectionsListContainer input[type="checkbox"]').forEach(cb => {
-      if (!cb.checked) hidden.push(cb.value);
-    });
-    setHiddenCollectionsTags(hidden);
-    saveState();
-    renderList();
-    document.getElementById('collectionsModal')?.classList.remove('open');
-  });
-
   // ==========================================
   // INÍCIO DOS EVENTOS DO NAVTIME
   // ==========================================
@@ -634,7 +625,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-document.getElementById('monthUpBtn')?.addEventListener('click', () => {
+  document.getElementById('monthUpBtn')?.addEventListener('click', () => {
     if (!monthSelect || !yearSelect) return;
     const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
     if (enabledOpts.length === 0) return;
@@ -643,11 +634,9 @@ document.getElementById('monthUpBtn')?.addEventListener('click', () => {
     const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
 
     if (currentIndex > 0) {
-      // Move para o mês anterior disponível no mesmo ano
       monthSelect.value = enabledOpts[currentIndex - 1].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
-      // Se estiver no primeiro mês disponível, tenta ir para o último mês do ano anterior com dados
       const yearOpts = Array.from(yearSelect.options);
       const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
       if (currentYearIdx > 0) {
@@ -671,11 +660,9 @@ document.getElementById('monthUpBtn')?.addEventListener('click', () => {
     const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
 
     if (currentIndex !== -1 && currentIndex < enabledOpts.length - 1) {
-      // Move para o próximo mês disponível no mesmo ano
       monthSelect.value = enabledOpts[currentIndex + 1].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
-      // Se estiver no último mês disponível, tenta ir para o primeiro mês do próximo ano com dados
       const yearOpts = Array.from(yearSelect.options);
       const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
       if (currentYearIdx !== -1 && currentYearIdx < yearOpts.length - 1) {
@@ -700,7 +687,6 @@ window.applyCollectionShortcut = function(type, value) {
   state.activeCollectionFilter = { type, value, name: value };
   state.customFilterNoticeActive = true;
 
-  // Reseta os estados globais para que não haja acúmulo indesejado com seleções anteriores
   state.customFilterState.categories = {};
   state.customFilterState.markers = {};
 
