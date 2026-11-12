@@ -201,8 +201,9 @@ function syncNavTimeState() {
   const monthUpBtn = document.getElementById('monthUpBtn');
   const monthDownBtn = document.getElementById('monthDownBtn');
 
-  // Regra 4: Desabilitar se "Ordenar" != "Data" ou se houver busca ativa
-  const isDisabled = state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '');
+  const isDisabled = state.sortBy !== 'data' || 
+                     (state.searchQuery && state.searchQuery.trim() !== '') || 
+                     state.organizeMode === 'sequenciado-canais';
 
   if (container) container.classList.toggle('disabled', isDisabled);
   [yearSelect, monthSelect, yearUpBtn, yearDownBtn, monthUpBtn, monthDownBtn].forEach(el => {
@@ -377,43 +378,63 @@ function scrollToTemporalTarget(year, month) {
  * Atualização dos selects durante o scroll manual, utilizando o mesmo princípio determinístico.
  */
 function updateNavTimeOnScroll() {
-  if (isProgrammaticScroll || isNavTimeScrolling || state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
+  if (isProgrammaticScroll || isNavTimeScrolling || state.sortBy !== 'data' || 
+      (state.searchQuery && state.searchQuery.trim() !== '') || 
+      state.organizeMode === 'sequenciado-canais') return;
 
   const cards = Array.from(document.querySelectorAll('#videoListContainer [data-date]'));
+  if (cards.length === 0) return;
+
   const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
   const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
-  const triggerY = topBarHeight + navTimeHeight + 40;
+  const triggerY = topBarHeight + navTimeHeight + 50;
 
-  for (const card of cards) {
-    const rect = card.getBoundingClientRect();
-    if (rect.top <= triggerY && rect.bottom >= triggerY) {
-      const rawDate = card.getAttribute('data-date');
-      if (!rawDate) continue;
-      const cardDate = new Date(rawDate);
-      if (isNaN(cardDate.getTime())) continue;
+  let activeCard = null;
 
-      const yearSelect = document.getElementById('yearSelect');
-      const monthSelect = document.getElementById('monthSelect');
-      
-      const currentYear = cardDate.getFullYear();
-      const currentMonth = cardDate.getMonth();
-
-      if (yearSelect && yearSelect.value !== String(currentYear)) {
-        yearSelect.value = String(currentYear);
-        state.selectedYear = currentYear;
-        updateAvailableMonths();
+  // No modo grade, como os cards formam linhas horizontais, priorizamos o primeiro card cuja linha cruze o triggerY
+  if (state.displayMode === 'grade') {
+    activeCard = cards.find(card => {
+      const rect = card.getBoundingClientRect();
+      return rect.bottom >= triggerY;
+    }) || cards[0];
+  } else {
+    // Modo lista ou compacto (vertical estrito)
+    for (const card of cards) {
+      const rect = card.getBoundingClientRect();
+      if (rect.top <= triggerY && rect.bottom >= triggerY) {
+        activeCard = card;
+        break;
       }
-      
-      if (monthSelect) {
-        const targetOption = monthSelect.querySelector(`option[value="${currentMonth}"]`);
-        if (targetOption && !targetOption.disabled) {
-          monthSelect.value = String(currentMonth);
-        } else {
-          const firstValidOpt = Array.from(monthSelect.options).find(opt => !opt.disabled);
-          if (firstValidOpt) monthSelect.value = firstValidOpt.value;
-        }
+    }
+    if (!activeCard && cards.length > 0) activeCard = cards[0];
+  }
+
+  if (activeCard) {
+    const rawDate = activeCard.getAttribute('data-date');
+    if (!rawDate) return;
+    const cardDate = new Date(rawDate);
+    if (isNaN(cardDate.getTime())) return;
+
+    const yearSelect = document.getElementById('yearSelect');
+    const monthSelect = document.getElementById('monthSelect');
+    
+    const currentYear = cardDate.getFullYear();
+    const currentMonth = cardDate.getMonth();
+
+    if (yearSelect && yearSelect.value !== String(currentYear)) {
+      yearSelect.value = String(currentYear);
+      state.selectedYear = currentYear;
+      updateAvailableMonths();
+    }
+    
+    if (monthSelect) {
+      const targetOption = monthSelect.querySelector(`option[value="${currentMonth}"]`);
+      if (targetOption && !targetOption.disabled) {
+        monthSelect.value = String(currentMonth);
+      } else {
+        const firstValidOpt = Array.from(monthSelect.options).find(opt => !opt.disabled);
+        if (firstValidOpt) monthSelect.value = firstValidOpt.value;
       }
-      break;
     }
   }
 }
