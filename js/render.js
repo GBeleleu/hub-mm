@@ -62,6 +62,14 @@ export function formatDuration(totalSeconds) {
   return hours > 0 ? `${hours}:${pad(minutes)}:${pad(seconds)}` : `${minutes}:${pad(seconds)}`;
 }
 
+// Retorna um placeholder SVG embutido (zero requisições externas) para vídeos removidos
+export function getSafeThumbnailUrl(item) {
+  if (item.privacyStatus === 'removed') {
+    return 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="90" viewBox="0 0 120 90"><rect width="120" height="90" fill="%231a1a1a"/><text x="50%" y="50%" fill="%23666" font-family="sans-serif" font-size="11" font-weight="bold" dominant-baseline="middle" text-anchor="middle">REMOVIDO</text></svg>';
+  }
+  return `https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg`;
+}
+
 // Modal de visualização da Thumbnail Ampliada
 export function openThumbModal(item) {
   const modal = document.getElementById('thumbPreviewModal');
@@ -70,8 +78,16 @@ export function openThumbModal(item) {
   const watchBtn = document.getElementById('thumbModalWatchBtn');
 
   if (modal && img && title && watchBtn) {
-    img.src = `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
-    img.onerror = () => { img.src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`; };
+    if (item.privacyStatus === 'removed') {
+      img.onerror = null;
+      img.src = getSafeThumbnailUrl(item);
+    } else {
+      img.src = `https://img.youtube.com/vi/${item.videoId}/maxresdefault.jpg`;
+      img.onerror = () => { 
+        img.onerror = null; // Evita loop infinito caso hqdefault também falhe
+        img.src = `https://img.youtube.com/vi/${item.videoId}/hqdefault.jpg`; 
+      };
+    }
     title.textContent = item.title;
     watchBtn.href = `https://www.youtube.com/watch?v=${item.videoId}`;
     modal.classList.add('open');
