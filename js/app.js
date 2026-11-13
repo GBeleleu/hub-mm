@@ -523,6 +523,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = e.currentTarget;
       state.sortBy = target.dataset.sort;
       syncButtonGroupsUI();
+      populateYearSelector();
       saveState();
       renderList();
       if (sortMenu) sortMenu.style.display = 'none';
@@ -532,6 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
   sortOrderCheckbox?.addEventListener('change', (e) => {
     state.sortAscending = !e.target.checked;
     syncButtonGroupsUI();
+    populateYearSelector();
     saveState();
     renderList();
   });
