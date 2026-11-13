@@ -389,48 +389,36 @@ function updateNavTimeOnScroll() {
   const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
   const triggerY = topBarHeight + navTimeHeight + 40;
 
-  let activeCard = null;
-
-  // Abordagem vertical pura e determinística para todos os modos
   for (const card of cards) {
     const rect = card.getBoundingClientRect();
     if (rect.top <= triggerY && rect.bottom >= triggerY) {
-      activeCard = card;
-      break;
-    }
-  }
+      const rawDate = card.getAttribute('data-date');
+      if (!rawDate) continue;
+      const cardDate = new Date(rawDate);
+      if (isNaN(cardDate.getTime())) continue;
 
-  // Fallback de segurança caso nenhum card cruze exatamente a linha de gatilho
-  if (!activeCard) {
-    activeCard = cards.find(card => card.getBoundingClientRect().top >= triggerY) || cards[0];
-  }
+      const yearSelect = document.getElementById('yearSelect');
+      const monthSelect = document.getElementById('monthSelect');
+      
+      const currentYear = cardDate.getFullYear();
+      const currentMonth = cardDate.getMonth();
 
-  if (activeCard) {
-    const rawDate = activeCard.getAttribute('data-date');
-    if (!rawDate) return;
-    const cardDate = new Date(rawDate);
-    if (isNaN(cardDate.getTime())) return;
-
-    const yearSelect = document.getElementById('yearSelect');
-    const monthSelect = document.getElementById('monthSelect');
-    
-    const currentYear = cardDate.getFullYear();
-    const currentMonth = cardDate.getMonth();
-
-    if (yearSelect && yearSelect.value !== String(currentYear)) {
-      yearSelect.value = String(currentYear);
-      state.selectedYear = currentYear;
-      updateAvailableMonths();
-    }
-    
-    if (monthSelect) {
-      const targetOption = monthSelect.querySelector(`option[value="${currentMonth}"]`);
-      if (targetOption && !targetOption.disabled) {
-        monthSelect.value = String(currentMonth);
-      } else {
-        const firstValidOpt = Array.from(monthSelect.options).find(opt => !opt.disabled);
-        if (firstValidOpt) monthSelect.value = firstValidOpt.value;
+      if (yearSelect && yearSelect.value !== String(currentYear)) {
+        yearSelect.value = String(currentYear);
+        state.selectedYear = currentYear;
+        updateAvailableMonths();
       }
+      
+      if (monthSelect) {
+        const targetOption = monthSelect.querySelector(`option[value="${currentMonth}"]`);
+        if (targetOption && !targetOption.disabled) {
+          monthSelect.value = String(currentMonth);
+        } else {
+          const firstValidOpt = Array.from(monthSelect.options).find(opt => !opt.disabled);
+          if (firstValidOpt) monthSelect.value = firstValidOpt.value;
+        }
+      }
+      break;
     }
   }
 }
@@ -622,58 +610,72 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollToTemporalTarget(yearSelect.value, e.target.value);
   });
 
-  document.getElementById('yearUpBtn')?.addEventListener('click', () => {
-    if (!yearSelect || yearSelect.options.length === 0) return;
-    const idx = yearSelect.selectedIndex;
-    
-    const targetIdx = state.sortAscending ? idx - 1 : idx + 1;
+  function getChronologicalYears() {
+    const dataMap = getAvailableTemporalData();
+    return Array.from(dataMap.keys()).sort((a, b) => a - b);
+  }
 
-    if (targetIdx >= 0 && targetIdx < yearSelect.options.length) {
-      yearSelect.selectedIndex = targetIdx;
+  document.getElementById('yearUpBtn')?.addEventListener('click', () => {
+    const yearSelect = document.getElementById('yearSelect');
+    const monthSelect = document.getElementById('monthSelect');
+    if (!yearSelect) return;
+
+    const chronoYears = getChronologicalYears();
+    const currentYear = Number(yearSelect.value);
+    const currentIndex = chronoYears.indexOf(currentYear);
+
+    // Ano anterior no tempo (passado)
+    if (currentIndex > 0) {
+      const targetYear = chronoYears[currentIndex - 1];
+      yearSelect.value = targetYear;
+      state.selectedYear = targetYear;
       updateAvailableMonths();
-      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+      scrollToTemporalTarget(targetYear, monthSelect.value);
     }
   });
 
   document.getElementById('yearDownBtn')?.addEventListener('click', () => {
-    if (!yearSelect || yearSelect.options.length === 0) return;
-    const idx = yearSelect.selectedIndex;
-    
-    const targetIdx = state.sortAscending ? idx + 1 : idx - 1;
+    const yearSelect = document.getElementById('yearSelect');
+    const monthSelect = document.getElementById('monthSelect');
+    if (!yearSelect) return;
 
-    if (targetIdx >= 0 && targetIdx < yearSelect.options.length) {
-      yearSelect.selectedIndex = targetIdx;
+    const chronoYears = getChronologicalYears();
+    const currentYear = Number(yearSelect.value);
+    const currentIndex = chronoYears.indexOf(currentYear);
+
+    // Próximo ano no tempo (futuro)
+    if (currentIndex !== -1 && currentIndex < chronoYears.length - 1) {
+      const targetYear = chronoYears[currentIndex + 1];
+      yearSelect.value = targetYear;
+      state.selectedYear = targetYear;
       updateAvailableMonths();
-      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
+      scrollToTemporalTarget(targetYear, monthSelect.value);
     }
   });
 
   document.getElementById('monthUpBtn')?.addEventListener('click', () => {
     if (!monthSelect || !yearSelect) return;
-    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
+    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled).sort((a, b) => Number(a.value) - Number(b.value));
     if (enabledOpts.length === 0) return;
 
     const currentVal = monthSelect.value;
     const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
 
-    const step = state.sortAscending ? -1 : 1;
-    const targetIndex = currentIndex + step;
-
-    if (targetIndex >= 0 && targetIndex < enabledOpts.length) {
-      monthSelect.value = enabledOpts[targetIndex].value;
+    if (currentIndex > 0) {
+      monthSelect.value = enabledOpts[currentIndex - 1].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
-      const yearOpts = Array.from(yearSelect.options);
-      const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
-      const yearStep = state.sortAscending ? -1 : 1;
-      const targetYearIdx = currentYearIdx + yearStep;
-
-      if (targetYearIdx >= 0 && targetYearIdx < yearOpts.length) {
-        yearSelect.selectedIndex = targetYearIdx;
+      // Recua um ano cronologicamente se estiver no primeiro mês
+      const chronoYears = getChronologicalYears();
+      const currentYear = Number(yearSelect.value);
+      const yearIdx = chronoYears.indexOf(currentYear);
+      if (yearIdx > 0) {
+        yearSelect.value = chronoYears[yearIdx - 1];
+        state.selectedYear = chronoYears[yearIdx - 1];
         updateAvailableMonths();
-        const newEnabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-        if (newEnabledOpts.length > 0) {
-          monthSelect.value = state.sortAscending ? newEnabledOpts[newEnabledOpts.length - 1].value : newEnabledOpts[0].value;
+        const newOpts = Array.from(monthSelect.options).filter(o => !o.disabled).sort((a, b) => Number(a.value) - Number(b.value));
+        if (newOpts.length > 0) {
+          monthSelect.value = newOpts[newOpts.length - 1].value; // Último mês do ano anterior
           scrollToTemporalTarget(yearSelect.value, monthSelect.value);
         }
       }
@@ -682,30 +684,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('monthDownBtn')?.addEventListener('click', () => {
     if (!monthSelect || !yearSelect) return;
-    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
+    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled).sort((a, b) => Number(a.value) - Number(b.value));
     if (enabledOpts.length === 0) return;
 
     const currentVal = monthSelect.value;
     const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
 
-    const step = state.sortAscending ? 1 : -1;
-    const targetIndex = currentIndex + step;
-
-    if (targetIndex >= 0 && targetIndex < enabledOpts.length) {
-      monthSelect.value = enabledOpts[targetIndex].value;
+    if (currentIndex !== -1 && currentIndex < enabledOpts.length - 1) {
+      monthSelect.value = enabledOpts[currentIndex + 1].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
-      const yearOpts = Array.from(yearSelect.options);
-      const currentYearIdx = yearOpts.findIndex(o => o.value === yearSelect.value);
-      const yearStep = state.sortAscending ? 1 : -1;
-      const targetYearIdx = currentYearIdx + yearStep;
-
-      if (targetYearIdx >= 0 && targetYearIdx < yearOpts.length) {
-        yearSelect.selectedIndex = targetYearIdx;
+      // Avança um ano cronologicamente se estiver no último mês
+      const chronoYears = getChronologicalYears();
+      const currentYear = Number(yearSelect.value);
+      const yearIdx = chronoYears.indexOf(currentYear);
+      if (yearIdx !== -1 && yearIdx < chronoYears.length - 1) {
+        yearSelect.value = chronoYears[yearIdx + 1];
+        state.selectedYear = chronoYears[yearIdx + 1];
         updateAvailableMonths();
-        const newEnabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-        if (newEnabledOpts.length > 0) {
-          monthSelect.value = state.sortAscending ? newEnabledOpts[0].value : newEnabledOpts[newEnabledOpts.length - 1].value;
+        const newOpts = Array.from(monthSelect.options).filter(o => !o.disabled).sort((a, b) => Number(a.value) - Number(b.value));
+        if (newOpts.length > 0) {
+          monthSelect.value = newOpts[0].value; // Primeiro mês do próximo ano
           scrollToTemporalTarget(yearSelect.value, monthSelect.value);
         }
       }
