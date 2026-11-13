@@ -114,12 +114,10 @@ async function loadDatabase() {
 }
 
 // ==========================================================================
-// SISTEMA DE NAVEGAÇÃO TEMPORAL
+// SISTEMA DE NAVEGAÇÃO TEMPORAL (BLINDADO E DETERMINÍSTICO - UTC & SCROLLEND)
 // ==========================================================================
 
-let isNavTimeScrolling = false;
 let isProgrammaticScroll = false;
-let scrollDebounceTimer = null;
 
 /**
  * Extrai e retorna a lista atual de vídeos aplicando os filtros ativos e a ordenação.
@@ -190,8 +188,7 @@ function getCurrentFilteredItems() {
 }
 
 /**
- * Constrói a estrutura de âncoras temporais em memória.
- * Retorna anos ordenados visualmente e um mapa de meses disponíveis por ano com o primeiro videoId correspondente.
+ * Constrói a estrutura de âncoras temporais em memória utilizando UTC estrito.
  */
 function getTemporalAnchors() {
   const items = getCurrentFilteredItems();
@@ -204,8 +201,9 @@ function getTemporalAnchors() {
     const date = new Date(item.publishedAt);
     if (isNaN(date.getTime())) return;
 
-    const year = date.getFullYear();
-    const month = date.getMonth();
+    // Uso estrito de UTC para evitar distorção de fuso horário local
+    const year = date.getUTCFullYear();
+    const month = date.getUTCMonth();
 
     yearsSet.add(year);
     if (!monthsByYear.has(year)) {
@@ -219,7 +217,6 @@ function getTemporalAnchors() {
     }
   });
 
-  // Anos ordenados estritamente pela direção visual (sortAscending: true = cresc, false = decresc)
   const sortedYears = Array.from(yearsSet).sort((a, b) => state.sortAscending ? a - b : b - a);
 
   return { years: sortedYears, monthsByYear, anchorMap };
@@ -277,7 +274,6 @@ function populateYearSelector() {
     { val: 11, label: '12 Dezembro' }
   ];
 
-  // Espelhamento da Ordem Visual dos Meses
   allMonths.sort((a, b) => state.sortAscending ? a.val - b.val : b.val - a.val);
 
   monthSelect.innerHTML = '';
@@ -291,7 +287,6 @@ function populateYearSelector() {
     monthSelect.appendChild(opt);
   });
 
-  // Seleciona mês válido correspondente
   const validOptions = Array.from(monthSelect.options).filter(o => !o.disabled);
   if (validOptions.length > 0) {
     const isValidCurrent = validOptions.some(o => Number(o.value) === currentMonthNum);
@@ -328,7 +323,7 @@ function syncNavTimeState() {
 }
 
 /**
- * Executa o salto de scroll determinístico para o vídeo correspondente ao ano/mês.
+ * Executa o salto de scroll determinístico utilizando scrollIntoView e scrollend.
  */
 function scrollToTemporalTarget(year, month) {
   if (state.sortBy !== 'data' || (state.searchQuery && state.searchQuery.trim() !== '')) return;
@@ -344,13 +339,11 @@ function scrollToTemporalTarget(year, month) {
   if (anchorMap.has(exactKey)) {
     targetVideoId = anchorMap.get(exactKey);
   } else {
-    // Fallback para o primeiro mês disponível no ano selecionado
     const monthsInYear = monthsByYear.get(targetYear);
     if (monthsInYear && monthsInYear.size > 0) {
       const sortedMonths = Array.from(monthsInYear).sort((a, b) => state.sortAscending ? a - b : b - a);
       targetVideoId = anchorMap.get(`${targetYear}-${sortedMonths[0]}`);
     } else if (years.length > 0) {
-      // Fallback absoluto para o ano mais próximo
       const closestYear = years.find(y => state.sortAscending ? y >= targetYear : y <= targetYear) || years[0];
       const monthsInClosest = monthsByYear.get(closestYear);
       if (monthsInClosest && monthsInClosest.size > 0) {
@@ -366,31 +359,34 @@ function scrollToTemporalTarget(year, month) {
                         document.querySelector(`[href*="v=${targetVideoId}"]`)?.closest('.card-display-lista, .card-display-compacto, .card-display-grade');
 
   if (targetElement) {
-    isNavTimeScrolling = true;
     isProgrammaticScroll = true;
-    if (scrollDebounceTimer) clearTimeout(scrollDebounceTimer);
 
+    // Configura margem superior automática para compensar a barra fixa superior
     const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
     const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
-    
-    const elementRect = targetElement.getBoundingClientRect();
-    const absoluteTop = elementRect.top + window.pageYOffset;
-    const targetY = absoluteTop - (topBarHeight + navTimeHeight + 15);
+    targetElement.style.scrollMarginTop = `${topBarHeight + navTimeHeight + 20}px`;
 
-    window.scrollTo({ top: Math.max(0, targetY), behavior: 'smooth' });
+    targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    scrollDebounceTimer = setTimeout(() => {
-      isNavTimeScrolling = false;
+    // Liberação determinística baseada no término real do scroll (scrollend com fallback)
+    const releaseLock = () => {
       isProgrammaticScroll = false;
-    }, 600);
+      window.removeEventListener('scrollend', releaseLock);
+    };
+
+    if ('onscrollend' in window) {
+      window.addEventListener('scrollend', releaseLock, { once: true });
+    } else {
+      setTimeout(releaseLock, 900);
+    }
   }
 }
 
 /**
- * Atualização passiva dos selects durante o scroll manual da página.
+ * Atualização passiva dos selects durante o scroll manual utilizando UTC estrito.
  */
 function updateNavTimeOnScroll() {
-  if (isProgrammaticScroll || isNavTimeScrolling || state.sortBy !== 'data' || 
+  if (isProgrammaticScroll || state.sortBy !== 'data' || 
       (state.searchQuery && state.searchQuery.trim() !== '') || 
       state.organizeMode === 'sequenciado-canais') return;
 
@@ -412,13 +408,13 @@ function updateNavTimeOnScroll() {
       const yearSelect = document.getElementById('yearSelect');
       const monthSelect = document.getElementById('monthSelect');
       
-      const currentYear = cardDate.getFullYear();
-      const currentMonth = cardDate.getMonth();
+      const currentYear = cardDate.getUTCFullYear();
+      const currentMonth = cardDate.getUTCMonth();
 
       if (yearSelect && yearSelect.value !== String(currentYear)) {
         yearSelect.value = String(currentYear);
         state.selectedYear = currentYear;
-        populateYearSelector(); // Atualiza meses do ano correspondente
+        populateYearSelector();
       }
       
       if (monthSelect) {
