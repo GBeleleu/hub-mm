@@ -17,11 +17,6 @@ function adjustBodyPadding() {
   document.body.style.paddingTop = `${totalHeight + 20}px`;
 }
 
-function updateSortBtnText() {
-  const label = document.getElementById('sortOrderLabel');
-  if (label) label.textContent = state.sortAscending ? 'Asc ▲' : 'Desc ▼';
-}
-
 function syncButtonGroupsUI() {
   // Sincronizar Grupo EXIBIR
   document.querySelectorAll('#displayModeGroup .btn-group-item').forEach(btn => {
