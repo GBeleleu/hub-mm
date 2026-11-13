@@ -608,79 +608,64 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollToTemporalTarget(yearSelect.value, e.target.value);
   });
 
-// Helper para obter a lista de anos respeitando a ordem visual atual da tela
-  function getVisualYears() {
-    const dataMap = getAvailableTemporalData();
-    // Se sortAscending for true: [2017, ..., 2026]. Se false: [2026, ..., 2017]
-    return Array.from(dataMap.keys()).sort((a, b) => state.sortAscending ? a - b : b - a);
+  // Helper para obter os meses habilitados na ordem visual correta
+  function getVisualMonths() {
+    if (!monthSelect) return [];
+    const opts = Array.from(monthSelect.options).filter(o => !o.disabled);
+    // Se ordenação normal: Jan -> Dez. Se invertida: Dez -> Jan.
+    return opts.sort((a, b) => {
+      const valA = Number(a.value);
+      const valB = Number(b.value);
+      return state.sortAscending ? valA - valB : valB - valA;
+    });
   }
 
+  // Setas de Ano (baseadas estritamente na ordem física do select)
   document.getElementById('yearUpBtn')?.addEventListener('click', () => {
-    const yearSelect = document.getElementById('yearSelect');
-    const monthSelect = document.getElementById('monthSelect');
-    if (!yearSelect) return;
-
-    const visualYears = getVisualYears();
-    const currentYear = Number(yearSelect.value);
-    const currentIndex = visualYears.indexOf(currentYear);
-
-    // Seta para CIMA (▲): No visual normal vai para o passado, no invertido vai para o futuro
-    const targetIdx = currentIndex - 1;
-
-    if (targetIdx >= 0 && targetIdx < visualYears.length) {
-      const targetYear = visualYears[targetIdx];
-      yearSelect.value = targetYear;
-      state.selectedYear = targetYear;
+    if (!yearSelect || yearSelect.options.length === 0) return;
+    const targetIdx = yearSelect.selectedIndex - 1;
+    if (targetIdx >= 0 && targetIdx < yearSelect.options.length) {
+      yearSelect.selectedIndex = targetIdx;
+      state.selectedYear = Number(yearSelect.value);
       updateAvailableMonths();
-      scrollToTemporalTarget(targetYear, monthSelect.value);
+      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     }
   });
 
   document.getElementById('yearDownBtn')?.addEventListener('click', () => {
-    const yearSelect = document.getElementById('yearSelect');
-    const monthSelect = document.getElementById('monthSelect');
-    if (!yearSelect) return;
-
-    const visualYears = getVisualYears();
-    const currentYear = Number(yearSelect.value);
-    const currentIndex = visualYears.indexOf(currentYear);
-
-    // Seta para BAIXO (▼): No visual normal vai para o futuro, no invertido vai para o passado
-    const targetIdx = currentIndex + 1;
-
-    if (targetIdx >= 0 && targetIdx < visualYears.length) {
-      const targetYear = visualYears[targetIdx];
-      yearSelect.value = targetYear;
-      state.selectedYear = targetYear;
+    if (!yearSelect || yearSelect.options.length === 0) return;
+    const targetIdx = yearSelect.selectedIndex + 1;
+    if (targetIdx >= 0 && targetIdx < yearSelect.options.length) {
+      yearSelect.selectedIndex = targetIdx;
+      state.selectedYear = Number(yearSelect.value);
       updateAvailableMonths();
-      scrollToTemporalTarget(targetYear, monthSelect.value);
+      scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     }
   });
 
+  // Setas de Mês (baseadas na ordem visual dos meses disponíveis)
   document.getElementById('monthUpBtn')?.addEventListener('click', () => {
     if (!monthSelect || !yearSelect) return;
-    // Respeita a ordem dos meses no select (que já é sincronizada com o sortAscending)
-    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-    if (enabledOpts.length === 0) return;
+    const visualMonths = getVisualMonths();
+    if (visualMonths.length === 0) return;
 
     const currentVal = monthSelect.value;
-    const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
+    const currentIndex = visualMonths.findIndex(o => o.value === currentVal);
+    const targetIdx = currentIndex - 1;
 
-    if (currentIndex > 0) {
-      monthSelect.value = enabledOpts[currentIndex - 1].value;
+    if (targetIdx >= 0 && targetIdx < visualMonths.length) {
+      monthSelect.value = visualMonths[targetIdx].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
-      // Transição para o ano anterior visualmente
-      const visualYears = getVisualYears();
-      const currentYear = Number(yearSelect.value);
-      const yearIdx = visualYears.indexOf(currentYear);
-      if (yearIdx > 0) {
-        yearSelect.value = visualYears[yearIdx - 1];
-        state.selectedYear = visualYears[yearIdx - 1];
+      // Transição automática para o ano anterior na ordem visual
+      const targetYearIdx = yearSelect.selectedIndex - 1;
+      if (targetYearIdx >= 0 && targetYearIdx < yearSelect.options.length) {
+        yearSelect.selectedIndex = targetYearIdx;
+        state.selectedYear = Number(yearSelect.value);
         updateAvailableMonths();
-        const newOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-        if (newOpts.length > 0) {
-          monthSelect.value = newOpts[newOpts.length - 1].value;
+        const newVisualMonths = getVisualMonths();
+        if (newVisualMonths.length > 0) {
+          monthSelect.value = newVisualMonths[newVisualMonths.length - 1].value;
           scrollToTemporalTarget(yearSelect.value, monthSelect.value);
         }
       }
@@ -689,27 +674,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('monthDownBtn')?.addEventListener('click', () => {
     if (!monthSelect || !yearSelect) return;
-    const enabledOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-    if (enabledOpts.length === 0) return;
+    const visualMonths = getVisualMonths();
+    if (visualMonths.length === 0) return;
 
     const currentVal = monthSelect.value;
-    const currentIndex = enabledOpts.findIndex(o => o.value === currentVal);
+    const currentIndex = visualMonths.findIndex(o => o.value === currentVal);
+    const targetIdx = currentIndex + 1;
 
-    if (currentIndex !== -1 && currentIndex < enabledOpts.length - 1) {
-      monthSelect.value = enabledOpts[currentIndex + 1].value;
+    if (targetIdx >= 0 && targetIdx < visualMonths.length) {
+      monthSelect.value = visualMonths[targetIdx].value;
       scrollToTemporalTarget(yearSelect.value, monthSelect.value);
     } else {
-      // Transição para o próximo ano visualmente
-      const visualYears = getVisualYears();
-      const currentYear = Number(yearSelect.value);
-      const yearIdx = visualYears.indexOf(currentYear);
-      if (yearIdx !== -1 && yearIdx < visualYears.length - 1) {
-        yearSelect.value = visualYears[yearIdx + 1];
-        state.selectedYear = visualYears[yearIdx + 1];
+      // Transição automática para o próximo ano na ordem visual
+      const targetYearIdx = yearSelect.selectedIndex + 1;
+      if (targetYearIdx >= 0 && targetYearIdx < yearSelect.options.length) {
+        yearSelect.selectedIndex = targetYearIdx;
+        state.selectedYear = Number(yearSelect.value);
         updateAvailableMonths();
-        const newOpts = Array.from(monthSelect.options).filter(o => !o.disabled);
-        if (newOpts.length > 0) {
-          monthSelect.value = newOpts[0].value;
+        const newVisualMonths = getVisualMonths();
+        if (newVisualMonths.length > 0) {
+          monthSelect.value = newVisualMonths[0].value;
           scrollToTemporalTarget(yearSelect.value, monthSelect.value);
         }
       }
