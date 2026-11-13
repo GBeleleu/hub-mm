@@ -114,29 +114,28 @@ async function loadDatabase() {
 }
 
 // ==========================================================================
-// SISTEMA DE NAVEGAÇÃO TEMPORAL (BLINDADO E DETERMINÍSTICO - UTC & SCROLLEND)
+// SISTEMA DE NAVEGAÇÃO TEMPORAL (FONTE ÚNICA DA VERDADE - UNIFICADO COM RENDER.JS)
 // ==========================================================================
 
 let isProgrammaticScroll = false;
 
 /**
- * Extrai e retorna a lista atual de vídeos aplicando os filtros ativos e a ordenação.
+ * Obtém exatamente a lista de itens visíveis considerando o estado de organização (consolidado, blocos, etc.) 
+ * e os mesmos filtros aplicados no render.js.
  */
-function getCurrentFilteredItems() {
+function getRenderedTemporalItems() {
   if (typeof videoDatabase === 'undefined' || !Array.isArray(videoDatabase)) return [];
 
+  // Replicamos fielmente o pipeline de filtro do render.js
   let items = videoDatabase.filter(item => {
-    // 1. Filtro de removidos
     if (item.privacyStatus === 'removed' && !state.customFilterState.removed) {
       return false;
     }
 
-    // 2. Filtro de canais ocultos
     const isChannelHidden = (state.hiddenChannels && state.hiddenChannels.includes(item.channelTitle)) || 
                             (state.customFilterState.channels && state.customFilterState.channels[item.channelTitle] === false);
     if (isChannelHidden) return false;
 
-    // 3. Filtro de coleções ativas
     if (state.activeCollectionFilter) {
       const { type, value } = state.activeCollectionFilter;
       if (type === 'collection') {
@@ -160,7 +159,6 @@ function getCurrentFilteredItems() {
       return true;
     }
 
-    // 4. Filtros customizados de categorias e marcadores
     const catKey = (item.category && item.category.trim()) ? item.category.trim() : 'NULL';
     if (state.customFilterState.categories && state.customFilterState.categories[catKey] === false) return false;
 
@@ -168,30 +166,81 @@ function getCurrentFilteredItems() {
       ? String(window.userMarkerCache[item.videoId]) : 'NULL';
     if (state.customFilterState.markers && state.customFilterState.markers[markerVal] === false) return false;
 
+    // Validação de coleções ocultas (consistente com collections.js)
+    const hiddenNormalized = (window.hiddenCollectionsTags || []).map(t => t.toLowerCase());
+    if (item.category && hiddenNormalized.includes(`category:${item.category.trim().toLowerCase()}`)) return false;
+    const collections = Array.isArray(item.collection) ? item.collection : [item.collection];
+    if (collections.some(c => c && hiddenNormalized.includes(`collection:${c.trim().toLowerCase()}`))) return false;
+    const playlists = Array.isArray(item.playlist) ? item.playlist : [item.playlist];
+    if (playlists.some(p => p && hiddenNormalized.includes(`playlist:${p.trim().toLowerCase()}`))) return false;
+
     return true;
   });
 
-  // 5. Aplicação da busca textual
+  // Busca textual
   if (state.searchQuery && state.searchQuery.trim() !== '') {
     const q = state.searchQuery.toLowerCase();
     items = items.filter(item => item.title && item.title.toLowerCase().includes(q));
   }
 
-  // 6. Ordenação estrita por data respeitando state.sortAscending
-  items.sort((a, b) => {
-    const valA = new Date(a.publishedAt);
-    const valB = new Date(b.publishedAt);
-    return state.sortAscending ? valA - valB : valB - valA;
-  });
+  // Função de ordenação idêntica à do render.js
+  const sortList = (list) => {
+    list.sort((a, b) => {
+      let valA, valB;
+      if (state.sortBy === 'category') {
+        valA = (a.category || 'zzz').toLowerCase();
+        valB = (b.category || 'zzz').toLowerCase();
+        return state.sortAscending ? valA.localeCompare(valB) : valB.localeCompare(valA);
+      } else if (state.sortBy === 'marcador') {
+        valA = (window.userMarkerCache && window.userMarkerCache[a.videoId] !== undefined) ? Number(window.userMarkerCache[a.videoId]) : 99;
+        valB = (window.userMarkerCache && window.userMarkerCache[b.videoId] !== undefined) ? Number(window.userMarkerCache[b.videoId]) : 99;
+      } else if (state.sortBy === 'duracao') {
+        valA = a.durationSeconds || 0;
+        valB = b.durationSeconds || 0;
+      } else if (state.sortBy === 'ocorrencias') {
+        const getCount = (item) => {
+          const targetId = item.isMaster ? item.videoId : item.masterId;
+          if (!targetId) return 1;
+          let count = 0;
+          videoDatabase.forEach(v => {
+            if (v.videoId === targetId || v.masterId === targetId) count++;
+          });
+          return count > 0 ? count : 1;
+        };
+        valA = getCount(a);
+        valB = getCount(b);
+      } else {
+        valA = new Date(a.publishedAt);
+        valB = new Date(b.publishedAt);
+      }
+      return state.sortAscending ? valA - valB : valB - valA;
+    });
+  };
 
+  // Se estiver no modo consolidado, aplica a mesma regra de exibição de masters do render.js
+  if (state.organizeMode === 'consolidado') {
+    const videoMap = new Map(videoDatabase.map(v => [v.videoId, v]));
+    const masterMap = new Map();
+    items.forEach(item => {
+      let targetMasterId = item.isMaster ? item.videoId : item.masterId;
+      if (!targetMasterId) return;
+      const masterItem = videoMap.get(targetMasterId);
+      if (masterItem && !masterMap.has(masterItem.videoId)) {
+        masterMap.set(masterItem.videoId, masterItem);
+      }
+    });
+    items = Array.from(masterMap.values());
+  }
+
+  sortList(items);
   return items;
 }
 
 /**
- * Constrói a estrutura de âncoras temporais em memória utilizando UTC estrito.
+ * Constrói a estrutura de âncoras temporais baseada estritamente nos itens renderizados.
  */
 function getTemporalAnchors() {
-  const items = getCurrentFilteredItems();
+  const items = getRenderedTemporalItems();
   const anchorMap = new Map(); // "year-month" -> videoId
   const yearsSet = new Set();
   const monthsByYear = new Map(); // year -> Set(months)
@@ -201,7 +250,6 @@ function getTemporalAnchors() {
     const date = new Date(item.publishedAt);
     if (isNaN(date.getTime())) return;
 
-    // Uso estrito de UTC para evitar distorção de fuso horário local
     const year = date.getUTCFullYear();
     const month = date.getUTCMonth();
 
@@ -218,7 +266,6 @@ function getTemporalAnchors() {
   });
 
   const sortedYears = Array.from(yearsSet).sort((a, b) => state.sortAscending ? a - b : b - a);
-
   return { years: sortedYears, monthsByYear, anchorMap };
 }
 
