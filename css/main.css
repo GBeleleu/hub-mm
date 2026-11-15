@@ -62,6 +62,10 @@ body {
   padding: 0 16px;
 }
 
+#videoListContainer {
+  padding-bottom: calc(100vh - 250px);
+}
+
 /* Caixa de busca expansível com prioridade */
 .search-box {
   flex: 1 1 180px;
@@ -369,6 +373,24 @@ button:disabled, select:disabled {
 .arrow-btn:hover:not(:disabled) {
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--text-main);
+}
+
+/* FEEDBACK VISUAL DE DESTAQUE DA ÂNCORA (FLASHEO) */
+@keyframes targetFlash {
+  0% { 
+    background-color: rgba(255, 255, 255, 0.18); 
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.15);
+  }
+  100% { 
+    background-color: transparent; 
+    box-shadow: none;
+  }
+}
+
+.nav-target-flash {
+  animation: targetFlash 1.2s ease-out;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
 }
 
 @media (max-width: 768px) {

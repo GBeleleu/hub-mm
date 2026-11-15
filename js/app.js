@@ -415,7 +415,14 @@ function scrollToTemporalTarget(year, month) {
 
     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Liberação determinística baseada no término real do scroll (scrollend com fallback)
+    // >>> INÍCIO DA ADIÇÃO DO FEEDBACK VISUAL TESTE <<<
+    targetElement.classList.add('nav-target-flash');
+    setTimeout(() => {
+      targetElement.classList.remove('nav-target-flash');
+    }, 1200);
+    // >>> FIM DA ADIÇÃO DO FEEDBACK VISUAL TESTE <<<
+
+    // Liberação determinística baseada no término real do scroll
     const releaseLock = () => {
       isProgrammaticScroll = false;
       window.removeEventListener('scrollend', releaseLock);
