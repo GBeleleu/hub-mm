@@ -400,29 +400,25 @@ function scrollToTemporalTarget(year, month) {
     }
   }
 
-  if (!targetVideoId) return;
+if (!targetVideoId) return;
 
-  const targetElement = document.querySelector(`[data-videoid="${targetVideoId}"]`) || 
-                        document.querySelector(`[href*="v=${targetVideoId}"]`)?.closest('.card-display-lista, .card-display-compacto, .card-display-grade');
+  // Busca o elemento baseando-se no link do vídeo e pegando o card pai correspondente
+  const targetElement = document.querySelector(`a[href*="v=${targetVideoId}"]`)?.closest('.card-display-lista, .card-display-compacto, .card-display-grade');
 
   if (targetElement) {
     isProgrammaticScroll = true;
 
-    // Configura margem superior automática para compensar a barra fixa superior
     const topBarHeight = document.getElementById('topBar')?.offsetHeight || 60;
     const navTimeHeight = document.getElementById('navTimeContainer')?.offsetHeight || 35;
     targetElement.style.scrollMarginTop = `${topBarHeight + navTimeHeight + 20}px`;
 
     targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // >>> INÍCIO DA ADIÇÃO DO FEEDBACK VISUAL TESTE <<<
     targetElement.classList.add('nav-target-flash');
     setTimeout(() => {
       targetElement.classList.remove('nav-target-flash');
     }, 1200);
-    // >>> FIM DA ADIÇÃO DO FEEDBACK VISUAL TESTE <<<
 
-    // Liberação determinística baseada no término real do scroll
     const releaseLock = () => {
       isProgrammaticScroll = false;
       window.removeEventListener('scrollend', releaseLock);
@@ -434,7 +430,6 @@ function scrollToTemporalTarget(year, month) {
       setTimeout(releaseLock, 900);
     }
   }
-}
 
 /**
  * Atualização passiva dos selects durante o scroll manual utilizando UTC estrito.
