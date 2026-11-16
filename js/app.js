@@ -237,13 +237,15 @@ function getRenderedTemporalItems() {
 }
 
 /**
- * Constrói a estrutura de âncoras temporais baseada estritamente nos itens renderizados.
+ * Constrói a estrutura de âncoras temporais
  */
 function getTemporalAnchors() {
   const items = getRenderedTemporalItems();
   const anchorMap = new Map(); // "year-month" -> videoId
   const yearsSet = new Set();
   const monthsByYear = new Map(); // year -> Set(months)
+
+  const monthGroups = new Map();
 
   items.forEach(item => {
     if (!item.publishedAt) return;
@@ -260,9 +262,20 @@ function getTemporalAnchors() {
     monthsByYear.get(year).add(month);
 
     const key = `${year}-${month}`;
-    if (!anchorMap.has(key)) {
-      anchorMap.set(key, item.videoId);
+    if (!monthGroups.has(key)) {
+      monthGroups.set(key, []);
     }
+    monthGroups.get(key).push({
+      videoId: item.videoId,
+      time: date.getTime()
+    });
+  });
+
+  monthGroups.forEach((groupItems, key) => {
+    groupItems.sort((a, b) => a.time - b.time); // Do mais antigo para o mais recente
+
+    const targetItem = state.sortAscending ? groupItems[0] : groupItems[groupItems.length - 1];
+    anchorMap.set(key, targetItem.videoId);
   });
 
   const sortedYears = Array.from(yearsSet).sort((a, b) => state.sortAscending ? a - b : b - a);
