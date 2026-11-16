@@ -430,6 +430,7 @@ if (!targetVideoId) return;
       setTimeout(releaseLock, 900);
     }
   }
+}
 
 /**
  * Atualização passiva dos selects durante o scroll manual utilizando UTC estrito.
