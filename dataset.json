@@ -13,11 +13,7 @@
     "masterId": "tkA6jkRfZA8",
     "isMaster": true,
     "masterType": "Original Master",
-    "category": "Meditação",
-    "collection": [
-      "collection Série Teste 1",
-      "collection Série Teste 2"
-    ]
+    "category": "Meditação"
   },
   {
     "videoId": "jBQG06BNH4U",
@@ -29,10 +25,7 @@
     "privacyStatus": "public",
     "masterId": "jBQG06BNH4U",
     "isMaster": true,
-    "masterType": "Original Master",
-    "collection": [
-      "collection Série Teste 1"
-    ]
+    "masterType": "Original Master"
   },
   {
     "videoId": "Wd6Ha54Hx-s",
@@ -44,10 +37,7 @@
     "privacyStatus": "public",
     "masterId": "Wd6Ha54Hx-s",
     "isMaster": true,
-    "masterType": "Original Master",
-    "collection": [
-      "collection Série Teste 1"
-    ]
+    "masterType": "Original Master"
   },
   {
     "videoId": "8pkYsvSqYZE",
@@ -62,10 +52,7 @@
     ],
     "masterId": "8pkYsvSqYZE",
     "isMaster": true,
-    "masterType": "Original Master",
-    "collection": [
-      "collection Série Teste 2"
-    ]
+    "masterType": "Original Master"
   },
   {
     "videoId": "EYeC98jy14k",
@@ -78,10 +65,7 @@
     "masterId": "EYeC98jy14k",
     "isMaster": true,
     "masterType": "Original Master",
-    "category": "Análise",
-    "collection": [
-      "collection Série Teste 2"
-    ]
+    "category": "Análise"
   },
   {
     "videoId": "ZzfbcG_8ubA",
@@ -13830,7 +13814,8 @@
     "privacyStatus": "public",
     "masterId": "rR7mV778Y8E",
     "isMaster": true,
-    "masterType": "Original Master"
+    "masterType": "Original Master",
+    "category": "Relato"
   },
   {
     "videoId": "8tXQujLw7v0",
@@ -13842,7 +13827,8 @@
     "privacyStatus": "public",
     "masterId": "rR7mV778Y8E",
     "isMaster": false,
-    "masterType": "Duplicate - Exact Copy (Criterion A)"
+    "masterType": "Duplicate - Exact Copy (Criterion A)",
+    "category": "Relato"
   },
   {
     "videoId": "NWZs3qozm10",
